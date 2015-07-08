@@ -6,6 +6,87 @@
     margin-top: @navbar-height;
 }
 
-.app-content {
-  .container();
+.app-fp-content {
+  //.container-fluid();
+  height: 100%;
+  padding: 0px !important;
+  margin: 0px !important;
 }
+
+.app-logo {
+	border: 0px solid red;
+	margin: auto;
+}
+
+.white {
+	background: #000;
+	height: 100%;
+	color: #fff;
+}
+
+.black {
+	background: #fff;
+	height: 100%;
+	color: #000;
+}
+
+.app-fp-wrapper {
+	display: flex;
+	border: 0px solid red;
+	height: 100%;
+}
+
+.app-fp-block {
+	width: 50%;
+	height: 100%;
+	padding: @line-height-computed * 6;
+	display: block;
+
+	.app-fp-heading {
+		padding: @line-height-computed;
+		font-size: @font-size-large * 2;
+		text-transform: uppercase;
+	}
+}
+
+//== Page blocks
+//
+//## Seperate content sections into blocks
+.app-page-block {
+  @media (min-width: @screen-sm-min) {
+    display: flex;
+    flex-wrap: wrap;
+    background: transparent;
+    height: 100%;
+  }
+}
+
+.app-page-block-content {
+	.center-block();
+  flex: 1;
+  border: 0px solid red;
+  font-size: 0.8rem;
+  height: 100%;
+
+  h3 {
+    font-size: 0.8rem;
+  }
+}
+
+//== Flexbox rows
+.flexbox .app-page-row {
+  margin: -1em 0 0 -1em;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flexbox .app-page-column {
+  padding: 1em 0 0 1em;
+  display: flex;
+  @media (min-width: @screen-sm-min) {
+    width:50%;
+  }
+  @media (min-width: @screen-md-min) {
+    width:33.3333%;
+  }
+  }

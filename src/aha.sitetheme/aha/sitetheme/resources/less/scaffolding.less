@@ -4,6 +4,7 @@
 
 // Set root font size
 html {
+    height:100% !important;
     font-size: @font-size-root;
     @media (min-width: @screen-sm-min) {
         font-size: ceil((@font-size-root + 2));
@@ -14,7 +15,8 @@ html {
 }
 
 body {
-    background: @gray-lighter;
+    background: #fff;
+    height:100% !important;
     &.template-theming-controlpanel .row {
         // Fix theming control panel
         margin: 0 @line-height-computed;
