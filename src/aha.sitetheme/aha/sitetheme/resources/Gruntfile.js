@@ -36,7 +36,8 @@ module.exports = function (grunt) {
                     'bower_components/mailcheck/src/mailcheck.js',
                     'bower_components/JVFloat/jvfloat.js',
                     'bower_components/hideShowPassword/hideShowPassword.js',
-                    'bower_components/blazy/blazy.js',
+                    'bower_components/lazysizes/lazysizes.js',
+                    'bower_components/flickity/dist/flickity.pkgd.js',
                     'js/main.js'
                 ],
                 dest: '<%= config.dist %>/js/<%= pkg.name %>.js'
@@ -49,10 +50,9 @@ module.exports = function (grunt) {
                 },
                 src: [
                     'bower_components/bootstrap-without-jquery/bootstrap3/bootstrap-without-jquery.js',
-                    'bower_components/mailcheck/src/mailcheck.js',
-                    'bower_components/JVFloat/jvfloat.js',
-                    'bower_components/hideShowPassword/hideShowPassword.js',
-                    'bower_components/blazy/blazy.js',
+                    'bower_components/responsive-nav/responsive-nav.js',
+                    'bower_components/lazysizes/lazysizes.js',
+                    'bower_components/flickity/dist/flickity.pkgd.js',
                     'js/main.js'
                 ],
                 dest: '<%= config.dist %>/js/main.js'
@@ -647,7 +647,7 @@ module.exports = function (grunt) {
         'css',
         'js',
         'cb',
-        'replace:dist'
+        'replace:pat'
     ]);
     grunt.registerTask('build', [
         'clean:server',
