@@ -31,7 +31,10 @@
 }
 
 .app-fp-wrapper {
-	display: flex;
+	display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 	border: 0px solid red;
 	height: 100%;
 }
@@ -39,15 +42,23 @@
 .app-fp-block {
 	width: 50%;
 	height: 100%;
-	padding: @line-height-computed * 6;
-	display: block;
-
-	.app-fp-heading {
-		padding: @line-height-computed;
-		font-size: @font-size-large * 2;
-		text-transform: uppercase;
-	}
+	//padding: @line-height-computed * 6;
+	display: table-cell;
+  vertical-align: middle;
 }
+
+.app-fp-block-content {
+  margin-left: auto;
+    margin-right: auto; 
+    width: 50%;
+
+}
+
+.app-fp-heading {
+    padding: @line-height-computed;
+    font-size: @font-size-large * 2;
+    text-transform: uppercase;
+  }
 
 //== Page blocks
 //
