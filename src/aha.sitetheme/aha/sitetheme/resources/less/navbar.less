@@ -1,0 +1,75 @@
+//
+// Navbar
+// -----------------------------------------
+
+.app-navbar {
+  .navbar();
+  line-height: @line-height-computed / 1.5;
+  margin-bottom: 0;
+  min-height: @line-height-computed * 1.5;
+}
+
+// Navbar toggle button visible on small displays
+.app-navbar-toggle {
+  border-color: transparent !important;
+  &:hover,
+  &:focus {
+    background-color: @navbar-default-toggle-hover-bg;
+  }
+  .icon-bar {
+    background-color: @navbar-default-toggle-icon-bar-bg;
+  }
+  // Bars
+  .icon-bar {
+    display: block;
+    width: 30px;
+    height: 2px;
+    border-radius: 1px;
+  }
+  .icon-bar + .icon-bar {
+    margin-top: 8px;
+  }
+}
+
+.app-navbar-collapse {
+  margin-left: -30px !important;
+  margin-right: -30px !important;
+}
+
+.app-navbar-brand {
+  padding: 0 30px;
+}
+
+// Unordered list main navigation
+.app-navbar-nav {
+  width: 100%;
+}
+
+.navbar-nav > li {
+    float: none;
+}
+
+.navbar-nav > li > a {
+    padding-top: @line-height-computed / 2;
+    padding-bottom: @line-height-computed / 2;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.app-navbar-nav > .active > a, 
+.app-navbar-nav > .active > a:focus, 
+.app-navbar-nav > .active > a:hover {
+    color: @app-gray-light;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:focus, 
+.navbar-default .navbar-nav > .active > a:hover {
+    color: @app-gray-light;
+    background-color: transparent;
+}
+
+.app-navitem {
+  background: transparent;
+}
