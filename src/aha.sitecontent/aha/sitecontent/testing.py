@@ -15,7 +15,7 @@ from plone.testing import z2
 import unittest2 as unittest
 
 
-class AhaSitecontentLayer(PloneSandboxLayer):
+class ahaSitecontentLayer(PloneSandboxLayer):
 
     defaultBases = (PLONE_FIXTURE,)
 
@@ -46,11 +46,11 @@ class AhaSitecontentLayer(PloneSandboxLayer):
         z2.uninstallProduct(app, 'aha.sitecontent')
 
 
-FIXTURE = AhaSitecontentLayer()
+FIXTURE = CkSitecontentLayer()
 INTEGRATION_TESTING = IntegrationTesting(
-    bases=(FIXTURE,), name="AhaSitecontentLayer:Integration")
+    bases=(FIXTURE,), name="CkSitecontentLayer:Integration")
 FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(FIXTURE,), name="AhaSitecontentLayer:Functional")
+    bases=(FIXTURE,), name="CkSitecontentLayer:Functional")
 
 
 class IntegrationTestCase(unittest.TestCase):

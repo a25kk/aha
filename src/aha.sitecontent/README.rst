@@ -2,12 +2,9 @@
 aha.sitecontent
 ====================
 
-AHA 360 Sitecontent
+aha Site Content
 
-* `Source code @ GitHub <https://github.com/kreativkombinat/aha.sitecontent>`_
-* `Releases @ PyPI <http://pypi.python.org/pypi/aha.sitecontent>`_
-* `Documentation @ ReadTheDocs <http://ahasitecontent.readthedocs.org>`_
-* `Continuous Integration @ Travis-CI <http://travis-ci.org/kreativkombinat/aha.sitecontent>`_
+* `Source code @ GitHub <https://github.com/potzenheimer/aha.sitecontent>`_
 
 How it works
 ============

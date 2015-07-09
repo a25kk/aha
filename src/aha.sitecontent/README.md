@@ -1,21 +1,23 @@
 # aha.sitecontent
 
-## AHA 360 Sitecontent
+## aha Site Content
 
-* `Source code @ GitHub <https://github.com/kreativkombinat/aha.sitecontent>`_
-* `Releases @ PyPI <http://pypi.python.org/pypi/aha.sitecontent>`_
-* `Documentation @ ReadTheDocs <http://ahasitecontent.readthedocs.org>`_
-* `Continuous Integration @ Travis-CI <http://travis-ci.org/kreativkombinat/aha.sitecontent>`_
+* `Source code @ GitHub <https://github.com/potzenheimer/aha.sitecontent>`_
 
 ## How it works
 
 This package provides a Plone addon as an installable Python egg package.
 
-The generated Python package holds an example content type `ContentPage` which
-provides a folderish version of the default **Page** document type.
+The generated Python package hold the necessary scaffold to add content types
+via the 'contenttype' template and to add functionality.
 
-The implementation is kept simple on purpose and asumes that the developer will
-add further content manually.
+In order to get productive you still need to generate a contenttype
+
+```bash
+$ cd aha.sitecontent/src/ck/sitecontent/
+$ mrbob --config ~/.mrbob.ini -O example_type bobtemplates:contenttype
+
+```
 
 
 ## Installation

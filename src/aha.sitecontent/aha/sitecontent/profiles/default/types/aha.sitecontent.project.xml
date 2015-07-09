@@ -1,39 +1,38 @@
 <?xml version="1.0"?>
-<object name="aha.sitecontent.contentpage"
+<object name="aha.sitecontent.project"
    meta_type="Dexterity FTI"
    i18n:domain="aha.sitecontent" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
   <!-- Basic metadata -->
-  <property name="title" i18n:translate="">Contentpage</property>
+  <property name="title" i18n:translate="">Project</property>
   <property name="description"
-    i18n:translate="">Folderish content page</property>
+    i18n:translate="">Reference project</property>
   <property name="icon_expr">string:${portal_url}/folder_icon.png</property>
-  <property name="factory">aha.sitecontent.contentpage</property>
+  <property name="factory">aha.sitecontent.project</property>
   <property name="global_allow">False</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
-    <element value="aha.sitecontent.contentpage" />
-    <element value="aha.sitecontent.showroom" />
     <element value="Image" />
   </property>
   <property name="allow_discussion">True</property>
 
   <!-- schema and class used for content items -->
-  <property name="schema">aha.sitecontent.contentpage.IContentPage</property>
-  <property name="klass">aha.sitecontent.contentpage.ContentPage</property>
+  <property name="schema">aha.sitecontent.project.IProject</property>
+  <property name="klass">aha.sitecontent.project.Project</property>
 
   <property name="behaviors">
      <element value="plone.app.content.interfaces.INameFromTitle" />
      <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
      <element value="plone.app.contenttypes.behaviors.richtext.IRichText" />
+     <element value="ade25.assetmanager.behaviors.storage.IAssetStorage" />
    </property>
 
   <!-- View information -->
   <property name="link_target"></property>
   <property name="immediate_view">view</property>
-  <property name="default_view">contentpage_view</property>
+  <property name="default_view">project_view</property>
   <property name="view_methods">
-   <element value="contentpage_view"/>
+   <element value="project_view"/>
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>

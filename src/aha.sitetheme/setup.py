@@ -10,25 +10,22 @@ import os
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-long_description = \
-    read('README.rst') + \
-    read('docs', 'HISTORY.txt') + \
-    read('docs', 'LICENSE.txt')
+long_description = read('README.rst')
 
 setup(
     name='aha.sitetheme',
     version='1.0.0',
-    description="AHA 360 Website",
+    description="Site Theme for AHA",
     long_description=long_description,
     # Get more from http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         "Framework :: Plone",
         "Programming Language :: Python",
     ],
-    keywords='aha plone kreativkombinat',
+    keywords='Plone Diazo',
     author='Serge Davidov',
     author_email='sd@ade25.de',
-    url='http://pypi.python.org/pypi/aha.buildout',
+    url='http://pypi.python.org/pypi/aha.sitetheme',
     license='BSD',
     packages=find_packages(exclude=['ez_setup']),
     namespace_packages=['aha'],

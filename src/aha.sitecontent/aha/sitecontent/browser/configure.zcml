@@ -13,4 +13,53 @@
       layer="..interfaces.IAhaSitecontentLayer"
       />
 
+  <!-- Content page image gallery -->
+  <browser:page
+      for="aha.sitecontent.contentpage.IContentPage"
+      name="gallery-view"
+      class=".contentpage.GalleryView"
+      template="galleryview.pt"
+      permission="zope2.View"
+      layer="..interfaces.IAhaSitecontentLayer"
+      />
+
+  <browser:page
+      for="aha.sitecontent.contentpage.IContentPage"
+      name="gallery-preview"
+      class=".contentpage.GalleryPreview"
+      template="gallerypreview.pt"
+      permission="zope2.View"
+      layer="..interfaces.IAhaSitecontentLayer"
+      />
+
+
+  <browser:page
+      for="aha.sitecontent.showroom.IShowRoom"
+      name="showroom_view"
+      class=".showroom.ShowRoomView"
+      template="showroom.pt"
+      permission="zope2.View"
+      layer="..interfaces.IAhaSitecontentLayer"
+      />
+
+  <!-- Project View -->
+  <browser:page
+      for="aha.sitecontent.project.IProject"
+      name="project_view"
+      class=".project.ProjectView"
+      template="project.pt"
+      permission="zope2.View"
+      layer="..interfaces.IAhaSitecontentLayer"
+      />
+
+  <!-- Frontpage Views -->
+  <browser:page
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      name="frontpage-view"
+      class=".frontpage.FrontPageView"
+      template="frontpage.pt"
+      permission="zope2.View"
+      layer="..interfaces.IAhaSitecontentLayer"
+      />
+
 </configure>

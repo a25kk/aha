@@ -46,9 +46,9 @@
         <drop css:content="head link[rel='apple-touch-icon']" />
         <drop css:content="head link[rel='shortcut icon']" />
         <after theme="/html/head">
-            <link rel="shortcut icon" href="/++theme++aha.sitetheme/dist/assets/ico/favicon.ico" type="images/x-icon" />
-            <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/++theme++aha.sitetheme/dist/assets/ico/apple-touch-icon-144-precomposed.png" />
-            <link rel="shortcut icon" href="/++theme++aha.sitetheme/dist/assets/ico/favicon.png" />
+            <link rel="shortcut icon" href="/++theme++cks.sitetheme/dist/assets/ico/favicon.ico" type="images/x-icon" />
+            <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/++theme++cks.sitetheme/dist/assets/ico/apple-touch-icon-144-precomposed.png" />
+            <link rel="shortcut icon" href="/++theme++cks.sitetheme/dist/assets/ico/favicon.png" />
         </after>
 
         <!-- Copy over the id/class attributes on the body tag.
@@ -60,8 +60,14 @@
         <drop css:theme="#app-toolbar"
             css:if-content=".userrole-anonymous" />
 
+        <!--<replace css:theme="#app-toolbar"
+            css:content="#app-toolbar" />-->
+
+        <!-- toolbar -->
         <replace css:theme="#app-toolbar"
-            css:content="#app-toolbar" />
+            css:content="#edit-bar"
+            css:if-not-content=".ajax_load"
+            css:if-content=".userrole-authenticated"/>
 
         <!-- Logo (link target) -->
         <copy attributes="href" css:content="#portal-logo" css:theme="a.navbar-brand" />
@@ -75,13 +81,20 @@
         <replace css:content="#portal-globalnav li"
             css:theme-children="#app-navbar-nav" />
 
+        <drop css:theme="#app-banner"
+                css:if-not-content="#app-banner" />
+
+        <replace css:content="#app-banner"
+                css:theme="#app-banner"
+                css:if-content="#app-banner" />
+
         <!-- Breadcrumbs -->
         <replace css:content-children='#portal-breadcrumbs'
             css:theme-children='#app-pathbar' />
 
          <!-- Login form rules -->
         <replace css:content-children="#content-core"
-                css:theme-children="#app-signin-content"
+                css:theme-children="#app-signin-body"
                 css:if-content="body.template-login_form" />
         <replace css:content-children="#content-core"
                 css:theme-children="#app-signin-content"
@@ -102,6 +115,13 @@
                 css:theme-children="#app-signin-content"
                 css:if-content="body.template-pwreset_finish" />
 
+
+        <drop css:theme="#app-banner"
+                css:if-not-content="#app-banner" />
+
+        <replace css:content="#app-banner"
+                css:theme="#app-banner"
+                css:if-content="#app-banner" />
 
         <!-- Document First Heading -->
         <replace css:content=".documentFirstHeading">
@@ -128,19 +148,166 @@
         <replace css:content-children="#content"
             css:theme-children="#content" />
 
+        <!-- Fix table styles -->
+            <replace css:content="table.listing">
+              <table>
+                <xsl:copy-of select="@*"/>
+                <xsl:attribute name="class">table table-hover</xsl:attribute>
+                <xsl:apply-templates />
+              </table>
+            </replace>
+
+        <!-- Alert and portal messages -->
         <before css:content=".portalMessage" css:theme="#content" />
-        <replace css:content-children="#viewlet-below-content"
-            css:theme-children="#app-below-main-content" />
+        <strip css:content=".portalMessage dd"/>
+        <replace css:content=".portalMessage" >
+          <xsl:choose>
+              <xsl:when css:test=".portalMessage[style]"/>
+              <xsl:when css:test=".portalMessage">
+                  <div class="app-callout app-callout-default alert-dismissable" role="alert">
+                      <xsl:choose>
+                          <xsl:when css:test=".info">
+                              <xsl:attribute name="class">app-callout app-callout-success alert-dismissable</xsl:attribute>
+                          </xsl:when>
+                          <xsl:when css:test=".error">
+                              <xsl:attribute name="class">app-callout app-callout-danger alert-dismissable</xsl:attribute>
+                          </xsl:when>
+                          <xsl:when css:test=".warning">
+                              <xsl:attribute name="class">app-callout app-callout-warning alert-dismissable</xsl:attribute>
+                          </xsl:when>
+                      </xsl:choose>
+                      <h4><xsl:apply-templates select="./dt/*"/></h4>
+                      <xsl:apply-templates />
+                  </div>
+              </xsl:when>
+          </xsl:choose>
+        </replace>
+
+        <!-- Form transforms -->
+
+        <replace css:content=".formHelp">
+              <xsl:copy>
+                <xsl:copy-of select="@*" />
+                <xsl:attribute name="class"><xsl:value-of select="./@class" /> help-block</xsl:attribute>
+                <xsl:apply-templates />
+              </xsl:copy>
+            </replace>
+
+        <!-- Required marker -->
+        <replace css:content="span.required">
+          <xsl:copy>
+            <xsl:copy-of select="@*" />
+            <xsl:attribute name="class"><xsl:value-of select="./@class" /> text-warning</xsl:attribute>
+            <xsl:apply-templates />
+          </xsl:copy>
+        </replace>
+
+        <replace content="//*[contains(@class, 'fieldRequired')]/@class">
+          <xsl:attribute name="class"><xsl:value-of select="." /> text-warning</xsl:attribute>
+        </replace>
+        <!-- Drop .label class for twbs compatibility -->
+        <drop content="//label/span[@class='label']/@class" />
+
+        <replace css:content=".field">
+          <xsl:copy>
+            <xsl:copy-of select="@*" />
+            <xsl:choose>
+               <xsl:when css:test=".error">
+                 <xsl:attribute name="class"><xsl:value-of select="./@class" /> form-group has-error</xsl:attribute>
+               </xsl:when>
+               <xsl:otherwise>
+                 <xsl:attribute name="class"><xsl:value-of select="./@class" /> form-group</xsl:attribute>
+               </xsl:otherwise>
+            </xsl:choose>
+            <xsl:if test="not(*[@class='widget']) and not(table)">
+              <xsl:choose>
+                  <xsl:when css:test="[type='xradio']">
+                      <xsl:attribute name="class">form-control radio</xsl:attribute>
+                  </xsl:when>
+                  <xsl:when css:test="[type='xcheckbox']">
+                      <xsl:attribute name="class">form-control checkbox</xsl:attribute>
+                  </xsl:when>
+              </xsl:choose>
+            </xsl:if>
+              <xsl:apply-templates />
+          </xsl:copy>
+              <!--
+            <label>
+              <xsl:copy-of select="./label/@*" />
+              <xsl:attribute name="class"><xsl:value-of select="./label/@class" /> control-label</xsl:attribute>
+              <xsl:apply-templates select="./label/text()"/>
+              <xsl:apply-templates select="./span[@class='fieldRequired']"/>
+            </label>
+            <div class="controls">
+              <xsl:apply-templates select="./*[not(self::label) and not(@class='fieldRequired')]"/>
+            </div>
+              -->
+
+        </replace>
+
+        <!-- Replace input elements (submit buttons and checkboxes) -->
+        <replace css:content="input">
+            <xsl:choose>
+                <xsl:when css:test="[type='submit'],[type='button']">
+                    <button>
+                        <xsl:copy-of select="@*" />
+                        <xsl:choose>
+                            <xsl:when css:test=".delete, .destructive, [value='Delete']">
+                                <xsl:attribute name="class"><xsl:value-of select="./@class" /> btn btn-danger</xsl:attribute>
+                            </xsl:when>
+                            <xsl:when css:test=".searchButton, .context">
+                                <xsl:attribute name="class"><xsl:value-of select="./@class" /> btn btn-primary</xsl:attribute>
+                            </xsl:when>
+                            <xsl:when css:test=".standalone, [type='file']">
+                                <xsl:attribute name="class"><xsl:value-of select="./@class" /> btn btn-default</xsl:attribute>
+                            </xsl:when>
+                            <xsl:otherwise>
+                              <xsl:attribute name="class"><xsl:value-of select="./@class" /> btn btn-default</xsl:attribute>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <xsl:value-of select="./@value"/>
+                    </button>
+                </xsl:when>
+                <xsl:when css:test="[type='text'][name$='.title'],#title, textarea">
+                    <xsl:copy>
+                        <xsl:copy-of select="@*" />
+                        <xsl:attribute name="class"><xsl:value-of select="./@class" /> form-control</xsl:attribute>
+                        <xsl:apply-templates />
+                    </xsl:copy>
+                </xsl:when>
+                <xsl:when css:test="[class='label checkboxType']">
+                    <xsl:copy>
+                        <xsl:copy-of select="@*" />
+                        <xsl:attribute name="class">checkboxType</xsl:attribute>
+                        <xsl:apply-templates />
+                    </xsl:copy>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:copy-of select="."/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </replace>
 
         <replace css:content=".configlets">
-            <ul class="nav nav-list checkbox">
+            <ul class="nav nav-list">
                 <xsl:apply-templates />
             </ul>
         </replace>
 
-        <!-- Columns example -->
+        <!-- News -->
+        <replace css:content-children="#app-fp-news"
+            css:theme-children="#news" />
+
+        <!-- Frontpage cards transforms -->
+         <replace css:content-children="#app-frontpage-cks"
+            css:theme-children="#app-cards-frontpage" />
+
+        <!-- Columns -->
+        <replace css:content-children="#portal-column-one > *"
+            css:theme-children="#app-aside" />
         <replace css:content-children="#portal-column-two > *"
-            css:theme-children="#app-sidebar" />
+            css:theme-children="#app-aside" />
+
 
     </rules>
 

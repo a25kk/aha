@@ -15,14 +15,14 @@ long_description = read('README.rst')
 setup(
     name='aha.sitecontent',
     version='1.0.0',
-    description="AHA 360 Sitecontent",
+    description="aha Site Content",
     long_description=long_description,
     # Get more from http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         "Framework :: Plone",
         "Programming Language :: Python",
     ],
-    keywords='AHA Plone Kreativkombinat',
+    keywords='Plone Python Dexterity',
     author='Serge Davidov',
     author_email='sd@ade25.de',
     url='http://pypi.python.org/pypi/aha.sitecontent',
@@ -32,11 +32,13 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'setuptools',
+        'plone.api',
         'plone.app.dexterity [grok, relations]',
         'plone.app.relationfield',
-        'plone.namedfile [blobs]',
         'plone.formwidget.contenttree',
+        'plone.namedfile [blobs]',
+        'requests[security]',
+        'setuptools',
     ],
     extras_require={
         'test': [
