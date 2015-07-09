@@ -1,0 +1,65 @@
+//
+// Content banner and carousel
+// ---------------------------
+
+.app-banner {
+    //.container();
+    //min-height: 300px;
+    //background: #fff;
+    //border: 0px solid red;
+    //@media (min-width: @screen-sm-min) {
+    //    min-height: 560px;
+    //}
+}
+
+.app-banner-image {
+  .img-responsive();
+}
+
+.app-banner-item {
+    min-height: 300px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center !important;
+
+    /* Small devices (tablets, 768px and up) */
+    @media (min-width: @screen-sm-min) {
+        min-height: 600px;
+    }
+    
+    /* Medium devices (desktops, 992px and up) */
+    @media (min-width: @screen-md-min) {
+        min-height: 800px;
+    }
+    
+    /* Large devices (large desktops, 1200px and up) */
+    @media (min-width: @screen-lg-min) { 
+        min-height: 1000px;
+    }
+}
+
+.app-banner-item-content {
+    min-height: 200px;
+
+    @media (min-width: @screen-sm-min) {
+        min-height: 560px;
+    }
+}
+
+.app-banner-item-body {
+    color: #fff;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    padding: @line-height-computed;
+    @media (min-width: @screen-sm-min) {
+        padding: @line-height-computed * 2;
+        position: absolute;
+        bottom: @line-height-computed;
+    }
+}
+
+.app-baner-item-title {
+    font-size: 2rem;
+}

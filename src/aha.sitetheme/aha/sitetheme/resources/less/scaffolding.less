@@ -4,8 +4,8 @@
 
 // Set root font size
 html {
-    height:100% !important;
     font-size: @font-size-root;
+    font-weight: 300;
     @media (min-width: @screen-sm-min) {
         font-size: ceil((@font-size-root + 2));
     }
@@ -16,29 +16,35 @@ html {
 
 body {
     background: #fff;
-    height:100% !important;
+    height: 100%;
     &.template-theming-controlpanel .row {
         // Fix theming control panel
         margin: 0 @line-height-computed;
+    }
+    @media (min-width: @screen-md-min) {
+        line-height: 1.75;
     }
 }
 
 // Set font weights if webfont is active
 .wf-active {
     // Default twbs weight for headings 500 not provided by Open Sans
-    @headings-font-weight: 600;
+    @headings-font-weight: 700;
     b,
     strong {
-        font-weight: 600;
+        font-weight: 400;
+    }
+    label {
+        font-weight: 400;
     }
 }
 
 // prevent fake bolds
 b,
 strong {
-    font-weight: 700;
+    font-weight: 400;
     .wf-active & {
-        font-weight: 600;
+        font-weight: 400;
     }
 }
 
@@ -142,6 +148,7 @@ div.riform .label {
 }
 
 // Reset tiny mce content body styling for better readability
-.mceContentBody {
+body.mce-content-body {
     padding: @line-height-computed;
+    font-size: 16px !important;
 }

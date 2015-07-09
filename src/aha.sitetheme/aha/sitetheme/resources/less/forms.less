@@ -3,6 +3,53 @@
 //------------------------------------
 
 
+//== Inputs
+//
+//## Add basic styling to all input types
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+    .form-control();
+    @media (min-width: @screen-sm-min) {
+      input {
+        height: 35px !important;
+      }
+    }
+}
+
+
+.app-form-group-wrapper {
+  background: @app-gray-light;
+  padding: @line-height-computed;
+}
+
+//** Reset textarea height
+textarea {
+    height: auto;
+}
+
+
+//** Checkbox label needs to be placed inline
+input[type="checkbox"] + label,
+.ArchetypesBooleanWidget label {
+    display: inline-block;
+    margin-left: ceil((@line-height-computed / 4));
+}
+
+
 //== Password toggle
 //
 //## Hide/show password in [type="password"] fields

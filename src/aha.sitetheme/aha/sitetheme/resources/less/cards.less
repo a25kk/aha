@@ -1,0 +1,189 @@
+//
+// Cards displaying thumbnails and data collections
+// ------------------------------------------------------
+
+.app-cards-wrapper {
+  .container();
+  margin: @line-height-computed auto !important;
+}
+
+//== Card lists
+//
+//## Use a grid layout for card listings
+.app-cards {
+  @media (min-width: @screen-sm-min) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+//== Base card styles
+.app-card {
+  flex: 1;
+  @media (min-width: @screen-sm-min) {
+    flex: 0 0 33.3333%;
+  }
+}
+
+// Card content
+.app-card-content {
+  padding: @padding-large-vertical @padding-large-horizontal;
+  background: @app-gray-light;
+
+  .app-card-content-header {
+    color: @app-primary;
+    font-size: @font-size-large;
+  }
+}
+
+// Card footer
+.app-card-footer {
+  padding: @padding-large-vertical @padding-large-horizontal;
+  background: @app-gray-light;
+}
+
+
+
+// Placeholder for missing preview image
+.app-card-media-placeholder {
+    background-color: @app-gray-light;
+    &.lazyloaded {
+      //height: 228px;
+      //width: 372px;
+      //background: url(../assets/img/card-image-placeholder.jpg) no-repeat top center;
+      //background-size: cover;
+      .text-hide();
+      .app-card-placeholder-sign,
+      .app-card-placeholder-aside {
+        visibility: hidden;
+      }
+  }
+}
+
+
+
+// Card images
+.app-card-media {
+  //min-height: 500px;
+  > img {
+    .img-responsive();
+  }
+}
+
+.app-img {
+  .img-responsive();
+  width: 100%;
+  //height: 100% !important;
+}
+
+// Card title
+.app-card-title {
+    font-size: 1rem;
+    font-weight: 200 !important;
+}
+
+
+.app-cards-wrapper .app-card-media {
+    .img-responsive();
+    width: 100% !important;
+}
+
+.app-cards-wrapper .app-card-content {
+  @media (min-width: @screen-sm-min) {
+    //min-height: 340px;
+  }
+}
+
+
+
+// Card header
+.app-card-header {
+  //width: 340px;
+  @media (min-width: @screen-sm-min) {
+    width: auto;
+  }
+}
+
+.app-card-btn {
+  color: @app-primary;
+  padding-top: @line-height-computed;
+  padding-bottom: @line-height-computed;
+  font-size: @font-size-small;
+}
+
+
+//== Gutter
+//
+//## Add spacing to cards
+.app-card-gutter {
+  margin: -0.5rem 0 0 -0.5rem;
+  .app-card {
+    padding: 0.5rem 0 0 0.5rem;
+  }
+}
+
+//== Embedded card
+//
+//## Remove spacing for card inside card usecase
+.app-subcard {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  border: 0;
+}
+
+
+//== Card title
+//
+//## Title is used inside the card-header
+.app-card-title {
+  .h4();
+}
+
+
+//== Placeholder for missing card content
+//
+//## Provide call to actions and descriptions on empty cards
+//## by providing highlighted card content
+.app-card-placeholder {
+  margin: 1.5rem auto;
+  padding: 1rem;
+  border: 1px solid @app-gray-light;
+  text-align: center;
+  @media (min-width: @screen-sm-min) {
+    padding: 2rem 3rem;
+    width: 66.66%;
+  }
+}
+
+//** Round hellip sign
+.app-card-placeholder-sign {
+  .square(4rem);
+  .center-block();
+  padding-top: 0.5rem;
+  border-radius: 50%;
+  border: 1px solid @gray-light;
+  color: @gray-light;
+  font-size: 2rem;
+}
+
+.app-card-placeholder-title {
+  font-size: 1.25rem;
+}
+
+.app-card-placeholder-lead {
+  font-weight: 300;
+}
+
+.app-card-placeholder-btn {
+  margin-bottom: 1rem;
+}
+
+//** Subdued extra information
+.app-card-placeholder-aside {
+  padding: 2rem 2rem 0;
+  color: @gray-light;
+  font-size: 0.85rem;
+  line-height: 1.25;
+}
+

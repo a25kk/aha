@@ -363,8 +363,8 @@ require(['jquery', 'pat-registry'], function($, Registry) {/*!
 
 			running =  true;
 
-			if(delay < 9){
-				delay = 9;
+			if(delay < 6){
+				delay = 6;
 			}
 			setTimeout(getAF, delay);
 		};
@@ -386,7 +386,7 @@ require(['jquery', 'pat-registry'], function($, Registry) {/*!
 		var currentExpand = 0;
 
 		var isLoading = 0;
-		var lowRuns = 1;
+		var lowRuns = 0;
 
 		var resetPreloading = function(e){
 			isLoading--;
@@ -470,6 +470,7 @@ require(['jquery', 'pat-registry'], function($, Registry) {/*!
 						((isCompleted && isLoading < 3 && !elemExpandVal && (loadMode < 3 || lowRuns < 4)) || isNestedVisible(lazyloadElems[i], elemExpand))){
 						unveilElement(lazyloadElems[i], rect.width);
 						loadedSomething = true;
+						if(isLoading > 9){break;}
 					} else if(!loadedSomething && isCompleted && !autoLoadElem &&
 						isLoading < 3 && lowRuns < 4 && loadMode > 2 &&
 						(preloadElems[0] || lazySizesConfig.preloadAfterLoad) &&
@@ -524,7 +525,7 @@ require(['jquery', 'pat-registry'], function($, Registry) {/*!
 			var isImg = regImg.test(elem.nodeName);
 
 			//allow using sizes="auto", but don't use. it's invalid. Use data-sizes="auto" or a valid value for sizes instead (i.e.: sizes="80vw")
-			var sizes = elem.getAttribute(lazySizesConfig.sizesAttr) || elem.getAttribute('sizes');
+			var sizes = isImg && (elem.getAttribute(lazySizesConfig.sizesAttr) || elem.getAttribute('sizes'));
 			var isAuto = sizes == 'auto';
 
 			if( (isAuto || !isCompleted) && isImg && (elem.src || elem.srcset) && !elem.complete && !hasClass(elem, lazySizesConfig.errorClass)){return;}
@@ -695,11 +696,11 @@ require(['jquery', 'pat-registry'], function($, Registry) {/*!
 					document.addEventListener(name, throttledCheckElements, true);
 				});
 
-				if(!(isCompleted = /d$|^c/.test(document.readyState))){
+				if((/d$|^c/.test(document.readyState))){
+					onload();
+				} else {
 					addEventListener('load', onload);
 					document.addEventListener('DOMContentLoaded', throttledCheckElements);
-				} else {
-					onload();
 				}
 
 				throttledCheckElements();
