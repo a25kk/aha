@@ -7,21 +7,21 @@
     <!-- Meta, title, CSS, favicons, etc. -->
     {% include head.html %}
   </head>
-  <body class="light dim-in dim-in-4">
+  <body class="room dim-in dim-in-4">
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
     {% include toolbar.html %}
     <!-- App master nav -->
     <div class="app-wrapper">
-    <div class="app-aside col-md-push-9">
+    <div class="app-aside">
     <div class="logo">
-    {% include logo-black.html %}
+    {% include logo-white.html %}
     </div>
     <div class="aap-navbar-wrapper">
     {% include navbar.html %}
     </div>
     </div>
 
-    <div class="app-content col-md-pull-3" role="main">
+    <div class="app-content" role="main">
           {{ content }}
     </div>
 

@@ -6,7 +6,7 @@
     margin-top: @navbar-height;
 }
 
-.light {
+.light, .room {
   .logo {
     padding: @line-height-computed;
     @media (min-width: @screen-sm-min) {
@@ -25,6 +25,15 @@
 }
 
 .app-aside {
+  @media (min-width: @screen-sm-min) {
+    .make-md-column(3);
+    height: 100%;
+    padding: @line-height-computed !important;
+  }
+}
+
+.room .app-aside {
+  background: #000;
   @media (min-width: @screen-sm-min) {
     .make-md-column(3);
     height: 100%;
