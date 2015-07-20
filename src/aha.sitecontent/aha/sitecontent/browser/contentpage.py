@@ -122,7 +122,7 @@ class GalleryView(BrowserView):
         data = context.restrictedTraverse('@@folderListing')(
             portal_type='Image',
             sort_on='getObjPositionInParent')
-        return data
+        return data[:9]
 
     def image_tag(self, image):
         context = image.getObject()
@@ -168,6 +168,7 @@ class GalleryThumbnailView(BrowserView):
             portal_type=Image,
             sort_on='getObjPositionInParent'
         )
+        return data[:9]
 
     def has_assets(self):
         return len(self.contained_images()) > 0
