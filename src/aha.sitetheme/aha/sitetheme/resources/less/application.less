@@ -2,7 +2,7 @@
 // Application stylesheet
 // -----------------------------------------------
 
-
+// Add fullscreen layout suppert via body class
 .app-fullscreen {
     min-height: 100vh;
     @media (min-width: @screen-sm-min) {
@@ -10,6 +10,9 @@
         fley-directioon: column;
     }
 }
+// Switch background color based on body classes
+
+
 
 .app-aside,
 .app-content {
@@ -23,6 +26,9 @@
     @media (min-width: @screen-sm-min) {
         flex: 0 0 12em;
     }
+    .section-light & {
+        order: -1;
+    }
 }
 
 .app-content {
@@ -30,8 +36,6 @@
         flex: 1;
     }
 }
-
-
 
 .light, .room {
   .logo {
