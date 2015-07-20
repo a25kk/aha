@@ -23,6 +23,16 @@
       layer="..interfaces.IAhaSitecontentLayer"
       />
 
+  <!-- Content page image gallery -->
+    <browser:page
+        for="aha.sitecontent.contentpage.IContentPage"
+        name="gallery-thumbnails"
+        class=".contentpage.GalleryThumbnailView"
+        template="gallerythumbnails.pt"
+        permission="zope2.View"
+        layer="..interfaces.IAhaSitecontentLayer"
+        />
+
   <browser:page
       for="aha.sitecontent.contentpage.IContentPage"
       name="gallery-preview"

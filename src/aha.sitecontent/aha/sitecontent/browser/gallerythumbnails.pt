@@ -1,0 +1,15 @@
+<div class="app-page-gallery" tal:condition="view/has_assets">
+    <div class="app-gallery-thu,mbs" tal:define="images view/contained_images">
+        <div class="app-thumbnails">
+            <talblock tal:condition="images">
+                <div class="app-thumbnail" tal:repeat="item images">
+                    <tal:item tal:define="img python:view.image_tag(item)">
+                        <img class="lazyload" src="${img/url}"
+                             width="${img/width}" height="${img/height}"
+                             alt="" />
+                    </tal:item>
+                </div>
+            </talblock>
+        </div>
+    </div>
+</div>
