@@ -2,9 +2,36 @@
 // Application stylesheet
 // -----------------------------------------------
 
-.app-toolbar + .app-navbar {
-    margin-top: @navbar-height;
+
+.app-fullscreen {
+    min-height: 100vh;
+    @media (min-width: @screen-sm-min) {
+        display: flex;
+        fley-directioon: column;
+    }
 }
+
+.app-aside,
+.app-content {
+    height: 100%;
+    min-height: 100%;
+    min-height: 100vh;
+}
+
+.app-aside {
+    background-color: @gray-dark;
+    @media (min-width: @screen-sm-min) {
+        flex: 0 0 12em;
+    }
+}
+
+.app-content {
+    @media (min-width: @screen-sm-min) {
+        flex: 1;
+    }
+}
+
+
 
 .light, .room {
   .logo {
@@ -15,37 +42,37 @@
   }
 }
 
-.app-wrapper {
-  .container-fluid();
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  height: 100%;
-}
-
-.app-aside {
-  @media (min-width: @screen-sm-min) {
-    .make-md-column(3);
-    height: 100%;
-    padding: @line-height-computed !important;
-  }
-}
-
-.room .app-aside {
-  background: #000;
-  @media (min-width: @screen-sm-min) {
-    .make-md-column(3);
-    height: 100%;
-    padding: @line-height-computed !important;
-  }
-}
-
-.app-content {
-  @media (min-width: @screen-sm-min) {
-    .make-md-column(9);
-  }
-}
+//.app-wrapper {
+//  .container-fluid();
+//  padding-top: 0px;
+//  padding-right: 0px;
+//  padding-bottom: 0px;
+//  padding-left: 0px;
+//  height: 100%;
+//}
+//
+//.app-aside {
+//  @media (min-width: @screen-sm-min) {
+//    .make-md-column(3);
+//    height: 100%;
+//    padding: @line-height-computed !important;
+//  }
+//}
+//
+//.room .app-aside {
+//  background: #000;
+//  @media (min-width: @screen-sm-min) {
+//    .make-md-column(3);
+//    height: 100%;
+//    padding: @line-height-computed !important;
+//  }
+//}
+//
+//.app-content {
+//  @media (min-width: @screen-sm-min) {
+//    .make-md-column(9);
+//  }
+//}
 
 
 
@@ -64,7 +91,7 @@
 .app-page-block-content {
 	.center-block();
   flex: 1;
-  border: 0px solid red;
+  border: 0 solid red;
   font-size: 0.8rem;
   height: 100%;
 

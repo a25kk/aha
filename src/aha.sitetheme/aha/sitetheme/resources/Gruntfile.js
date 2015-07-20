@@ -51,11 +51,7 @@ module.exports = function (grunt) {
                 },
                 src: [
                     'bower_components/bootstrap-without-jquery/bootstrap3/bootstrap-without-jquery.js',
-                    //'bower_components/mailcheck/src/mailcheck.js',
-                    //'bower_components/JVFloat/jvfloat.js',
-                    //'bower_components/hideShowPassword/hideShowPassword.js',
                     'bower_components/lazysizes/lazysizes.js',
-                    // 'bower_components/isotope/dist/isotope.pkgd.js',
                     'bower_components/flickity/dist/flickity.pkgd.js',
                     'js/main.js'
                 ],

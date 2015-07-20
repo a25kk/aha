@@ -325,7 +325,7 @@ require(['jquery', 'pat-registry'], function($, Registry) {/*!
 	};
 
 	var getCSS = function (elem, style){
-		return getComputedStyle(elem, null)[style];
+		return (getComputedStyle(elem, null) || {})[style];
 	};
 
 	var getWidth = function(elem, parent, width){
