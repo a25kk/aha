@@ -15,7 +15,7 @@
     <theme href="dist/frontpage/index.html" css:if-content="body.section-front-page" />
     <theme href="dist/room/index.html" css:if-content="body.section-raum" />
     <theme href="dist/light/index.html" css:if-content="body.section-licht" />
-    
+
 
     <!-- Rules applying to a standard Plone web page -->
     <rules css:if-content="#visual-portal-wrapper">
@@ -295,14 +295,6 @@
                 <xsl:apply-templates />
             </ul>
         </replace>
-
-        <!-- News -->
-        <replace css:content-children="#app-fp-news"
-            css:theme-children="#news" />
-
-        <!-- Frontpage cards transforms -->
-         <replace css:content-children="#app-frontpage-cks"
-            css:theme-children="#app-cards-frontpage" />
 
         <!-- Columns -->
         <replace css:content-children="#portal-column-one > *"

@@ -2,12 +2,22 @@
 // App page content
 // -------------------------------------------
 
+
 .app-page {
+    position: relative;
   padding: @line-height-computed 0;
 }
 
+.app-page-content {
+    padding: 1.5rem;
+    background-color: #fff;
+    @media (min-width: @screen-sm-min) {
+        width: 25vw;
+    }
+}
+
 .app-page-title {
-  .page-header();
+    margin-bottom: 1rem;
 }
 
 

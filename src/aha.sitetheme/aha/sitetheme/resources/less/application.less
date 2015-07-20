@@ -9,6 +9,10 @@
         display: flex;
         fley-directioon: column;
     }
+    &.app-inverse {
+        background: @gray-dark;
+        color: @gray-lighter;
+    }
 }
 // Switch background color based on body classes
 
@@ -22,12 +26,8 @@
 }
 
 .app-aside {
-    background-color: @gray-dark;
     @media (min-width: @screen-sm-min) {
         flex: 0 0 12em;
-    }
-    .section-light & {
-        order: -1;
     }
 }
 
