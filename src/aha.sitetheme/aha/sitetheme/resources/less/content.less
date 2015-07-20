@@ -5,19 +5,20 @@
 
 .app-page {
     position: relative;
-  padding: @line-height-computed 0;
+    padding: 1rem 2rem;
 }
 
 .app-page-content {
     padding: 1.5rem;
     background-color: #fff;
-    @media (min-width: @screen-sm-min) {
-        width: 25vw;
+    .app-inverse & {
+        color: @gray-dark;
     }
 }
 
 .app-page-title {
     margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
 

@@ -53,3 +53,22 @@
   margin-bottom: 1rem;
   padding: 1rem 0;
 }
+
+//== Thumbnails
+//
+//## 3x3 grid of thumbnails added to content collapsible
+.app-thumbnails {
+    width: 480px;
+    max-width: 480px;
+    @media (min-width: @screen-sm-min) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.app-thumbnail {
+    flex: 1;
+    @media (min-width: @screen-sm-min) {
+        flex: 0 0 33.3333%;
+    }
+}

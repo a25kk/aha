@@ -30,6 +30,29 @@ class ContentPageView(BrowserView):
             return display
         return False
 
+    def display_thumbnails(self):
+        context = aq_inner(self.context)
+        try:
+            display = context.displayThumbnails
+        except AttributeError:
+            display = None
+        if display is not None:
+            return display
+        return False
+
+    def computed_klass(self):
+        klass = 'app-page-content'
+        if self.display_gallery():
+            klass = klass + ' has-gallery'
+        if self.display_thumbnails():
+            klass = klass + ' has-thumbnails'
+        return klass
+
+    def rendered_thumbnails(self):
+        context = aq_inner(self.context)
+        template = context.restrictedTraverse('@@gallery-thumbnails')()
+        return template
+
     def rendered_gallery(self):
         context = aq_inner(self.context)
         template = context.restrictedTraverse('@@gallery-view')()
@@ -165,7 +188,7 @@ class GalleryThumbnailView(BrowserView):
     def contained_images(self):
         context = aq_inner(self.context)
         data = context.restrictedTraverse('@@folderListing')(
-            portal_type=Image,
+            portal_type='Image',
             sort_on='getObjPositionInParent'
         )
         return data[:9]

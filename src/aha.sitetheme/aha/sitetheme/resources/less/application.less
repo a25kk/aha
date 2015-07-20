@@ -95,7 +95,6 @@
 .app-page-block-content {
 	.center-block();
   flex: 1;
-  border: 0 solid red;
   font-size: 0.8rem;
   height: 100%;
 
@@ -111,7 +110,7 @@
   flex-wrap: wrap;
 }
 
-.flexbox .app-page-column {
+.flexbox .app-page-cell {
   padding: 1em 0 0 1em;
   display: flex;
   @media (min-width: @screen-sm-min) {
@@ -121,3 +120,13 @@
     width:33.3333%;
   }
   }
+
+//== Gutter
+//
+//## Add spacing to cards
+.app-gutter {
+    margin: -0.5rem 0 0 -0.5rem;
+    .app-gutter-cell {
+        padding: 0.5rem 0 0 0.5rem;
+    }
+}
