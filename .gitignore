@@ -28,6 +28,7 @@ include
 known-good-versions.cfg
 lib
 parts
+pip*
 secret.cfg
 src/Plone
 src/Products.*
