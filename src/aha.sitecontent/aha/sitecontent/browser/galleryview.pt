@@ -1,5 +1,4 @@
-<div class="app-page-gallery" tal:condition="view/has_assets"
-  tal:define="contained_images python:context.restrictedTraverse('@@folderListing')(portal_type='Image')">
+<div class="app-page-gallery" id="app-page-gallery" tal:condition="view/has_assets">
   <div class="app-gallery" tal:define="images view/contained_images">
       <div class="project-gallery main-gallery">
         <talblock tal:condition="images">
