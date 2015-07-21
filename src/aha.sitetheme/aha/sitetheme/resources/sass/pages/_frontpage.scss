@@ -1,12 +1,36 @@
-// AHA Frontpage Styles
+//
+// Frontpage
+//---------------------------------------
 
+// Adjust padding on wrapper for fullscreen boxes
+.app-page-frontpage {
+    padding: 0;
+}
+
+.app-frontpage-content {
+    @media (min-width: $grid-float-breakpoint) {
+        display: flex;
+    }
+}
 
 .app-frontpage-section {
+    display: block;
     position: relative;
     height: 50vh;
+    color: $text-color;
+    &:hover {
+        color: darken($text-color, 6.5%);
+    }
     &-inverse {
         background: $gray-dark;
         color: #fff;
+        &:hover {
+            color: darken($gray-lighter, 6.5%);
+        }
+    }
+    @media (min-width: $grid-float-breakpoint) {
+        flex: 1;
+        height: 100vh;
     }
 }
 
@@ -19,7 +43,7 @@
     .app-brand-img {
         width: 120px;
         @media (min-width: $grid-float-breakpoint) {
-            width: $screen-sm;
+            width: $screen-xs;
         }
     }
 }
@@ -28,13 +52,14 @@
     position: absolute;
     right: 0.5rem;
     bottom: 0.25rem;
-    > a {
-        text-transform: uppercase;
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: $text-color;
+    font-size: 2rem;
+    font-weight: 400;
+    @media (min-width: $grid-float-breakpoint) {
+        right: 25%;
+        bottom: 25%;
         .app-frontpage-section-inverse & {
-            color: #fff;
+            left: 25%;
+            bottom: 25%;
         }
     }
 }
