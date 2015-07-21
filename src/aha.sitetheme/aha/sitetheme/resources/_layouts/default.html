@@ -1,21 +1,19 @@
 <!doctype html>
 <html lang="de">
-  <head>
+<head>
     <!-- Meta, title, CSS, favicons, etc. -->
-    {% include head.html %}
-  </head>
-  <body class="dim-in dim-in-4">
+    {% include base/head.html %}
+</head>
+<body class="app-main section-light dim-in dim-in-4">
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
-    {% include toolbar.html %}
-    <!-- App master nav -->
-    {% include navbar.html %}
 
-    <div class="app-content" role="main">
-          {{ content }}
-    </div>
-    {% include javascript.html %}
+    <main class="app-content" role="main">
+        {{ content }}
+    </main>
+
+    {% include base/javascript.html %}
     <div class="app-js-slot">
-        {% include webfonts.html %}
+        {% include base/webfonts.html %}
     </div>
-  </body>
+</body>
 </html>

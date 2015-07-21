@@ -1,0 +1,52 @@
+<nav class="app-navbar" id="app-navbar" role="navigation">
+<div class="app-navbar-content">
+  <div class="app-navbar-header">
+      <a class="app-navbar-brand app-navbar-header-title visible-xs" href="/">
+          <span class="app-brand-img app-brand-img-sm">
+              {% include components/logo.html %}
+          </span>
+      </a>
+    <button type="button" class="app-navbar-toggle app-navbar-header-toggle" data-toggle="collapse" data-target=".app-navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+
+  <div class="collapse navbar-collapse app-navbar-collapse">
+    <ul class="xnav xnavbar-nav app-navbar-nav" id="app-navbar-nav">
+      <li class="app-navitem active">
+        <a class="app-navitem-tab app-navitem-tab-home" href="{{ page.base_url }}">
+          <span>Startseite</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab app-navitem-tab-aktuelles" href="{{ page.base_url }}aktuelles">
+          <span>Unternehmen</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab app-navitem-tab-landratsamt" href="{{ page.base_url }}landratsamt">
+          <span>Projekte</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab app-navitem-tab-service" href="{{ page.base_url }}service">
+          <span>Konzeption</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab app-navitem-tab-info" href="{{ page.base_url }}info">
+          <span>Beratung</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab app-navitem-tab-hier-leben" href="{{ page.base_url }}hier-leben">
+          <span>Kontakt</span>
+        </a>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</div>
+</nav>

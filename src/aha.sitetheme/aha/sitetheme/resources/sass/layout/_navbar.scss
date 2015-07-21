@@ -1,0 +1,128 @@
+//
+// Navbar
+// -----------------------------------------
+
+.app-navbar {
+  @extend .navbar;
+  border-radius: 0;
+  @media (min-width: $grid-float-breakpoint-max) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: transparent;
+  }
+}
+
+// Navbar content container
+.app-navbar-content {
+    @extend .container-fluid;
+}
+
+//== Navbar header
+//
+//## Default display of global site navigation
+//## Hidden on larger displays
+.app-navbar-header {
+  @include clearfix;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background: transparent;
+}
+
+//** Navbar toggle text
+.app-navbar-header-title {
+    flex: 0 0 75%;
+}
+
+.app-navbar-brand {
+  height: ($navbar-height * 1.5);
+  padding: $navbar-padding-vertical $navbar-padding-horizontal;
+  font-weight: 500;
+  line-height: $line-height-computed;
+  color: $text-color;
+}
+
+//** Icon bar navigation toggle
+.app-navbar-header-toggle {
+  flex: 0 0 25%;
+  background: $app-secondary;
+  min-height: $navbar-height;
+  padding: $navbar-padding-vertical $navbar-padding-horizontal;
+  text-align: center;
+}
+
+// Navbar toggle button visible on small displays
+.app-navbar-toggle {
+    position: relative;
+    float: right;
+  width: 100%;
+  border-color: transparent;
+  background: transparent;
+  text-align: right;
+  &:hover,
+  &:focus {
+    background: transparent;
+    border-color: transparent;
+  }
+  .icon-bar {
+    background-color: $text-color;
+  }
+  // Bars
+  .icon-bar {
+    display: block;
+    width: 44px;
+    height: 3px;
+    border-radius: 2px;
+  }
+  .icon-bar + .icon-bar {
+    margin-top: 12px;
+  }
+    @media (min-width: $grid-float-breakpoint) {
+        display: none;
+    }
+}
+
+.app-navbar-collapse {
+  // margin-left: -30px !important;
+  // margin-right: -30px !important;
+}
+
+// Unordered list main navigation
+.app-navbar-nav {
+  margin-bottom: 0;
+  padding-left: 0; // Override default ul/ol
+  list-style: none;
+  @extend clearfix;
+}
+
+//== Navitems
+//
+//## Color coded based on addon classes
+.app-navitem {
+  width: 100%;
+}
+
+.app-navitem-tab {
+    color: $text-color;
+    background-color: $app-primary;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+    transition: background-color 0.5s ease;
+    &:hover {
+      color: darken($text-color, 6.5%);
+      background-color: darken($app-primary, 6.5%);
+      text-decoration: underline;
+    }
+    > span {
+      display: block;
+      margin: 0 auto;
+      // padding: ((#{$navbar-height} - ($line-height-computed)) / 2) 0;
+      @include navbar-vertical-align($line-height-computed);
+    }
+    @media (min-width: $grid-float-breakpoint-max) {
+      height: 70px;
+      min-height: 70px;
+    }
+}
