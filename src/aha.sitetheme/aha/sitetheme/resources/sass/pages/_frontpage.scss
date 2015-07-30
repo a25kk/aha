@@ -13,16 +13,31 @@
     }
 }
 
+.app-frontpage-card {
+    display: block;
+    height: 50vh;
+    @media (min-width: $grid-float-breakpoint) {
+        flex: 1;
+        height: 100vh;
+        background: url(../assets/img/fp-licht.jpg) no-repeat top center #fff;
+        background-size: cover;
+        &-inverse {
+            background-image: url(../assets/img/fp-raum.jpg);
+        }
+    }
+}
+
 .app-frontpage-section {
     display: block;
     position: relative;
     height: 50vh;
     color: $text-color;
+    background-color: #fff;
     &:hover {
         color: darken($text-color, 6.5%);
     }
     &-inverse {
-        background: $gray-dark;
+        background-color: $gray-dark;
         color: #fff;
         &:hover {
             color: darken($gray-lighter, 6.5%);
@@ -31,6 +46,20 @@
     @media (min-width: $grid-float-breakpoint) {
         flex: 1;
         height: 100vh;
+        transition: background-color 3s ease;
+        &:hover {
+            color: darken($text-color, 6.5%);
+            background: transparent;
+            transition: background-color 3s linear;
+        }
+        &-inverse {
+            background-color: $gray-dark;
+            color: #fff;
+            &:hover {
+                color: darken($gray-lighter, 6.5%);
+                background: transparent;
+            }
+        }
     }
 }
 
@@ -52,15 +81,20 @@
     position: absolute;
     right: 0.5rem;
     bottom: 0.25rem;
-    font-size: 2rem;
+    width: 33vw;
+    font-size: 1.5rem;
     font-weight: 400;
     @media (min-width: $grid-float-breakpoint) {
         right: 25%;
         bottom: 25%;
+        font-size: 2rem;
         .app-frontpage-section-inverse & {
             left: 25%;
             bottom: 25%;
         }
+    }
+    > .visible-xs {
+        display: inline-block !important;
     }
 }
 

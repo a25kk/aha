@@ -7,25 +7,29 @@ base_url: "../"
 ---
 <div class="app-page app-page-frontpage" id="content">
     <div class="app-page-content app-frontpage-content">
-        <a class="app-frontpage-section app-frontpage-section-inverse" href="{{page.base_url}}raum">
-            <div class="app-frontpage-block">
-                <div class="app-brand-img">
-                    {% include components/logo-inverse.html %}
+        <div class="app-frontpage-card app-frontpage-card-inverse">
+            <a class="app-frontpage-section app-frontpage-section-inverse" href="{{page.base_url}}raum">
+                <div class="app-frontpage-block">
+                    <div class="app-brand-img">
+                        {% include components/logo-inverse.html %}
+                    </div>
                 </div>
-           </div>
-            <div class="app-frontpage-action">
-                <span class="hidden-xs">&lt; </span>Raum <span class="visible-xs">&gt;</span>
-            </div>
-        </a>
-        <a class="app-frontpage-section" href="{{page.base_url}}raum">
-            <div class="app-frontpage-block">
-                <div class="app-brand-img">
-                    {% include components/logo.html %}
+                <div class="app-frontpage-action">
+                    <span class="hidden-xs">&lt; </span>Raum <span class="visible-xs">&gt;</span>
                 </div>
-            </div>
-            <div class="app-frontpage-action">
-               Licht &gt;
-            </div>
-        </a>
+            </a>
+        </div>
+        <div class="app-frontpage-card">
+            <a class="app-frontpage-section" href="{{page.base_url}}raum">
+                <div class="app-frontpage-block">
+                    <div class="app-brand-img">
+                        {% include components/logo.html %}
+                    </div>
+                </div>
+                <div class="app-frontpage-action">
+                    Licht &gt;
+                </div>
+            </a>
+        </div>
     </div>
 </div>

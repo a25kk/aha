@@ -10841,6 +10841,33 @@ body.section-front-page .app-pathbar
     }
 }
 
+.app-frontpage-card
+{
+    display: block;
+
+    height: 50vh;
+}
+@media (min-width: 768px)
+{
+    .app-frontpage-card
+    {
+        height: 100vh;
+
+        background: url(../assets/img/fp-licht.jpg) no-repeat top center #fff;
+        -webkit-background-size: cover;
+                background-size: cover; 
+
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+    }
+    .app-frontpage-card-inverse
+    {
+        background-image: url(../assets/img/fp-raum.jpg);
+    }
+}
+
 .app-frontpage-section
 {
     position: relative;
@@ -10850,6 +10877,7 @@ body.section-front-page .app-pathbar
     height: 50vh;
 
     color: #333;
+    background-color: #fff;
 }
 .app-frontpage-section:hover
 {
@@ -10858,7 +10886,7 @@ body.section-front-page .app-pathbar
 .app-frontpage-section-inverse
 {
     color: #fff; 
-    background: #333;
+    background-color: #333;
 }
 .app-frontpage-section-inverse:hover
 {
@@ -10868,12 +10896,35 @@ body.section-front-page .app-pathbar
 {
     .app-frontpage-section
     {
-        height: 100vh; 
+        height: 100vh;
+
+        -webkit-transition: background-color 3s ease;
+             -o-transition: background-color 3s ease;
+                transition: background-color 3s ease; 
 
         -webkit-box-flex: 1;
         -webkit-flex: 1;
             -ms-flex: 1;
                 flex: 1;
+    }
+    .app-frontpage-section:hover
+    {
+        -webkit-transition: background-color 3s linear;
+             -o-transition: background-color 3s linear;
+                transition: background-color 3s linear; 
+
+        color: #222;
+        background: transparent;
+    }
+    .app-frontpage-section-inverse
+    {
+        color: #fff; 
+        background-color: #333;
+    }
+    .app-frontpage-section-inverse:hover
+    {
+        color: #dedede;
+        background: transparent;
     }
 }
 
@@ -10911,17 +10962,21 @@ body.section-front-page .app-pathbar
 
 .app-frontpage-action
 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 400; 
 
     position: absolute;
     right: .5rem;
     bottom: .25rem;
+
+    width: 33vw;
 }
 @media (min-width: 768px)
 {
     .app-frontpage-action
     {
+        font-size: 2rem; 
+
         right: 25%;
         bottom: 25%;
     }
@@ -10930,6 +10985,10 @@ body.section-front-page .app-pathbar
         bottom: 25%; 
         left: 25%;
     }
+}
+.app-frontpage-action > .visible-xs
+{
+    display: inline-block !important;
 }
 
 .app-fp-wrapper
@@ -11133,6 +11192,12 @@ body.section-front-page .app-pathbar
     {
         padding: 1.428571429rem 0;
     }
+}
+
+.app-page.app-page-frontpage
+{
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .app-page-lead,
