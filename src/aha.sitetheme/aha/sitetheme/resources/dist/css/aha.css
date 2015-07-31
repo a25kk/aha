@@ -10827,7 +10827,8 @@ body.section-front-page .app-pathbar
 
 .app-page-frontpage
 {
-    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 @media (min-width: 768px)
@@ -10868,12 +10869,20 @@ body.section-front-page .app-pathbar
 {
     .app-frontpage-section
     {
-        height: 100vh; 
+        height: 100vh;
+
+        background: url(../assets/img/fp-licht.jpg) no-repeat top center #fff;
+        -webkit-background-size: cover;
+                background-size: cover; 
 
         -webkit-box-flex: 1;
         -webkit-flex: 1;
             -ms-flex: 1;
                 flex: 1;
+    }
+    .app-frontpage-section-inverse
+    {
+        background-image: url(../assets/img/fp-raum.jpg);
     }
 }
 
@@ -10899,13 +10908,18 @@ body.section-front-page .app-pathbar
 }
 .app-frontpage-block .app-brand-img
 {
-    width: 120px;
+    width: 120px; 
+
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
 }
 @media (min-width: 768px)
 {
     .app-frontpage-block .app-brand-img
     {
-        width: 480px;
+        width: 280px;
     }
 }
 
@@ -11133,6 +11147,11 @@ body.section-front-page .app-pathbar
     {
         padding: 1.428571429rem 0;
     }
+}
+
+.app-page.app-page-frontpage
+{
+    padding: 0;
 }
 
 .app-page-lead,

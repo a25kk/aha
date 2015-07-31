@@ -4,7 +4,8 @@
 
 // Adjust padding on wrapper for fullscreen boxes
 .app-page-frontpage {
-    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .app-frontpage-content {
@@ -13,6 +14,10 @@
     }
 }
 
+//== Frontpage sections
+//
+//## Anchor tags spanning the whole section and revealing
+//## the background image on hover
 .app-frontpage-section {
     display: block;
     position: relative;
@@ -31,6 +36,11 @@
     @media (min-width: $grid-float-breakpoint) {
         flex: 1;
         height: 100vh;
+        background: url(../assets/img/fp-licht.jpg) no-repeat top center #fff;
+        background-size: cover;
+        &-inverse {
+            background-image: url(../assets/img/fp-raum.jpg);
+        }
     }
 }
 
@@ -41,9 +51,10 @@
     padding: 2rem 2rem 0;
     text-align: center;
     .app-brand-img {
+        flex: 0 0 auto;
         width: 120px;
         @media (min-width: $grid-float-breakpoint) {
-            width: $screen-xs;
+            width: 280px;
         }
     }
 }
