@@ -14,12 +14,12 @@ module.exports = function (grunt) {
         banner: '/*!\n' + '* <%= pkg.name %> v<%= pkg.version %> by Ade25\n' + '* Copyright <%= pkg.author %>\n' + '* Licensed under <%= pkg.licenses %>.\n' + '*\n' + '* Designed and built by ade25\n' + '*/\n',
         jqueryCheck: 'if (typeof jQuery === "undefined") { throw new Error("We require jQuery") }\n\n',
         jshint: {
-            options: { jshintrc: 'js/.jshintrc' },
+            options: { jshintrc: '<%= config.app %>/js/.jshintrc' },
             grunt: { src: 'Gruntfile.js' },
-            src: { src: ['js/*.js'] }
+            src: { src: ['<%= config.app %>/js/*.js'] }
         },
         jscs: {
-            options: { config: 'js/.jscsrc' },
+            options: { config: '<%= config.app %>/js/.jscsrc' },
             grunt: { src: '<%= jshint.grunt.src %>' },
             src: { src: '<%= jshint.src.src %>' }
         },
@@ -39,7 +39,7 @@ module.exports = function (grunt) {
                     'bower_components/JVFloat/jvfloat.js',
                     'bower_components/hideShowPassword/hideShowPassword.js',
                     'bower_components/blazy/blazy.js',
-                    'js/main.js'
+                    '<%= config.app %>/js/main.js'
                 ],
                 dest: '<%= config.dist %>/js/<%= pkg.name %>.js'
             },
@@ -53,7 +53,7 @@ module.exports = function (grunt) {
                     'bower_components/mailcheck/src/mailcheck.js',
                     'bower_components/hideShowPassword/hideShowPassword.js',
                     'bower_components/blazy/blazy.js',
-                    'js/main.js'
+                    '<%= config.app %>/js/main.js'
                 ],
                 dest: '<%= config.dist %>/js/main.js'
             }
@@ -89,36 +89,27 @@ module.exports = function (grunt) {
                 loadPath: 'bower_components'
             },
             dist: {
-                files: { '<%= config.dist %>/css/<%= pkg.name %>.css': 'sass/main.scss' }
+                files: { '<%= config.dist %>/css/<%= pkg.name %>.css': '<%= config.app %>/sass/main.scss' }
             },
             server: {
-                files: { '<%= config.dist %>/css/<%= pkg.name %>.css': 'sass/main.scss' }
+                files: { '<%= config.dist %>/css/<%= pkg.name %>.css': '<%= config.app %>/sass/main.scss' }
             }
         },
-        less: {
-            compileTheme: {
-                options: {
-                    strictMath: false,
-                    sourceMap: true,
-                    outputSourceFiles: true,
-                    sourceMapURL: '<%= config.dist %>/css/<%= pkg.name %>.css.map',
-                    sourceMapFilename: '<%= config.dist %>/css/<%= pkg.name %>.css.map'
-                },
-                files: { '<%= config.dist %>/css/<%= pkg.name %>.css': 'less/styles.less' }
-            }
-        },
+        // less: {
+        //     compileTheme: {
+        //         options: {
+        //             strictMath: false,
+        //             sourceMap: true,
+        //             outputSourceFiles: true,
+        //             sourceMapURL: '<%= config.dist %>/css/<%= pkg.name %>.css.map',
+        //             sourceMapFilename: '<%= config.dist %>/css/<%= pkg.name %>.css.map'
+        //         },
+        //         files: { '<%= config.dist %>/css/<%= pkg.name %>.css': 'less/styles.less' }
+        //     }
+        // },
         autoprefixer: {
             options: {
-                browsers: [
-                    'Android 2.3',
-                    'Android >= 4',
-                    'Chrome >= 20',
-                    'Firefox >= 24',
-                    'Explorer >= 8',
-                    'iOS >= 6',
-                    'Opera >= 12',
-                    'Safari >= 6'
-                ]
+                browsers: ['last 2 versions']
             },
             core: {
                 options: { map: true },
@@ -126,7 +117,7 @@ module.exports = function (grunt) {
             }
         },
         csslint: {
-            options: { csslintrc: 'less/.csslintrc' },
+            options: { csslintrc: '<%= config.app %>/sass/.csslintrc' },
             src: '<%= config.dist %>/css/<%= pkg.name %>.css'
         },
         cssmin: {
@@ -139,17 +130,17 @@ module.exports = function (grunt) {
         },
         csscomb: {
             sort: {
-                options: { config: 'less/.csscomb.json' },
+                options: { config: '<%= config.app %>/sass/.csscomb.json' },
                 files: { '<%= config.dist %>/css/<%= pkg.name %>.css': ['dist/css/<%= pkg.name %>.css'] }
             }
         },
         criticalcss: {
             frontpage: {
                 options: {
-                    url: 'http://localhost:8499/rms',
+                    url: 'http://localhost:8499/<%= pkg.name %>',
                     width: 1200,
                     height: 900,
-                    outputfile: 'assets/css/critical-lp.css',
+                    outputfile: '<%= config.app %>/assets/css/critical-lp.css',
                     filename: '<%= config.dist %>/css/<%= pkg.name %>.css'
                 }
             },
@@ -158,7 +149,7 @@ module.exports = function (grunt) {
                     url: 'http://localhost:8499/rms/stellplatz-am-wassersportzentrum',
                     width: 1200,
                     height: 900,
-                    outputfile: 'assets/css/critical.css',
+                    outputfile: '<%= config.app %>/assets/css/critical.css',
                     filename: '<%= config.dist %>/css/<%= pkg.name %>.css'
                 }
             }
@@ -188,7 +179,7 @@ module.exports = function (grunt) {
             favicon: {
                 expand: true,
                 flatten: true,
-                src: ['assets/ico/*'],
+                src: ['<%= config.app %>/assets/ico/*'],
                 dest: '<%= config.dist %>/assets/ico/'
             }
         },
@@ -197,7 +188,7 @@ module.exports = function (grunt) {
                 options: { optimizationLevel: 7 },
                 files: [{
                     expand: true,
-                    cwd: 'assets/img',
+                    cwd: '<%= config.app %>/assets/img',
                     src: ['**/*.png'],
                     dest: '<%= config.dist %>/assets/img/',
                     ext: '.png'
@@ -207,7 +198,7 @@ module.exports = function (grunt) {
                 options: { progressive: true },
                 files: [{
                     expand: true,
-                    cwd: 'assets/img/',
+                    cwd: '<%= config.app %>/assets/img/',
                     src: ['**/*.jpg'],
                     dest: '<%= config.dist %>/assets/img/',
                     ext: '.jpg'
@@ -218,7 +209,7 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: 'assets/img/',
+                    cwd: '<%= config.app %>/assets/img/',
                     src: '{,*/}*.svg',
                     dest: '<%= config.dist %>/assets/img/'
                 }]
@@ -523,26 +514,26 @@ module.exports = function (grunt) {
         },
         watch: {
             js: {
-                files: ['js/{,*/}*.js'],
+                files: ['<%= config.app %>/js/{,*/}*.js'],
                 tasks: ['concat', 'uglify'],
                 options: { livereload: true }
             },
             html: {
-                files: ['*.html'],
+                files: ['<%= config.app %>/{,*/}*.html'],
                 tasks: ['jekyll:theme', 'replace:server', 'htmlmin']
             },
-            less: {
-                files: 'less/*.less',
-                tasks: [
-                    'less',
-                    'autoprefixer',
-                    'csscomb',
-                    'cssmin'
-                ],
-                options: { spawn: false }
-            },
+            // less: {
+            //     files: 'less/*.less',
+            //     tasks: [
+            //         'less',
+            //         'autoprefixer',
+            //         'csscomb',
+            //         'cssmin'
+            //     ],
+            //     options: { spawn: false }
+            // },
             sass: {
-                files: ['sass/{,*/}*.{scss,sass}'],
+                files: ['<%= config.app %>/sass/{,*/}*.{scss,sass}'],
                 tasks: ['sass:server', 'autoprefixer', 'csscomb', 'cssmin'],
                 options: { livereload: true }
             }
@@ -595,8 +586,8 @@ module.exports = function (grunt) {
             },
             dist: {
                 options: {
-                    url: 'http://d2.ade25.de',
-                    paths: ['/', '/landratsamt'],
+                    url: 'http://aha.kreatoivkombinat.de',
+                    paths: ['/', '/licht', '/raum'],
                     locale: 'de_DE',
                     strategy: 'desktop',
                     threshold: 80
@@ -650,7 +641,6 @@ module.exports = function (grunt) {
     ]);
     grunt.registerTask('less-compile', ['less:compileTheme']);
     grunt.registerTask('css', [
-        //'less-compile',
         'sass:dist',
         'autoprefixer',
         'csscomb',
