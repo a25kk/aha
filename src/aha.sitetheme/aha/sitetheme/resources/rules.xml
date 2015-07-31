@@ -12,9 +12,9 @@
     <theme href="dist/signin/index.html" css:if-content="body.template-mail_password_response" />
     <theme href="dist/signin/index.html" css:if-content="body.template-pwreset_form" />
     <theme href="dist/signin/index.html" css:if-content="body.template-pwreset_finish" />
-    <theme href="dist/frontpage/index.html" css:if-content="body.section-front-page" />
-    <theme href="dist/room/index.html" css:if-content="body.section-raum" />
-    <theme href="dist/light/index.html" css:if-content="body.section-licht" />
+    <theme href="dist/index.html" css:if-content="body.section-front-page" />
+    <theme href="dist/theme-inverse/index.html" css:if-content="body.section-raum" />
+    <theme href="dist/theme/index.html" css:if-content="body.section-licht" />
 
 
     <!-- Rules applying to a standard Plone web page -->
