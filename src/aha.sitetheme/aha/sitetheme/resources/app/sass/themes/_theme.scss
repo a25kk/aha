@@ -54,6 +54,7 @@
 //
 //## Define content specific styles
 .app-page {
+    position: relative;
     @media (min-width: $screen-sm-min) {
         padding: $line-height-computed 0;
     }
@@ -63,6 +64,28 @@
     }
 }
 
+//== Fullscreen background gallery
+//
+//## Add full page gallery and layer page contents
+.app-page-content {
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.app-page-gallery {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include size(100%, 100%);
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+//== Page content
+//
+//## Text body layout and styling
 .app-page-title {
   @extend .page-header;
 }
