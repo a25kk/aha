@@ -7338,10 +7338,16 @@ div.riform .label {
   background-color: #274d38;
   transition: background-color .5s ease;
 }
+.app-sidebar-inverse .app-navitem-tab {
+  color: #eee;
+}
 .app-navitem-tab:hover {
   color: #222;
   text-decoration: underline; 
   background-color: #1c3728;
+}
+.app-sidebar-inverse .app-navitem-tab:hover {
+  color: #dedede;
 }
 .app-navitem-tab > span {
   display: block;

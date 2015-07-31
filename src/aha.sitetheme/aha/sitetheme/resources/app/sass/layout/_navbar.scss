@@ -110,10 +110,16 @@
     line-height: 1;
     text-transform: uppercase;
     transition: background-color 0.5s ease;
+    .app-sidebar-inverse & {
+        color: $gray-lighter;
+    }
     &:hover {
       color: darken($text-color, 6.5%);
       background-color: darken($app-primary, 6.5%);
       text-decoration: underline;
+        .app-sidebar-inverse & {
+            color: darken($gray-lighter, 6.5%);
+        }
     }
     > span {
       display: block;
