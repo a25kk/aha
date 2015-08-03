@@ -40,39 +40,39 @@ gulp.task('images', function(){
     .pipe(gulp.dest('dist/images/'));
 });
 
-gulp.task('styles', () => {
-    return gulp.src('app/styles/*.scss')
-        .pipe($.plumber())
-        .pipe($.sourcemaps.init())
-        .pipe($.sass.sync({
-            outputStyle: 'expanded',
-            precision: 10,
-            includePaths: ['.']
-        }).on('error', $.sass.logError))
-        .pipe($.autoprefixer({browsers: ['last 1 version']}))
-        .pipe($.sourcemaps.write())
-        .pipe(gulp.dest('.tmp/styles'))
-        .pipe(reload({stream: true}));
+//gulp.task('styles', () => {
+//    return gulp.src('app/styles/*.scss')
+//        .pipe($.plumber())
+//        .pipe($.sourcemaps.init())
+//        .pipe($.sass.sync({
+//            outputStyle: 'expanded',
+//            precision: 10,
+//            includePaths: ['.']
+//        }).on('error', $.sass.logError))
+//        .pipe($.autoprefixer({browsers: ['last 1 version']}))
+//        .pipe($.sourcemaps.write())
+//        .pipe(gulp.dest('.tmp/styles'))
+//        .pipe(reload({stream: true}));
+//});
+
+
+gulp.task('styles', () =>  {
+  return gulp.src('app/sass/main.scss')
+    .pipe($.plumber())
+    .pipe($.sourcemaps.init())
+    .pipe($.sass.sync({
+      outputStyle: 'expanded',
+      precision: 10,
+      includePaths: ['bower_components']
+    }).on('error', $.sass.logError))
+    .pipe($.autoprefixer({browsers: ['last 1 version']}))
+    .pipe(gulp.dest('dist/styles'))
+    .pipe($.minifyCss())
+    .pipe($.rename({suffix: '.min'}))
+    .pipe($.sourcemaps.write())
+    .pipe(gulp.dest('dist/styles/'))
+    .pipe(reload({stream: true}));
 });
-
-
-// gulp.task('styles', () =>  {
-//   return gulp.src('app/sass/main.scss')
-//     .pipe($.plumber())
-//     .pipe($.sourcemaps.init())
-//     .pipe($.sass.sync({
-//       outputStyle: 'expanded',
-//       precision: 10,
-//       includePaths: ['bower_components']
-//     }).on('error', $.sass.logError))
-//     .pipe($.autoprefixer({browsers: ['last 1 version']}))
-//     .pipe($.sourcemaps.write())
-//     .pipe(gulp.dest('dist/styles'))
-//     .pipe(rename({suffix: '.min'}))
-//     .pipe(minifycss())
-//     .pipe(gulp.dest('dist/styles/'))
-//     .pipe(reload({stream: true}));
-// });
 
 gulp.task('scripts', function(){
   return gulp.src('src/scripts/**/*.js')
