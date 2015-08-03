@@ -72,16 +72,31 @@
     z-index: 1051;
 }
 
-.app-page-gallery {
-    position: absolute;
-    top: 0;
-    left: 0;
-    @include size(100%, 100%);
-    width: 100vw;
-    height: 100vh;
+// Make content body visible
+.app-theme-content {
+    @media (min-width: $grid-float-breakpoint) {
+        position: absolute;
+        top: 2em;
+        left: 2em;
+        width: 33.3333%;
+        background: #fff;
+        .app-main-inverse & {
+          right: 2em;
+          background: $gray-dark;
+        }
+    }
 }
 
-
+.app-page-gallery {
+    @media (min-width: $grid-float-breakpoint) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(100%, 100%);
+      width: 100vw;
+      height: 100vh;
+    }
+}
 
 //== Page content
 //

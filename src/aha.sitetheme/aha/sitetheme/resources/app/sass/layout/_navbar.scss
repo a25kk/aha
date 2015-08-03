@@ -35,6 +35,9 @@
     flex: 0 0 75%;
 }
 
+//== Brand info
+//
+//## Includes logo svg
 .app-navbar-brand {
   height: ($navbar-height * 1.5);
   padding: $navbar-padding-vertical $navbar-padding-horizontal;
@@ -42,6 +45,7 @@
   line-height: $line-height-computed;
   color: $text-color;
 }
+
 
 //** Icon bar navigation toggle
 .app-navbar-header-toggle {

@@ -8680,14 +8680,30 @@ body.section-front-page .app-pathbar {
   padding: .5rem;
 }
 
-.app-page-gallery {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  width: 100vw;
-  height: 100%;
-  height: 100vh;
+@media (min-width: 768px) {
+  .app-theme-content {
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    width: 33.3333%;
+    background: #fff;
+  }
+  .app-main-inverse .app-theme-content {
+    right: 2em;
+    background: #333;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-page-gallery {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    width: 100vw;
+    height: 100%;
+    height: 100vh;
+  }
 }
 
 .app-page-lead,
