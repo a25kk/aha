@@ -8629,13 +8629,6 @@ body.section-front-page .app-pathbar {
   min-height: 100vh;
   background: #fff;
 }
-@media (min-width: 768px) {
-  .app-main {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display:         flex;
-  }
-}
 .app-main-inverse {
   color: #eee; 
   background: #333;
@@ -8652,19 +8645,27 @@ body.section-front-page .app-pathbar {
 
 @media (min-width: 768px) {
   .app-aside {
-    padding: 1rem; 
-
-    -webkit-flex: 0 0 12em;
-        -ms-flex: 0 0 12em;
-            flex: 0 0 12em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15rem;
+    padding: 1rem;
+  }
+  .app-aside-inverse {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid blue;
   }
 }
 
 @media (min-width: 768px) {
   .app-content {
-    -webkit-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    margin-left: 15rem;
+  }
+  .app-main-inverse .app-content {
+    margin-right: 15rem; 
+    margin-left: 0;
   }
 }
 

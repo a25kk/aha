@@ -10,7 +10,7 @@
   min-height: 100vh;
   background: #fff;
   @media (min-width: $screen-sm-min) {
-      display: flex;
+      // display: flex;
   }
     &-inverse {
       background: $gray-dark;
@@ -30,14 +30,27 @@
 
 .app-aside {
     @media (min-width: $screen-sm-min) {
-        flex: 0 0 12em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 15rem;
         padding: 1rem;
+        &-inverse {
+          position: absolute;
+          top: 0;
+          right: 0;
+          border: 1px solid blue;
+        }
     }
 }
 
 .app-content {
     @media (min-width: $screen-sm-min) {
-        flex: 1;
+          margin-left: 15rem;
+          .app-main-inverse & {
+            margin-left: 0;
+            margin-right: 15rem;
+          }
     }
 }
 
