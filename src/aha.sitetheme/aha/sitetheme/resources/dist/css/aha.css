@@ -7564,6 +7564,11 @@ label {
   outline: transparent;
 }
 
+.app-sidebar {
+  position: relative;
+  height: 100vh;
+}
+
 .app-toolbar {
   position: fixed;
   top: 0;
@@ -8622,6 +8627,7 @@ body.section-front-page .app-pathbar {
 
 .app-main {
   min-height: 100vh;
+  background: #fff;
 }
 @media (min-width: 768px) {
   .app-main {
@@ -8676,10 +8682,12 @@ body.section-front-page .app-pathbar {
 }
 
 .app-page-content {
-  z-index: 1051; 
-  padding: .5rem;
+  z-index: 1051;
 }
 
+.app-theme-content {
+  padding: 1rem;
+}
 @media (min-width: 768px) {
   .app-theme-content {
     position: absolute;

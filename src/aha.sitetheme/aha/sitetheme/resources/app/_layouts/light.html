@@ -4,15 +4,15 @@
     <!-- Meta, title, CSS, favicons, etc. -->
     {% include base/head.html %}
 </head>
-<body class="app-main section-light dim-in dim-in-4">
+<body class="app-main section-light userrole-anonymous dim-in dim-in-4">
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
-    <aside class="app-aside">
-        {% include layout/sidebar.html %}
-    </aside>
     <main class="app-content" role="main">
         {{ content }}
     </main>
+    <aside class="app-aside">
+        {% include layout/sidebar.html %}
+    </aside>
 
     {% include base/javascript.html %}
     <div class="app-js-slot">

@@ -8,6 +8,7 @@
 //## Provides optional fullscreen layouts
 .app-main {
   min-height: 100vh;
+  background: #fff;
   @media (min-width: $screen-sm-min) {
       display: flex;
   }
@@ -68,12 +69,12 @@
 //
 //## Add full page gallery and layer page contents
 .app-page-content {
-    padding: 0.5rem;
     z-index: 1051;
 }
 
 // Make content body visible
 .app-theme-content {
+    padding: 1rem;
     @media (min-width: $grid-float-breakpoint) {
         position: absolute;
         top: 2em;
