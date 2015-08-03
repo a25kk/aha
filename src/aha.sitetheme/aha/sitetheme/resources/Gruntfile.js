@@ -30,29 +30,23 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: [
-                    'bower_components/jquery/dist/jquery.js',
-                    'bower_components/modernizr/modernizr.js',
-                    'bower_components/bootstrap/js/transition.js',
-                    'bower_components/bootstrap/js/collapse.js',
-                    'bower_components/bootstrap/js/dropdown.js',
-                    'bower_components/mailcheck/src/mailcheck.js',
-                    'bower_components/JVFloat/jvfloat.js',
-                    'bower_components/hideShowPassword/hideShowPassword.js',
-                    'bower_components/blazy/blazy.js',
-                    '<%= config.app %>/js/main.js'
+                  'bower_components/jquery/dist/jquery.js',
+                  'bower_components/modernizr/modernizr.js',
+                  'bower_components/bootstrap-without-jquery/bootstrap3/bootstrap-without-jquery.js',
+                  'bower_components/mailcheck/src/mailcheck.js',
+                  'bower_components/JVFloat/jvfloat.js',
+                  'bower_components/hideShowPassword/hideShowPassword.js',
+                  'bower_components/lazysizes/lazysizes.js',
+                  'bower_components/flickity/dist/flickity.pkgd.js',
+                  'js/main.js'
                 ],
                 dest: '<%= config.dist %>/js/<%= pkg.name %>.js'
             },
             theme: {
                 src: [
-                    'bower_components/jquery/dist/jquery.js',
-                    'bower_components/modernizr/modernizr.js',
-                    'bower_components/bootstrap/js/transition.js',
-                    'bower_components/bootstrap/js/collapse.js',
-                    'bower_components/bootstrap/js/dropdown.js',
-                    'bower_components/mailcheck/src/mailcheck.js',
-                    'bower_components/hideShowPassword/hideShowPassword.js',
-                    'bower_components/blazy/blazy.js',
+                    'bower_components/bootstrap-without-jquery/bootstrap3/bootstrap-without-jquery.js',
+                    'bower_components/lazysizes/lazysizes.js',
+                    'bower_components/flickity/dist/flickity.pkgd.js',
                     '<%= config.app %>/js/main.js'
                 ],
                 dest: '<%= config.dist %>/js/main.js'
@@ -306,12 +300,12 @@ module.exports = function (grunt) {
                 options: {
                     patterns: [
                         {
-                            match: '../../assets/',
-                            replacement: '../assets/'
-                        },
-                        {
                             match: '../assets/',
                             replacement: 'assets/'
+                        },
+                        {
+                            match: '../../assets/',
+                            replacement: '../assets/'
                         },
                         {
                             match: '../../<%= config.dist %>/css/<%= pkg.name %>.min.css',

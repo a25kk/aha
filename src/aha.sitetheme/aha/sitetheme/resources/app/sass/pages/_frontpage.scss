@@ -96,9 +96,11 @@
         right: 25%;
         bottom: 25%;
         font-size: 2rem;
+        text-align: right;
         .app-frontpage-section-inverse & {
             left: 25%;
             bottom: 25%;
+            text-align: left;
         }
     }
 }
