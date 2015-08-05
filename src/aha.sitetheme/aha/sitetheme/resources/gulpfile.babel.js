@@ -7,10 +7,19 @@ import {stream as wiredep} from 'wiredep';
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
-var cp          = require('child_process');
+var cp = require('child_process');
+var pkg = require('./package.json');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
+};
+
+var basePaths = {
+    app: 'app',
+    dev: '_site',
+    dist: 'dist',
+    diazoPrefix: '/++theme++pkg.name.sitetheme',
+    bower: 'bower_components/'
 };
 
 /**
@@ -75,7 +84,7 @@ gulp.task('styles', () =>  {
 });
 
 gulp.task('scripts', function(){
-  return gulp.src('src/scripts/**/*.js')
+  return gulp.src('app/scripts/**/*.js')
     .pipe(plumber({
       errorHandler: function (error) {
         console.log(error.message);
