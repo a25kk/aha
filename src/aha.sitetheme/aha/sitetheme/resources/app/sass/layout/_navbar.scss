@@ -6,10 +6,10 @@
   @extend .navbar;
   border-radius: 0;
   @media (min-width: $grid-float-breakpoint-max) {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      background: transparent;
+      // position: absolute;
+      // bottom: 0;
+      // left: 0;
+      // background: transparent;
   }
 }
 
@@ -88,6 +88,10 @@
 }
 
 .app-navbar-collapse {
+  border-top: 1px solid $gray-dark;
+  @media (min-width: $grid-float-breakpoint) {
+    border-top: none;
+  }
   // margin-left: -30px !important;
   // margin-right: -30px !important;
 }

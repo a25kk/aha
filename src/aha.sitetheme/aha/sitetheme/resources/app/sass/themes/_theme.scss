@@ -9,8 +9,9 @@
 .app-main {
   min-height: 100vh;
   background: #fff;
-  @media (min-width: $screen-sm-min) {
-      // display: flex;
+  @media (min-width: $grid-float-breakpoint) {
+      display: flex;
+      flex-direction: row-reverse;
   }
     &-inverse {
       background: $gray-dark;
@@ -30,9 +31,10 @@
 
 .app-aside {
     @media (min-width: $screen-sm-min) {
-        position: absolute;
-        top: 0;
-        left: 0;
+        //position: absolute;
+        //top: 0;
+        //left: 0;
+        flex: 0 0 15rem;
         width: 15rem;
         padding: 1rem;
         &-inverse {
@@ -45,98 +47,7 @@
 }
 
 .app-content {
-    @media (min-width: $screen-sm-min) {
-          margin-left: 15rem;
-          .app-main-inverse & {
-            margin-left: 0;
-            margin-right: 15rem;
-          }
-    }
-}
-
-//.app-content {
-//  @extend .container;
-//  &-centerstage {
-//    @extend .container-fluid;
-//    @extend .center-block;
-//    max-width: 480px;
-//  }
-//}
-
-
-//== Page styles
-//
-//## Define content specific styles
-.app-page {
-    position: relative;
-    @media (min-width: $screen-sm-min) {
-        padding: $line-height-computed 0;
-    }
-    &.app-page-frontpage {
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-}
-
-//== Fullscreen background gallery
-//
-//## Add full page gallery and layer page contents
-.app-page-content {
-    z-index: 1051;
-}
-
-// Make content body visible
-.app-theme-content {
-    padding: 1rem;
     @media (min-width: $grid-float-breakpoint) {
-        position: absolute;
-        top: 2em;
-        left: 2em;
-        width: 33.3333%;
-        background: #fff;
-        .app-main-inverse & {
-          right: 2em;
-          background: $gray-dark;
-        }
+      flex: 1;
     }
-}
-
-.app-page-gallery {
-    @media (min-width: $grid-float-breakpoint) {
-      position: absolute;
-      top: 0;
-      left: 0;
-      @include size(100%, 100%);
-      width: 100vw;
-      height: 100vh;
-    }
-}
-
-//== Page content
-//
-//## Text body layout and styling
-.app-page-title {
-  @extend .page-header;
-}
-
-
-// Use custom lead element for page desciptions
-// that has proper line-height on all media types
-.app-page-lead,
-.app-page-abstract {
-  margin-bottom: $line-height-computed;
-  font-size: 1.25rem;
-  font-weight: 300;
-  line-height: 1.5;
-  @media (min-width: $screen-sm-min) {
-    font-size: 1.5rem;
-  }
-}
-
-
-//== Page section
-//
-//## Container providing visual separation
-.app-page-section {
-  margin: 1rem 0 2rem;
 }

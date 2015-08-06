@@ -33,7 +33,6 @@
     }
 }
 
-
 .app-frontpage-section {
     display: block;
     position: relative;
@@ -83,6 +82,18 @@
             width: 280px;
         }
     }
+}
+
+//== Brand image animation
+//
+//## Nest the .app-logo class for better isolation
+.app-brand-img-frontpage {
+  .app-logo {
+      transition: all 0.2s ease-in-out 0s;
+  }
+  .app-logo:hover {
+      transform: scale(1.1);
+  }
 }
 
 .app-frontpage-action {
@@ -182,14 +193,6 @@
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-}
-
-.app-logo {
-    transition: all 0.2s ease-in-out 0s;
-}
-
-.app-logo:hover {
-    transform: scale(1.1);
 }
 
 .app-fp-heading {

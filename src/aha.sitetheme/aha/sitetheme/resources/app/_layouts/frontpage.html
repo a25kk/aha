@@ -4,14 +4,13 @@
     <!-- Meta, title, CSS, favicons, etc. -->
     {% include head.html %}
   </head>
-  <body class="app-fullscreen app-frontpage">
+  <body class="app-main app-main-fullscreen app-frontpage">
     <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
     {% include toolbar.html %}
     <!-- App master nav -->
-
-    <div class="app-fp-content" role="main">
-          {{ content }}
-    </div>
+    <main class="app-content" role="main">
+        {{ content }}
+    </main>
     {% include javascript.html %}
     <div class="app-js-slot">
         {% include webfonts.html %}

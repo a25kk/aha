@@ -4,22 +4,21 @@
 
 
 .app-header {
-  padding-top: 3rem;
+  border-bottom: 1px solid $gray-dark;
   @media (min-width: $grid-float-breakpoint-max) {
     padding-left: $line-height-computed;
     padding-bottom: 1rem;
+    border-bottom: none;
   }
 }
 
 .app-header-content {
   @media (min-width: $grid-float-breakpoint) {
-    @extend .container;
     display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100%;
   }
-}
-
-.app-header-content + .app-header-content {
-  margin-top: 1.5rem;
 }
 
 .app-header-panel {
@@ -36,5 +35,8 @@
   }
   .app-header-actionbar {
     flex: 0 0 33.3333%;
+  }
+  .app-header-navbar {
+    align-self: flex-end;
   }
 }
