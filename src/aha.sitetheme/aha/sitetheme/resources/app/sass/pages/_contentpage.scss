@@ -7,6 +7,7 @@
 //## Define content specific styles
 .app-page {
     position: relative;
+    min-height: 100vh;
     @media (min-width: $screen-sm-min) {
         padding: $line-height-computed 0;
     }
@@ -45,7 +46,7 @@
         top: 0;
         left: 0;
         @include size(100%, 100%);
-        width: 100vw;
+        width: 100%;
         height: 100vh;
     }
 }
