@@ -17,6 +17,9 @@
 .app-navbar-content {
     padding-bottom: 1rem;
     border-bottom: 1px solid $gray-dark;
+    .app-header-inverse & {
+      border-color: $gray-lighter;
+    }
     @media (min-width: $grid-float-breakpoint) {
       border-bottom: 0;
     }
@@ -78,6 +81,9 @@
   }
   .icon-bar {
     background-color: $text-color;
+    .app-header-inverse & {
+      background-color: $gray-lighter;
+    }
   }
   // Bars
   .icon-bar {
@@ -103,6 +109,9 @@
   font-weight: 600;
   text-transform: uppercase;
   color: $gray-dark;
+  .app-header-inverse & {
+    color: $gray-lighter;
+  }
 }
 
 .app-navbar-collapse {
@@ -129,6 +138,9 @@
   width: 100%;
   padding-left: $navbar-padding-horizontal;
   border-bottom: 1px solid $gray-dark;
+  .app-header-inverse & {
+    border-color: $gray-lighter;
+  }
   &:last-child {
     border-bottom: 0;
   }
@@ -144,14 +156,14 @@
     line-height: 1;
     text-transform: uppercase;
     transition: background-color 0.5s ease;
-    .app-sidebar-inverse & {
+    .app-header-inverse & {
         color: $gray-lighter;
     }
     &:hover {
       color: darken($text-color, 6.5%);
       background-color: darken($app-primary, 6.5%);
       text-decoration: underline;
-        .app-sidebar-inverse & {
+        .app-header-inverse & {
             color: darken($gray-lighter, 6.5%);
         }
     }

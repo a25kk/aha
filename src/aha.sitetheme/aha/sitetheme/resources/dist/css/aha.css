@@ -7372,6 +7372,9 @@ div.riform .label {
   padding-bottom: 1rem;
   border-bottom: 1px solid #333;
 }
+.app-header-inverse .app-navbar-content {
+  border-color: #eee;
+}
 @media (min-width: 768px) {
   .app-navbar-content {
     border-bottom: 0;
@@ -7444,6 +7447,9 @@ div.riform .label {
 .app-navbar-toggle .icon-bar {
   background-color: #333;
 }
+.app-header-inverse .app-navbar-toggle .icon-bar {
+  background-color: #eee;
+}
 .app-navbar-toggle .icon-bar {
   display: block;
   width: 44px;
@@ -7469,6 +7475,9 @@ div.riform .label {
       -ms-flex: 0 0 25%;
           flex: 0 0 25%;
 }
+.app-header-inverse .app-navbar-section {
+  color: #eee;
+}
 
 .app-navbar-collapse {
   padding-right: 0; 
@@ -7492,6 +7501,9 @@ div.riform .label {
   padding-left: 15px;
   border-bottom: 1px solid #333;
 }
+.app-header-inverse .app-navitem {
+  border-color: #eee;
+}
 .app-navitem:last-child {
   border-bottom: 0;
 }
@@ -7509,7 +7521,7 @@ div.riform .label {
   background-color: #274d38;
   transition: background-color .5s ease;
 }
-.app-sidebar-inverse .app-navitem-tab {
+.app-header-inverse .app-navitem-tab {
   color: #eee;
 }
 .app-navitem-tab:hover {
@@ -7517,7 +7529,7 @@ div.riform .label {
   text-decoration: underline; 
   background-color: #1c3728;
 }
-.app-sidebar-inverse .app-navitem-tab:hover {
+.app-header-inverse .app-navitem-tab:hover {
   color: #dedede;
 }
 .app-navitem-tab > span {
@@ -8719,6 +8731,12 @@ body.section-front-page .app-pathbar {
 
     -webkit-flex-direction: row-reverse;
         -ms-flex-direction: row-reverse;
+  }
+  .app-main-inverse {
+            flex-direction: row; 
+
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
   }
 }
 .app-main-inverse {

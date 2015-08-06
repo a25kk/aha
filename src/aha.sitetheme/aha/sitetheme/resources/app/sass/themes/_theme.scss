@@ -12,6 +12,9 @@
   @media (min-width: $grid-float-breakpoint) {
       display: flex;
       flex-direction: row-reverse;
+      &-inverse {
+        flex-direction: row;
+      }
   }
     &-inverse {
       background: $gray-dark;
@@ -31,9 +34,6 @@
 
 .app-aside {
     @media (min-width: $screen-sm-min) {
-        //position: absolute;
-        //top: 0;
-        //left: 0;
         flex: 0 0 15rem;
         width: 15rem;
         padding: 1rem;
