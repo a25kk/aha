@@ -15,7 +15,11 @@
 
 // Navbar content container
 .app-navbar-content {
-    @extend .container-fluid;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $gray-dark;
+    @media (min-width: $grid-float-breakpoint) {
+      border-bottom: 0;
+    }
 }
 
 //== Navbar header
@@ -25,14 +29,14 @@
 .app-navbar-header {
   @include clearfix;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     padding: 0;
     background: transparent;
 }
 
 //** Navbar toggle text
 .app-navbar-header-title {
-    flex: 0 0 75%;
+    flex: 0 0 50%;
 }
 
 //== Brand info
@@ -40,10 +44,14 @@
 //## Includes logo svg
 .app-navbar-brand {
   height: ($navbar-height * 1.5);
-  padding: $navbar-padding-vertical $navbar-padding-horizontal;
+  padding-top: $navbar-padding-vertical;
+  padding-left: $navbar-padding-horizontal;
   font-weight: 500;
   line-height: $line-height-computed;
   color: $text-color;
+  @media (min-width: $grid-float-breakpoint) {
+    padding: $navbar-padding-vertical $navbar-padding-horizontal;
+  }
 }
 
 
@@ -52,15 +60,14 @@
   flex: 0 0 25%;
   background: $app-secondary;
   min-height: $navbar-height;
-  padding: $navbar-padding-vertical $navbar-padding-horizontal;
+  padding-top: $navbar-padding-vertical;
   text-align: center;
 }
 
 // Navbar toggle button visible on small displays
 .app-navbar-toggle {
-    position: relative;
-    float: right;
-  width: 100%;
+  position: relative;
+  width: 50px;
   border-color: transparent;
   background: transparent;
   text-align: right;
@@ -76,24 +83,35 @@
   .icon-bar {
     display: block;
     width: 44px;
-    height: 3px;
+    height: 2px;
     border-radius: 2px;
   }
   .icon-bar + .icon-bar {
-    margin-top: 12px;
+    margin-top: 10px;
   }
     @media (min-width: $grid-float-breakpoint) {
         display: none;
     }
 }
 
+//** Section marker
+//** Enhance hamburger icon menu by providing a clickable
+//** section info link
+.app-navbar-section {
+  flex: 0 0 25%;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $gray-dark;
+}
+
 .app-navbar-collapse {
   border-top: 1px solid $gray-dark;
+  padding-left: 0;
+  padding-right: 0;
   @media (min-width: $grid-float-breakpoint) {
     border-top: none;
   }
-  // margin-left: -30px !important;
-  // margin-right: -30px !important;
 }
 
 // Unordered list main navigation
@@ -109,6 +127,14 @@
 //## Color coded based on parent inverse class
 .app-navitem {
   width: 100%;
+  padding-left: $navbar-padding-horizontal;
+  border-bottom: 1px solid $gray-dark;
+  &:last-child {
+    border-bottom: 0;
+  }
+  @media (min-width: $grid-float-breakpoint) {
+    border-bottom: none;
+  }
 }
 
 .app-navitem-tab {

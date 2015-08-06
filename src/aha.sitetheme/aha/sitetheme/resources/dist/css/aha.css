@@ -2999,7 +2999,7 @@ a.bg-danger:focus {
   background-color: #e4b9b9;
 }
 
-.page-header {
+.page-header, .app-page-title {
   padding-bottom: -.2857142855rem;
   margin: 2.857142858rem 0 1.428571429rem;
   border-bottom: 1px solid #eee;
@@ -3231,19 +3231,18 @@ pre code {
   }
 }
 
-.container-fluid, .app-navbar-content {
+.container-fluid {
   padding-right: 15px; 
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
 .container-fluid:before,
-  .app-navbar-content:before,
-  .container-fluid:after, .app-navbar-content:after {
+  .container-fluid:after {
   display: table; 
   content: " ";
 }
-.container-fluid:after, .app-navbar-content:after {
+.container-fluid:after {
   clear: both;
 }
 
@@ -6036,8 +6035,7 @@ tbody.collapse.in {
 .app-footer-content > .navbar-collapse,
 .app-banner > .navbar-collapse,
 .container-fluid > .navbar-header,
-.app-navbar-content > .navbar-header,
-.container-fluid > .navbar-collapse, .app-navbar-content > .navbar-collapse {
+.container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -6049,8 +6047,7 @@ tbody.collapse.in {
   .app-footer-content > .navbar-collapse,
   .app-banner > .navbar-collapse,
   .container-fluid > .navbar-header,
-  .app-navbar-content > .navbar-header,
-  .container-fluid > .navbar-collapse, .app-navbar-content > .navbar-collapse {
+  .container-fluid > .navbar-collapse {
     margin-right: 0;
     margin-left: 0;
   }
@@ -6112,7 +6109,7 @@ tbody.collapse.in {
   .app-navbar > .app-footer-content .navbar-brand,
   .navbar > .app-banner .navbar-brand,
   .app-navbar > .app-banner .navbar-brand,
-  .navbar > .container-fluid .navbar-brand, .app-navbar > .container-fluid .navbar-brand, .navbar > .app-navbar-content .navbar-brand, .app-navbar > .app-navbar-content .navbar-brand {
+  .navbar > .container-fluid .navbar-brand, .app-navbar > .container-fluid .navbar-brand {
     margin-left: -15px;
   }
 }
@@ -7339,9 +7336,6 @@ div.riform .label {
   background-color: #274d38;
 }
 
-.app-header {
-  border-bottom: 1px solid #333;
-}
 @media (min-width: 767px) {
   .app-header {
     padding-bottom: 1rem;
@@ -7355,8 +7349,8 @@ div.riform .label {
     display: -webkit-flex;
     display: -ms-flexbox;
     display:         flex;
-    height: 100%;
-    min-height: 100%; 
+    height: 100vh;
+    min-height: 100vh; 
             flex-direction: column;
 
     -webkit-flex-direction: column;
@@ -7370,26 +7364,18 @@ div.riform .label {
           flex: 1;
 }
 
-@media (min-width: 767px) {
-  .app-header-brandbar {
-    -webkit-flex: 0 0 66.6666%;
-        -ms-flex: 0 0 66.6666%;
-            flex: 0 0 66.6666%;
-  }
-  .app-header-actionbar {
-    -webkit-flex: 0 0 33.3333%;
-        -ms-flex: 0 0 33.3333%;
-            flex: 0 0 33.3333%;
-  }
-  .app-header-navbar {
-    -webkit-align-self: flex-end;
-    -ms-flex-item-align: end;
-            align-self: flex-end;
-  }
-}
-
 .app-navbar {
   border-radius: 0;
+}
+
+.app-navbar-content {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #333;
+}
+@media (min-width: 768px) {
+  .app-navbar-content {
+    border-bottom: 0;
+  }
 }
 
 .app-navbar-header {
@@ -7399,9 +7385,9 @@ div.riform .label {
   padding: 0;
   background: transparent; 
 
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-          align-items: center;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+          align-items: flex-end;
 }
 .app-navbar-header:before,
   .app-navbar-header:after {
@@ -7413,22 +7399,28 @@ div.riform .label {
 }
 
 .app-navbar-header-title {
-  -webkit-flex: 0 0 75%;
-      -ms-flex: 0 0 75%;
-          flex: 0 0 75%;
+  -webkit-flex: 0 0 50%;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
 }
 
 .app-navbar-brand {
   height: 75px;
-  padding: 15px 15px;
+  padding-top: 15px;
+  padding-left: 15px;
   font-weight: 500;
   line-height: 1.428571429rem;
   color: #333;
 }
+@media (min-width: 768px) {
+  .app-navbar-brand {
+    padding: 15px 15px;
+  }
+}
 
 .app-navbar-header-toggle {
   min-height: 50px;
-  padding: 15px 15px;
+  padding-top: 15px;
   text-align: center; 
   background: #588c73;
 
@@ -7439,8 +7431,7 @@ div.riform .label {
 
 .app-navbar-toggle {
   position: relative;
-  float: right;
-  width: 100%;
+  width: 50px;
   text-align: right; 
   background: transparent;
   border-color: transparent;
@@ -7456,11 +7447,11 @@ div.riform .label {
 .app-navbar-toggle .icon-bar {
   display: block;
   width: 44px;
-  height: 3px;
+  height: 2px;
   border-radius: 2px;
 }
 .app-navbar-toggle .icon-bar + .icon-bar {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 @media (min-width: 768px) {
   .app-navbar-toggle {
@@ -7468,7 +7459,20 @@ div.riform .label {
   }
 }
 
+.app-navbar-section {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333; 
+  text-transform: uppercase;
+
+  -webkit-flex: 0 0 25%;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+}
+
 .app-navbar-collapse {
+  padding-right: 0; 
+  padding-left: 0;
   border-top: 1px solid #333;
 }
 @media (min-width: 768px) {
@@ -7485,6 +7489,16 @@ div.riform .label {
 
 .app-navitem {
   width: 100%;
+  padding-left: 15px;
+  border-bottom: 1px solid #333;
+}
+.app-navitem:last-child {
+  border-bottom: 0;
+}
+@media (min-width: 768px) {
+  .app-navitem {
+    border-bottom: none;
+  }
 }
 
 .app-navitem-tab {
@@ -8625,6 +8639,70 @@ body.section-front-page .app-pathbar {
 .app-fp-heading:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.app-page {
+  position: relative;
+}
+@media (min-width: 768px) {
+  .app-page {
+    padding: 1.428571429rem 0;
+  }
+}
+.app-page.app-page-frontpage {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.app-page-content {
+  z-index: 1051;
+}
+
+.app-theme-content {
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  .app-theme-content {
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    width: 33.3333%;
+    background: #fff;
+  }
+  .app-main-inverse .app-theme-content {
+    right: 2em;
+    background: #333;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-page-gallery {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    width: 100vw;
+    height: 100%;
+    height: 100vh;
+  }
+}
+
+.app-page-lead,
+.app-page-abstract {
+  margin-bottom: 1.428571429rem;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+@media (min-width: 768px) {
+  .app-page-lead,
+  .app-page-abstract {
+    font-size: 1.5rem;
+  }
+}
+
+.app-page-section {
+  margin: 1rem 0 2rem;
 }
 
 .app-main {
