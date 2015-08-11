@@ -67,9 +67,9 @@ module.exports = function (grunt) {
                 outputFile: '<%%= config.dist %>/js/vendor/modernizr.js',
                 files: {
                     src: [
-                        '<%%= config.dist %>/js/{,*/}*.js',
-                        '<%%= config.dist %>/css/{,*/}*.css',
-                        '!<%%= config.dist %>/js/vendor/*'
+                        '<%%= config.dist %>/scripts/{,*/}*.js',
+                        '<%%= config.dist %>/stypes/{,*/}*.css',
+                        '!<%%= config.dist %>/scripts/vendor/*'
                     ]
                 },
                 uglify: true
@@ -83,36 +83,24 @@ module.exports = function (grunt) {
                 loadPath: 'bower_components'
             },
             dist: {
-                files: { '<%= config.dist %>/css/<%= pkg.name %>.css': '<%= config.app %>/sass/main.scss' }
+                files: { '<%= config.dist %>/styles/<%= pkg.name %>.css': '<%= config.app %>/sass/main.scss' }
             },
             server: {
-                files: { '<%= config.dist %>/css/<%= pkg.name %>.css': '<%= config.app %>/sass/main.scss' }
+                files: { '<%= config.dist %>/styles/<%= pkg.name %>.css': '<%= config.app %>/sass/main.scss' }
             }
         },
-        // less: {
-        //     compileTheme: {
-        //         options: {
-        //             strictMath: false,
-        //             sourceMap: true,
-        //             outputSourceFiles: true,
-        //             sourceMapURL: '<%= config.dist %>/css/<%= pkg.name %>.css.map',
-        //             sourceMapFilename: '<%= config.dist %>/css/<%= pkg.name %>.css.map'
-        //         },
-        //         files: { '<%= config.dist %>/css/<%= pkg.name %>.css': 'less/styles.less' }
-        //     }
-        // },
         autoprefixer: {
             options: {
                 browsers: ['last 2 versions']
             },
             core: {
                 options: { map: true },
-                src: '<%= config.dist %>/css/<%= pkg.name %>.css'
+                src: '<%= config.dist %>/styles/<%= pkg.name %>.css'
             }
         },
         csslint: {
             options: { csslintrc: '<%= config.app %>/sass/.csslintrc' },
-            src: '<%= config.dist %>/css/<%= pkg.name %>.css'
+            src: '<%= config.dist %>/styles/<%= pkg.name %>.css'
         },
         cssmin: {
             options: {
@@ -120,12 +108,12 @@ module.exports = function (grunt) {
                 keepSpecialComments: '*',
                 noAdvanced: true
             },
-            core: { files: { '<%= config.dist %>/css/<%= pkg.name %>.min.css': 'dist/css/<%= pkg.name %>.css' } }
+            core: { files: { '<%= config.dist %>/styles/<%= pkg.name %>.min.css': '<%= config.dist %>/styles/<%= pkg.name %>.css' } }
         },
         csscomb: {
             sort: {
                 options: { config: '<%= config.app %>/sass/.csscomb.json' },
-                files: { '<%= config.dist %>/css/<%= pkg.name %>.css': ['dist/css/<%= pkg.name %>.css'] }
+                files: { '<%= config.dist %>/styles/<%= pkg.name %>.css': ['<%= config.dist %>/styles/<%= pkg.name %>.css'] }
             }
         },
         criticalcss: {
@@ -143,8 +131,8 @@ module.exports = function (grunt) {
                     url: 'http://localhost:8499/rms/stellplatz-am-wassersportzentrum',
                     width: 1200,
                     height: 900,
-                    outputfile: '<%= config.app %>/assets/css/critical.css',
-                    filename: '<%= config.dist %>/css/<%= pkg.name %>.css'
+                    outputfile: '<%= config.app %>/assets/styles/critical.css',
+                    filename: '<%= config.dist %>/styles/<%= pkg.name %>.css'
                 }
             }
         },
@@ -217,8 +205,8 @@ module.exports = function (grunt) {
             },
             assets: {
                 src: [
-                    '<%= config.dist %>/js/<%= pkg.name %>.min.js',
-                    '<%= config.dist %>/css/<%= pkg.name %>.min.css'
+                    '<%= config.dist %>/scripts/<%= pkg.name %>.min.js',
+                    '<%= config.dist %>/styles/<%= pkg.name %>.min.css'
                 ]
             },
             files: {
@@ -231,11 +219,11 @@ module.exports = function (grunt) {
         usemin: {
             html: ['<%= config.dist %>/{,*/}*.html'],
             htmlcustom: ['<%= config.dist %>/{,*/}*.html'],
-            css: ['<%= config.dist %>/css/*.css'],
+            css: ['<%= config.dist %>/styles/*.css'],
             options: {
                 assetsDirs: [
                     '<%= config.dist %>',
-                    '<%= config.dist %>/css',
+                    '<%= config.dist %>/styles',
                     '<%= config.dist %>/assets'
                 ],
                 patterns: {
@@ -308,20 +296,20 @@ module.exports = function (grunt) {
                             replacement: '../assets/'
                         },
                         {
-                            match: '../../<%= config.dist %>/css/<%= pkg.name %>.min.css',
-                            replacement: '../css/<%= pkg.name %>.min.css'
+                            match: '../../<%= config.dist %>/styles/<%= pkg.name %>.min.css',
+                            replacement: '../styles/<%= pkg.name %>.min.css'
                         },
                         {
-                            match: '../<%= config.dist %>/css/<%= pkg.name %>.min.css',
-                            replacement: 'css/<%= pkg.name %>.min.css'
+                            match: '../<%= config.dist %>/styles/<%= pkg.name %>.min.css',
+                            replacement: 'styles/<%= pkg.name %>.min.css'
                         },
                         {
-                            match: '../../<%= config.dist %>/js/<%= pkg.name %>.min.js',
-                            replacement: '../js/<%= pkg.name %>.min.js'
+                            match: '../../<%= config.dist %>/scripts/<%= pkg.name %>.min.js',
+                            replacement: '../scripts/<%= pkg.name %>.min.js'
                         },
                         {
-                            match: '../<%= config.dist %>/js/<%= pkg.name %>.min.js',
-                            replacement: 'js/<%= pkg.name %>.min.js'
+                            match: '../<%= config.dist %>/scripts/<%= pkg.name %>.min.js',
+                            replacement: 'scripts/<%= pkg.name %>.min.js'
                         }
                     ],
                     usePrefix: false,
@@ -349,20 +337,20 @@ module.exports = function (grunt) {
                             replacement: 'http://<%= connect.options.hostname %>:<%= connect.options.port %>/assets/'
                         },
                         {
-                            match: '../css/',
-                            replacement: 'css/'
+                            match: '../styles/',
+                            replacement: 'styles/'
                         },
                         {
-                            match: 'css/',
-                            replacement: 'http://<%= connect.options.hostname %>:<%= connect.options.port %>/css/'
+                            match: 'styles/',
+                            replacement: 'http://<%= connect.options.hostname %>:<%= connect.options.port %>/styles/'
                         },
                         {
-                            match: '../js/<%= pkg.name %>',
-                            replacement: 'js/<%= pkg.name %>'
+                            match: '../scripts/<%= pkg.name %>',
+                            replacement: 'scripts/<%= pkg.name %>'
                         },
                         {
-                            match: 'js/<%= pkg.name %>',
-                            replacement: 'http://<%= connect.options.hostname %>:<%= connect.options.port %>/js/<%= pkg.name %>'
+                            match: 'scripts/<%= pkg.name %>',
+                            replacement: 'http://<%= connect.options.hostname %>:<%= connect.options.port %>/scripts/<%= pkg.name %>'
                         }
                     ],
                     usePrefix: false,
@@ -390,20 +378,20 @@ module.exports = function (grunt) {
                             replacement: '<%= config.diazoPrefix %>/<%= config.dist %>/assets/'
                         },
                         {
-                            match: '../css/',
-                            replacement: 'css/'
+                            match: '../styles/',
+                            replacement: 'styles/'
                         },
                         {
-                            match: 'css/',
-                            replacement: '<%= config.diazoPrefix %>/<%= config.dist %>/css/'
+                            match: 'styles/',
+                            replacement: '<%= config.diazoPrefix %>/<%= config.dist %>/styles/'
                         },
                         {
-                            match: '../js/<%= pkg.name %>',
-                            replacement: 'js/<%= pkg.name %>'
+                            match: '../scripts/<%= pkg.name %>',
+                            replacement: 'scripts/<%= pkg.name %>'
                         },
                         {
-                            match: 'js/<%= pkg.name %>',
-                            replacement: '<%= config.diazoPrefix %>/<%= config.dist %>/js/<%= pkg.name %>'
+                            match: 'scripts/<%= pkg.name %>',
+                            replacement: '<%= config.diazoPrefix %>/<%= config.dist %>/scripts/<%= pkg.name %>'
                         }
                     ],
                     usePrefix: false,
@@ -431,20 +419,20 @@ module.exports = function (grunt) {
                             replacement: '/assets/'
                         },
                         {
-                            match: '../css/<%= pkg.name %>',
-                            replacement: 'css/<%= pkg.name %>'
+                            match: '../styles/<%= pkg.name %>',
+                            replacement: 'styles/<%= pkg.name %>'
                         },
                         {
-                            match: 'css/<%= pkg.name %>',
-                            replacement: '/css/<%= pkg.name %>'
+                            match: 'styles/<%= pkg.name %>',
+                            replacement: '/styles/<%= pkg.name %>'
                         },
                         {
-                            match: '../js/<%= pkg.name %>',
-                            replacement: 'js/<%= pkg.name %>'
+                            match: '../scripts/<%= pkg.name %>',
+                            replacement: 'scripts/<%= pkg.name %>'
                         },
                         {
-                            match: 'js/<%= pkg.name %>',
-                            replacement: '/js/<%= pkg.name %>'
+                            match: 'scripts/<%= pkg.name %>',
+                            replacement: '/scripts/<%= pkg.name %>'
                         }
                     ],
                     usePrefix: false,
@@ -472,8 +460,8 @@ module.exports = function (grunt) {
                 files: [{
                     dot: true,
                     src: [
-                        '<%= config.dist %>/js/*.min.*.js',
-                        '<%= config.dist %>/css/*.min.*.css'
+                        '<%= config.dist %>/scripts/*.min.*.js',
+                        '<%= config.dist %>/styles/*.min.*.css'
                     ]
                 }]
             },
@@ -508,7 +496,7 @@ module.exports = function (grunt) {
         },
         watch: {
             js: {
-                files: ['<%= config.app %>/js/{,*/}*.js'],
+                files: ['<%= config.app %>/scripts/{,*/}*.js'],
                 tasks: ['concat', 'uglify'],
                 options: { livereload: true }
             },
@@ -580,7 +568,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 options: {
-                    url: 'http://aha.kreatoivkombinat.de',
+                    url: 'http://aha.kreativkombinat.de',
                     paths: ['/', '/licht', '/raum'],
                     locale: 'de_DE',
                     strategy: 'desktop',

@@ -78,6 +78,7 @@
     "opn": "^1.0.1",
     "time-grunt": "~1.1.1",
     "wiredep": "^2.2.2",
-    "xmlbuilder": "~2.6.2"
+    "xmlbuilder": "~2.6.2",
+    "yargs": "^3.18.0"
   }
 }

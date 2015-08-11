@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
+import args from 'yargs';
 import {stream as wiredep} from 'wiredep';
 
 const $ = gulpLoadPlugins();
@@ -21,6 +22,27 @@ var basePaths = {
     diazoPrefix: '/++theme++pkg.name.sitetheme',
     bower: 'bower_components/'
 };
+
+var sourcesJS = {
+  base: [
+    basePaths.bower + 'bootstrap-without-jquery/bootstrap3/bootstrap-without-jquery.js',
+    basePaths.bower + 'lazysizes/lazysizes.js',
+    basePaths.bower + 'flickity/dist/flickity.pkgd.js'
+  ],
+  all: [
+    basePaths.bower +'jquery/dist/jquery.js',
+    basePaths.bower +'modernizr/modernizr.js',
+    basePaths.bower + 'bootstrap-without-jquery/bootstrap3/bootstrap-without-jquery.js',
+    basePaths.bower +'mailcheck/src/mailcheck.js',
+    basePaths.bower +'JVFloat/jvfloat.js',
+    basePaths.bower +'hideShowPassword/hideShowPassword.js',
+    basePaths.bower + 'lazysizes/lazysizes.js',
+    basePaths.bower + 'flickity/dist/flickity.pkgd.js'
+
+  ]
+}
+
+var isProduction = args.env === 'dist';
 
 /**
  * Build the Jekyll Site
@@ -84,20 +106,20 @@ gulp.task('styles', () =>  {
 });
 
 gulp.task('scripts', function(){
-  return gulp.src('app/scripts/**/*.js')
-    .pipe(plumber({
+  return gulp.src(isProduction ? sourcesJS.all : sourcesJS.base)
+    .pipe($.plumber({
       errorHandler: function (error) {
         console.log(error.message);
         this.emit('end');
     }}))
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-    .pipe(concat('main.js'))
-    .pipe(gulp.dest('dist/scripts/'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
-    .pipe(gulp.dest('dist/scripts/'))
-    .pipe(browserSync.reload({stream:true}))
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('default'))
+    .pipe(concat(pkg.name + '.js'))
+    .pipe(gulp.dest(basePaths.dist + 'scripts/'))
+    .pipe($.rename({suffix: '.min'}))
+    .pipe($.uglify())
+    .pipe(gulp.dest(basePaths.dist + 'scripts/'))
+    .pipe(browserSync.reload({stream:true}));
 });
 
 gulp.task('default', ['browser-sync'], function(){
