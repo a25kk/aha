@@ -40,7 +40,7 @@ module.exports = function (grunt) {
                   'bower_components/flickity/dist/flickity.pkgd.js',
                   '<%= config.app %>/js/main.js'
                 ],
-                dest: '<%= config.dist %>/js/<%= pkg.name %>.js'
+                dest: '<%= config.dist %>/scripts/<%= pkg.name %>.js'
             },
             theme: {
                 src: [
@@ -49,14 +49,14 @@ module.exports = function (grunt) {
                     'bower_components/flickity/dist/flickity.pkgd.js',
                     '<%= config.app %>/js/main.js'
                 ],
-                dest: '<%= config.dist %>/js/main.js'
+                dest: '<%= config.dist %>/scripts/main.js'
             }
         },
         uglify: {
             options: { banner: '<%= banner %>' },
             dist: {
                 src: ['<%= concat.dist.dest %>'],
-                dest: '<%= config.dist %>/js/<%= pkg.name %>.min.js'
+                dest: '<%= config.dist %>/scripts/<%= pkg.name %>.min.js'
             }
         },
         // Generates a custom Modernizr build that includes only the tests you
@@ -64,7 +64,7 @@ module.exports = function (grunt) {
         modernizr: {
             dist: {
                 devFile: 'bower_components/modernizr/modernizr.js',
-                outputFile: '<%%= config.dist %>/js/vendor/modernizr.js',
+                outputFile: '<%%= config.dist %>/scripts/vendor/modernizr.js',
                 files: {
                     src: [
                         '<%%= config.dist %>/scripts/{,*/}*.js',

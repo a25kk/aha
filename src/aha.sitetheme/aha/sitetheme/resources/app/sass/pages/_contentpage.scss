@@ -80,3 +80,13 @@
 .app-page-section {
     margin: 1rem 0 2rem;
 }
+
+//== Responsive image
+//
+//## Class to resize standalone images based
+//## on viewport sizes
+.app-image {
+    @media (max-width: $grid-float-breakpoint) {
+        @extend .img-responsive;
+    }
+}
