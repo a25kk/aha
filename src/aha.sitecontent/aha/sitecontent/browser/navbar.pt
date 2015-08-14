@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="aha.sitecontent">
+<body>
+
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main">
+
+    <ul class="xnav xnavbar-nav app-navbar-nav" id="app-navbar-nav"
+      tal:define="portal_url context/portal_url;
+                  section view/section">
+      <li class="app-navitem active">
+        <a class="app-navitem-tab app-navitem-tab-home" href="${portal_url}/${section}/unternehmen/">
+          <span>Unternehmen</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab app-navitem-tab-aktuelles" href="${portal_url}/${section}/projekte">
+          <span>Projekte</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab app-navitem-tab-service" href="${portal_url}/${section}/konzeption">
+          <span>Konzeption</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab app-navitem-tab-info" href="${portal_url}/${section}/beratung">
+          <span>Beratung</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab app-navitem-tab-landratsamt" href="${portal_url}/${section}/aktuell">
+          <span>Aktuell</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab app-navitem-tab-hier-leben" href="${portal_url}/${section}/kontakt">
+          <span>Kontakt</span>
+        </a>
+      </li>
+    </ul>
+  </metal:content-core>
+</metal:main>
+</body>
+</html>

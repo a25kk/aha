@@ -72,4 +72,17 @@
       layer="..interfaces.IAhaSitecontentLayer"
       />
 
+  <!-- Navbar View -->
+  <browser:page
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      name="navbar-view"
+      class=".navbar.NavBarView"
+      template="navbar.pt"
+      permission="zope2.View"
+      layer="..interfaces.IAhaSitecontentLayer"
+      />
+
+
+
+
 </configure>
