@@ -17355,7 +17355,7 @@ return Flickity;
       $('.app-signin-input').jvFloat();
       var $mcNote = $('#app-signin-suggestion');
       Mailcheck.defaultDomains.push('aha.kreativkombinat.de')
-      $('#ac-name').on('blur', function (event) {
+      $('[data-appui="mailcheck"]').on('blur', function (event) {
         console.log("event ", event);
         console.log("this ", $(this));
         $(this).mailcheck({
@@ -17395,29 +17395,6 @@ return Flickity;
           imagesLoaded: true,
           cellSelector: '.app-gallery-cell',
           cellAlign: 'left'
-        });
-        var $isoContainer = $('#js-isotope-container');
-        $isoContainer.addClass('js-isotope-intialized');
-        $isoContainer.isotope({
-          itemSelector: '.js-isotope-item',
-          layoutMode: 'fitRows',
-          animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-          },
-          resizable: false,
-          animationEngine: 'best-available'
-        });
-        // filter items on button click
-        var $selectionLinks = $('[data-appui="app-list-filter"]'),
-            $current = '';
-        $('#app-list-filters').on('click', '[data-appui="app-list-filter"]', function () {
-          $current = $(this);
-          $selectionLinks.not($current).removeClass('active-filter');
-          $(this).addClass('active-filter');
-          var $filterValue = $(this).attr('data-filter');
-          $isoContainer.isotope({ filter: $filterValue });
         });
       }
     };
