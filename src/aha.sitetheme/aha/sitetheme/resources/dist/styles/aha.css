@@ -2698,7 +2698,7 @@ img {
   vertical-align: middle;
 }
 
-.img-responsive, .app-image {
+.img-responsive, .app-image, .newsImage, .tileImage {
   display: block;
   max-width: 100%;
   height: auto;
@@ -7001,7 +7001,7 @@ a.label:focus {
   }
 }
 
-/*! Flickity v1.0.2
+/*! Flickity v1.1.0
 http://flickity.metafizzy.co
 ---------------------------------------------- */
 .flickity-enabled {
@@ -8912,6 +8912,65 @@ body.section-front-page .app-pathbar {
 
 .app-page-section {
   margin: 1rem 0 2rem;
+}
+
+.app-summary-wrapper {
+  min-height: 500px;
+  padding-top: 1.428571429rem;
+  padding-bottom: 1.428571429rem; 
+  border-bottom: 1px solid #edeaea;
+}
+.app-summary-wrapper .app-sumary-left {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-left: 0 !important;
+}
+@media (min-width: 992px) {
+  .app-summary-wrapper .app-sumary-left {
+    float: left;
+    width: 66.6666666667%;
+  }
+}
+.app-summary-wrapper .app-sumary-right {
+  position: relative;
+  min-height: 1px;
+  padding-top: 4.285714287rem; 
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-left: 0 !important;
+}
+@media (min-width: 992px) {
+  .app-summary-wrapper .app-sumary-right {
+    float: left;
+    width: 33.3333333333%;
+  }
+}
+
+.tileItem {
+  display: block;
+  min-height: 500px; 
+  border: 0 solid red;
+}
+
+.newsImage {
+  width: 100%;
+  margin-bottom: 1.428571429rem;
+}
+
+.tileImage {
+  float: left;
+}
+
+.tileHeadline {
+  font-size: 1.5rem;
+  line-height: 2.1428571435rem;
+  text-transform: uppercase;
+}
+
+.option {
+  display: block;
 }
 
 .app-main {
