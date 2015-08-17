@@ -90,3 +90,36 @@
         @extend .img-responsive;
     }
 }
+
+//== Content grid
+//
+//## Flexbox based grid classes
+.app-page-section {
+    @media (min-width: $grid-float-breakpoint) {
+        display: flex;
+    }
+}
+
+.app-page-col {
+    @media (min-width: $grid-float-breakpoint) {
+        flex: 1;
+        &-main {
+            flex: 0 0 60%;
+        }
+        &-aside {
+            flex: 0 0 40%;
+        }
+    }
+}
+
+
+// Gutter modifier class
+//
+// Add spacing to grid cells
+.app-gutters {
+  margin: -1em 0 0 -1em;
+}
+.app-gutters > .app-page-col {
+  padding: 1em 0 0 1em;
+}
+

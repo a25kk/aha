@@ -1,6 +1,24 @@
-<div class="app-page-gallery" id="app-page-gallery" tal:condition="view/has_assets">
+<div class="app-page-gallery" id="app-page-gallery">
   <div class="app-gallery" tal:define="images view/contained_images">
       <div class="project-gallery main-gallery">
+        <div class="app-gallery-caption">
+          <div class="app-page-header">
+            <div class="app-page-title">
+              <h1 class="app-page-headline" tal:content="context/Title">
+                ${context/Title}
+              </h1>
+            </div>
+            <p class="app-page-abstract" tal:condition="context/Description">
+              ${context/Description}
+            </p>
+          </div>
+
+          <div class="app-page-body">
+            <div class="app-page-text" id="parent-fieldname-text"
+              tal:condition="context/text"
+              tal:content="structure context/text/output" />
+          </div>
+        </div>
         <talblock tal:condition="images">
           <div class="app-gallery-cell project-gallery-item item" tal:repeat="item images">
             <tal:item tal:define="img python:view.image_tag(item)">

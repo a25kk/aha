@@ -20,6 +20,16 @@ class ContentPageView(BrowserView):
             return True
         return False
 
+    def display_cards(self):
+        context = aq_inner(self.context)
+        try:
+            display = context.displayCards
+        except AttributeError:
+            display = None
+        if display is not None:
+            return display
+        return False
+
     def display_gallery(self):
         context = aq_inner(self.context)
         try:
