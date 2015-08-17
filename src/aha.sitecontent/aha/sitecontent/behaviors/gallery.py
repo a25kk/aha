@@ -18,7 +18,15 @@ class IGalleryEnabled(model.Schema):
     model.fieldset(
         'display',
         label=u"Display",
-        fields=['displayGallery', 'displayThumbnails']
+        fields=['displayCards', 'displayGallery', 'displayThumbnails']
+    )
+
+    displayCards = schema.Bool(
+        title=_(u"Enable preview cards"),
+        description=_(u"Activate preview card listing of contained items."
+                      u"This will override all other display options when "
+                      u"activated"),
+        required=False,
     )
 
     displayGallery = schema.Bool(

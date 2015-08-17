@@ -9,8 +9,11 @@
 
 <metal:main fill-slot="main">
   <metal:content-core define-macro="main">
+
+    <tal:block tal:condition="not:view/display_cards">
     <div class="app-page-content" id="app-page-content"
-            tal:attributes="class view/computed_klass">
+            tal:attributes="class view/computed_klass"
+            tal:condition="not:view/display_gallery">
         <div class="app-page-header">
           <div class="app-page-title">
               <h1 class="app-page-headline" tal:content="context/Title">
@@ -31,41 +34,33 @@
             <div tal:replace="structure view/rendered_thumbnails" />
         </tal:thumbs>
     </div>
-    <div class="app-page-gallery" id="app-page-gallery">
-        <tal:gallery tal:condition="view/display_gallery">
-            <div tal:replace="structure view/rendered_gallery" />
-        </tal:gallery>
+    <div class="app-page-gallery" id="app-page-gallery"
+      tal:condition="view/display_gallery">
+        <div tal:replace="structure view/rendered_gallery" />
     </div>
+    </tal:block>
 
-      <tal:nogallery tal:condition="not:view/display_gallery">
-          <div class="app-page-leadimage" tal:condition="view/has_leadimage">
-              <figure class="app-page-image-container"
-                      tal:define="image_data view/image_data">
-                  <div class="ratio-container">
-                      <img  class="lazyload"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-sizes="auto"
-                            data-srcset="${image_data/small},
-                                         ${image_data/medium},
-                                         ${image_data/large}" />
-                  </div>
-                  <noscript>
-                      <!-- Provide fallback for missing lazyload javascript -->
-                      <img tal:define="has_img context/image|nothing;
-                              scales context/@@images|nothing"
-                              tal:condition="python:has_img and scales"
-                              tal:replace="structure python: scales.scale('image', scale='mini').tag(css_class='newsImage')" />
-                  </noscript>
-                  <figcaption tal:condition="context/image_caption">
-                          ${context/image_caption}
-                  </figcaption>
-              </figure>
+    <tal:cards tal:condition="view/display_cards">
+      <div class="app-page-cards" tal:condition="view/has_subitems">
+        <tal:row tal:repeat="row view/content_matrix">
+          <div class="app-page-section"
+            tal:define="evenrow repeat/row/even"
+            tal:attributes="class python:evenrow and 'app-page-section app-page-section-inverse' or 'app-page-section'">
+            <tal:col tal:repeat="col row">
+              <div class="app-page-col"
+                tal:define="evenrow repeat/col/even;
+                            item col/item"
+                tal:attributes="class python:evenrow and 'app-page-col app-page-col-main' or 'app-page-col app-page-col-aside'">
+                <p>${item/Title}</p>
+              </div>
+            </tal:col>
           </div>
-      </tal:nogallery>
+        </tal:row>
+      </div>
+    </tal:cards>
 
   </metal:content-core>
 </metal:main>
 
 </body>
 </html>
-
