@@ -14,61 +14,10 @@ class FrontPageView(BrowserView):
     """ General purpose frontpage view """
 
     def __call__(self):
-        self.has_projects = len(self.projects()) > 0
         return self.render()
 
     def render(self):
         return self.index()
-
-    def can_edit(self):
-        show = False
-        if not api.user.is_anonymous():
-            show = True
-        return show
-
-    def projects(self):
-        portal = api.portal.get()
-        context = portal['models']
-        return context.restrictedTraverse('@@folderListing')(
-            portal_type='aha.sitecontent.project',
-            review_state='published')
-
-    def _project_assets(self, uuid):
-        project = api.content.get(UID=uuid)
-        data = getattr(project, 'assets')
-        if data is None:
-            data = dict()
-        return data
-
-    def _assets(self, uuid):
-        return json.loads(self._project_assets(uuid))
-
-    def has_preview_image(self, uuid):
-        """ Test if we have an available preview image """
-        assets = self._assets(uuid)
-        return len(assets['items']) > 0
-
-    def get_preview_container(self, uuid):
-        data = self._assets(uuid)
-        items = data['items']
-        return items[0]
-
-    def rendered_preview_image(self, uuid):
-        item = api.content.get(UID=uuid)
-        return item.restrictedTraverse('@@stack-preview')()
-
-    def computed_class(self, uuid):
-        item = api.content.get(UID=uuid)
-        item_cat = 'artist'
-        subjects = item.Subject()
-        if subjects:
-            item_cat = subjects[0]
-        klass = 'app-card-{0} {1}'.format(uuid, item_cat)
-        return klass
-
-    def available_filter(self):
-        catalog = api.portal.get_tool('portal_catalog')
-        return catalog.uniqueValuesFor('Subject')
 
     def image_tag(self, item):
         data = {}
