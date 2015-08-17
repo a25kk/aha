@@ -14,32 +14,32 @@
       tal:define="portal_url context/portal_url;
                   section view/section">
       <li class="app-navitem active">
-        <a class="app-navitem-tab app-navitem-tab-home" href="${portal_url}/${section}/unternehmen/">
+        <a class="app-navitem-tab" href="${portal_url}/${section}/unternehmen/">
           <span>Unternehmen</span>
         </a>
       </li>
       <li class="app-navitem">
-        <a class="app-navitem-tab app-navitem-tab-aktuelles" href="${portal_url}/${section}/projekte">
+        <a class="app-navitem-tab" href="${portal_url}/${section}/projekte">
           <span>Projekte</span>
         </a>
       </li>
       <li class="app-navitem">
-        <a class="app-navitem-tab app-navitem-tab-service" href="${portal_url}/${section}/konzeption">
+        <a class="app-navitem-tab" href="${portal_url}/${section}/konzeption">
           <span>Konzeption</span>
         </a>
       </li>
       <li class="app-navitem">
-        <a class="app-navitem-tab app-navitem-tab-info" href="${portal_url}/${section}/beratung">
+        <a class="app-navitem-tab" href="${portal_url}/${section}/beratung-360deg">
           <span>Beratung</span>
         </a>
       </li>
       <li class="app-navitem">
-        <a class="app-navitem-tab app-navitem-tab-landratsamt" href="${portal_url}/${section}/aktuell">
+        <a class="app-navitem-tab" href="${portal_url}/${section}/aktuell">
           <span>Aktuell</span>
         </a>
       </li>
       <li class="app-navitem">
-        <a class="app-navitem-tab app-navitem-tab-hier-leben" href="${portal_url}/${section}/kontakt">
+        <a class="app-navitem-tab" href="${portal_url}/${section}/kontakt">
           <span>Kontakt</span>
         </a>
       </li>
