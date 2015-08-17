@@ -1,14 +1,25 @@
 # -*- coding: utf-8 -*-
 """Module providing views for the folderish content page type"""
+import math
 from Acquisition import aq_inner
 from Products.Five.browser import BrowserView
+from plone import api
 from zope.component import getMultiAdapter
+from aha.sitecontent.contentpage import IContentPage
 
 IMG = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs='
 
 
 class ContentPageView(BrowserView):
     """ Folderish content page default view """
+
+
+    def __call__(self):
+        self.has_subitems = len(self.contained_pages()) > 0
+        return self.render()
+
+    def render(self):
+        return self.index()
 
     def has_leadimage(self):
         context = aq_inner(self.context)
@@ -57,6 +68,33 @@ class ContentPageView(BrowserView):
         if self.display_thumbnails():
             klass = klass + ' has-thumbnails'
         return klass
+
+    def contained_pages(self):
+        context = aq_inner(self.context)
+        items = api.content.find(
+            context=context,
+            depth=1,
+            object_provides=IContentPage,
+            review_state='published'
+        )
+        return items
+
+    def content_matrix(self):
+        items = self.contained_pages()
+        count = len(items)
+        rowcount = count / 2.0
+        rows = math.ceil(rowcount)
+        matrix = []
+        for i in range(int(rows)):
+            row = []
+            for j in range(2):
+                index = 2 * i + j
+                if index <= int(count - 1):
+                    cell = {}
+                    cell['item'] = items[index]
+                    row.append(cell)
+            matrix.append(row)
+        return matrix
 
     def rendered_thumbnails(self):
         context = aq_inner(self.context)

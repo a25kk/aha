@@ -97,6 +97,9 @@
 .app-page-section {
     @media (min-width: $grid-float-breakpoint) {
         display: flex;
+        &-inverse {
+            flex-direction: row-reverse;
+        }
     }
 }
 

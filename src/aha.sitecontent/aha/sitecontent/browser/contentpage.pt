@@ -41,6 +41,22 @@
     </tal:block>
 
     <tal:cards tal:condition="view/display_cards">
+      <div class="app-page-cards" tal:condition="view/has_subitems">
+        <tal:row tal:repeat="row view/content_matrix">
+          <div class="app-page-section"
+            tal:define="evenrow repeat/row/even"
+            tal:attributes="class python:evenrow and 'app-page-section app-page-section-inverse' or 'app-page-section'">
+            <tal:col tal:repeat="col row">
+              <div class="app-page-col"
+                tal:define="evenrow repeat/col/even;
+                            item col/item"
+                tal:attributes="class python:evenrow and 'app-page-col app-page-col-main' or 'app-page-col app-page-col-aside'">
+                <p>${item/Title}</p>
+              </div>
+            </tal:col>
+          </div>
+        </tal:row>
+      </div>
     </tal:cards>
 
   </metal:content-core>
@@ -48,4 +64,3 @@
 
 </body>
 </html>
-
