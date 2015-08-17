@@ -42,7 +42,6 @@ class NavBarView(BrowserView):
         portal_tabs_view = getMultiAdapter((self.context, self.request),
                                            name='portal_tabs_view')
         portal_tabs = portal_tabs_view.topLevelTabs()
-        # selectedTabs = self.context.restrictedTraverse('selectedTabs')
         selected_tabs = self.selectedTabs(portal_tabs=portal_tabs)
         selected_section =  selected_tabs['portal']
         if selected_section != 'index_html':
