@@ -8920,6 +8920,9 @@ body.section-front-page .app-pathbar {
   .app-page {
     padding-left: 1.5rem;
   }
+  .app-page-frontpage {
+    padding-left: 0;
+  }
 }
 
 .app-page-content {
