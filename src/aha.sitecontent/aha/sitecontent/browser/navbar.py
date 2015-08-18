@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 """Module providing custom navbar"""
 from Products.Five.browser import BrowserView
-from Products.ZCatalog.interfaces import ICatalogBrain
 from plone import api
-from plone.app.contentlisting.interfaces import IContentListingObject
 from zope.component import getMultiAdapter
 
 
@@ -43,7 +41,7 @@ class NavBarView(BrowserView):
                                            name='portal_tabs_view')
         portal_tabs = portal_tabs_view.topLevelTabs()
         selected_tabs = self.selectedTabs(portal_tabs=portal_tabs)
-        selected_section =  selected_tabs['portal']
+        selected_section = selected_tabs['portal']
         if selected_section != 'index_html':
             section = portal[selected_section]
             return section.getId()

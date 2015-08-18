@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 """Module providing views for the site navigation root"""
-import json
 from Products.Five.browser import BrowserView
 from Products.ZCatalog.interfaces import ICatalogBrain
-from plone import api
 from plone.app.contentlisting.interfaces import IContentListingObject
 from zope.component import getMultiAdapter
 
