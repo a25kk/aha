@@ -126,7 +126,7 @@
 // Project panel links
 .app-project-panel {
     color: $gray-darker;
-    .app-main-inverse & {
-        color: $gray-lighter;
+    @include when-inside('.app-main-inverse') {
+      color: $gray-lighter;
     }
 }
