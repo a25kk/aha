@@ -54,7 +54,7 @@
                 <div class="ratio-container"
                   tal:define="image_data python:view.image_tag(item)">
                     <a class="app-project-panel" href="${item/getURL}">
-                        <img class="slazyload"
+                        <img class="lazyload"
                               src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                               data-sizes="auto"
                               data-srcset="${image_data/small},
