@@ -13,7 +13,6 @@ IMG = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs='
 class ContentPageView(BrowserView):
     """ Folderish content page default view """
 
-
     def __call__(self):
         self.has_subitems = len(self.contained_pages()) > 0
         return self.render()
@@ -73,7 +72,6 @@ class ContentPageView(BrowserView):
         context = aq_inner(self.context)
         items = api.content.find(
             context=context,
-            depth=1,
             object_provides=IContentPage,
             review_state='published'
         )
@@ -229,6 +227,7 @@ class GalleryView(BrowserView):
             item['width'] = '1px'
             item['height'] = '1px'
         return item
+
 
 class GalleryThumbnailView(BrowserView):
     """ Optional thumbnail overlay content """
