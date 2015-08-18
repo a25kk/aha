@@ -17544,14 +17544,6 @@ return Flickity;
       });
       // Enable gallery and masonry scripts based on screen size
       if (mq.matches) {
-        var bannerflkty = new Flickity('.app-js-carousel', {
-          autoPlay: true,
-          contain: true,
-          wrapAround: true,
-          imagesLoaded: true,
-          cellSelector: '.app-banner-item',
-          cellAlign: 'left'
-        });
         var flkty = new Flickity('.main-gallery', {
           autoPlay: true,
           contain: true,

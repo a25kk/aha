@@ -51,7 +51,18 @@
                 tal:define="evenrow repeat/col/even;
                             item col/item"
                 tal:attributes="class python:evenrow and 'app-page-col app-page-col-main' or 'app-page-col app-page-col-aside'">
-                <p>${item/Title}</p>
+                <div class="ratio-container"
+                  tal:define="image_data python:view.image_tag(item)">
+                    <a class="app-project-panel" href="${item/getURL}">
+                        <img class="slazyload"
+                              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                              data-sizes="auto"
+                              data-srcset="${image_data/small},
+                                           ${image_data/medium},
+                                           ${image_data/large}" />
+                    </a>
+                </div>
+                <p><a class="app-project-panel" href="${item/getURL}">${item/Title}</a></p>
               </div>
             </tal:col>
           </div>

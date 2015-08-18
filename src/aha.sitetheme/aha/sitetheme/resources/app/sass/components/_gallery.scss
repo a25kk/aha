@@ -1,0 +1,31 @@
+//
+// Gallery
+// ---------------------------------------------------
+
+.app-gallery {
+    height: 100vh;
+}
+
+.project-gallery {
+    position: relative;
+}
+
+.app-gallery-caption {
+    @media (min-width: $grid-float-breakpoint) {
+        position: absolute;
+        top: 2rem;
+        left: 4rem;
+        z-index: 1001;
+        width: 25%;
+        padding: 1rem;
+        background: $gray-dark;
+    }
+}
+
+.app-gallery-cell {
+    width: 100%;
+    @media (min-width: $grid-float-breakpoint) {
+        height: 100vh;
+        // @extend .ratio-container;
+    }
+}
