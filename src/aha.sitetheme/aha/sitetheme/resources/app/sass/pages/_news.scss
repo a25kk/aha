@@ -1,0 +1,48 @@
+// Listing
+
+.app-summary-wrapper {
+  @extend .make-row;
+  min-height: 500px;
+  border-bottom: 1px solid $app-gray;
+  padding-top: $line-height-computed;
+  padding-bottom: $line-height-computed;
+  .app-sumary-left {
+    @include make-md-column(8);
+    padding-left: 0 !important;
+  }
+  .app-sumary-right {
+    @include make-md-column(4);
+    padding-left: 0 !important;
+    padding-top: $line-height-computed * 3;
+  }
+}
+
+// News
+
+.tileItem {
+  border: 0px solid red;
+  display: block;
+  min-height: 500px;
+}
+
+.newsImage {
+  @extend .img-responsive;
+  width: 100%;
+  margin-bottom: $line-height-computed;
+}
+
+.tileImage {
+   @extend .img-responsive;
+  //margin-bottom: $line-height-computed;
+  float: left;
+}
+
+.tileHeadline {
+  font-size: 1.5rem;
+  line-height: $line-height-computed * 1.5;
+  text-transform: uppercase;
+}
+
+.option {
+  display: block;
+}
