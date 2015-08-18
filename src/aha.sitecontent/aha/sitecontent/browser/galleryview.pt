@@ -19,7 +19,7 @@
               tal:content="structure context/text/output" />
           </div>
         </div>
-        <talblock tal:condition="images">
+        <tal:block tal:condition="images">
           <div class="app-gallery-cell project-gallery-item item" tal:repeat="item images">
             <tal:item tal:define="img python:view.image_tag(item)">
               <img class="lazyload" src="${img/url}"
@@ -27,7 +27,7 @@
                 alt="" />
             </tal:item>
           </div>
-        </talblock>
+        </tal:block>
       </div>
   </div>
 </div>
