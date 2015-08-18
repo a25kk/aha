@@ -72,8 +72,9 @@ class ContentPageView(BrowserView):
 
     def contained_pages(self):
         context = aq_inner(self.context)
-        items = api.content.find(
+        items =  api.content.find(
             context=context,
+            depth=2,
             object_provides=IContentPage,
             review_state='published'
         )
