@@ -53,7 +53,7 @@
                 tal:attributes="class python:evenrow and 'app-page-col app-page-col-main' or 'app-page-col app-page-col-aside'">
                 <div class="ratio-container"
                   tal:define="image_data python:view.image_tag(item)">
-                    <a href="${item/getURL}">
+                    <a class="app-project-panel" href="${item/getURL}">
                         <img class="app-img-card lazyload"
                               src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                               data-sizes="auto"
@@ -62,7 +62,7 @@
                                            ${image_data/large}" />
                     </a>
                 </div>
-                <p><a href="${item/getURL}">${item/Title}</a></p>
+                <p><a class="app-project-panel" href="${item/getURL}">${item/Title}</a></p>
               </div>
             </tal:col>
           </div>
