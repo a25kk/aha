@@ -2676,7 +2676,7 @@ textarea {
 }
 
 a {
-  color: #333;
+  color: #000;
   text-decoration: none;
 }
 a:hover,
@@ -2906,12 +2906,12 @@ mark,
 }
 
 .text-primary {
-  color: #333;
+  color: #000;
 }
 
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #1a1a1a;
+  color: black;
 }
 
 .text-success {
@@ -2955,12 +2955,12 @@ a.text-danger:focus {
 }
 
 .bg-primary {
-  background-color: #333;
+  background-color: #000;
 }
 
 a.bg-primary:hover,
 a.bg-primary:focus {
-  background-color: #1a1a1a;
+  background-color: black;
 }
 
 .bg-success {
@@ -5247,25 +5247,25 @@ fieldset[disabled] a.btn, fieldset[disabled] a.searchButton {
 
 .btn-primary {
   color: #fff;
-  background-color: #333;
+  background-color: #000;
   border-color: #2e6da4;
 }
 .btn-primary:focus,
   .btn-primary.focus {
   color: #fff;
-  background-color: #1a1a1a;
+  background-color: black;
   border-color: #122b40;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color: #1a1a1a;
+  background-color: black;
   border-color: #204d74;
 }
 .btn-primary:active,
   .btn-primary.active,
   .open > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #1a1a1a;
+  background-color: black;
   border-color: #204d74;
 }
 .btn-primary:active:hover,
@@ -5278,7 +5278,7 @@ fieldset[disabled] a.btn, fieldset[disabled] a.searchButton {
     .open > .btn-primary.dropdown-toggle:focus,
     .open > .btn-primary.dropdown-toggle.focus {
   color: #fff;
-  background-color: #080808;
+  background-color: black;
   border-color: #122b40;
 }
 .btn-primary:active,
@@ -5304,11 +5304,11 @@ fieldset[disabled] a.btn, fieldset[disabled] a.searchButton {
   fieldset[disabled] .btn-primary.focus,
   fieldset[disabled] .btn-primary:active,
   fieldset[disabled] .btn-primary.active {
-  background-color: #333;
+  background-color: #000;
   border-color: #2e6da4;
 }
 .btn-primary .badge {
-  color: #333;
+  color: #000;
   background-color: #fff;
 }
 
@@ -5582,7 +5582,7 @@ fieldset[disabled] a.btn, fieldset[disabled] a.searchButton {
 
 .btn-link {
   font-weight: normal;
-  color: #333;
+  color: #000;
   border-radius: 0;
 }
 .btn-link,
@@ -5891,7 +5891,7 @@ tbody.collapse.in {
   .app-toolbar-nav .open > a:hover,
   .nav .open > a:focus, .app-toolbar-nav .open > a:focus {
   background-color: #eee;
-  border-color: #333;
+  border-color: #000;
 }
 .nav .nav-divider, .app-toolbar-nav .nav-divider {
   height: 1px;
@@ -7483,7 +7483,7 @@ div.riform .label {
 }
 
 .app-primary {
-  background-color: #333;
+  background-color: #000;
 }
 
 .app-default-bg {
@@ -7671,7 +7671,7 @@ div.riform .label {
   line-height: 1;
   color: #333;
   text-transform: uppercase;
-  background-color: #333;
+  background-color: #000;
   transition: background-color .5s ease;
 }
 .app-header-inverse .app-navitem-tab {
@@ -7680,7 +7680,7 @@ div.riform .label {
 .app-navitem-tab:hover {
   color: #222;
   text-decoration: underline; 
-  background-color: #222;
+  background-color: black;
 }
 .app-header-inverse .app-navitem-tab:hover {
   color: #dedede;
@@ -8169,7 +8169,7 @@ textarea {
   padding: 1rem .3125rem;
   color: #fff;
   text-align: center; 
-  background: #333;
+  background: #000;
 
   -webkit-flex: 1;
       -ms-flex: 1;
@@ -8181,7 +8181,7 @@ textarea {
 }
 
 .app-action-search {
-  color: #333;
+  color: #000;
   background: #edeaea; 
 
   -webkit-flex: 1;
@@ -8207,14 +8207,14 @@ textarea {
   border-color: #edeaea;
 }
 .app-searchbox-field::-moz-placeholder {
-  color: #333;
+  color: #000;
   opacity: 1;
 }
 .app-searchbox-field:-ms-input-placeholder {
-  color: #333;
+  color: #000;
 }
 .app-searchbox-field::-webkit-input-placeholder {
-  color: #333;
+  color: #000;
 }
 
 .app-searchbox-btn {
@@ -8289,7 +8289,7 @@ textarea {
 }
 
 .app-bannerbar {
-  background: #333;
+  background: #000;
 }
 
 .app-banner {
@@ -8346,7 +8346,7 @@ textarea {
 }
 .app-search .input-group-addon {
   color: #fff; 
-  background: #333;
+  background: #000;
 }
 
 .app-page-scroll {
@@ -8484,7 +8484,7 @@ body.section-front-page .app-pathbar {
 
 .app-card-main {
   padding: .3125rem .625rem;
-  background: #333;
+  background: #000;
 }
 
 .app-card-footer {
@@ -8565,7 +8565,7 @@ body.section-front-page .app-pathbar {
 
 .app-signin-title {
   font-weight: 400;
-  color: #333;
+  color: #000;
 }
 
 .app-signin-content {
@@ -9392,7 +9392,7 @@ body.section-front-page .app-pathbar {
 
 .app-navbar-collapsed,
 .app-navbar-open {
-  background-color: #333;
+  background-color: #000;
   border-bottom: 0;
 }
 
@@ -9553,7 +9553,7 @@ body.section-front-page .app-pathbar {
 }
 
 .color-swatches .app-primary {
-  background-color: #333;
+  background-color: #000;
 }
 
 .color-swatches .app-primary-light {

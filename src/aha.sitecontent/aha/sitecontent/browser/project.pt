@@ -15,16 +15,6 @@
           <div class="app-page-block app-page-toolbar"
             tal:define="context_state context/@@plone_context_state;
                         parent context_state/parent">
-            <div class="app-page-block-content app-page-toolbar-title">
-              <div class="app-page-toolbar-name"><a href="${parent/absolute_url}">Media Manager</a></div>
-              <small>Manage ${context/Title} media</small>
-            </div>
-            <div class="app-page-block-aside">
-              <a class="app-page-toolbar-action pull-right" href="#"
-                tal:attributes="href string:${context/absolute_url}/@@asset-manager">
-                <span i18n:translate="">Manage</span>
-              </a>
-            </div>
           </div>
         </div>
         <div class="app-page-header">
@@ -35,9 +25,6 @@
         <p class="app-page-abstract"
             tal:condition="context/Description"
             tal:content="context/Description" />
-
-        
-
         <div class="app-page-content app-project-content">
             <div class="app-page-gallery"
               tal:define="contained_images python:context.restrictedTraverse('@@folderListing')(portal_type='Image')">
@@ -46,14 +33,6 @@
                   <div class="no-data-sign">
                     <i class="ion ion-ios7-more app-icon-lg"></i>
                   </div>
-                  <div class="no-data-title" i18n:translate="">No project gallery available</div>
-                  <p i18n:translate="">No images have been asigned to this project yet</p>
-                  <a class="btn btn-default"
-                    href="${context/absolute_url}/@@assets-factory/create">
-                    <span i18n:translate="">Manage gallery</span>
-                    <i class="ion ion-ios7-arrow-thin-right app-icon-lg"></i>
-                  </a>
-              </div>
               <div class="app-gallery" tal:condition="view/has_assets">
                   <div class="project-gallery main-gallery" tal:define="items view/image_list">
                     <div class="app-gallery-cell project-gallery-item item" tal:repeat="item items">
@@ -94,24 +73,8 @@
             </div>
           </div>
         </div>
-
-        <div class="app-social">
-        <h3>Share it!</h3>
-          <ul>
-            <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmodelsintheraw.com&t=Models%20in%20the%20Raw" title="Share on Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fmodelsintheraw.com&text=Models%20in%20the%20Raw:%20http%3A%2F%2Fmodelsintheraw.com&via=modelsintheraw" target="_blank" title="Tweet"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fmodelsintheraw.com" target="_blank" title="Share on Google+"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="http://www.tumblr.com/share?v=3&u=http%3A%2F%2Fmodelsintheraw.com&t=Models%20in%20the%20Raw&s=" target="_blank" title="Post to Tumblr"><i class="fa fa-tumblr"></i></a></li>
-            <li><a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fmodelsintheraw.com&description=" target="_blank" title="Pin it"><i class="fa fa-pinterest-p"></i></a></li>
-            <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fmodelsintheraw.com&title=Models%20in%20the%20Raw&summary=&source=http%3A%2F%2Fmodelsintheraw.com" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
-        </div>
-
     </div>
-
   </metal:content-core>
 </metal:main>
-
 </body>
 </html>
-
