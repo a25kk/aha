@@ -11870,9 +11870,10 @@ if (typeof window !== 'undefined' && window.jQuery) {
 						(eLleft = rect.left) <= eLvW &&
 						(eLbottom || eLright || eLleft || eLtop) &&
 						((isCompleted && isLoading < 3 && !elemExpandVal && (loadMode < 3 || lowRuns < 4)) || isNestedVisible(lazyloadElems[i], elemExpand))){
-						unveilElement(lazyloadElems[i], rect.width);
+						unveilElement(lazyloadElems[i]);
 						loadedSomething = true;
-						if(isLoading > 6){currentExpand = shrinkExpand;}
+						if(isLoading > 12){break;}
+						if(isLoading > 7){currentExpand = shrinkExpand;}
 					} else if(!loadedSomething && isCompleted && !autoLoadElem &&
 						isLoading < 3 && lowRuns < 4 && loadMode > 2 &&
 						(preloadElems[0] || lazySizesConfig.preloadAfterLoad) &&
@@ -11921,8 +11922,8 @@ if (typeof window !== 'undefined' && window.jQuery) {
 			};
 		})();
 
-		var unveilElement = function (elem, width){
-			var sources, i, len, sourceSrcset, src, srcset, parent, isPicture, event, firesLoad, customMedia;
+		var unveilElement = function (elem){
+			var sources, i, len, sourceSrcset, src, srcset, parent, isPicture, event, firesLoad, customMedia, width;
 
 			var isImg = regImg.test(elem.nodeName);
 
@@ -11933,7 +11934,7 @@ if (typeof window !== 'undefined' && window.jQuery) {
 			if( (isAuto || !isCompleted) && isImg && (elem.src || elem.srcset) && !elem.complete && !hasClass(elem, lazySizesConfig.errorClass)){return;}
 
 			if(isAuto){
-				width = Math.max(width || 0, elem.offsetWidth);
+				width = elem.offsetWidth;
 			}
 
 			elem._lazyRace = true;
@@ -12019,6 +12020,7 @@ if (typeof window !== 'undefined' && window.jQuery) {
 		};
 
 		var onload = function(){
+			if(isCompleted){return;}
 			var scrollTimer;
 			var afterScroll = function(){
 				lazySizesConfig.loadMode = 3;
@@ -12108,6 +12110,7 @@ if (typeof window !== 'undefined' && window.jQuery) {
 				} else {
 					addEventListener('load', onload);
 					document.addEventListener('DOMContentLoaded', throttledCheckElements);
+					setTimeout(onload, 25000);
 				}
 
 				throttledCheckElements();

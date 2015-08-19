@@ -74,7 +74,8 @@
 //
 //## Container providing visual separation
 .app-page-section {
-    margin: 1rem 0 2rem;
+    margin: 1rem 0 3rem;
+    border: 0px solid red;
 }
 
 //== Responsive image
@@ -82,6 +83,12 @@
 //## Class to resize standalone images based
 //## on viewport sizes
 .app-image {
+    @media (max-width: $grid-float-breakpoint) {
+        @extend .img-responsive;
+    }
+}
+
+.image-inline {
     @media (max-width: $grid-float-breakpoint) {
         @extend .img-responsive;
     }
@@ -100,15 +107,21 @@
 }
 
 .app-page-col {
+    padding: $line-height-computed;
     @media (min-width: $grid-float-breakpoint) {
         flex: 1;
         &-main {
-            flex: 0 0 60%;
+            flex: 0 0 40%;
+            padding: 0 $line-height-computed 0 0;
         }
         &-aside {
-            flex: 0 0 40%;
+            flex: 0 0 60%;
         }
     }
+}
+
+.app-page-col-header {
+    text-transform: uppercase;
 }
 
 

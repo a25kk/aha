@@ -5,8 +5,7 @@
 
 .app-header {
   @media (min-width: $grid-float-breakpoint-max) {
-    padding-left: $line-height-computed;
-    padding-bottom: 1rem;
+    padding: $line-height-computed;
     border-bottom: none;
   }
 }
