@@ -71,18 +71,9 @@
                   <div class="app-card"
                     tal:define="item_uid item/UID;
                                 item_idx repeat/item/index;
-                                preview python:view.has_preview_image(item_uid);
                                 klass python:view.computed_class(item_uid)"
                     tal:attributes="class string:app-card js-isotope-item ${klass}">
-                        <div class="app-card-media" tal:condition="preview">
-                            <a class=""
-                              tal:define="stack python:view.get_preview_container(item_uid)"
-                              tal:attributes="href string:${item/getURL}">
-                              <img tal:replace="structure python:view.rendered_preview_image(stack)" />
-                            </a>
-                        </div>
                         <div class="app-card-content app-card-media-placeholder text-center lazyload"
-                            tal:condition="not:preview"
                             tal:define="portal_url context/portal_url">
                             <div class="app-card-placeholder-sign">
                               &hellip;
