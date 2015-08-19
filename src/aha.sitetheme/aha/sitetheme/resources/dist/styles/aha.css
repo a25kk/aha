@@ -7698,6 +7698,12 @@ div.riform .label {
   }
 }
 
+@media (min-width: 767px) {
+  .app-navitem-beratung {
+    margin-bottom: 4.285714287rem;
+  }
+}
+
 .app-footer {
   padding-top: 1.428571429rem;
   padding-bottom: 1.428571429rem;
@@ -9107,7 +9113,7 @@ body.section-front-page .app-pathbar {
 }
 .app-main-inverse {
   color: #eee; 
-  background: #333;
+  background: #000;
 }
 
 @media (min-width: 768px) {

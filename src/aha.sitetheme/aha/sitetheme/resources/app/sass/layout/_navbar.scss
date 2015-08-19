@@ -177,3 +177,9 @@
       min-height: 70px;
     }
 }
+
+.app-navitem-beratung {
+  @media (min-width: $grid-float-breakpoint-max) {
+    margin-bottom: $line-height-computed * 3;
+  }
+}

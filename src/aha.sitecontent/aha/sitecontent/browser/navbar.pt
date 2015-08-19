@@ -13,7 +13,21 @@
     <ul class="xnav xnavbar-nav app-navbar-nav" id="app-navbar-nav"
       tal:define="portal_url context/portal_url;
                   section view/section">
-      <li class="app-navitem active">
+      <li class="app-navitem">
+        <a class="app-navitem-tab" href="${portal_url}/raum">
+          <span>Raum</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab" href="${portal_url}/licht">
+          <span>Licht</span>
+        </a>
+      </li>
+      <li class="app-navitem app-navitem-beratung">
+        <a class="app-navitem-tab" href="${portal_url}/${section}/beratung-360deg">
+          <span>360° Beratung</span>
+        </a>
+      </li>      <li class="app-navitem active">
         <a class="app-navitem-tab" href="${portal_url}/${section}/unternehmen/">
           <span>Unternehmen</span>
         </a>
@@ -26,11 +40,6 @@
       <li class="app-navitem">
         <a class="app-navitem-tab" href="${portal_url}/${section}/konzeption">
           <span>Konzeption</span>
-        </a>
-      </li>
-      <li class="app-navitem">
-        <a class="app-navitem-tab" href="${portal_url}/${section}/beratung-360deg">
-          <span>Beratung</span>
         </a>
       </li>
       <li class="app-navitem">
