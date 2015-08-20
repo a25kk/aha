@@ -61,9 +61,12 @@ class NavBarView(BrowserView):
 
     def showrooms(self, section):
         portal = api.portal.get()
-        items = api.content.find(
-            context=portal[section]['projekte'],
-            object_provides=IShowRoom,
+        container = portal[section]['projekte']
+        catalog = api.portal.get_tool('portal_catalog')
+        items = catalog(
+            object_provides=IShowRoom.__identifier__,
+            path={'query': '/'.join(container.getPhysicalPath()),
+                  'depth': 1},
             review_state='published',
             sort_on='getObjPositionInParent'
         )

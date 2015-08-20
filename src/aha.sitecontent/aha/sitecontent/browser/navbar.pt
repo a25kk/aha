@@ -10,10 +10,15 @@
 <metal:main fill-slot="main">
   <metal:content-core define-macro="main">
 
+      <div class="app-navbar-section-marker" id="app-navbar-section-marker"
+              tal:define="portal_url context/portal_url;
+                          section view/section">
+          <a class="app-navbar-section" href="#">Licht</a>
+      </div>
       <div id="app-navbar-nav-wrapper"
           tal:define="portal_url context/portal_url;
                       section view/section">
-      <ul class="app-navbar-nav" id="app-navbar-nav">
+      <ul class="app-navbar-nav app-navbar-nav-main" id="app-navbar-nav">
           <li class="app-navitem"
                   tal:define="active python:view.active_navitem('raum')"
                   tal:attributes="class python:active and 'app-navitem active ' or 'app-navitem'">
