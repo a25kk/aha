@@ -112,7 +112,6 @@
         flex: 1;
         &-main {
             flex: 0 0 40%;
-            padding: 0 $line-height-computed 0 0;
         }
         &-aside {
             flex: 0 0 60%;
@@ -139,9 +138,12 @@
 // Project panel links
 .app-project-panel {
     display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
     color: $gray-darker;
     @include when-inside('.app-main-inverse') {
       color: $gray-lighter;
     }
-    background-size: cover;
+    background-size: contain;
 }
