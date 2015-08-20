@@ -171,7 +171,7 @@
       display: block;
       margin: 0 auto;
       @include navbar-vertical-align($line-height-computed);
-    }g add
+    }
     @media (min-width: $grid-float-breakpoint-max) {
       height: 70px;
       min-height: 70px;
