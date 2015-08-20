@@ -18,7 +18,7 @@
                   <tal:col tal:repeat="col row">
                       <div class="app-page-col"
                               tal:define="evenrow repeat/col/even;
-                                          item col/item"
+                                          iteg add m col/item"
                               tal:attributes="class python:evenrow and 'app-page-col app-page-col-main' or 'app-page-col app-page-col-aside'">
                           <div class="ratio-container hidden"
                                   tal:define="image_data python:view.image_tag(item)">
@@ -32,12 +32,13 @@
                               </a>
                           </div>
                           <div class="ratio-container lazyload"
-                               tal:define="image_data python:view.image_tag(item)"
-                               data-sizes="auto"
-                               data-bgset="${image_data/small},
-                                           ${image_data/medium},
-                                           ${image_data/large}">
-                              <a class="app-project-panel" href="${item/getURL}">${item/Title}</a>
+                               tal:define="image_data python:view.image_tag(item)">
+                              <a class="app-project-panel" href="${item/getURL}"
+                                 data-sizes="auto"
+                                 data-bgset="${image_data/small},
+                                             ${image_data/medium},
+                                             ${image_data/large}">
+                                      ${item/Title}</a>
                           </div>
                       </div>
                   </tal:col>
