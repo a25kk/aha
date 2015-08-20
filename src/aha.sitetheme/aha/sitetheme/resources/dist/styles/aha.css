@@ -3956,8 +3956,8 @@ table {
 }
 
 caption {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  padding-top: .6666666667rem;
+  padding-bottom: .6666666667rem;
   color: #777;
   text-align: left;
 }
@@ -3977,7 +3977,7 @@ th {
   .table > tbody > tr > td,
   .table > tfoot > tr > th,
   .table > tfoot > tr > td {
-  padding: .5rem;
+  padding: .6666666667rem;
   line-height: 1.428571429;
   vertical-align: top;
   border-top: 1px solid #ddd;
@@ -4007,7 +4007,7 @@ th {
 .table-condensed > tbody > tr > td,
 .table-condensed > tfoot > tr > th,
 .table-condensed > tfoot > tr > td {
-  padding: .3125rem;
+  padding: .4166666667rem;
 }
 
 .table-bordered {
@@ -4273,7 +4273,7 @@ input[type="checkbox"]:focus {
 
 output {
   display: block;
-  padding-top: 1.375rem;
+  padding-top: 1.5rem;
   font-size: 1rem;
   line-height: 1.428571429;
   color: #555;
@@ -4297,8 +4297,8 @@ input[type="tel"],
 input[type="color"], .app-searchbox-field {
   display: block;
   width: 100%;
-  height: 2.178571429rem;
-  padding: .375rem .75rem;
+  height: 2.428571429rem;
+  padding: .5rem 1rem;
   font-size: 1rem;
   line-height: 1.428571429;
   color: #555;
@@ -4463,7 +4463,7 @@ input[type="search"] {
   input[type="datetime-local"].form-control,
   input[type="datetime-local"],
   input[type="month"].form-control, input[type="month"] {
-    line-height: 2.178571429rem;
+    line-height: 2.428571429rem;
   }
   input[type="date"].input-sm,
   .input-group-sm > input[type="date"],
@@ -4485,7 +4485,7 @@ input[type="search"] {
   .input-group-sm > .input-group-btn > input[type="month"].btn,
   .input-group-sm > .input-group-btn > input[type="month"].searchButton,
   .input-group-sm input[type="month"] {
-    line-height: 1.9rem;
+    line-height: 2.1083333333rem;
   }
   input[type="date"].input-lg,
   .input-group-lg > input[type="date"],
@@ -4507,7 +4507,7 @@ input[type="search"] {
   .input-group-lg > .input-group-btn > input[type="month"].btn,
   .input-group-lg > .input-group-btn > input[type="month"].searchButton,
   .input-group-lg input[type="month"] {
-    line-height: 2.916666625rem;
+    line-height: 3.3333332917rem;
   }
 }
 
@@ -4587,8 +4587,8 @@ fieldset[disabled] .checkbox label {
 
 .form-control-static {
   min-height: 2.428571429rem; 
-  padding-top: 1.375rem;
-  padding-bottom: 1.375rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   margin-bottom: 0;
 }
 .form-control-static.input-lg,
@@ -4657,8 +4657,8 @@ fieldset[disabled] .checkbox label {
 .input-group-sm > .app-searchbox-field,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn, .input-group-sm > .input-group-btn > .searchButton {
-  height: 1.9rem;
-  padding: .3125rem .625rem;
+  height: 2.1083333333rem;
+  padding: .4166666667rem .8333333333rem;
   font-size: .85rem;
   line-height: 1.5;
   border-radius: 3px;
@@ -4669,8 +4669,8 @@ select.input-sm, .input-group-sm > select.form-control,
 .input-group-sm > select.app-searchbox-field,
 .input-group-sm > select.input-group-addon,
 .input-group-sm > .input-group-btn > select.btn, .input-group-sm > .input-group-btn > select.searchButton {
-  height: 1.9rem;
-  line-height: 1.9rem;
+  height: 2.1083333333rem;
+  line-height: 2.1083333333rem;
 }
 
 textarea.input-sm,
@@ -4686,16 +4686,16 @@ select[multiple].input-sm, .input-group-sm > select[multiple],
 }
 
 .form-group-sm .form-control, .form-group-sm select, .form-group-sm textarea, .form-group-sm input[type="text"], .form-group-sm input[type="password"], .form-group-sm input[type="datetime"], .form-group-sm input[type="datetime-local"], .form-group-sm input[type="date"], .form-group-sm input[type="month"], .form-group-sm input[type="time"], .form-group-sm input[type="week"], .form-group-sm input[type="number"], .form-group-sm input[type="email"], .form-group-sm input[type="url"], .form-group-sm input[type="search"], .form-group-sm input[type="tel"], .form-group-sm input[type="color"], .form-group-sm .app-searchbox-field {
-  height: 1.9rem;
-  padding: .3125rem .625rem;
+  height: 2.1083333333rem;
+  padding: .4166666667rem .8333333333rem;
   font-size: .85rem;
   line-height: 1.5;
   border-radius: 3px;
 }
 
 .form-group-sm select.form-control, .form-group-sm select {
-  height: 1.9rem;
-  line-height: 1.9rem;
+  height: 2.1083333333rem;
+  line-height: 2.1083333333rem;
 }
 
 .form-group-sm textarea.form-control,
@@ -4705,9 +4705,9 @@ select[multiple].input-sm, .input-group-sm > select[multiple],
 }
 
 .form-group-sm .form-control-static {
-  height: 1.9rem;
+  height: 2.1083333333rem;
   min-height: 2.278571429rem;
-  padding: 1.3125rem .625rem;
+  padding: 1.4166666667rem .8333333333rem;
   font-size: .85rem;
   line-height: 1.5;
 }
@@ -4732,8 +4732,8 @@ select[multiple].input-sm, .input-group-sm > select[multiple],
 .input-group-lg > .app-searchbox-field,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn, .input-group-lg > .input-group-btn > .searchButton {
-  height: 2.916666625rem;
-  padding: .625rem 1rem;
+  height: 3.3333332917rem;
+  padding: .8333333333rem 1.3333333333rem;
   font-size: 1.25rem;
   line-height: 1.3333333;
   border-radius: 6px;
@@ -4744,8 +4744,8 @@ select.input-lg, .input-group-lg > select.form-control,
 .input-group-lg > select.app-searchbox-field,
 .input-group-lg > select.input-group-addon,
 .input-group-lg > .input-group-btn > select.btn, .input-group-lg > .input-group-btn > select.searchButton {
-  height: 2.916666625rem;
-  line-height: 2.916666625rem;
+  height: 3.3333332917rem;
+  line-height: 3.3333332917rem;
 }
 
 textarea.input-lg,
@@ -4761,16 +4761,16 @@ select[multiple].input-lg, .input-group-lg > select[multiple],
 }
 
 .form-group-lg .form-control, .form-group-lg select, .form-group-lg textarea, .form-group-lg input[type="text"], .form-group-lg input[type="password"], .form-group-lg input[type="datetime"], .form-group-lg input[type="datetime-local"], .form-group-lg input[type="date"], .form-group-lg input[type="month"], .form-group-lg input[type="time"], .form-group-lg input[type="week"], .form-group-lg input[type="number"], .form-group-lg input[type="email"], .form-group-lg input[type="url"], .form-group-lg input[type="search"], .form-group-lg input[type="tel"], .form-group-lg input[type="color"], .form-group-lg .app-searchbox-field {
-  height: 2.916666625rem;
-  padding: .625rem 1rem;
+  height: 3.3333332917rem;
+  padding: .8333333333rem 1.3333333333rem;
   font-size: 1.25rem;
   line-height: 1.3333333;
   border-radius: 6px;
 }
 
 .form-group-lg select.form-control, .form-group-lg select {
-  height: 2.916666625rem;
-  line-height: 2.916666625rem;
+  height: 3.3333332917rem;
+  line-height: 3.3333332917rem;
 }
 
 .form-group-lg textarea.form-control,
@@ -4780,9 +4780,9 @@ select[multiple].input-lg, .input-group-lg > select[multiple],
 }
 
 .form-group-lg .form-control-static {
-  height: 2.916666625rem;
+  height: 3.3333332917rem;
   min-height: 2.678571429rem;
-  padding: 1.625rem 1rem;
+  padding: 1.8333333333rem 1.3333333333rem;
   font-size: 1.25rem;
   line-height: 1.3333333;
 }
@@ -4791,7 +4791,7 @@ select[multiple].input-lg, .input-group-lg > select[multiple],
   position: relative;
 }
 .has-feedback .form-control, .has-feedback select, .has-feedback textarea, .has-feedback input[type="text"], .has-feedback input[type="password"], .has-feedback input[type="datetime"], .has-feedback input[type="datetime-local"], .has-feedback input[type="date"], .has-feedback input[type="month"], .has-feedback input[type="time"], .has-feedback input[type="week"], .has-feedback input[type="number"], .has-feedback input[type="email"], .has-feedback input[type="url"], .has-feedback input[type="search"], .has-feedback input[type="tel"], .has-feedback input[type="color"], .has-feedback .app-searchbox-field {
-  padding-right: 2.7232142862rem;
+  padding-right: 3.0357142862rem;
 }
 
 .form-control-feedback {
@@ -4800,9 +4800,9 @@ select[multiple].input-lg, .input-group-lg > select[multiple],
   right: 0;
   z-index: 2;
   display: block;
-  width: 2.178571429rem;
-  height: 2.178571429rem;
-  line-height: 2.178571429rem;
+  width: 2.428571429rem;
+  height: 2.428571429rem;
+  line-height: 2.428571429rem;
   text-align: center;
   pointer-events: none;
 }
@@ -4831,9 +4831,9 @@ select[multiple].input-lg, .input-group-lg > select[multiple],
 .input-group-lg > .input-group-btn > .searchButton + .form-control-feedback,
 .input-group-lg + .form-control-feedback,
 .form-group-lg .form-control + .form-control-feedback, .form-group-lg select + .form-control-feedback, .form-group-lg textarea + .form-control-feedback, .form-group-lg input[type="text"] + .form-control-feedback, .form-group-lg input[type="password"] + .form-control-feedback, .form-group-lg input[type="datetime"] + .form-control-feedback, .form-group-lg input[type="datetime-local"] + .form-control-feedback, .form-group-lg input[type="date"] + .form-control-feedback, .form-group-lg input[type="month"] + .form-control-feedback, .form-group-lg input[type="time"] + .form-control-feedback, .form-group-lg input[type="week"] + .form-control-feedback, .form-group-lg input[type="number"] + .form-control-feedback, .form-group-lg input[type="email"] + .form-control-feedback, .form-group-lg input[type="url"] + .form-control-feedback, .form-group-lg input[type="search"] + .form-control-feedback, .form-group-lg input[type="tel"] + .form-control-feedback, .form-group-lg input[type="color"] + .form-control-feedback, .form-group-lg .app-searchbox-field + .form-control-feedback {
-  width: 2.916666625rem;
-  height: 2.916666625rem;
-  line-height: 2.916666625rem;
+  width: 3.3333332917rem;
+  height: 3.3333332917rem;
+  line-height: 3.3333332917rem;
 }
 
 .input-sm + .form-control-feedback,
@@ -4860,9 +4860,9 @@ select[multiple].input-lg, .input-group-lg > select[multiple],
 .input-group-sm > .input-group-btn > .searchButton + .form-control-feedback,
 .input-group-sm + .form-control-feedback,
 .form-group-sm .form-control + .form-control-feedback, .form-group-sm select + .form-control-feedback, .form-group-sm textarea + .form-control-feedback, .form-group-sm input[type="text"] + .form-control-feedback, .form-group-sm input[type="password"] + .form-control-feedback, .form-group-sm input[type="datetime"] + .form-control-feedback, .form-group-sm input[type="datetime-local"] + .form-control-feedback, .form-group-sm input[type="date"] + .form-control-feedback, .form-group-sm input[type="month"] + .form-control-feedback, .form-group-sm input[type="time"] + .form-control-feedback, .form-group-sm input[type="week"] + .form-control-feedback, .form-group-sm input[type="number"] + .form-control-feedback, .form-group-sm input[type="email"] + .form-control-feedback, .form-group-sm input[type="url"] + .form-control-feedback, .form-group-sm input[type="search"] + .form-control-feedback, .form-group-sm input[type="tel"] + .form-control-feedback, .form-group-sm input[type="color"] + .form-control-feedback, .form-group-sm .app-searchbox-field + .form-control-feedback {
-  width: 1.9rem;
-  height: 1.9rem;
-  line-height: 1.9rem;
+  width: 2.1083333333rem;
+  height: 2.1083333333rem;
+  line-height: 2.1083333333rem;
 }
 
 .has-success .help-block,
@@ -5031,14 +5031,14 @@ select[multiple].input-lg, .input-group-lg > select[multiple],
 .form-horizontal .checkbox,
 .form-horizontal .radio-inline,
 .form-horizontal .checkbox-inline {
-  padding-top: 1.375rem; 
+  padding-top: 1.5rem; 
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .form-horizontal .radio,
 .form-horizontal .checkbox {
-  min-height: 2.803571429rem;
+  min-height: 2.928571429rem;
 }
 
 .form-horizontal .form-group {
@@ -5056,7 +5056,7 @@ select[multiple].input-lg, .input-group-lg > select[multiple],
 
 @media (min-width: 768px) {
   .form-horizontal .control-label {
-    padding-top: 1.375rem; 
+    padding-top: 1.5rem; 
     margin-bottom: 0;
     text-align: right;
   }
@@ -5068,21 +5068,21 @@ select[multiple].input-lg, .input-group-lg > select[multiple],
 
 @media (min-width: 768px) {
   .form-horizontal .form-group-lg .control-label {
-    padding-top: 1.8333333125rem;
+    padding-top: 2.1111110833rem;
     font-size: 1.25rem;
   }
 }
 
 @media (min-width: 768px) {
   .form-horizontal .form-group-sm .control-label {
-    padding-top: 1.3125rem;
+    padding-top: 1.4166666667rem;
     font-size: .85rem;
   }
 }
 
 .btn, .searchButton {
   display: inline-block;
-  padding: .375rem .75rem;
+  padding: .5rem 1rem;
   margin-bottom: 0;
   font-size: 1rem;
   font-weight: normal;
@@ -5614,21 +5614,21 @@ fieldset[disabled] a.btn, fieldset[disabled] a.searchButton {
 }
 
 .btn-lg {
-  padding: .625rem 1rem;
+  padding: .8333333333rem 1.3333333333rem;
   font-size: 1.25rem;
   line-height: 1.3333333;
   border-radius: 6px;
 }
 
 .btn-sm {
-  padding: .3125rem .625rem;
+  padding: .4166666667rem .8333333333rem;
   font-size: .85rem;
   line-height: 1.5;
   border-radius: 3px;
 }
 
 .btn-xs {
-  padding: .0625rem .3125rem;
+  padding: .0833333333rem .4166666667rem;
   font-size: .85rem;
   line-height: 1.5;
   border-radius: 3px;
@@ -5718,7 +5718,7 @@ tbody.collapse.in {
 }
 
 .input-group-addon {
-  padding: .375rem .75rem;
+  padding: .5rem 1rem;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
@@ -5730,13 +5730,13 @@ tbody.collapse.in {
 }
 .input-group-addon.input-sm, .input-group-sm > .input-group-addon,
   .input-group-sm > .input-group-btn > .input-group-addon.btn, .input-group-sm > .input-group-btn > .input-group-addon.searchButton {
-  padding: .3125rem .625rem;
+  padding: .4166666667rem .8333333333rem;
   font-size: .85rem;
   border-radius: 0;
 }
 .input-group-addon.input-lg, .input-group-lg > .input-group-addon,
   .input-group-lg > .input-group-btn > .input-group-addon.btn, .input-group-lg > .input-group-btn > .input-group-addon.searchButton {
-  padding: .625rem 1rem;
+  padding: .8333333333rem 1.3333333333rem;
   font-size: 1.25rem;
   border-radius: 0;
 }
@@ -6267,9 +6267,9 @@ tbody.collapse.in {
 
 .navbar-form {
   padding: 10px 15px;
-  margin-top: 7.571428568px;
+  margin-top: 10.428571426px;
   margin-right: -15px;
-  margin-bottom: 7.571428568px; 
+  margin-bottom: 10.428571426px; 
   margin-left: -15px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
@@ -6360,12 +6360,12 @@ tbody.collapse.in {
 }
 
 .navbar-btn {
-  margin-top: 7.571428568px;
-  margin-bottom: 7.571428568px;
+  margin-top: 10.428571426px;
+  margin-bottom: 10.428571426px;
 }
 .navbar-btn.btn-sm {
-  margin-top: 9.8px;
-  margin-bottom: 9.8px;
+  margin-top: 12.35px;
+  margin-bottom: 12.35px;
 }
 .navbar-btn.btn-xs {
   margin-top: 14px;
@@ -6373,8 +6373,8 @@ tbody.collapse.in {
 }
 
 .navbar-text {
-  margin-top: 13.571428568px;
-  margin-bottom: 13.571428568px;
+  margin-top: 16.428571426px;
+  margin-bottom: 16.428571426px;
 }
 @media (min-width: 768px) {
   .navbar-text {
@@ -7278,16 +7278,16 @@ http://flickity.metafizzy.co
 }
 
 html {
-  font-size: 16px;
+  font-size: 12px;
 }
 @media (min-width: 768px) {
   html {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 @media (min-width: 992px) {
   html {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
@@ -7322,7 +7322,7 @@ a:hover {
 }
 
 pre {
-  font-size: .9375rem;
+  font-size: .9166666667rem;
 }
 
 .form-control-feedback {
@@ -7401,7 +7401,7 @@ input[type="color"], .app-searchbox-field {
 .form-horizontal .checkbox,
 .form-horizontal .radio-inline,
 .form-horizontal .checkbox-inline {
-  padding: .375rem;
+  padding: .5rem;
   border: 1px solid transparent;
 }
 
@@ -7411,15 +7411,15 @@ input[type="color"], .app-searchbox-field {
 }
 
 .form-horizontal .form-control-static {
-  padding-top: .375rem;
-  padding-bottom: .375rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
 }
 
 @media (min-width: 768px) {
   .form-horizontal .control-label {
-    padding-top: .375rem;
+    padding-top: .5rem;
     border-top: 1px solid transparent;
   }
 }
@@ -7492,7 +7492,7 @@ div.riform .label {
 
 @media (min-width: 767px) {
   .app-header {
-    padding: 1.428571429rem;
+    padding: 1.428571429rem 1.428571429rem 0 1.428571429rem;
     border-bottom: none;
   }
 }
@@ -7520,9 +7520,13 @@ div.riform .label {
 .app-navbar {
   border-radius: 0;
 }
+@media (min-width: 767px) {
+  .app-navbar {
+    margin-bottom: 0;
+  }
+}
 
 .app-navbar-content {
-  padding-bottom: 1rem;
   border-bottom: 1px solid #333;
 }
 .app-header-inverse .app-navbar-content {
@@ -7636,7 +7640,7 @@ div.riform .label {
 }
 
 .app-navbar-section {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #333; 
   text-transform: uppercase;
@@ -7702,6 +7706,7 @@ div.riform .label {
 }
 
 .app-navitem-tab {
+  font-size: .8rem;
   font-weight: 400;
   line-height: 1;
   color: #333;
@@ -7723,8 +7728,8 @@ div.riform .label {
 .app-navitem-tab > span {
   display: block;
   margin: 0 auto;
-  margin-top: 13.571428568px;
-  margin-bottom: 13.571428568px;
+  margin-top: 16.428571426px;
+  margin-bottom: 16.428571426px;
 }
 @media (min-width: 767px) {
   .app-navitem-tab {
@@ -8160,7 +8165,7 @@ textarea {
 
 .app-brand {
   width: 10rem;
-  margin-right: .625rem;
+  margin-right: .8333333333rem;
 }
 .app-brand-panel-inverse {
   width: 100%;
@@ -8212,7 +8217,7 @@ textarea {
 }
 
 .app-action {
-  padding: 1rem .3125rem;
+  padding: 1rem .4166666667rem;
   color: #fff;
   text-align: center; 
   background: #000;
@@ -8485,6 +8490,13 @@ body.section-front-page .app-pathbar {
     padding: 1rem;
     background: #333;
   }
+  .app-gallery-caption-inverse {
+    background: #fff;
+  }
+}
+
+.section-licht .app-gallery-caption {
+  background: #fff;
 }
 
 .app-gallery-cell {
@@ -8494,6 +8506,10 @@ body.section-front-page .app-pathbar {
   .app-gallery-cell {
     height: 100vh;
   }
+}
+
+.flickity-page-dots {
+  bottom: 100px !important;
 }
 
 .app-cards {
@@ -8520,7 +8536,7 @@ body.section-front-page .app-pathbar {
   display:         flex;
   height: 8rem;
   min-height: 8rem;
-  padding: 1rem .625rem;
+  padding: 1rem .8333333333rem;
   background: #588c73; 
 
   -webkit-align-items: center;
@@ -8529,12 +8545,12 @@ body.section-front-page .app-pathbar {
 }
 
 .app-card-main {
-  padding: .3125rem .625rem;
+  padding: .4166666667rem .8333333333rem;
   background: #000;
 }
 
 .app-card-footer {
-  padding: .3125rem .625rem;
+  padding: .4166666667rem .8333333333rem;
 }
 
 .app-card-gutter {
@@ -8962,9 +8978,6 @@ body.section-front-page .app-pathbar {
   padding-bottom: 0;
 }
 @media (min-width: 768px) {
-  .app-page {
-    padding-left: 1.5rem;
-  }
   .app-page-frontpage {
     padding-left: 0;
   }
@@ -8972,6 +8985,11 @@ body.section-front-page .app-pathbar {
 
 .app-page-content {
   z-index: 1051;
+  padding-left: 1.5rem;
+}
+
+.app-page-frontpage .app-page-content {
+  padding-left: 0;
 }
 
 .app-theme-content {
@@ -8996,6 +9014,13 @@ body.section-front-page .app-pathbar {
   height: 100%;
 }
 
+.app-page-title {
+  text-transform: uppercase;
+}
+.app-page-title .app-page-headline {
+  font-size: 1.5rem;
+}
+
 .app-page-lead,
 .app-page-abstract {
   margin-bottom: 1.428571429rem;
@@ -9006,8 +9031,12 @@ body.section-front-page .app-pathbar {
 @media (min-width: 768px) {
   .app-page-lead,
   .app-page-abstract {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
+}
+
+.app-page-body {
+  font-size: .8rem;
 }
 
 .app-page-section {

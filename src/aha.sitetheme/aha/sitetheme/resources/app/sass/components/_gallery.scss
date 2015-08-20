@@ -19,7 +19,14 @@
         width: 25%;
         padding: 1rem;
         background: $gray-dark;
+        &-inverse {
+            background: #fff;
+        }
     }
+}
+
+.section-licht .app-gallery-caption {
+    background: #fff;
 }
 
 .app-gallery-cell {
@@ -28,4 +35,8 @@
         height: 100vh;
         // @extend .ratio-container;
     }
+}
+
+.flickity-page-dots {
+    bottom: 100px !important;
 }
