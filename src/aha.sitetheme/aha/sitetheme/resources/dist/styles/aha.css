@@ -8480,9 +8480,6 @@ body.section-front-page .app-pathbar {
     padding: 1rem;
     background: #333;
   }
-  .app-gallery-caption-inverse {
-    background: #fff;
-  }
 }
 
 .section-licht .app-gallery-caption {
@@ -9026,7 +9023,7 @@ body.section-front-page .app-pathbar {
 }
 
 .app-page-body {
-  font-size: .8rem;
+  font-size: 1rem;
 }
 
 .app-page-section {
