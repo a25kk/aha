@@ -64,7 +64,7 @@ class ShowRoomView(BrowserView):
 
     def image_tag(self, item):
         data = {}
-        sizes = ['small', 'medium', 'large']
+        sizes = ['small', 'medium', 'large', 'original']
         idx = 0
         for size in sizes:
             idx += 0
@@ -87,8 +87,10 @@ class ShowRoomView(BrowserView):
                 scale = scales.scale('image', width=300, height=300)
             if size == 'medium':
                 scale = scales.scale('image', width=600, height=600)
-            else:
+            if size == 'large':
                 scale = scales.scale('image', width=900, height=900)
+            else:
+                scale = scales.scale('image', width=1200, height=1200)
             if scale is not None:
                 info['url'] = scale.url
                 info['width'] = scale.width

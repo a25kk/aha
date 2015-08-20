@@ -16,30 +16,20 @@
                       tal:define="evenrow repeat/row/even"
                       tal:attributes="class python:evenrow and 'app-page-section app-page-section-inverse' or 'app-page-section'">
                   <tal:col tal:repeat="col row">
-                      <div class="app-page-col"
+                      <div class="app-page-col lazyload"
                               tal:define="evenrow repeat/col/even;
-                                          iteg add m col/item"
-                              tal:attributes="class python:evenrow and 'app-page-col app-page-col-main' or 'app-page-col app-page-col-aside'">
-                          <div class="ratio-container hidden"
-                                  tal:define="image_data python:view.image_tag(item)">
-                              <a class="app-project-panel" href="${item/getURL}">
-                                  <img class="lazyload"
-                                       src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                       data-sizes="auto"
-                                       data-srcset="${image_data/small},
-                                           ${image_data/medium},
-                                           ${image_data/large}" />
-                              </a>
-                          </div>
-                          <div class="ratio-container lazyload"
-                               tal:define="image_data python:view.image_tag(item)">
-                              <a class="app-project-panel" href="${item/getURL}"
-                                 data-sizes="auto"
-                                 data-bgset="${image_data/small},
-                                             ${image_data/medium},
-                                             ${image_data/large}">
-                                      ${item/Title}</a>
-                          </div>
+                                          item col/item;
+                                          image_data python:view.image_tag(item)"
+                              tal:attributes="class python:evenrow and 'app-page-col app-page-col-main' or 'app-page-col app-page-col-aside'"
+                           data-sizes="auto"
+                           data-bgset="${image_data/small},
+                                              ${image_data/medium},
+                                              ${image_data/large},
+                                              ${image_data/original}">
+                          <a class="app-project-panel"
+                             href="${item/getURL}"
+                                  >
+                                  ${item/Title}</a>
                       </div>
                   </tal:col>
               </div>
