@@ -6925,7 +6925,7 @@ a.label:focus {
 }
 
 @media (max-width: 767px) {
-  .hidden-xs, .app-toolbar {
+  .hidden-xs, .app-navbar-nav-main, .app-navbar-divider, .app-toolbar {
     display: none !important;
   }
 }
@@ -7572,6 +7572,23 @@ div.riform .label {
   .app-navbar-brand {
     padding: 15px 15px;
   }
+}
+
+.app-logo {
+  display: block;
+}
+.app-main-inverse .app-logo {
+  display: none;
+}
+
+.app-logo-inverse {
+  display: none;
+}
+.app-frontpage-section-inverse .app-logo-inverse {
+  display: block;
+}
+.app-main-inverse .app-logo-inverse {
+  display: block;
 }
 
 .app-navbar-header-toggle {

@@ -57,6 +57,23 @@
   }
 }
 
+.app-logo {
+    display: block;
+    @include when-inside('.app-main-inverse') {
+        display: none;
+    }
+}
+
+.app-logo-inverse {
+    display: none;
+    @include when-inside('.app-frontpage-section-inverse') {
+        display: block;
+    }
+    @include when-inside('.app-main-inverse') {
+        display: block;
+    }
+}
+
 
 //** Icon bar navigation toggle
 .app-navbar-header-toggle {
@@ -131,6 +148,11 @@
   @extend clearfix;
 }
 
+// Main section and global navitems
+.app-navbar-nav-main {
+    @extend .hidden-xs;
+}
+
 .app-navbar-subnav {
     display: none;
     font-weight: 400px;
@@ -148,6 +170,7 @@
     width: 2rem;
     margin: 2rem auto 0 15px;
     text-align: left;
+    @extend .hidden-xs;
 }
 
 

@@ -72,8 +72,8 @@
             css:if-content=".userrole-authenticated"/>
 
         <!-- Logo (link target) -->
-        <copy attributes="href" css:content="#portal-logo" css:theme="a.navbar-brand" />
-        <copy attributes="href" css:content="#portal-logo" css:theme="a.app-brand" />
+        <copy attributes="href" css:content="#portal-logo" css:theme="a.app-navbar-brand" />
+        <copy attributes="href" css:content="#portal-logo" css:theme="a.app-navbar-section" />
 
         <!-- Portal searchbox -->
         <!--<copy attributes="action" css:content="#portal-searchbox form"
