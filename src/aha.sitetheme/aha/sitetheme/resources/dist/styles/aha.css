@@ -9025,7 +9025,9 @@ body.section-front-page .app-pathbar {
 }
 
 .app-project-panel {
+  display: block;
   color: #222;
+  background-size: cover;
 }
 .app-main-inverse .app-project-panel {
   color: #eee;

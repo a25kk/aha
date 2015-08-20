@@ -45,6 +45,9 @@ module.exports = function (grunt) {
             theme: {
                 src: [
                     'bower_components/bootstrap-without-jquery/bootstrap3/bootstrap-without-jquery.js',
+                    'bower_components/lazysizes/plugins/ls.respimg.js',
+                    'bower_components/lazysizes/plugins/ls.parent-fit.js',
+                    'bower_components/lazysizes/plugins/ls.bgset.js',
                     'bower_components/lazysizes/lazysizes.js',
                     'bower_components/flickity/dist/flickity.pkgd.js',
                     '<%= config.app %>/js/main.js'
