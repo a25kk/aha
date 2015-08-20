@@ -18,6 +18,8 @@
   }
     &-inverse {
       background: $app-primary;
+        // Redefine text color variable for inverse theme
+      $text-color: $gray-lighter;
       color: $gray-lighter;
   }
 }

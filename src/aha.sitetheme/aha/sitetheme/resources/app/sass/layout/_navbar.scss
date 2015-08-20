@@ -131,6 +131,26 @@
   @extend clearfix;
 }
 
+.app-navbar-subnav {
+    display: none;
+    font-weight: 400px;
+    @include when-inside('.active') {
+        display: block;
+    }
+}
+
+// Two adjacent navbars need spacing
+.app-navbar-nav + .app-navbar-nav {
+    margin-top: 2rem;
+}
+
+.app-navbar-divider {
+    width: 2rem;
+    margin: 2rem auto 0 15px;
+    text-align: left;
+}
+
+
 //== Navitems
 //
 //## Color coded based on parent inverse class
@@ -171,19 +191,20 @@
       display: block;
       margin: 0 auto;
       @include navbar-vertical-align($line-height-computed);
-    }g add
+    }
     @media (min-width: $grid-float-breakpoint-max) {
       height: 70px;
       min-height: 70px;
     }
     @include when-inside('.active') {
-        border-bottom: 1px solid #fff;
+        font-weight: 700;
+        @include when-inside('.app-navbar-subnav') {
+            font-weight: 400;
+        }
     }
-
-}
-
-.app-navitem-beratung {
-  @media (min-width: $grid-float-breakpoint-max) {
-    margin-bottom: $line-height-computed * 3;
-  }
+    @include when-inside('.app-navbar-subnav') {
+        font-weight: 300;
+        text-transform: none;
+        text-decoration: none;
+    }
 }
