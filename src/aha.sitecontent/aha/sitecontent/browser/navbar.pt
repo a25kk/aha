@@ -10,52 +10,104 @@
 <metal:main fill-slot="main">
   <metal:content-core define-macro="main">
 
-    <ul class="app-navbar-nav" id="app-navbar-nav"
-      tal:define="portal_url context/portal_url;
-                  section view/section">
-      <li class="app-navitem"
-          tal:define="active python:view.active_navitem('raum')"
-          tal:attributes="class python:active and 'app-navitem active ' or 'app-navitem'">
-        <a class="app-navitem-tab" href="${portal_url}/raum">
-          <span>Raum</span>
-        </a>
-      </li>
-      <li class="app-navitem">
-        <a class="app-navitem-tab" href="${portal_url}/licht">
-          <span>Licht</span>
-        </a>
-      </li>
-      <li class="app-navitem app-navitem-beratung">
-        <a class="app-navitem-tab" href="${portal_url}/${section}/beratung-360deg">
-          <span>360° Beratung</span>
-        </a>
-      </li>
-      <li class="app-navitem active">
-        <a class="app-navitem-tab" href="${portal_url}/${section}/unternehmen/">
-          <span>Unternehmen</span>
-        </a>
-      </li>
-      <li class="app-navitem">
-        <a class="app-navitem-tab" href="${portal_url}/${section}/projekte">
-          <span>Projekte</span>
-        </a>
-      </li>
-      <li class="app-navitem">
-        <a class="app-navitem-tab" href="${portal_url}/${section}/konzeption">
-          <span>Konzeption</span>
-        </a>
-      </li>
-      <li class="app-navitem">
-        <a class="app-navitem-tab" href="${portal_url}/${section}/aktuell">
-          <span>Aktuell</span>
-        </a>
-      </li>
-      <li class="app-navitem">
-        <a class="app-navitem-tab" href="${portal_url}/${section}/kontakt">
-          <span>Kontakt</span>
-        </a>
-      </li>
+      <div id="app-navbar-nav-wrapper"
+          tal:define="portal_url context/portal_url;
+                      section view/section">
+      <ul class="app-navbar-nav" id="app-navbar-nav">
+          <li class="app-navitem"
+                  tal:define="active python:view.active_navitem('raum')"
+                  tal:attributes="class python:active and 'app-navitem active ' or 'app-navitem'">
+              <a class="app-navitem-tab"
+                      tal:attributes="class python:active and 'app-navitem-tab active ' or 'app-navitem-tab'"
+                 href="${portal_url}/raum">
+                  <span>Raum</span>
+              </a>
+          </li>
+          <li class="app-navitem"
+                  tal:define="active python:view.active_navitem('licht')"
+                  tal:attributes="class python:active and 'app-navitem active ' or 'app-navitem'">
+              <a class="app-navitem-tab"
+                      tal:attributes="class python:active and 'app-navitem-tab active ' or 'app-navitem-tab'"
+                 href="${portal_url}/licht">
+                  <span>Licht</span>
+              </a>
+          </li>
+          <li class="app-navitem"
+                  tal:define="active python:view.active_navitem('beratung-360deg')"
+                  tal:attributes="class python:active and 'app-navitem active ' or 'app-navitem'">
+              <a class="app-navitem-tab"
+                      tal:attributes="class python:active and 'app-navitem-tab active ' or 'app-navitem-tab'"
+                 href="${portal_url}/${section}/beratung360deg">
+                  <span>360° Beratung</span>
+              </a>
+          </li>
+      </ul>
+    <hr class="app-navbar-divider">
+    <ul class="app-navbar-nav" id="app-navbar-nav">
+        <li class="app-navitem"
+            tal:define="active python:view.active_navitem('unternehmen')"
+            tal:attributes="class python:active and 'app-navitem active ' or 'app-navitem'">
+            <a class="app-navitem-tab"
+                    tal:attributes="class python:active and 'app-navitem-tab active ' or 'app-navitem-tab'"
+               href="${portal_url}/${section}/unternehmen">
+                <span>Unternehmen</span>
+            </a>
+        </li>
+        <li class="app-navitem"
+                tal:define="active python:view.active_navitem('projekte')"
+                tal:attributes="class python:active and 'app-navitem active ' or 'app-navitem'">
+            <a class="app-navitem-tab"
+                    tal:attributes="class python:active and 'app-navitem-tab active ' or 'app-navitem-tab'"
+               href="${portal_url}/${section}/projekte">
+                <span>Projekte</span>
+            </a>
+            <ul class="app-navbar-nav app-navbar-subnav"
+                tal:define="categories python:view.showrooms(section)">
+                <li class="app-navitem" tal:repeat="category categories">
+                    <a class="app-navitem-tab" href="${category/getURL}">
+                        <span>${category/Title}</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="app-navitem"
+                tal:define="active python:view.active_navitem('konzeption')"
+                tal:attributes="class python:active and 'app-navitem active ' or 'app-navitem'">
+            <a class="app-navitem-tab"
+                    tal:attributes="class python:active and 'app-navitem-tab active ' or 'app-navitem-tab'"
+               href="${portal_url}/${section}/konzeption">
+                <span>Konzeption</span>
+            </a>
+        </li>
+        <li class="app-navitem"
+                tal:define="active python:view.active_navitem('aktuell')"
+                tal:attributes="class python:active and 'app-navitem active ' or 'app-navitem'">
+            <a class="app-navitem-tab"
+                    tal:attributes="class python:active and 'app-navitem-tab active ' or 'app-navitem-tab'"
+               href="${portal_url}/${section}/aktuell">
+                <span>Aktuell</span>
+            </a>
+        </li>
+        <li class="app-navitem"
+                tal:define="active python:view.active_navitem('jobs')"
+                tal:attributes="class python:active and 'app-navitem active ' or 'app-navitem'">
+            <a class="app-navitem-tab"
+                    tal:attributes="class python:active and 'app-navitem-tab active ' or 'app-navitem-tab'"
+               href="${portal_url}/${section}/jobs">
+                <span>Jobs</span>
+            </a>
+        </li>
+        <li class="app-navitem"
+                tal:define="active python:view.active_navitem('kontakt')"
+                tal:attributes="class python:active and 'app-navitem active ' or 'app-navitem'">
+            <a class="app-navitem-tab"
+                    tal:attributes="class python:active and 'app-navitem-tab active ' or 'app-navitem-tab'"
+               href="${portal_url}/${section}/kontakt">
+                <span>Kontakt</span>
+            </a>
+        </li>
     </ul>
+    </div>
   </metal:content-core>
 </metal:main>
 </body>

@@ -5,6 +5,7 @@ from Acquisition import aq_inner
 from Products.Five.browser import BrowserView
 from plone import api
 from zope.component import getMultiAdapter
+from aha.sitecontent.showroom import IShowRoom
 
 
 class NavBarView(BrowserView):
@@ -57,3 +58,13 @@ class NavBarView(BrowserView):
         if section in path.split('/'):
             return True
         return False
+
+    def showrooms(self, section):
+        portal = api.portal.get()
+        items = api.content.find(
+            context=portal[section]['projekte'],
+            object_provides=IShowRoom,
+            review_state='published',
+            sort_on='getObjPositionInParent'
+        )
+        return items
