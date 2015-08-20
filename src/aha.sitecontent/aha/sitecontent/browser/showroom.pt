@@ -27,8 +27,14 @@
                                               ${image_data/large},
                                               ${image_data/original}">
                           <a class="app-project-panel"
-                             href="${item/getURL}"
-                                  >
+                             href="${item/getURL}">
+                              <img class="app-img-card lazyload"
+                                   src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                   data-sizes="auto"
+                                   data-srcset="${image_data/small},
+                                                ${image_data/medium},
+                                                ${image_data/large},
+                                                ${image_data/original}" />
                                   ${item/Title}</a>
                       </div>
                   </tal:col>
