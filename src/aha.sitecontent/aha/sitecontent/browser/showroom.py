@@ -7,7 +7,8 @@ from Products.Five.browser import BrowserView
 from Products.ZCatalog.interfaces import ICatalogBrain
 from plone import api
 from plone.app.contentlisting.interfaces import IContentListingObject
-from aha.sitecontent.contentpage import IProject
+from aha.sitecontent.project import IProject
+from zope.component import getMultiAdapter
 
 
 class ShowRoomView(BrowserView):

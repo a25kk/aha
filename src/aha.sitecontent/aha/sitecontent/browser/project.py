@@ -14,7 +14,7 @@ class ProjectView(BrowserView):
     """ Show room default view """
 
     def __call__(self):
-        self.has_assets = len(self.assets()) > 0
+        self.has_assets = len(self.contained_images()) > 0
         return self.render()
 
     def render(self):
@@ -24,7 +24,7 @@ class ProjectView(BrowserView):
         context = aq_inner(self.context)
         items = api.content.find(
             context=context,
-            portal_type=Image,
+            portal_type='Image',
             sort_on='getObjPositionInParent'
         )
         return items[:9]
