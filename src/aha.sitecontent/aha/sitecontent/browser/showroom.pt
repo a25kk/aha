@@ -19,16 +19,14 @@
                       <div class="app-page-col lazyload"
                               tal:define="evenrow repeat/col/even;
                                           item col/item;
+                                          preview_image python:view.preview_image(item);
                                           image_data python:view.image_tag(item)"
-                              tal:attributes="class python:evenrow and 'app-page-col app-page-col-main' or 'app-page-col app-page-col-aside'"
+                              tal:attributes="class python:evenrow and 'app-page-col app-page-col-main lazyload' or 'app-page-col app-page-col-aside lazyload'"
                            data-sizes="auto"
-                           data-bgset="${image_data/small},
-                                              ${image_data/medium},
-                                              ${image_data/large},
-                                              ${image_data/original}">
+                           data-bg="${preview_image/url}">
                           <a class="app-project-panel"
                              href="${item/getURL}">
-                              <img class="app-img-card lazyload"
+                              <img class="app-img-card hidden"
                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                    data-sizes="auto"
                                    data-srcset="${image_data/small},

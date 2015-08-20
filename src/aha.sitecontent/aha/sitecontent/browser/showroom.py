@@ -62,6 +62,9 @@ class ShowRoomView(BrowserView):
             matrix.append(row)
         return matrix
 
+    def preview_image(self, item):
+        return self._get_scaled_img(item, 'original')
+
     def image_tag(self, item):
         data = {}
         sizes = ['small', 'medium', 'large', 'original']
