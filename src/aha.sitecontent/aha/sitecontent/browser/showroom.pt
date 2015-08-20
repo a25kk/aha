@@ -9,92 +9,34 @@
 
 <metal:main fill-slot="main">
   <metal:content-core define-macro="main">
-
     <div class="app-showroom">
-        <!-- <div class="app-page-header">
-            <h1 class="app-page-title">
-                ${context/Title}
-            </h1>
-        </div>
-        <p class="app-page-lead"
-            tal:condition="context/Description"
-            tal:content="context/Description" /> -->
-
-        <div class="app-page-body" tal:condition="context/text">
-          <div class="app-page-body-text" id="parent-fieldname-text"
-            tal:content="structure context/text/output" />
-        </div>
-
-        <div class="app-page-body app-showroom-content"
-            tal:define="Batch python:modules['Products.CMFPlone'].Batch;
-                        b_size python:int(request.get('b_size', 20));
-                        b_start python:int(request.get('b_start', 0));
-                        results view/subitems;
-                        batch python:Batch(results, b_size, b_start);">
-            <div class="app-card-placeholder"
-                tal:condition="not:results">
-                <div class="app-card-placeholder-sign">
-                  &hellip;
-                </div>
-                <div class="app-card-placeholder-title" i18n:translate="">This showroom is empty</div>
-                <p class="app-card-placeholder-lead" i18n:translate="">In order to get started create your first project</p>
-                <a class="btn btn-default app-card-placeholder-btn"
-                  tal:attributes="href string:${context/absolute_url}/++add++aha.sitecontent.project">
-                  <i class="ion ion-ios7-plus-outline app-icon-lg"></i>
-                  <span i18n:translate="">Add project</span>
-                </a>
-                <p class="app-card-placeholder-aside" i18n:translate="">
-                  If you would like to sort your projects
-                  into subfolder you can <br>
-                    <a tal:attributes="href string:${context/absolute_url}/++add++aha.sitecontent.showroom">
-                     add a contained showroom</a>.<br>
-                  Please note that this page will ignore already existing projects and
-                  only list existing showrooms if one is detected.
-                </p>
-            </div>
-            <div class="app-list-filter" tal:condition="results">
-              <ul class="app-list-filters" id="app-list-filters">
-                <li data-appui="contentfilter" class="active active-filter"><a href="#" data-appui="app-list-filter" data-filter="*">Alle</a></li>
-                <tal:block tal:repeat="filter view/available_filter">
-                  <li data-appui="contentfilter">
-                    <a href="#filter-${filter}"
-                      data-appui="app-list-filter"
-                      data-filter=".${filter}"
-                      tal:content="filter">Filter term</a>
-                  </li>
-                </tal:block>
-              </ul>
-            </div>
-            <div class="app-cards app-card-gutter app-js-isotope" id="js-isotope-container">
-              <div class="app-grid-sizer"><!-- Size provider for grid cells --></div>
-                <tal:block tal:repeat="item results">
-                  <div class="app-card"
-                    tal:define="item_uid item/UID;
-                                item_idx repeat/item/index;
-                                klass python:view.computed_class(item_uid)"
-                    tal:attributes="class string:app-card js-isotope-item ${klass}">
-                        <div class="app-card-content app-card-media-placeholder text-center lazyload"
-                            tal:define="portal_url context/portal_url">
-                            <div class="app-card-placeholder-sign">
-                              &hellip;
-                            </div>
-                            <div class="app-card-placeholder-aside" i18n:translate="">
-                              No preview image available
-                            </div>
-                        </div>
-                        <div class="app-card-info app-card-caption">
-                          <a class=""
-                            tal:attributes="href string:${item/getURL}">
-                            <div class="app-card-title" tal:content="item/Title" />
-                          </a>
-                        </div>
-                  </div>
-                </tal:block>
-            </div>
-            <div class="app-listing-nav" tal:content="nothing">
-                  <div metal:use-macro="context/batch_macros/macros/navigation" />
-            </div>
-        </div>
+      <div class="app-page-cards" tal:condition="view/has_subitems">
+          <tal:row tal:repeat="row view/content_matrix">
+              <div class="app-page-section"
+                      tal:define="evenrow repeat/row/even"
+                      tal:attributes="class python:evenrow and 'app-page-section app-page-section-inverse' or 'app-page-section'">
+                  <tal:col tal:repeat="col row">
+                      <div class="app-page-col"
+                              tal:define="evenrow repeat/col/even;
+                              item col/item"
+                              tal:attributes="class python:evenrow and 'app-page-col app-page-col-main' or 'app-page-col app-page-col-aside'">
+                          <div class="ratio-container"
+                                  tal:define="image_data python:view.image_tag(item)">
+                              <a class="app-project-panel" href="${item/getURL}">
+                                  <img class="lazyload"
+                                       src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                       data-sizes="auto"
+                                       data-srcset="${image_data/small},
+                                           ${image_data/medium},
+                                           ${image_data/large}" />
+                              </a>
+                          </div>
+                          <p><a class="app-project-panel" href="${item/getURL}">${item/Title}</a></p>
+                      </div>
+                  </tal:col>
+              </div>
+          </tal:row>
+      </div>
     </div>
 
   </metal:content-core>

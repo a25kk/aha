@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """Module providing views for the folderish content page type"""
-import json
 from Acquisition import aq_inner
 from Products.Five.browser import BrowserView
+from Products.ZCatalog.interfaces import ICatalogBrain
 from plone import api
+from plone.app.contentlisting.interfaces import IContentListingObject
 from zope.component import getMultiAdapter
 
 IMG = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs='
@@ -19,48 +20,54 @@ class ProjectView(BrowserView):
     def render(self):
         return self.index()
 
-    def can_edit(self):
-        show = False
-        if not api.user.is_anonymous():
-            show = True
-        return show
-
-    def assets(self):
+    def contained_images(self):
         context = aq_inner(self.context)
-        data = getattr(context, 'assets')
-        if data is None:
-            data = dict()
+        items = api.content.find(
+            context=context,
+            portal_type=Image,
+            sort_on='getObjPositionInParent'
+        )
+        return items[:9]
+
+    def image_tag(self, item):
+        data = {}
+        sizes = ['small', 'medium', 'large', 'original']
+        idx = 0
+        for size in sizes:
+            idx += 0
+            img = self._get_scaled_img(item, size)
+            data[size] = '{0} {1}w'.format(img['url'], img['width'])
         return data
 
-    def stored_data(self):
-        return json.loads(self.assets())
-
-    def image_list(self):
-        data = self.stored_data()
-        items = data['items']
-        images = list()
-        for item in items:
-            item_uid = str(item)
-            catalog = api.portal.get_tool(name='portal_catalog')
-            stack = catalog.unrestrictedSearchResults(UID=item_uid)
-            obj = stack[0].getObject()
-            contained_imgs = obj.unrestrictedTraverse('@@folderListing')()
-            for img in contained_imgs:
-                img_uid = api.content.get_uuid(obj=img.getObject())
-                images.append(img_uid)
-        return images
-
-    def image_tag(self, uuid):
-        context = api.content.get(UID=uuid)
-        scales = getMultiAdapter((context, self.request), name='images')
-        scale = scales.scale('image')
-        item = {}
-        if scale is not None:
-            item['url'] = scale.url
-            item['width'] = scale.width
-            item['height'] = scale.height
+    def _get_scaled_img(self, item, size):
+        if (
+                    ICatalogBrain.providedBy(item) or
+                    IContentListingObject.providedBy(item)
+        ):
+            obj = item.getObject()
         else:
-            item['url'] = IMG
-            item['width'] = '1px'
-            item['height'] = '1px'
-        return item
+            obj = item
+        info = {}
+        if hasattr(obj, 'image'):
+            scales = getMultiAdapter((obj, self.request), name='images')
+            if size == 'small':
+                scale = scales.scale('image', width=300, height=300)
+            if size == 'medium':
+                scale = scales.scale('image', width=600, height=600)
+            if size == 'large':
+                scale = scales.scale('image', width=900, height=900)
+            else:
+                scale = scales.scale('image', width=1200, height=1200)
+            if scale is not None:
+                info['url'] = scale.url
+                info['width'] = scale.width
+                info['height'] = scale.height
+            else:
+                info['url'] = IMG
+                info['width'] = '1px'
+                info['height'] = '1px'
+        else:
+            info['url'] = IMG
+            info['width'] = '1px'
+            info['height'] = '1px'
+        return info

@@ -38,7 +38,7 @@ class ContentPageView(BrowserView):
             display = context.displayCards
         except AttributeError:
             display = None
-        if display is not None:
+        if display is not None   :
             return display
         return False
 

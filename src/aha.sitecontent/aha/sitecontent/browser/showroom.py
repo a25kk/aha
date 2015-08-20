@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 """Module providing views for the folderish content page type"""
-import json
+import math
+
 from Acquisition import aq_inner
 from Products.Five.browser import BrowserView
+from Products.ZCatalog.interfaces import ICatalogBrain
 from plone import api
+from plone.app.contentlisting.interfaces import IContentListingObject
+from aha.sitecontent.contentpage import IProject
 
 
 class ShowRoomView(BrowserView):
@@ -25,9 +29,12 @@ class ShowRoomView(BrowserView):
 
     def projects(self):
         context = aq_inner(self.context)
-        return context.restrictedTraverse('@@folderListing')(
-            portal_type='aha.sitecontent.project',
-            review_state='published')
+        items = api.content.find(
+            context=context,
+            object_provides=IProject,
+            review_state='published'
+        )
+        return items
 
     def subitems(self):
         """ A showroom containing other showrooms
@@ -37,39 +44,60 @@ class ShowRoomView(BrowserView):
             return self.showrooms()
         return self.projects()
 
-    def _project_assets(self, uuid):
-        project = api.content.get(UID=uuid)
-        data = getattr(project, 'assets')
-        if data is None:
-            data = dict()
+    def content_matrix(self):
+        items = self.projects()
+        count = len(items)
+        rowcount = count / 2.0
+        rows = math.ceil(rowcount)
+        matrix = []
+        for i in range(int(rows)):
+            row = []
+            for j in range(2):
+                index = 2 * i + j
+                if index <= int(count - 1):
+                    cell = {}
+                    cell['item'] = items[index]
+                    row.append(cell)
+            matrix.append(row)
+        return matrix
+
+    def image_tag(self, item):
+        data = {}
+        sizes = ['small', 'medium', 'large']
+        idx = 0
+        for size in sizes:
+            idx += 0
+            img = self._get_scaled_img(item, size)
+            data[size] = '{0} {1}w'.format(img['url'], img['width'])
         return data
 
-    def _assets(self, uuid):
-        return json.loads(self._project_assets(uuid))
-
-    def has_preview_image(self, uuid):
-        """ Test if we have an available preview image """
-        assets = self._assets(uuid)
-        return len(assets['items']) > 0
-
-    def get_preview_container(self, uuid):
-        data = self._assets(uuid)
-        items = data['items']
-        return items[0]
-
-    def rendered_preview_image(self, uuid):
-        item = api.content.get(UID=uuid)
-        return item.restrictedTraverse('@@stack-preview')()
-
-    def computed_class(self, uuid):
-        item = api.content.get(UID=uuid)
-        item_cat = 'artist'
-        subjects = item.Subject()
-        if subjects:
-            item_cat = subjects[0]
-        klass = 'app-card-{0} {1}'.format(uuid, item_cat)
-        return klass
-
-    def available_filter(self):
-        catalog = api.portal.get_tool('portal_catalog')
-        return catalog.uniqueValuesFor('Subject')
+    def _get_scaled_img(self, item, size):
+        if (
+                    ICatalogBrain.providedBy(item) or
+                    IContentListingObject.providedBy(item)
+        ):
+            obj = item.getObject()
+        else:
+            obj = item
+        info = {}
+        if hasattr(obj, 'image'):
+            scales = getMultiAdapter((obj, self.request), name='images')
+            if size == 'small':
+                scale = scales.scale('image', width=300, height=300)
+            if size == 'medium':
+                scale = scales.scale('image', width=600, height=600)
+            else:
+                scale = scales.scale('image', width=900, height=900)
+            if scale is not None:
+                info['url'] = scale.url
+                info['width'] = scale.width
+                info['height'] = scale.height
+            else:
+                info['url'] = IMG
+                info['width'] = '1px'
+                info['height'] = '1px'
+        else:
+            info['url'] = IMG
+            info['width'] = '1px'
+            info['height'] = '1px'
+        return info
