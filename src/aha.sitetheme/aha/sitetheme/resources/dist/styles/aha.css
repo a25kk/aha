@@ -8495,8 +8495,25 @@ body.section-front-page .app-pathbar {
   }
 }
 
+/* ---- flickity overrides ---- */
+.flickity-prev-next-button {
+  background: transparent;
+}
+
+.flickity-prev-next-button .arrow {
+  fill: #fff;
+}
+
+.flickity-prev-next-button:hover {
+  background: none;
+}
+
 .flickity-page-dots {
   bottom: 100px !important;
+}
+
+.flickity-page-dots .dot {
+  background: #fff;
 }
 
 .app-cards {
