@@ -150,6 +150,7 @@
 // Project panel links
 .app-project-panel {
     display: block;
+    position: relative;
     width: 100%;
     height: 100%;
     border: 1px solid #fff;
@@ -158,4 +159,11 @@
       color: $gray-lighter;
     }
     background-size: contain;
+}
+
+.app-project-panel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1.25rem;
 }
