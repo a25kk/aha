@@ -24,13 +24,26 @@
                                       ${context/Description}
                               </p>
                           </div>
-
                           <div class="app-page-body">
-                              <div class="app-page-text" id="parent-fieldname-text"
-                                      tal:condition="context/text"
-                                      tal:content="structure context/text/output" />
+                              <!-- Nav tabs -->
+                              <ul class="nav nav-tabs text-right" role="tablist">
+                                  <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Projekt</a></li>
+                                  <li role="presentation"><a href="#profile" aria-controls="thumbnails" role="tab" data-toggle="tab">Galerie</a></li>
+                              </ul>
+
+                              <!-- Tab panes -->
+                              <div class="tab-content">
+                                  <div role="tabpanel" class="tab-pane active" id="home">
+                                      <div class="app-page-text" id="parent-fieldname-text"
+                                              tal:condition="context/text"
+                                              tal:content="structure context/text/output" />
+                                  </div>
+                                  <div role="tabpanel" class="tab-pane" id="thumbnails">
+                                      <div tal:replace="structure view/rendered_thumbnails" />
+                                  </div>
+                              </div>
                           </div>
-                          <div tal:replace="structure view/rendered_thumbnails" />
+
                       </div>
                       <tal:block tal:condition="images">
                           <div class="app-gallery-cell project-gallery-item item" tal:repeat="item images">

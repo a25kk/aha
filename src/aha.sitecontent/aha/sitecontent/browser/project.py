@@ -79,7 +79,7 @@ class ProjectView(BrowserView):
 
 
 class ThumbnailView(BrowserView):
-        """ Thumbnail overlay content """
+    """ Thumbnail overlay content """
 
     def contained_images(self):
         context = aq_inner(self.context)
