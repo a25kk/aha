@@ -30,6 +30,7 @@
                                       tal:condition="context/text"
                                       tal:content="structure context/text/output" />
                           </div>
+                          <div tal:replace="structure view/rendered_thumbnails" />
                       </div>
                       <tal:block tal:condition="images">
                           <div class="app-gallery-cell project-gallery-item item" tal:repeat="item images">

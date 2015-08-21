@@ -62,6 +62,16 @@
       layer="..interfaces.IAhaSitecontentLayer"
       />
 
+     <!-- Project View -->
+     <browser:page
+         for="aha.sitecontent.project.IProject"
+         name="project-thumbnails"
+         class=".project.ThumbnailView"
+         template="project-thumbnails.pt"
+         permission="zope2.View"
+         layer="..interfaces.IAhaSitecontentLayer"
+         />
+
   <!-- Frontpage Views -->
   <browser:page
       for="plone.app.layout.navigation.interfaces.INavigationRoot"
