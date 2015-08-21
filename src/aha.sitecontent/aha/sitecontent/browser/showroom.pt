@@ -16,17 +16,15 @@
                       tal:define="evenrow repeat/row/even"
                       tal:attributes="class python:evenrow and 'app-page-section app-page-section-inverse' or 'app-page-section'">
                   <tal:col tal:repeat="col row">
-                      <div class="app-page-col lazyload"
+                      <div class="app-page-col"
                               tal:define="evenrow repeat/col/even;
                                           item col/item;
                                           preview_image python:view.preview_image(item);
                                           image_data python:view.image_tag(item)"
-                              tal:attributes="class python:evenrow and 'app-page-col app-page-col-main lazyload' or 'app-page-col app-page-col-aside lazyload'"
-                           data-sizes="auto"
-                           data-bg="${preview_image/url}">
+                              tal:attributes="class python:evenrow and 'app-page-col app-page-col-main' or 'app-page-col app-page-col-aside'">
                           <a class="app-project-panel"
                              href="${item/getURL}">
-                              <img class="app-img-card hidden"
+                              <img class="app-img-card lazyload"
                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                    data-sizes="auto"
                                    data-srcset="${image_data/small},
@@ -34,6 +32,12 @@
                                                 ${image_data/large},
                                                 ${image_data/original}" />
                                   ${item/Title}</a>
+
+                              <div class="app-project-panel-overlay">
+                                  <h4 class="card-title">Card title</h4>
+                                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                              </div>
                       </div>
                   </tal:col>
               </div>
