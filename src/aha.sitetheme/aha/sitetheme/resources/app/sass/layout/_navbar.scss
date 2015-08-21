@@ -6,6 +6,7 @@
   @extend .navbar;
   border-radius: 0;
   @media (min-width: $grid-float-breakpoint-max) {
+    margin-bottom: 0;
       // position: absolute;
       // bottom: 0;
       // left: 0;
@@ -15,7 +16,7 @@
 
 // Navbar content container
 .app-navbar-content {
-    padding-bottom: 1rem;
+    //padding-bottom: 1rem;
     border-bottom: 1px solid $gray-dark;
     .app-header-inverse & {
       border-color: $gray-lighter;
@@ -122,7 +123,7 @@
 //** section info link
 .app-navbar-section {
   flex: 0 0 25%;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
   color: $gray-dark;
@@ -193,6 +194,7 @@
 }
 
 .app-navitem-tab {
+    font-size: 0.8rem;
     color: $text-color;
     background-color: $app-primary;
     font-weight: 400;
