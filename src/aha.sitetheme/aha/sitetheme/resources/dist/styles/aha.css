@@ -7630,7 +7630,6 @@ div.riform .label {
 }
 
 .app-navbar-section {
-  font-size: 1rem;
   font-weight: 700;
   color: #333; 
   text-transform: uppercase;
@@ -7696,7 +7695,6 @@ div.riform .label {
 }
 
 .app-navitem-tab {
-  font-size: .8rem;
   font-weight: 400;
   line-height: 1;
   color: #333;
@@ -7734,6 +7732,7 @@ div.riform .label {
   font-weight: 400;
 }
 .app-navbar-subnav .app-navitem-tab {
+  font-size: .85rem;
   font-weight: 300;
   text-decoration: none; 
   text-transform: none;
@@ -9095,6 +9094,17 @@ body.section-front-page .app-pathbar {
   padding: 1em 0 0 1em;
 }
 
+.app-page-masonry {
+  columns-count: 3;
+  -webkit-column-gap: 1rem;
+     -moz-column-gap: 1rem;
+          column-gap: 1rem;
+}
+.app-page-masonry .app-page-col {
+  display: inline-block;
+  width: 100%;
+}
+
 .app-project-panel {
   position: relative;
   display: block;
@@ -9107,12 +9117,17 @@ body.section-front-page .app-pathbar {
 .app-main-inverse .app-project-panel {
   color: #eee;
 }
+.app-project-panel:hover > .app-project-panel-overlay {
+  opacity: 1;
+}
 
 .app-project-panel-overlay {
   position: absolute;
   top: 0;
   left: 0;
   padding: 1.25rem;
+  background: rgba(0, 0, 0, .75); 
+  opacity: 0;
 }
 
 .app-summary-wrapper {

@@ -31,13 +31,11 @@
                                                 ${image_data/medium},
                                                 ${image_data/large},
                                                 ${image_data/original}" />
-                                  ${item/Title}</a>
-
                               <div class="app-project-panel-overlay">
-                                  <h4 class="card-title">Card title</h4>
-                                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                  <h4 class="card-title">${item/Title}</h4>
+                                  <p class="card-text" tal:condition="item/Description">${item/Description}</p>
                               </div>
+                            </a>
                       </div>
                   </tal:col>
               </div>
@@ -50,4 +48,3 @@
 
 </body>
 </html>
-
