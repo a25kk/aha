@@ -14,7 +14,7 @@
           <tal:row tal:repeat="row view/content_matrix">
               <div class="app-page-section app-gutters"
                       tal:define="evenrow repeat/row/even"
-                      tal:attributes="class python:evenrow and 'app-page-section app-page-section-inverse' or 'app-page-section'">
+                      tal:attributes="class python:evenrow and 'app-page-section app-page-section-inverse app-gutters' or 'app-page-section app-gutters'">
                   <tal:col tal:repeat="col row">
                       <div class="app-page-col"
                               tal:define="evenrow repeat/col/even;
