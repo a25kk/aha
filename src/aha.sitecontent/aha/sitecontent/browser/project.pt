@@ -25,20 +25,17 @@
                               </p>
                           </div>
                           <div class="app-page-body">
-                              <!-- Nav tabs -->
-                              <ul class="nav nav-tabs text-right" role="tablist">
-                                  <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Projekt</a></li>
-                                  <li role="presentation"><a href="#profile" aria-controls="thumbnails" role="tab" data-toggle="tab">Galerie</a></li>
+                              <ul class="app-project-tabs text-right" role="tablist">
+                                  <li role="presentation" class="app-project-tab active"><a href="#projectText" aria-controls="projectText" role="tab" data-toggle="collapse">Projekt</a></li>
+                                  <li role="presentation" class="app-project-tab"><a href="#projectThumbnails" aria-controls="projectThumbnails" role="tab" data-toggle="collapse">Galerie</a></li>
                               </ul>
-
-                              <!-- Tab panes -->
-                              <div class="tab-content">
-                                  <div role="tabpanel" class="tab-pane active" id="home">
+                              <div class="app-project-tabs-content">
+                                  <div role="tabpanel" class="collapse" id="projectText">
                                       <div class="app-page-text" id="parent-fieldname-text"
                                               tal:condition="context/text"
                                               tal:content="structure context/text/output" />
                                   </div>
-                                  <div role="tabpanel" class="tab-pane" id="thumbnails">
+                                  <div role="tabpanel" class="collapse" id="projectThumbnails">
                                       <div tal:replace="structure view/rendered_thumbnails" />
                                   </div>
                               </div>

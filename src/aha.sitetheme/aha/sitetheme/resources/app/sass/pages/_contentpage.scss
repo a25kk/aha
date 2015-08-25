@@ -186,3 +186,16 @@
       width: 50%;
     }
 }
+
+// Tabnavigation for paroject content
+.app-project-tabs {
+  text-align: right;
+  list-style: none;
+}
+
+.app-project-tab {
+  display: inline-block;
+  > a {
+    color: #fff;
+  }
+}

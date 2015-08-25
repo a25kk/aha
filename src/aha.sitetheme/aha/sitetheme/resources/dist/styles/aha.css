@@ -9135,6 +9135,18 @@ body.section-front-page .app-pathbar {
   }
 }
 
+.app-project-tabs {
+  text-align: right;
+  list-style: none;
+}
+
+.app-project-tab {
+  display: inline-block;
+}
+.app-project-tab > a {
+  color: #fff;
+}
+
 .app-summary-wrapper {
   min-height: 500px;
   padding-top: 1.428571429rem;
