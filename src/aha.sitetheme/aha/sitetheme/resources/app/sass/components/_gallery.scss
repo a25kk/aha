@@ -34,6 +34,14 @@
     }
 }
 
+.app-thumbnails {
+  display: flex;
+}
+
+.app-thumbnail {
+  flex: 0 0 33.3333%;
+}
+
 /* ---- flickity overrides ---- */
 
 .flickity-prev-next-button {
@@ -44,8 +52,8 @@
   fill: #fff;
 }
 
-.flickity-prev-next-button:hover { 
-    background: none; 
+.flickity-prev-next-button:hover {
+    background: none;
 }
 
 .flickity-page-dots {

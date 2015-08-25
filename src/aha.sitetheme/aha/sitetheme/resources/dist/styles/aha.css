@@ -8494,6 +8494,18 @@ body.section-front-page .app-pathbar {
   }
 }
 
+.app-thumbnails {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+.app-thumbnail {
+  -webkit-flex: 0 0 33.3333%;
+      -ms-flex: 0 0 33.3333%;
+          flex: 0 0 33.3333%;
+}
+
 /* ---- flickity overrides ---- */
 .flickity-prev-next-button {
   background: transparent;
@@ -9066,6 +9078,8 @@ body.section-front-page .app-pathbar {
 }
 @media (min-width: 768px) {
   .app-page-col {
+    position: relative;
+
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
@@ -9095,18 +9109,22 @@ body.section-front-page .app-pathbar {
 }
 
 .app-page-masonry {
-  columns-count: 3;
+  columns-count: 2;
   -webkit-column-gap: 1rem;
      -moz-column-gap: 1rem;
           column-gap: 1rem;
 }
-.app-page-masonry .app-page-col {
+.app-page-masonry .app-page-column {
   display: inline-block;
   width: 100%;
 }
 
 .app-project-panel {
-  position: relative;
+  position: relative; 
+  display: block;
+}
+
+.app-project-panel-media {
   display: block;
   width: 100%;
   height: 100%;
@@ -9114,10 +9132,10 @@ body.section-front-page .app-pathbar {
   background-size: contain; 
   border: 1px solid #fff;
 }
-.app-main-inverse .app-project-panel {
+.app-main-inverse .app-project-panel-media {
   color: #eee;
 }
-.app-project-panel:hover > .app-project-panel-overlay {
+.app-project-panel-media:hover > .app-project-panel-overlay {
   opacity: 1;
 }
 
@@ -9125,6 +9143,7 @@ body.section-front-page .app-pathbar {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
   padding: 1.25rem;
   background: rgba(0, 0, 0, .75); 
   opacity: 0;
