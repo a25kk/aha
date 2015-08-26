@@ -43,7 +43,7 @@
         color: darken($text-color, 6.5%);
     }
     &-inverse {
-        background-color: $gray-dark;
+        background-color: $app-primary;
         color: #fff;
         &:hover {
             color: darken($gray-lighter, 6.5%);
@@ -59,7 +59,7 @@
             transition: background-color 3s linear;
         }
         &-inverse {
-            background-color: $gray-dark;
+            background-color: $app-primary;
             color: #fff;
             &:hover {
                 color: darken($gray-lighter, 6.5%);
@@ -73,7 +73,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem 2rem 0;
+    padding: 25%;
     text-align: center;
     .app-brand-img {
         flex: 0 0 auto;
@@ -99,18 +99,18 @@
 .app-frontpage-action {
     position: absolute;
     right: 0.5rem;
-    bottom: 0.25rem;
-    width: 33vw;
+    bottom: 0.15rem;
     font-size: 1.5rem;
     font-weight: 400;
+    text-transform: uppercase;
     @media (min-width: $grid-float-breakpoint) {
         right: 25%;
-        bottom: 25%;
+        bottom: 15%;
         font-size: 2rem;
         text-align: right;
         .app-frontpage-section-inverse & {
             left: 25%;
-            bottom: 25%;
+            bottom: 15%;
             text-align: left;
         }
     }
@@ -144,7 +144,7 @@
 
 .app-fp-block-space {
     background: #000;
-    transition: all 3s ease;
+    transition: all 0.5s ease;
     width: 100%;
     height: 100%;
     padding-top: 25%;
@@ -178,7 +178,7 @@
 
 .app-fp-block-light {
     background: #fff;
-    transition: all 3s ease;
+    transition: all 0.5s ease;
     width: 100%;
     height: 100%;
     padding-top: 25%;

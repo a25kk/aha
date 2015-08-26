@@ -3,7 +3,6 @@
 ## AHA 360 Website
 
 * `Source code @ GitHub <https://github.com/a25kk/aha>`_
-* `Releases @ PyPI <http://pypi.python.org/pypi/aha>`_
 * `Documentation @ ReadTheDocs <http://aha.readthedocs.org>`_
 * `Continuous Integration @ Travis-CI <http://travis-ci.org/kreativkombinat/aha>`_
 

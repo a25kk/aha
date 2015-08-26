@@ -20,6 +20,11 @@ class ProjectView(BrowserView):
     def render(self):
         return self.index()
 
+    def rendered_thumbnails(self):
+        context = aq_inner(self.context)
+        template = context.restrictedTraverse('@@project-thumbnails')()
+        return template
+
     def contained_images(self):
         context = aq_inner(self.context)
         items = api.content.find(
@@ -48,7 +53,7 @@ class ProjectView(BrowserView):
         else:
             obj = item
         info = {}
-        if hasattr(obj, 'image'):
+        try:
             scales = getMultiAdapter((obj, self.request), name='images')
             if size == 'small':
                 scale = scales.scale('image', width=300, height=300)
@@ -66,8 +71,38 @@ class ProjectView(BrowserView):
                 info['url'] = IMG
                 info['width'] = '1px'
                 info['height'] = '1px'
-        else:
+        except:
             info['url'] = IMG
             info['width'] = '1px'
             info['height'] = '1px'
         return info
+
+
+class ThumbnailView(BrowserView):
+    """ Thumbnail overlay content """
+
+    def contained_images(self):
+        context = aq_inner(self.context)
+        data = context.restrictedTraverse('@@folderListing')(
+            portal_type='Image',
+            sort_on='getObjPositionInParent'
+        )
+        return data[:9]
+
+    def has_assets(self):
+        return len(self.contained_images()) > 0
+
+    def image_tag(self, image):
+        context = image.getObject()
+        scales = getMultiAdapter((context, self.request), name='images')
+        scale = scales.scale('image', width=120, height=120)
+        item = {}
+        if scale is not None:
+            item['url'] = scale.url
+            item['width'] = scale.width
+            item['height'] = scale.height
+        else:
+            item['url'] = IMG
+            item['width'] = '1px'
+            item['height'] = '1px'
+        return item

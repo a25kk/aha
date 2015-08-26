@@ -14,26 +14,30 @@
           <tal:row tal:repeat="row view/content_matrix">
               <div class="app-page-section app-gutters"
                       tal:define="evenrow repeat/row/even"
-                      tal:attributes="class python:evenrow and 'app-page-section app-page-section-inverse' or 'app-page-section'">
+                      tal:attributes="class python:evenrow and 'app-page-section app-page-section-inverse app-gutter' or 'app-page-section app-gutter'">
                   <tal:col tal:repeat="col row">
-                      <div class="app-page-col lazyload"
+                      <div class="app-page-col"
                               tal:define="evenrow repeat/col/even;
                                           item col/item;
                                           preview_image python:view.preview_image(item);
                                           image_data python:view.image_tag(item)"
-                              tal:attributes="class python:evenrow and 'app-page-col app-page-col-main lazyload' or 'app-page-col app-page-col-aside lazyload'"
-                           data-sizes="auto"
-                           data-bg="${preview_image/url}">
-                          <a class="app-project-panel"
+                              tal:attributes="class python:evenrow and 'app-page-col app-page-col-main' or 'app-page-col app-page-col-aside'">
+                        <div class="app-project-panel">
+                          <a class="app-project-panel-media"
                              href="${item/getURL}">
-                              <img class="app-img-card hidden"
+                              <img class="app-img-card lazyload"
                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                    data-sizes="auto"
                                    data-srcset="${image_data/small},
                                                 ${image_data/medium},
                                                 ${image_data/large},
                                                 ${image_data/original}" />
-                                  ${item/Title}</a>
+                              <div class="app-project-panel-overlay">
+                                  <h4 class="card-title">${item/Title}</h4>
+                                  <p class="card-text" tal:condition="item/Description">${item/Description}</p>
+                              </div>
+                            </a>
+                          </div>
                       </div>
                   </tal:col>
               </div>
@@ -46,4 +50,3 @@
 
 </body>
 </html>
-
