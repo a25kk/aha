@@ -10,6 +10,9 @@
 // Gray baseline
 $app-gray:                      rgba(237, 234, 234, 1);
 
+// Text color override
+$text-color:                    $gray-darker !default;
+
 // Brand primary (green)
 $app-primary:                   #000;
 $app-secondary:                 rgba(88, 140, 115, 1);
@@ -41,3 +44,31 @@ $app-section-default:         $app-primary-base;
 
 //** Font awesome font path
 $fa-font-path:                  "../assets/fonts";
+
+//== Bootstrap variable overides
+//
+//## Reset and adjust existing variables
+
+$brand-primary:                 $app-primary;
+$link-color:                    $app-primary;
+
+$font-family-base:              'Open Sans', $font-family-sans-serif;
+
+//** Font awesome font path
+$fa-font-path:                  "../assets/fonts";
+
+
+//== Compontent border reset
+//
+//## Bootstrap border radius reset
+$border-radius-base:        0px;
+$border-radius-large:       0px;
+$border-radius-small:       0px;
+
+//** Navbar toggle
+$navbar-default-toggle-hover-bg:           #ddd;
+$navbar-default-toggle-icon-bar-bg:        #888;
+$navbar-default-toggle-border-color:       #ddd;
+
+//** Button primary uses default link color not brand primary
+$btn-primary-bg:                 $app-primary;

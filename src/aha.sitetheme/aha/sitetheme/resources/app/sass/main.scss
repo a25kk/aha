@@ -2,13 +2,12 @@
 // Main application stylesheet
 // ----------------------------------------------
 
-
-@import 'utils/variables';
-@import 'utils/mixins';
-
 @import 'vendors/font-awesome';
 @import 'vendors/bootstrap';
 @import 'vendors/flickity';
+
+@import 'utils/variables';
+@import 'utils/mixins';
 
 @import 'base/animation';
 @import 'base/scaffolding';
