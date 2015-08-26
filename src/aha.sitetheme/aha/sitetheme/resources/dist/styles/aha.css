@@ -8816,7 +8816,7 @@ body.section-front-page .app-pathbar {
 }
 .app-frontpage-section-inverse {
   color: #fff; 
-  background-color: #333;
+  background-color: #000;
 }
 .app-frontpage-section-inverse:hover {
   color: #dedede;
@@ -8837,7 +8837,7 @@ body.section-front-page .app-pathbar {
   }
   .app-frontpage-section-inverse {
     color: #fff; 
-    background-color: #333;
+    background-color: #000;
   }
   .app-frontpage-section-inverse:hover {
     color: #dedede;
@@ -8885,7 +8885,6 @@ body.section-front-page .app-pathbar {
   position: absolute;
   right: .5rem;
   bottom: .15rem;
-  width: 120px;
   font-size: 1.5rem;
   font-weight: 400;
   text-transform: uppercase;
@@ -8894,7 +8893,6 @@ body.section-front-page .app-pathbar {
   .app-frontpage-action {
     right: 25%;
     bottom: 15%;
-    width: 280px; 
     font-size: 2rem;
     text-align: right;
   }
@@ -8934,7 +8932,7 @@ body.section-front-page .app-pathbar {
   height: 100%;
   padding-top: 25%; 
   background: #000;
-  transition: all 2s ease;
+  transition: all .5s ease;
 }
 
 .app-fp-block-space:hover {
@@ -8965,7 +8963,7 @@ body.section-front-page .app-pathbar {
   height: 100%;
   padding-top: 25%; 
   background: #fff;
-  transition: all 2s ease;
+  transition: all .5s ease;
 }
 
 .app-fp-block-light:hover {
