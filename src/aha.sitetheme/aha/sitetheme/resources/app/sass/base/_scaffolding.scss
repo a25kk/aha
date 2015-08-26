@@ -53,6 +53,14 @@ a:hover {
 }
 
 
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6, {
+    text-transform: uppercase;
+}
+
+
 // Change styling for elements that mix pixels and rems
 //
 // Form input is calculated based on line and font sizes and needs to be

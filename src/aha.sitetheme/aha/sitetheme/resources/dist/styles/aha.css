@@ -7311,6 +7311,10 @@ a:hover {
   transition: color .5s linear;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
 pre {
   font-size: .9375rem;
 }
@@ -8845,7 +8849,7 @@ body.section-front-page .app-pathbar {
   display: -webkit-flex;
   display: -ms-flexbox;
   display:         flex;
-  padding: 2rem 2rem 0;
+  padding: 25%;
   text-align: center; 
 
   -webkit-align-items: center;
@@ -8880,20 +8884,21 @@ body.section-front-page .app-pathbar {
 .app-frontpage-action {
   position: absolute;
   right: .5rem;
-  bottom: .25rem;
+  bottom: .15rem;
   width: 33vw;
   font-size: 1.5rem;
   font-weight: 400;
+  text-transform: uppercase;
 }
 @media (min-width: 768px) {
   .app-frontpage-action {
     right: 25%;
-    bottom: 25%;
+    bottom: 15%;
     font-size: 2rem;
     text-align: right;
   }
   .app-frontpage-section-inverse .app-frontpage-action {
-    bottom: 25%;
+    bottom: 15%;
     left: 25%;
     text-align: left;
   }
@@ -8928,7 +8933,7 @@ body.section-front-page .app-pathbar {
   height: 100%;
   padding-top: 25%; 
   background: #000;
-  transition: all 3s ease;
+  transition: all 2s ease;
 }
 
 .app-fp-block-space:hover {
@@ -8959,7 +8964,7 @@ body.section-front-page .app-pathbar {
   height: 100%;
   padding-top: 25%; 
   background: #fff;
-  transition: all 3s ease;
+  transition: all 2s ease;
 }
 
 .app-fp-block-light:hover {
