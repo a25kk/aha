@@ -20,21 +20,17 @@
         <div class="app-summary-wrapper">
         <div class="app-sumary-left">
           <div class="tileImage" tal:condition="item_has_image">
-            <a tal:attributes="href item_link">
               <img tal:define="scales obj/@@images;
                                scale python:scales.scale('image', 'large')"
                   tal:replace="structure python:scale and scale.tag(css_class='tileImage') or None" />
-            </a>
           </div>
           </div>
           <div class="app-sumary-right">
           <h2 class="tileHeadline" metal:define-macro="listitem">
-            <a class="summary url"
-                tal:attributes="href item_link;
-                                title item_type"
+            <span class="summary url"
                 tal:content="item_title">
               Item Title
-            </a>
+            </span>
           </h2>
 
           <div metal:use-macro="context/@@listing_view/macros/document_byline"></div>
@@ -44,14 +40,7 @@
               description
             </span>
           </p>
-
-          <p class="tileFooter">
-            <a tal:attributes="href item_link"
-                i18n:translate="read_more">
-              Read More&hellip;
-            </a>
-          </p>
-
+          
           <div class="visualClear"><!-- --></div>
           </div>
           </div>

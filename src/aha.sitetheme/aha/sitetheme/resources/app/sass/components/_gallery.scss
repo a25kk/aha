@@ -16,14 +16,15 @@
         top: 2rem;
         left: 4rem;
         z-index: 1001;
-        width: 25%;
-        padding: 1rem;
-        background: $gray-dark;
+        width: 35%;
+        padding: 4rem 2rem 2rem 2rem;
+        background: $app-primary;
     }
 }
 
 .section-licht .app-gallery-caption {
     background: #fff;
+    padding: 4rem 2rem 2rem 2rem;
 }
 
 .app-gallery-cell {
@@ -57,7 +58,7 @@
 }
 
 .flickity-page-dots {
-    bottom: 100px !important;
+    bottom: 40px !important;
 }
 
 .flickity-page-dots .dot {

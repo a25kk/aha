@@ -59,7 +59,9 @@
 .app-page-title {
     text-transform: uppercase;
     .app-page-headline {
-        font-size: 1.5rem;
+        font-size: 1rem;
+        color: #808080;
+        letter-spacing: 2px;
     }
 }
 
@@ -196,6 +198,7 @@
 .app-project-tabs {
   text-align: right;
   list-style: none;
+  text-transform: uppercase;
 }
 
 .app-project-tab {

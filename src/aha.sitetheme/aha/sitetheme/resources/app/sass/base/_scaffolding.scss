@@ -50,6 +50,7 @@ a {
 // Transistion link color on :hover state
 a:hover {
   transition: color 0.5s linear;
+  text-decoration: underline;
 }
 
 

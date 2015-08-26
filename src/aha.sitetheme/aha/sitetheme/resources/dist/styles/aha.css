@@ -7262,7 +7262,7 @@ http://flickity.metafizzy.co
   transition-delay: 1.2s;
 }
 .dim-in.dim-in-3 {
-  transition-delay: 1.8s;
+  transition-delay: 2.8s;
 }
 
 .app-dlay-1 {
@@ -7308,6 +7308,7 @@ a {
 }
 
 a:hover {
+  text-decoration: underline; 
   transition: color .5s linear;
 }
 
@@ -8479,13 +8480,14 @@ body.section-front-page .app-pathbar {
     top: 2rem;
     left: 4rem;
     z-index: 1001;
-    width: 25%;
-    padding: 1rem;
-    background: #333;
+    width: 35%;
+    padding: 4rem 2rem 2rem 2rem;
+    background: #000;
   }
 }
 
 .section-licht .app-gallery-caption {
+  padding: 4rem 2rem 2rem 2rem; 
   background: #fff;
 }
 
@@ -8524,7 +8526,7 @@ body.section-front-page .app-pathbar {
 }
 
 .flickity-page-dots {
-  bottom: 100px !important;
+  bottom: 40px !important;
 }
 
 .flickity-page-dots .dot {
@@ -9037,7 +9039,9 @@ body.section-front-page .app-pathbar {
   text-transform: uppercase;
 }
 .app-page-title .app-page-headline {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  color: #808080;
+  letter-spacing: 2px;
 }
 
 .app-page-lead,
@@ -9160,6 +9164,7 @@ body.section-front-page .app-pathbar {
 
 .app-project-tabs {
   text-align: right;
+  text-transform: uppercase; 
   list-style: none;
 }
 
