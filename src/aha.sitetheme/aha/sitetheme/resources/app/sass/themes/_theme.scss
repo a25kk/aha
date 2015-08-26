@@ -9,6 +9,9 @@
 .app-main {
   min-height: 100vh;
   background: #fff;
+  a {
+    color: #000;
+  }
   @media (min-width: $grid-float-breakpoint) {
       display: flex;
       flex-direction: row-reverse;
@@ -21,6 +24,9 @@
         // Redefine text color variable for inverse theme
       $text-color: $gray-lighter;
       color: $gray-lighter;
+      a {
+        color: #fff;
+      }
   }
 }
 

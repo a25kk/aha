@@ -8167,7 +8167,8 @@ textarea {
 
 .app-brand-img {
   display: block;
-  width: 140px;
+  width: 140px; 
+  padding: 0 1.0989010992rem;
 }
 .app-brand-img-xs {
   width: 64px;
@@ -9245,6 +9246,9 @@ body.section-front-page .app-pathbar {
   min-height: 100vh;
   background: #fff;
 }
+.app-main a {
+  color: #000;
+}
 @media (min-width: 768px) {
   .app-main {
     display: -webkit-flex;
@@ -9265,6 +9269,9 @@ body.section-front-page .app-pathbar {
 .app-main-inverse {
   color: #eee; 
   background: #000;
+}
+.app-main-inverse a {
+  color: #fff;
 }
 
 @media (min-width: 768px) {
