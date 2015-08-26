@@ -53,7 +53,7 @@ class ProjectView(BrowserView):
         else:
             obj = item
         info = {}
-        if hasattr(obj, 'image'):
+        try:
             scales = getMultiAdapter((obj, self.request), name='images')
             if size == 'small':
                 scale = scales.scale('image', width=300, height=300)
@@ -71,7 +71,7 @@ class ProjectView(BrowserView):
                 info['url'] = IMG
                 info['width'] = '1px'
                 info['height'] = '1px'
-        else:
+        except:
             info['url'] = IMG
             info['width'] = '1px'
             info['height'] = '1px'

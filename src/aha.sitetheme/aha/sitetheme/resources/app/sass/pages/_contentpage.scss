@@ -114,6 +114,7 @@
 .app-page-section {
     @media (min-width: $grid-float-breakpoint) {
         display: flex;
+        flex-wrap: row wrap;
         &-inverse {
             flex-direction: row-reverse;
         }
@@ -123,13 +124,12 @@
 .app-page-col {
     padding: $line-height-computed;
     @media (min-width: $grid-float-breakpoint) {
-        position: relative;
         flex: 1;
         &-main {
-            flex: 0 0 40%;
+            flex: 0 1 60%;
         }
         &-aside {
-            flex: 0 0 60%;
+            flex: 0 1 40%;
         }
     }
 }
@@ -161,17 +161,14 @@
 }
 
 .app-project-panel {
-  display: block;
-  position: relative;
+    border: 1px solid red;
 }
 
 // Project panel links
 .app-project-panel-media {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border: 1px solid #fff;
+    display: inline;
     color: $gray-darker;
+    border: 1px solid blue;
     @include when-inside('.app-main-inverse') {
       color: $gray-lighter;
     }
@@ -182,10 +179,12 @@
 }
 
 .app-project-panel-overlay {
-    position: absolute;
+    display: none;
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
+    z-index: 1001;
     padding: 1.25rem;
     opacity: 0;
     background: rgba(0, 0, 0, .75);
