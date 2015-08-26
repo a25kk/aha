@@ -100,7 +100,7 @@
     position: absolute;
     right: 0.5rem;
     bottom: 0.15rem;
-    width: 33vw;
+    width: 120px;
     font-size: 1.5rem;
     font-weight: 400;
     text-transform: uppercase;
@@ -109,6 +109,7 @@
         bottom: 15%;
         font-size: 2rem;
         text-align: right;
+        width: 280px;
         .app-frontpage-section-inverse & {
             left: 25%;
             bottom: 15%;
