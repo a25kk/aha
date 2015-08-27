@@ -22,23 +22,14 @@
                                           preview_image python:view.preview_image(item);
                                           image_data python:view.image_tag(item)"
                               tal:attributes="class python:evenrow and 'app-page-col app-page-col-main' or 'app-page-col app-page-col-aside'">
-                        <div class="app-project-panel" tal:content="nothing"
+                        <a class="app-project-panel"
+                          href="${item/getURL}"
                           tal:attributes="style python:view.computed_inline_styles(item)">
-                          <a class="app-project-panel-media"
-                             href="${item/getURL}">
-                              <img class="app-img-card lazyload"
-                                   src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                   data-sizes="auto"
-                                   data-srcset="${image_data/small},
-                                                ${image_data/medium},
-                                                ${image_data/large},
-                                                ${image_data/original}" />
-                              <div class="app-project-panel-overlay">
-                                  <h4 class="card-title">${item/Title}</h4>
-                                  <p class="card-text" tal:condition="item/Description">${item/Description}</p>
-                              </div>
-                            </a>
+                          <div class="app-project-panel-overlay">
+                              <h4 class="card-title">${item/Title}</h4>
+                              <p class="card-text" tal:condition="item/Description">${item/Description}</p>
                           </div>
+                          </a>
                       </div>
                   </tal:col>
               </div>

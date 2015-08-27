@@ -8168,7 +8168,7 @@ textarea {
 .app-brand-img {
   display: block;
   width: 140px; 
-  padding: 0 1.0989010992rem;
+  padding: 0 1rem;
 }
 .app-brand-img-xs {
   width: 64px;
@@ -9114,7 +9114,7 @@ body.section-front-page .app-pathbar {
 }
 
 .app-page-col {
-  padding: .7142857145rem;
+  padding: .5rem;
 }
 @media (min-width: 768px) {
   .app-page-col {
@@ -9158,7 +9158,10 @@ body.section-front-page .app-pathbar {
 }
 
 .app-project-panel {
+  display: block;
   min-height: 200px;
+  color: #fff;
+  text-decoration: none; 
   background-size: cover;
 }
 @media (min-width: 768px) {
@@ -9166,29 +9169,12 @@ body.section-front-page .app-pathbar {
     min-height: 400px;
   }
 }
-
-.app-project-panel-media {
-  display: inline;
-  color: #222;
-  background-size: contain;
-}
-.app-main-inverse .app-project-panel-media {
-  color: #eee;
-}
-.app-project-panel-media:hover > .app-project-panel-overlay {
+.app-project-panel:hover > .app-project-panel-overlay {
   opacity: 1;
-}
-.app-project-panel-media > img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 .app-project-panel-overlay {
-  top: 0;
-  left: 0;
   z-index: 1001;
-  display: none;
   width: 100%;
   height: 100%;
   padding: 1.25rem;
@@ -9197,7 +9183,7 @@ body.section-front-page .app-pathbar {
 }
 @media (min-width: 768px) {
   .app-project-panel-overlay {
-    width: 50%;
+    width: auto;
   }
 }
 
@@ -9312,9 +9298,6 @@ body.section-front-page .app-pathbar {
   min-height: 100vh;
   background: #fff;
 }
-.app-main a {
-  color: #000;
-}
 @media (min-width: 768px) {
   .app-main {
     display: -webkit-flex;
@@ -9335,9 +9318,6 @@ body.section-front-page .app-pathbar {
 .app-main-inverse {
   color: #eee; 
   background: #000;
-}
-.app-main-inverse a {
-  color: #fff;
 }
 
 @media (min-width: 768px) {
