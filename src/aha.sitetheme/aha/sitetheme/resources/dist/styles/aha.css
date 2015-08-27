@@ -2698,7 +2698,7 @@ img {
   vertical-align: middle;
 }
 
-.img-responsive {
+.img-responsive, .image-inline {
   display: block;
   max-width: 100%;
   height: auto;
@@ -7249,8 +7249,8 @@ http://flickity.metafizzy.co
   /* make things invisible upon start */
   -webkit-animation: dimmer-animation ease-in 1;
           animation: dimmer-animation ease-in 1;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s; 
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s; 
 
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
@@ -9039,6 +9039,21 @@ body.section-front-page .app-pathbar {
   height: 100%;
 }
 
+.app-page-header {
+  padding: 0 1rem;
+}
+
+.subsection-unternehmen .app-page-header,
+.subsection-beratung360deg .app-page-header,
+.subsection-konzeption .app-page-header,
+.subsection-jobs .app-page-header {
+  padding: 0 3rem;
+}
+
+.subsection-projekte .app-page-header {
+  padding: 0 1rem;
+}
+
 .app-page-title {
   font-size: 1rem;
   color: #808080;
@@ -9049,6 +9064,23 @@ body.section-front-page .app-pathbar {
   font-size: 1rem;
   color: #808080;
   letter-spacing: 2px;
+}
+
+.subsection-projekte .app-page-title {
+  font-size: 2rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.subsection-projekte .app-page-title .app-page-headline {
+  font-size: 2rem;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.subsection-projekte .app-page-abstract {
+  font-size: 1.5rem; 
+  text-transform: uppercase;
 }
 
 .app-page-lead,
@@ -9075,6 +9107,24 @@ body.section-front-page .app-pathbar {
 
 .app-page-section {
   margin: 0rem;
+}
+
+.img-responsive, .image-inline {
+  display: block;
+  width: 100%; 
+  max-width: 100%;
+  height: auto;
+}
+
+.app-page-list .app-page-section {
+  margin-top: 1rem;
+}
+
+.app-img-card {
+  display: block;
+  width: 100%; 
+  max-width: 100%;
+  height: auto;
 }
 
 .app-page-section {
@@ -9128,6 +9178,22 @@ body.section-front-page .app-pathbar {
         -ms-flex: 0 0 40%;
             flex: 0 0 40%;
   }
+}
+
+@media (min-width: 768px) {
+  .app-page-col-main p {
+    padding: 0 20px 0 20px;
+  }
+  .app-page-col-main .app-page-col-header {
+    padding: 0 20px 0 20px;
+  }
+  .app-page-col-main h4 {
+    padding: 0 20px 0 20px;
+  }
+}
+
+.app-page-col-aside img {
+  padding: 0 0 20px 0;
 }
 
 .app-page-col-header {
@@ -9191,6 +9257,7 @@ body.section-front-page .app-pathbar {
 
 .app-project-tab {
   display: inline-block;
+  padding: 0 .7142857145rem;
 }
 .app-project-tab > a {
   color: #fff;
@@ -9281,6 +9348,14 @@ body.section-front-page .app-pathbar {
   display: block;
 }
 
+a {
+  color: #000;
+}
+
+a:hover {
+  color: #fff;
+}
+
 .app-main {
   min-height: 100vh;
   background: #fff;
@@ -9305,6 +9380,9 @@ body.section-front-page .app-pathbar {
 .app-main-inverse {
   color: #eee; 
   background: #000;
+}
+.app-main-inverse a {
+  color: #fff;
 }
 
 @media (min-width: 768px) {

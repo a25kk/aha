@@ -58,7 +58,24 @@
 //## Text body layout and styling
 
 .app-page-header {
-    //display: none;
+    padding: 0 1rem;
+}
+
+.subsection-unternehmen,
+.subsection-beratung360deg,
+.subsection-konzeption,
+.subsection-jobs {
+    .app-page-header {
+    padding: 0 3rem;
+    }
+}
+
+
+
+ 
+
+.subsection-projekte .app-page-header {
+    padding: 0 1rem;
 }
 
 .app-page-title {
@@ -72,6 +89,26 @@
         letter-spacing: 2px;
     }
 }
+
+
+.subsection-projekte {
+    .app-page-title {
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #fff;
+    letter-spacing: 2px;
+    .app-page-headline {
+        font-size: 2rem;
+        color: #fff;
+        letter-spacing: 2px;
+        }
+    }
+    .app-page-abstract {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+    }   
+}
+
 
 
 // Use custom lead element for page desciptions
@@ -113,11 +150,29 @@
 //    }
 //}
 
-//.image-inline {
-//    @media (max-width: $grid-float-breakpoint) {
-//        @extend .img-responsive;
-//    }
-//}
+.image-inline {
+    @media (max-width: $grid-float-breakpoint) {
+        @extend .img-responsive;
+    }
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+.app-page-list .app-page-section {
+    margin-top: 1rem;
+}
+
+.app-img-card {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
 
 //== Content grid
 //
@@ -143,6 +198,28 @@
         &-aside {
             flex: 0 0 40%;
         }
+    }
+}
+
+.app-page-col-main {
+    @media (min-width: $grid-float-breakpoint) {
+        p {
+        padding: 0 20px 0 20px;
+    }
+    .app-page-col-header {
+        padding: 0 20px 0 20px;
+    }
+
+    h4 {
+        padding: 0 20px 0 20px;
+    }
+}
+    
+}
+
+.app-page-col-aside {
+    img {
+        padding: 0 0 20px 0;
     }
 }
 
@@ -210,6 +287,7 @@
 
 .app-project-tab {
   display: inline-block;
+  padding: 0 ($line-height-computed / 2);
   > a {
     color: #fff;
   }

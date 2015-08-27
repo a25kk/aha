@@ -2,6 +2,13 @@
 // Main site theme
 // --------------------------------------
 
+a {
+  color: $link-color;
+}
+
+a:hover {
+  color: #fff;
+}
 
 //== Main content area
 //
@@ -18,6 +25,9 @@
   }
     &-inverse {
       background: $app-primary;
+      a {
+        color: #fff;
+      }
         // Redefine text color variable for inverse theme
       $text-color: $gray-lighter;
       color: $gray-lighter;
