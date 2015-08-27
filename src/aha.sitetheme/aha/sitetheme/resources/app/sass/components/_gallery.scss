@@ -35,12 +35,19 @@
     }
 }
 
+.app-gallery-thumbs {
+    //border: 0px solid red;
+    padding: $line-height-computed / 2;
+}
+
 .app-thumbnails {
-  display: flex;
+  //display: flex;
 }
 
 .app-thumbnail {
-  flex: 0 0 33.3333%;
+  //flex: 0 0 33.3333%;
+  display: inline-block;
+  padding: $line-height-computed / 3;
 }
 
 /* ---- flickity overrides ---- */

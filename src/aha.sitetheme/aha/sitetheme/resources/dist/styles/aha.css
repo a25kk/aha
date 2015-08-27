@@ -8501,16 +8501,13 @@ body.section-front-page .app-pathbar {
   }
 }
 
-.app-thumbnails {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
+.app-gallery-thumbs {
+  padding: .7142857145rem;
 }
 
 .app-thumbnail {
-  -webkit-flex: 0 0 33.3333%;
-      -ms-flex: 0 0 33.3333%;
-          flex: 0 0 33.3333%;
+  display: inline-block;
+  padding: .4761904763rem;
 }
 
 /* ---- flickity overrides ---- */
@@ -9074,6 +9071,10 @@ body.section-front-page .app-pathbar {
 
 .app-page-body {
   font-size: 1rem;
+}
+
+.app-page-text {
+  padding: 0 .9523809527rem;
 }
 
 .app-page-section {
