@@ -9082,6 +9082,20 @@ body.section-front-page .app-pathbar {
   border: 0 solid red;
 }
 
+.app-page-section {
+  padding-right: 15px; 
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.app-page-section:before,
+  .app-page-section:after {
+  display: table; 
+  content: " ";
+}
+.app-page-section:after {
+  clear: both;
+}
 @media (min-width: 768px) {
   .app-page-section {
     display: -webkit-flex;
@@ -9100,49 +9114,24 @@ body.section-front-page .app-pathbar {
   }
 }
 
-.section-licht .app-page-col {
+.app-page-col {
   padding: 1.428571429rem;
 }
 @media (min-width: 768px) {
-  .section-licht .app-page-col {
+  .app-page-col {
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
   }
-  .section-licht .app-page-col-main {
-    padding: 1.428571429rem; 
-
-    -webkit-flex: 0 1 60%;
-        -ms-flex: 0 1 60%;
-            flex: 0 1 60%;
+  .app-page-col-main {
+    -webkit-flex: 0 0 60%;
+        -ms-flex: 0 0 60%;
+            flex: 0 0 60%;
   }
-  .section-licht .app-page-col-aside {
-    -webkit-flex: 0 1 40%;
-        -ms-flex: 0 1 40%;
-            flex: 0 1 40%;
-  }
-}
-
-.section-raum .app-page-col {
-  padding: 1.428571429rem;
-}
-@media (min-width: 768px) {
-  .section-raum .app-page-col {
-    -webkit-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-  }
-  .section-raum .app-page-col-main {
-    -webkit-flex: 0 1 60%;
-        -ms-flex: 0 1 60%;
-            flex: 0 1 60%;
-  }
-  .section-raum .app-page-col-aside {
-    padding: 1.428571429rem; 
-
-    -webkit-flex: 0 1 40%;
-        -ms-flex: 0 1 40%;
-            flex: 0 1 40%;
+  .app-page-col-aside {
+    -webkit-flex: 0 0 40%;
+        -ms-flex: 0 0 40%;
+            flex: 0 0 40%;
   }
 }
 
@@ -9170,6 +9159,7 @@ body.section-front-page .app-pathbar {
 }
 
 .app-project-panel {
+  min-height: 200px; 
   border: 1px solid red;
 }
 
@@ -9184,6 +9174,11 @@ body.section-front-page .app-pathbar {
 }
 .app-project-panel-media:hover > .app-project-panel-overlay {
   opacity: 1;
+}
+.app-project-panel-media > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .app-project-panel-overlay {
