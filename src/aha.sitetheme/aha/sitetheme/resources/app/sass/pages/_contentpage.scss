@@ -100,8 +100,7 @@
 //
 //## Container providing visual separation
 .app-page-section {
-    margin: 1rem 0 3rem;
-    border: 0px solid red;
+    margin: 0rem;
 }
 
 //== Responsive image
@@ -135,7 +134,7 @@
 }
 
 .app-page-col {
-    padding: $line-height-computed;
+    padding: $line-height-computed / 2;
     @media (min-width: $grid-float-breakpoint) {
         flex: 1;
         &-main {
@@ -175,7 +174,7 @@
 }
 
 .app-project-panel {
-    border: 1px solid red;
+    //border: 1px solid red;
     min-height: 200px;
     background-size: cover;
     @media (min-width: $grid-float-breakpoint) {
@@ -187,7 +186,7 @@
 .app-project-panel-media {
     display: inline;
     color: $gray-darker;
-    border: 1px solid blue;
+    //border: 1px solid blue;
     @include when-inside('.app-main-inverse') {
       color: $gray-lighter;
     }

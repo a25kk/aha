@@ -9078,8 +9078,7 @@ body.section-front-page .app-pathbar {
 }
 
 .app-page-section {
-  margin: 1rem 0 3rem;
-  border: 0 solid red;
+  margin: 0rem;
 }
 
 .app-page-section {
@@ -9115,7 +9114,7 @@ body.section-front-page .app-pathbar {
 }
 
 .app-page-col {
-  padding: 1.428571429rem;
+  padding: .7142857145rem;
 }
 @media (min-width: 768px) {
   .app-page-col {
@@ -9160,8 +9159,7 @@ body.section-front-page .app-pathbar {
 
 .app-project-panel {
   min-height: 200px;
-  background-size: cover; 
-  border: 1px solid red;
+  background-size: cover;
 }
 @media (min-width: 768px) {
   .app-project-panel {
@@ -9172,8 +9170,7 @@ body.section-front-page .app-pathbar {
 .app-project-panel-media {
   display: inline;
   color: #222;
-  background-size: contain; 
-  border: 1px solid blue;
+  background-size: contain;
 }
 .app-main-inverse .app-project-panel-media {
   color: #eee;
