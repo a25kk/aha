@@ -8898,12 +8898,12 @@ body.section-front-page .app-pathbar {
 @media (min-width: 768px) {
   .app-frontpage-action {
     right: 25%;
-    bottom: 15%;
+    bottom: 5%;
     font-size: 2rem;
     text-align: right;
   }
   .app-frontpage-section-inverse .app-frontpage-action {
-    bottom: 15%;
+    bottom: 5%;
     left: 25%;
     text-align: left;
   }
