@@ -64,9 +64,9 @@ class NewsListingView(BrowserView):
     def news(self):
         portal = api.portal.get()
         pages = api.content.find(
-            context=portal['news'],
+            context=portal['aktuell'],
             object_provides=IContentPage,
-            portal_type='published',
+            review_state='published',
             sort_on='effective'
         )
         return pages

@@ -19,7 +19,7 @@
                       batch python:Batch(results, b_size, b_start);">
             <div class="app-page-list-item" tal:repeat="item results">
               <div class="app-page-section app-gutters"
-                      tal:define="evenrow repeat/row/even">
+                      tal:define="evenrow repeat/item/even">
                   <div class="app-page-col app-page-col-aside"
                       tal:define="img_data python:view.image_tag(item)">
                         <img class="app-img-card lazyload"
@@ -41,13 +41,15 @@
                                 ${item/Description}
                         </p>
                     </div>
-                    <div class="app-page-body">
+                    <div class="app-page-body"
+                      tal:define="item_obj item/getObject">
                       <div class="app-page-text" id="parent-fieldname-text"
-                              tal:condition="item/text"
-                              tal:content="structure item/text/output" />
+                              tal:condition="item_obj/text"
+                              tal:content="structure item_obj/text/output" />
                     </div>
                   </div>
               </div>
+            <div metal:use-macro="context/batch_macros/macros/navigation" />
             </div>
         </div>
 
