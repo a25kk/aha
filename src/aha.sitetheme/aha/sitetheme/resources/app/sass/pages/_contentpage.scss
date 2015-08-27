@@ -58,6 +58,9 @@
 //## Text body layout and styling
 .app-page-title {
     text-transform: uppercase;
+    font-size: 1rem;
+    color: #808080;
+    letter-spacing: 2px;
     .app-page-headline {
         font-size: 1rem;
         color: #808080;
@@ -121,7 +124,21 @@
     }
 }
 
-.app-page-col {
+.section-licht .app-page-col {
+    padding: $line-height-computed;
+    @media (min-width: $grid-float-breakpoint) {
+        flex: 1;
+        &-main {
+            flex: 0 1 60%;
+            padding: $line-height-computed;
+        }
+        &-aside {
+            flex: 0 1 40%;
+        }
+    }
+}
+
+.section-raum .app-page-col {
     padding: $line-height-computed;
     @media (min-width: $grid-float-breakpoint) {
         flex: 1;
@@ -130,9 +147,12 @@
         }
         &-aside {
             flex: 0 1 40%;
+            padding: $line-height-computed;
         }
     }
 }
+
+
 
 .app-page-col-header {
     text-transform: uppercase;

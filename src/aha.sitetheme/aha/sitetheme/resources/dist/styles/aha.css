@@ -9043,7 +9043,10 @@ body.section-front-page .app-pathbar {
 }
 
 .app-page-title {
+  font-size: 1rem;
+  color: #808080;
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 .app-page-title .app-page-headline {
   font-size: 1rem;
@@ -9092,21 +9095,46 @@ body.section-front-page .app-pathbar {
   }
 }
 
-.app-page-col {
+.section-licht .app-page-col {
   padding: 1.428571429rem;
 }
 @media (min-width: 768px) {
-  .app-page-col {
+  .section-licht .app-page-col {
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
   }
-  .app-page-col-main {
+  .section-licht .app-page-col-main {
+    padding: 1.428571429rem; 
+
     -webkit-flex: 0 1 60%;
         -ms-flex: 0 1 60%;
             flex: 0 1 60%;
   }
-  .app-page-col-aside {
+  .section-licht .app-page-col-aside {
+    -webkit-flex: 0 1 40%;
+        -ms-flex: 0 1 40%;
+            flex: 0 1 40%;
+  }
+}
+
+.section-raum .app-page-col {
+  padding: 1.428571429rem;
+}
+@media (min-width: 768px) {
+  .section-raum .app-page-col {
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .section-raum .app-page-col-main {
+    -webkit-flex: 0 1 60%;
+        -ms-flex: 0 1 60%;
+            flex: 0 1 60%;
+  }
+  .section-raum .app-page-col-aside {
+    padding: 1.428571429rem; 
+
     -webkit-flex: 0 1 40%;
         -ms-flex: 0 1 40%;
             flex: 0 1 40%;
