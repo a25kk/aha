@@ -134,7 +134,7 @@
 }
 
 .app-page-col {
-    padding: $line-height-computed / 2;
+    padding: 0.5rem;
     @media (min-width: $grid-float-breakpoint) {
         flex: 1;
         &-main {
@@ -175,34 +175,21 @@
 
 .app-project-panel {
     //border: 1px solid red;
+    display: block;
     min-height: 200px;
     background-size: cover;
+    color: #fff;
+    text-decoration: none;
     @media (min-width: $grid-float-breakpoint) {
       min-height: 400px;
     }
-}
-
-// Project panel links
-.app-project-panel-media {
-    display: inline;
-    color: $gray-darker;
-    //border: 1px solid blue;
-    @include when-inside('.app-main-inverse') {
-      color: $gray-lighter;
-    }
-    background-size: contain;
     &:hover > .app-project-panel-overlay {
       opacity: 1;
     }
-    > img {
-      @include img-responsive();
-    }
 }
 
+// Overlay visible during parent :hover pseudostate
 .app-project-panel-overlay {
-    display: none;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     z-index: 1001;
@@ -210,7 +197,7 @@
     opacity: 0;
     background: rgba(0, 0, 0, .75);
     @media  (min-width: $grid-float-breakpoint) {
-      width: 50%;
+      width:auto;
     }
 }
 
