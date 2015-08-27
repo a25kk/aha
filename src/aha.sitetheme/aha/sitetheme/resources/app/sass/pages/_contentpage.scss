@@ -56,6 +56,11 @@
 //== Page content
 //
 //## Text body layout and styling
+
+.app-page-header {
+    display: none;
+}
+
 .app-page-title {
     text-transform: uppercase;
     font-size: 1rem;

@@ -1,6 +1,6 @@
 // Listing
 
-.app-summary-wrapper {
+.section-licht .app-summary-wrapper {
   @extend .make-row;
   min-height: 500px;
   border-bottom: 1px solid $app-gray;
@@ -9,6 +9,24 @@
   .app-sumary-left {
     @include make-md-column(8);
     padding-left: 0 !important;
+  }
+  .app-sumary-right {
+    @include make-md-column(4);
+    padding-left: 0 !important;
+    padding-top: $line-height-computed * 3;
+  }
+}
+
+.section-raum .app-summary-wrapper {
+  @extend .make-row;
+  min-height: 500px;
+  border-bottom: 1px solid $app-gray;
+  padding-top: $line-height-computed;
+  padding-bottom: $line-height-computed;
+  .app-sumary-left {
+    @include make-md-column(8);
+    padding-left: 0 !important;
+    float: right !important;
   }
   .app-sumary-right {
     @include make-md-column(4);
@@ -36,6 +54,12 @@
   //margin-bottom: $line-height-computed;
   float: left;
 }
+
+//.subsection-aktuell {
+//  .app-page-header {
+//    display: none;
+//  }
+//}
 
 .tileHeadline {
   font-size: 1.5rem;

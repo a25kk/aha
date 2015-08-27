@@ -9042,6 +9042,10 @@ body.section-front-page .app-pathbar {
   height: 100%;
 }
 
+.app-page-header {
+  display: none;
+}
+
 .app-page-title {
   font-size: 1rem;
   color: #808080;
@@ -9211,13 +9215,13 @@ body.section-front-page .app-pathbar {
   color: #fff;
 }
 
-.app-summary-wrapper {
+.section-licht .app-summary-wrapper {
   min-height: 500px;
   padding-top: 1.428571429rem;
   padding-bottom: 1.428571429rem; 
   border-bottom: 1px solid #edeaea;
 }
-.app-summary-wrapper .app-sumary-left {
+.section-licht .app-summary-wrapper .app-sumary-left {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
@@ -9225,12 +9229,12 @@ body.section-front-page .app-pathbar {
   padding-left: 0 !important;
 }
 @media (min-width: 992px) {
-  .app-summary-wrapper .app-sumary-left {
+  .section-licht .app-summary-wrapper .app-sumary-left {
     float: left;
     width: 66.6666666667%;
   }
 }
-.app-summary-wrapper .app-sumary-right {
+.section-licht .app-summary-wrapper .app-sumary-right {
   position: relative;
   min-height: 1px;
   padding-top: 4.285714287rem; 
@@ -9239,7 +9243,42 @@ body.section-front-page .app-pathbar {
   padding-left: 0 !important;
 }
 @media (min-width: 992px) {
-  .app-summary-wrapper .app-sumary-right {
+  .section-licht .app-summary-wrapper .app-sumary-right {
+    float: left;
+    width: 33.3333333333%;
+  }
+}
+
+.section-raum .app-summary-wrapper {
+  min-height: 500px;
+  padding-top: 1.428571429rem;
+  padding-bottom: 1.428571429rem; 
+  border-bottom: 1px solid #edeaea;
+}
+.section-raum .app-summary-wrapper .app-sumary-left {
+  position: relative;
+  float: right !important; 
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-left: 0 !important;
+}
+@media (min-width: 992px) {
+  .section-raum .app-summary-wrapper .app-sumary-left {
+    float: left;
+    width: 66.6666666667%;
+  }
+}
+.section-raum .app-summary-wrapper .app-sumary-right {
+  position: relative;
+  min-height: 1px;
+  padding-top: 4.285714287rem; 
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-left: 0 !important;
+}
+@media (min-width: 992px) {
+  .section-raum .app-summary-wrapper .app-sumary-right {
     float: left;
     width: 33.3333333333%;
   }
