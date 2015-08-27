@@ -58,7 +58,7 @@
 //## Text body layout and styling
 
 .app-page-header {
-    display: none;
+    //display: none;
 }
 
 .app-page-title {
@@ -107,17 +107,17 @@
 //
 //## Class to resize standalone images based
 //## on viewport sizes
-.app-image {
-    @media (max-width: $grid-float-breakpoint) {
-        @extend .img-responsive;
-    }
-}
+//.app-image {
+//    @media (max-width: $grid-float-breakpoint) {
+//        @extend .img-responsive;
+//    }
+//}
 
-.image-inline {
-    @media (max-width: $grid-float-breakpoint) {
-        @extend .img-responsive;
-    }
-}
+//.image-inline {
+//    @media (max-width: $grid-float-breakpoint) {
+//        @extend .img-responsive;
+//    }
+//}
 
 //== Content grid
 //

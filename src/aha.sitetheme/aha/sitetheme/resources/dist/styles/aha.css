@@ -2698,7 +2698,7 @@ img {
   vertical-align: middle;
 }
 
-.img-responsive, .app-image, .image-inline, .newsImage, .tileImage {
+.img-responsive {
   display: block;
   max-width: 100%;
   height: auto;
@@ -9039,10 +9039,6 @@ body.section-front-page .app-pathbar {
   height: 100%;
 }
 
-.app-page-header {
-  display: none;
-}
-
 .app-page-title {
   font-size: 1rem;
   color: #808080;
@@ -9273,15 +9269,6 @@ body.section-front-page .app-pathbar {
   display: block;
   min-height: 500px; 
   border: 0 solid red;
-}
-
-.newsImage {
-  width: 100%;
-  margin-bottom: 1.428571429rem;
-}
-
-.tileImage {
-  float: left;
 }
 
 .tileHeadline {
