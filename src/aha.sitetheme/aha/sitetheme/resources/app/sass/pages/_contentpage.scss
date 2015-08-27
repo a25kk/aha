@@ -173,6 +173,10 @@
 .app-project-panel {
     border: 1px solid red;
     min-height: 200px;
+    background-size: cover;
+    @media (min-width: $grid-float-breakpoint) {
+      min-height: 400px;
+    }
 }
 
 // Project panel links

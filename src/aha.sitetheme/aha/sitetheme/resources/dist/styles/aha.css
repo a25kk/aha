@@ -9158,8 +9158,14 @@ body.section-front-page .app-pathbar {
 }
 
 .app-project-panel {
-  min-height: 200px; 
+  min-height: 200px;
+  background-size: cover; 
   border: 1px solid red;
+}
+@media (min-width: 768px) {
+  .app-project-panel {
+    min-height: 400px;
+  }
 }
 
 .app-project-panel-media {

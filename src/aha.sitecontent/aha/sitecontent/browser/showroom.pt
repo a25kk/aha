@@ -22,7 +22,8 @@
                                           preview_image python:view.preview_image(item);
                                           image_data python:view.image_tag(item)"
                               tal:attributes="class python:evenrow and 'app-page-col app-page-col-main' or 'app-page-col app-page-col-aside'">
-                        <div class="app-project-panel" tal:content="nothing">
+                        <div class="app-project-panel" tal:content="nothing"
+                          tal:attributes="style python:view.computed_inline_styles(item)">
                           <a class="app-project-panel-media"
                              href="${item/getURL}">
                               <img class="app-img-card lazyload"
