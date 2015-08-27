@@ -112,6 +112,7 @@
 //
 //## Flexbox based grid classes
 .app-page-section {
+    @include container-fixed;
     @media (min-width: $grid-float-breakpoint) {
         display: flex;
         flex-wrap: row wrap;
@@ -126,10 +127,10 @@
     @media (min-width: $grid-float-breakpoint) {
         flex: 1;
         &-main {
-            flex: 0 1 60%;
+            flex: 0 0 60%;
         }
         &-aside {
-            flex: 0 1 40%;
+            flex: 0 0 40%;
         }
     }
 }
@@ -137,7 +138,6 @@
 .app-page-col-header {
     text-transform: uppercase;
 }
-
 
 // Gutter modifier class
 //
@@ -162,6 +162,7 @@
 
 .app-project-panel {
     border: 1px solid red;
+    min-height: 200px;
 }
 
 // Project panel links
@@ -175,6 +176,9 @@
     background-size: contain;
     &:hover > .app-project-panel-overlay {
       opacity: 1;
+    }
+    > img {
+      @include img-responsive();
     }
 }
 
