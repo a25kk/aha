@@ -9068,19 +9068,9 @@ body.section-front-page .app-pathbar {
 
 .subsection-projekte .app-page-title {
   font-size: 2rem;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
 .subsection-projekte .app-page-title .app-page-headline {
   font-size: 2rem;
-  color: #fff;
-  letter-spacing: 2px;
-}
-
-.subsection-projekte .app-page-abstract {
-  font-size: 1.5rem; 
-  text-transform: uppercase;
 }
 
 .app-page-lead,
@@ -9094,6 +9084,7 @@ body.section-front-page .app-pathbar {
   .app-page-lead,
   .app-page-abstract {
     font-size: 1rem;
+    text-transform: uppercase;
   }
 }
 
@@ -9260,6 +9251,20 @@ body.section-front-page .app-pathbar {
   padding: 0 .7142857145rem;
 }
 .app-project-tab > a {
+  color: #000;
+}
+.app-project-tab > a:hover {
+  color: #000;
+}
+
+.app-main-inverse .app-project-tab {
+  display: inline-block;
+  padding: 0 .7142857145rem;
+}
+.app-main-inverse .app-project-tab > a {
+  color: #fff;
+}
+.app-main-inverse .app-project-tab > a:hover {
   color: #fff;
 }
 
