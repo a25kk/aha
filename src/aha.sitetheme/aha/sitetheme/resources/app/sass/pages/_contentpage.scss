@@ -116,6 +116,22 @@
     }
 }
 
+.app-page-content-news {
+    @media (min-width: $screen-sm-min) {
+        .app-page-title {
+            padding: 0 1rem;
+            }
+        .app-page-abstract {
+            padding: 0 1rem;
+        }
+        .app-page-text {
+            h2 {
+                padding: 0 1rem;
+            }     
+        }           
+    }
+}
+
 .app-page-body {
     font-size: 1rem;
 }
@@ -185,10 +201,10 @@
     @media (min-width: $grid-float-breakpoint) {
         flex: 1;
         &-main {
-            flex: 0 0 60%;
+            flex: 0 0 40%;
         }
         &-aside {
-            flex: 0 0 40%;
+            flex: 0 0 60%;
         }
     }
 }
