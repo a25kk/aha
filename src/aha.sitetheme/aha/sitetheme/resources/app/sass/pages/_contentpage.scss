@@ -259,7 +259,6 @@
 }
 
 .app-project-panel {
-    //border: 1px solid red;
     display: block;
     min-height: 200px;
     background-size: cover;
@@ -280,9 +279,11 @@
     z-index: 1001;
     padding: 1.25rem;
     opacity: 0;
-    background: rgba(0, 0, 0, .75);
+    background: rgba(0, 0, 0, .65);
+    min-height: 200px;
     @media  (min-width: $grid-float-breakpoint) {
       width:auto;
+      min-height: 400px;
     }
 }
 
