@@ -8482,6 +8482,11 @@ body.section-front-page .app-pathbar {
 .app-gallery-caption {
   width: 100%;
 }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .app-gallery-caption {
+    width: 100%;
+  }
+}
 @media (min-width: 992px) {
   .app-gallery-caption {
     position: absolute;
