@@ -105,13 +105,13 @@
     text-transform: uppercase;
     @media (min-width: $grid-float-breakpoint) {
         right: 25%;
-        bottom: 15%;
+        bottom: 5%;
         font-size: 2rem;
         text-align: right;
         .app-frontpage-section-inverse & {
             left: 25%;
-            bottom: 15%;
-            text-align: left;
+            bottom: 5%;
+            text-align: right;
         }
     }
 }

@@ -43,7 +43,7 @@
               <a class="app-navitem-tab"
                       tal:attributes="class python:active and 'app-navitem-tab active ' or 'app-navitem-tab'"
                  href="${portal_url}/${section}/beratung360deg">
-                  <span>360° Beratung</span>
+                  <span class="beratung">360° Beratung</span>
               </a>
           </li>
       </ul>

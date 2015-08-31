@@ -2698,7 +2698,7 @@ img {
   vertical-align: middle;
 }
 
-.img-responsive, .app-image, .image-inline, .newsImage, .tileImage {
+.img-responsive, .image-inline {
   display: block;
   max-width: 100%;
   height: auto;
@@ -7249,8 +7249,8 @@ http://flickity.metafizzy.co
   /* make things invisible upon start */
   -webkit-animation: dimmer-animation ease-in 1;
           animation: dimmer-animation ease-in 1;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s; 
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s; 
 
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
@@ -7522,6 +7522,7 @@ div.riform .label {
 }
 
 .app-navbar-content {
+  padding-bottom: 1rem;
   border-bottom: 1px solid #333;
 }
 .app-header-inverse .app-navbar-content {
@@ -7554,9 +7555,9 @@ div.riform .label {
 }
 
 .app-navbar-header-title {
-  -webkit-flex: 0 0 50%;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
+  -webkit-flex: 0 0 60%;
+      -ms-flex: 0 0 60%;
+          flex: 0 0 60%;
 }
 
 .app-navbar-brand {
@@ -7593,12 +7594,13 @@ div.riform .label {
 .app-navbar-header-toggle {
   min-height: 50px;
   padding-top: 15px;
+  padding-bottom: 15px;
   text-align: center; 
   background: #588c73;
 
-  -webkit-flex: 0 0 25%;
-      -ms-flex: 0 0 25%;
-          flex: 0 0 25%;
+  -webkit-flex: 0 0 20%;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
 }
 
 .app-navbar-toggle {
@@ -7635,13 +7637,15 @@ div.riform .label {
 }
 
 .app-navbar-section {
+  padding-top: 15px;
+  padding-bottom: 15px; 
   font-weight: 700;
-  color: #333; 
+  color: #333;
   text-transform: uppercase;
 
-  -webkit-flex: 0 0 25%;
-      -ms-flex: 0 0 25%;
-          flex: 0 0 25%;
+  -webkit-flex: 0 0 20%;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
 }
 .app-header-inverse .app-navbar-section {
   color: #eee;
@@ -7741,6 +7745,10 @@ div.riform .label {
   font-weight: 300;
   text-decoration: none; 
   text-transform: none;
+}
+
+.subsection-beratung360deg .beratung {
+  font-weight: 700;
 }
 
 .app-footer {
@@ -8167,7 +8175,13 @@ textarea {
 
 .app-brand-img {
   display: block;
-  width: 140px;
+  width: 140px; 
+  padding: 0;
+}
+@media (min-width: 992px) {
+  .app-brand-img {
+    padding: 0 1rem;
+  }
 }
 .app-brand-img-xs {
   width: 64px;
@@ -8474,13 +8488,16 @@ body.section-front-page .app-pathbar {
   position: relative;
 }
 
-@media (min-width: 768px) {
+.app-gallery-caption {
+  width: 100%;
+}
+@media (min-width: 992px) {
   .app-gallery-caption {
     position: absolute;
     top: 2rem;
     left: 4rem;
     z-index: 1001;
-    width: 35%;
+    width: 49%;
     padding: 4rem 2rem 2rem 2rem;
     background: #000;
   }
@@ -8494,22 +8511,19 @@ body.section-front-page .app-pathbar {
 .app-gallery-cell {
   width: 100%;
 }
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .app-gallery-cell {
     height: 100vh;
   }
 }
 
-.app-thumbnails {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display:         flex;
+.app-gallery-thumbs {
+  padding: .7142857145rem;
 }
 
 .app-thumbnail {
-  -webkit-flex: 0 0 33.3333%;
-      -ms-flex: 0 0 33.3333%;
-          flex: 0 0 33.3333%;
+  display: inline-block;
+  padding: .4761904763rem;
 }
 
 /* ---- flickity overrides ---- */
@@ -8900,14 +8914,14 @@ body.section-front-page .app-pathbar {
 @media (min-width: 768px) {
   .app-frontpage-action {
     right: 25%;
-    bottom: 15%;
+    bottom: 5%;
     font-size: 2rem;
     text-align: right;
   }
   .app-frontpage-section-inverse .app-frontpage-action {
-    bottom: 15%;
+    bottom: 5%;
     left: 25%;
-    text-align: left;
+    text-align: right;
   }
 }
 
@@ -9041,13 +9055,37 @@ body.section-front-page .app-pathbar {
   height: 100%;
 }
 
+.app-page-header {
+  padding: 0 1rem;
+}
+
+.subsection-unternehmen .app-page-header,
+.subsection-konzeption .app-page-header,
+.subsection-jobs .app-page-header {
+  padding: 0 3rem;
+}
+
+.subsection-projekte .app-page-header {
+  padding: 0 1rem;
+}
+
 .app-page-title {
+  font-size: 1rem;
+  color: #808080;
   text-transform: uppercase;
+  letter-spacing: 2px;
 }
 .app-page-title .app-page-headline {
   font-size: 1rem;
   color: #808080;
   letter-spacing: 2px;
+}
+
+.subsection-projekte .app-page-title {
+  font-size: 2rem;
+}
+.subsection-projekte .app-page-title .app-page-headline {
+  font-size: 2rem;
 }
 
 .app-page-lead,
@@ -9061,14 +9099,62 @@ body.section-front-page .app-pathbar {
   .app-page-lead,
   .app-page-abstract {
     font-size: 1rem;
+    text-transform: uppercase;
   }
 }
 
-.app-page-section {
-  margin: 1rem 0 3rem;
-  border: 0 solid red;
+@media (min-width: 768px) {
+  .app-page-content-news .app-page-title {
+    padding: 0 1rem;
+  }
+  .app-page-content-news .app-page-abstract {
+    padding: 0 1rem;
+  }
+  .app-page-content-news .app-page-text h2 {
+    padding: 0 1rem;
+  }
 }
 
+.app-page-text {
+  padding: 0 1rem;
+}
+
+.app-page-section {
+  margin: 0rem;
+}
+
+.img-responsive, .image-inline {
+  display: block;
+  width: 100%; 
+  max-width: 100%;
+  height: auto;
+}
+
+.app-page-list .app-page-section {
+  margin-top: 1rem;
+}
+
+.app-img-card {
+  display: block;
+  width: 100%; 
+  max-width: 100%;
+  height: auto;
+}
+
+.app-page-section {
+  padding-right: 15px; 
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.app-page-section:before,
+  .app-page-section:after {
+  display: table; 
+  content: " ";
+}
+.app-page-section:after {
+  clear: both;
+}
 @media (min-width: 768px) {
   .app-page-section {
     display: -webkit-flex;
@@ -9088,7 +9174,7 @@ body.section-front-page .app-pathbar {
 }
 
 .app-page-col {
-  padding: 1.428571429rem;
+  padding: .5rem;
 }
 @media (min-width: 768px) {
   .app-page-col {
@@ -9097,15 +9183,31 @@ body.section-front-page .app-pathbar {
             flex: 1;
   }
   .app-page-col-main {
-    -webkit-flex: 0 1 60%;
-        -ms-flex: 0 1 60%;
-            flex: 0 1 60%;
+    -webkit-flex: 0 0 40%;
+        -ms-flex: 0 0 40%;
+            flex: 0 0 40%;
   }
   .app-page-col-aside {
-    -webkit-flex: 0 1 40%;
-        -ms-flex: 0 1 40%;
-            flex: 0 1 40%;
+    -webkit-flex: 0 0 60%;
+        -ms-flex: 0 0 60%;
+            flex: 0 0 60%;
   }
+}
+
+@media (min-width: 768px) {
+  .app-page-col-main p {
+    padding: 0 20px 0 20px;
+  }
+  .app-page-col-main .app-page-col-header {
+    padding: 0 20px 0 20px;
+  }
+  .app-page-col-main h4 {
+    padding: 0 20px 0 20px;
+  }
+}
+
+.app-page-col-aside img {
+  padding: 0 0 20px 0;
 }
 
 .app-page-col-header {
@@ -9132,36 +9234,34 @@ body.section-front-page .app-pathbar {
 }
 
 .app-project-panel {
-  border: 1px solid red;
+  display: block;
+  min-height: 200px;
+  color: #fff;
+  text-decoration: none; 
+  background-size: cover;
 }
-
-.app-project-panel-media {
-  display: inline;
-  color: #222;
-  background-size: contain; 
-  border: 1px solid blue;
+@media (min-width: 768px) {
+  .app-project-panel {
+    min-height: 400px;
+  }
 }
-.app-main-inverse .app-project-panel-media {
-  color: #eee;
-}
-.app-project-panel-media:hover > .app-project-panel-overlay {
+.app-project-panel:hover > .app-project-panel-overlay {
   opacity: 1;
 }
 
 .app-project-panel-overlay {
-  top: 0;
-  left: 0;
   z-index: 1001;
-  display: none;
   width: 100%;
   height: 100%;
+  min-height: 200px; 
   padding: 1.25rem;
-  background: rgba(0, 0, 0, .75); 
+  background: rgba(0, 0, 0, .65);
   opacity: 0;
 }
 @media (min-width: 768px) {
   .app-project-panel-overlay {
-    width: 50%;
+    width: auto;
+    min-height: 400px;
   }
 }
 
@@ -9173,18 +9273,33 @@ body.section-front-page .app-pathbar {
 
 .app-project-tab {
   display: inline-block;
+  padding: 0 .7142857145rem;
 }
 .app-project-tab > a {
+  color: #000;
+}
+.app-project-tab > a:hover {
+  color: #000;
+}
+
+.app-main-inverse .app-project-tab {
+  display: inline-block;
+  padding: 0 .7142857145rem;
+}
+.app-main-inverse .app-project-tab > a {
+  color: #fff;
+}
+.app-main-inverse .app-project-tab > a:hover {
   color: #fff;
 }
 
-.app-summary-wrapper {
+.section-licht .app-summary-wrapper {
   min-height: 500px;
   padding-top: 1.428571429rem;
   padding-bottom: 1.428571429rem; 
   border-bottom: 1px solid #edeaea;
 }
-.app-summary-wrapper .app-sumary-left {
+.section-licht .app-summary-wrapper .app-sumary-left {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
@@ -9192,12 +9307,12 @@ body.section-front-page .app-pathbar {
   padding-left: 0 !important;
 }
 @media (min-width: 992px) {
-  .app-summary-wrapper .app-sumary-left {
+  .section-licht .app-summary-wrapper .app-sumary-left {
     float: left;
     width: 66.6666666667%;
   }
 }
-.app-summary-wrapper .app-sumary-right {
+.section-licht .app-summary-wrapper .app-sumary-right {
   position: relative;
   min-height: 1px;
   padding-top: 4.285714287rem; 
@@ -9206,7 +9321,42 @@ body.section-front-page .app-pathbar {
   padding-left: 0 !important;
 }
 @media (min-width: 992px) {
-  .app-summary-wrapper .app-sumary-right {
+  .section-licht .app-summary-wrapper .app-sumary-right {
+    float: left;
+    width: 33.3333333333%;
+  }
+}
+
+.section-raum .app-summary-wrapper {
+  min-height: 500px;
+  padding-top: 1.428571429rem;
+  padding-bottom: 1.428571429rem; 
+  border-bottom: 1px solid #edeaea;
+}
+.section-raum .app-summary-wrapper .app-sumary-left {
+  position: relative;
+  float: right !important; 
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-left: 0 !important;
+}
+@media (min-width: 992px) {
+  .section-raum .app-summary-wrapper .app-sumary-left {
+    float: left;
+    width: 66.6666666667%;
+  }
+}
+.section-raum .app-summary-wrapper .app-sumary-right {
+  position: relative;
+  min-height: 1px;
+  padding-top: 4.285714287rem; 
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-left: 0 !important;
+}
+@media (min-width: 992px) {
+  .section-raum .app-summary-wrapper .app-sumary-right {
     float: left;
     width: 33.3333333333%;
   }
@@ -9216,15 +9366,6 @@ body.section-front-page .app-pathbar {
   display: block;
   min-height: 500px; 
   border: 0 solid red;
-}
-
-.newsImage {
-  width: 100%;
-  margin-bottom: 1.428571429rem;
-}
-
-.tileImage {
-  float: left;
 }
 
 .tileHeadline {
@@ -9261,6 +9402,12 @@ body.section-front-page .app-pathbar {
 .app-main-inverse {
   color: #eee; 
   background: #000;
+}
+.app-main-inverse a {
+  color: #fff;
+}
+.app-main-inverse a:hover {
+  color: #eee;
 }
 
 @media (min-width: 768px) {

@@ -11,12 +11,14 @@
 }
 
 .app-gallery-caption {
-    @media (min-width: $grid-float-breakpoint) {
+  width: 100%;
+
+   @media (min-width: $screen-md-min) {
         position: absolute;
         top: 2rem;
         left: 4rem;
         z-index: 1001;
-        width: 35%;
+        width: 49%;
         padding: 4rem 2rem 2rem 2rem;
         background: $app-primary;
     }
@@ -29,18 +31,29 @@
 
 .app-gallery-cell {
     width: 100%;
-    @media (min-width: $grid-float-breakpoint) {
+    //height: 300px;
+    //@media (min-width: $screen-sm-min) {
+    //  height: 500px;
+    //}
+    @media (min-width: $screen-lg-min) {
         height: 100vh;
         // @extend .ratio-container;
     }
 }
 
+.app-gallery-thumbs {
+    //border: 0px solid red;
+    padding: $line-height-computed / 2;
+}
+
 .app-thumbnails {
-  display: flex;
+  //display: flex;
 }
 
 .app-thumbnail {
-  flex: 0 0 33.3333%;
+  //flex: 0 0 33.3333%;
+  display: inline-block;
+  padding: $line-height-computed / 3;
 }
 
 /* ---- flickity overrides ---- */

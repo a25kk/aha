@@ -92,6 +92,15 @@
       layer="..interfaces.IAhaSitecontentLayer"
       />
 
+  <!-- Newslisting Views -->
+  <browser:page
+      for="aha.sitecontent.contentpage.IContentPage"
+      name="news-listing"
+      class=".frontpage.NewsListingView"
+      template="newslisting.pt"
+      permission="zope2.View"
+      layer="..interfaces.IAhaSitecontentLayer"
+      />
 
 
 

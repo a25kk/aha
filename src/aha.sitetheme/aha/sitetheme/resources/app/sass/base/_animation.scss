@@ -64,7 +64,7 @@
     opacity: 0;  /* make things invisible upon start */
     animation: dimmer-animation ease-in 1;
     animation-fill-mode: forwards;
-    animation-duration: 1s;
+    animation-duration: 3s;
     &.dim-in-1 {
         transition-delay: 0.5s;
     }
