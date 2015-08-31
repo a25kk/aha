@@ -70,3 +70,9 @@ $navbar-default-toggle-border-color:       #ddd;
 
 //** Button primary uses default link color not brand primary
 $btn-primary-bg:                 $app-primary;
+
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-md-min !default;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;

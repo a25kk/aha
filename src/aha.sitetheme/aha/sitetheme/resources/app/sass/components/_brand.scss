@@ -15,8 +15,11 @@
 //** Inline svg logo
 .app-brand-img {
   display: block;
-  padding: 0 1rem;
+  padding: 0;
   width: 140px;
+  @media (min-width: $screen-md-min) {
+    padding: 0 1rem;
+  }
   &-xs {
     width: 64px;
   }

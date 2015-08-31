@@ -16,7 +16,7 @@
 
 // Navbar content container
 .app-navbar-content {
-    //padding-bottom: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid $gray-dark;
     .app-header-inverse & {
       border-color: $gray-lighter;
@@ -40,7 +40,7 @@
 
 //** Navbar toggle text
 .app-navbar-header-title {
-    flex: 0 0 50%;
+    flex: 0 0 60%;
 }
 
 //== Brand info
@@ -78,10 +78,11 @@
 
 //** Icon bar navigation toggle
 .app-navbar-header-toggle {
-  flex: 0 0 25%;
+  flex: 0 0 20%;
   background: $app-secondary;
   min-height: $navbar-height;
   padding-top: $navbar-padding-vertical;
+  padding-bottom: $navbar-padding-vertical;
   text-align: center;
 }
 
@@ -122,11 +123,13 @@
 //** Enhance hamburger icon menu by providing a clickable
 //** section info link
 .app-navbar-section {
-  flex: 0 0 25%;
+  flex: 0 0 20%;
   // font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
   color: $gray-dark;
+  padding-top: $navbar-padding-vertical;
+  padding-bottom: $navbar-padding-vertical;
   .app-header-inverse & {
     color: $gray-lighter;
   }

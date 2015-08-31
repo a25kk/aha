@@ -7522,6 +7522,7 @@ div.riform .label {
 }
 
 .app-navbar-content {
+  padding-bottom: 1rem;
   border-bottom: 1px solid #333;
 }
 .app-header-inverse .app-navbar-content {
@@ -7554,9 +7555,9 @@ div.riform .label {
 }
 
 .app-navbar-header-title {
-  -webkit-flex: 0 0 50%;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
+  -webkit-flex: 0 0 60%;
+      -ms-flex: 0 0 60%;
+          flex: 0 0 60%;
 }
 
 .app-navbar-brand {
@@ -7593,12 +7594,13 @@ div.riform .label {
 .app-navbar-header-toggle {
   min-height: 50px;
   padding-top: 15px;
+  padding-bottom: 15px;
   text-align: center; 
   background: #588c73;
 
-  -webkit-flex: 0 0 25%;
-      -ms-flex: 0 0 25%;
-          flex: 0 0 25%;
+  -webkit-flex: 0 0 20%;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
 }
 
 .app-navbar-toggle {
@@ -7635,13 +7637,15 @@ div.riform .label {
 }
 
 .app-navbar-section {
+  padding-top: 15px;
+  padding-bottom: 15px; 
   font-weight: 700;
-  color: #333; 
+  color: #333;
   text-transform: uppercase;
 
-  -webkit-flex: 0 0 25%;
-      -ms-flex: 0 0 25%;
-          flex: 0 0 25%;
+  -webkit-flex: 0 0 20%;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
 }
 .app-header-inverse .app-navbar-section {
   color: #eee;
@@ -8172,7 +8176,12 @@ textarea {
 .app-brand-img {
   display: block;
   width: 140px; 
-  padding: 0 1rem;
+  padding: 0;
+}
+@media (min-width: 992px) {
+  .app-brand-img {
+    padding: 0 1rem;
+  }
 }
 .app-brand-img-xs {
   width: 64px;
@@ -8482,11 +8491,6 @@ body.section-front-page .app-pathbar {
 .app-gallery-caption {
   width: 100%;
 }
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-  .app-gallery-caption {
-    width: 100%;
-  }
-}
 @media (min-width: 992px) {
   .app-gallery-caption {
     position: absolute;
@@ -8506,12 +8510,6 @@ body.section-front-page .app-pathbar {
 
 .app-gallery-cell {
   width: 100%;
-  height: 300px;
-}
-@media (min-width: 768px) {
-  .app-gallery-cell {
-    height: 500px;
-  }
 }
 @media (min-width: 1200px) {
   .app-gallery-cell {
