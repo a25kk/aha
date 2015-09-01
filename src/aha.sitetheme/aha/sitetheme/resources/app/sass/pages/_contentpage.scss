@@ -2,6 +2,24 @@
 // Content page
 // ----------------------------------------
 
+.app-main-default {
+    a {
+        color: #000;
+    }
+    a:hover {
+        color: #000;
+    }
+
+    .app-page-cards {
+        a {
+           color: #fff; 
+        }       
+        a:hover {
+            color: #fff;
+        }
+    }
+}
+
 //== Page styles
 //
 //## Define content specific styles
@@ -61,13 +79,16 @@
     padding: 0 1rem;
 }
 
-.subsection-unternehmen,
-.subsection-konzeption,
-.subsection-jobs {
-    .app-page-header {
-    padding: 0 3rem;
-    }
-}
+//.subsection-unternehmen,
+//.subsection-konzeption,
+//.subsection-jobs {
+//    .app-page-header {
+//    padding: 0 3rem;
+//    }
+//    h3 {
+//        padding: 0 2rem;
+//    }
+//}
 
 
 
@@ -181,7 +202,7 @@
 //
 //## Flexbox based grid classes
 .app-page-section {
-    @include container-fixed;
+    //@include container-fixed;
     @media (min-width: $grid-float-breakpoint) {
         display: flex;
         flex-wrap: row wrap;
@@ -204,25 +225,32 @@
     }
 }
 
-.app-page-col-main {
-    @media (min-width: $grid-float-breakpoint) {
-        p {
-        padding: 0 20px 0 20px;
-    }
-    .app-page-col-header {
-        padding: 0 20px 0 20px;
-    }
+//.app-page-col-main {
+//    @media (min-width: $grid-float-breakpoint) {
+//        p {
+//            padding: 0 20px 0 20px;
+//        }
+//        .app-page-col-header {
+//            padding: 0 20px 0 20px;
+//        }
+//        h4 {
+//            padding: 0 20px 0 20px;
+//        }
+//        ul {
+//            padding: 0 20px 0 40px;
+//        }
+//    }
+//}
 
-    h4 {
-        padding: 0 20px 0 20px;
-    }
-}
-
-}
-
-.app-page-col-aside {
+.app-main-inverse .app-page-col-aside {
     img {
-        padding: 0 0 20px 0;
+        padding: 0 0 2rem 2rem;
+    }
+}
+
+.app-main-default .app-page-col-aside {
+    img {
+        padding: 0 2rem 2rem 0;
     }
 }
 

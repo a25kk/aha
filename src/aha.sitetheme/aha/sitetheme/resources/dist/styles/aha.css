@@ -8497,7 +8497,7 @@ body.section-front-page .app-pathbar {
     top: 2rem;
     left: 4rem;
     z-index: 1001;
-    width: 49%;
+    width: 35%;
     padding: 4rem 2rem 2rem 2rem;
     background: #000;
   }
@@ -9010,6 +9010,22 @@ body.section-front-page .app-pathbar {
           transform: scale(1.1);
 }
 
+.app-main-default a {
+  color: #000;
+}
+
+.app-main-default a:hover {
+  color: #000;
+}
+
+.app-main-default .app-page-cards a {
+  color: #fff;
+}
+
+.app-main-default .app-page-cards a:hover {
+  color: #fff;
+}
+
 .app-page {
   position: relative;
   min-height: 100vh;
@@ -9057,12 +9073,6 @@ body.section-front-page .app-pathbar {
 
 .app-page-header {
   padding: 0 1rem;
-}
-
-.subsection-unternehmen .app-page-header,
-.subsection-konzeption .app-page-header,
-.subsection-jobs .app-page-header {
-  padding: 0 3rem;
 }
 
 .subsection-projekte .app-page-header {
@@ -9141,20 +9151,6 @@ body.section-front-page .app-pathbar {
   height: auto;
 }
 
-.app-page-section {
-  padding-right: 15px; 
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-.app-page-section:before,
-  .app-page-section:after {
-  display: table; 
-  content: " ";
-}
-.app-page-section:after {
-  clear: both;
-}
 @media (min-width: 768px) {
   .app-page-section {
     display: -webkit-flex;
@@ -9194,20 +9190,12 @@ body.section-front-page .app-pathbar {
   }
 }
 
-@media (min-width: 768px) {
-  .app-page-col-main p {
-    padding: 0 20px 0 20px;
-  }
-  .app-page-col-main .app-page-col-header {
-    padding: 0 20px 0 20px;
-  }
-  .app-page-col-main h4 {
-    padding: 0 20px 0 20px;
-  }
+.app-main-inverse .app-page-col-aside img {
+  padding: 0 0 2rem 2rem;
 }
 
-.app-page-col-aside img {
-  padding: 0 0 20px 0;
+.app-main-default .app-page-col-aside img {
+  padding: 0 2rem 2rem 0;
 }
 
 .app-page-col-header {
