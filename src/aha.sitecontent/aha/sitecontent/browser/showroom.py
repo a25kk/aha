@@ -33,7 +33,8 @@ class ShowRoomView(BrowserView):
         items = api.content.find(
             context=context,
             object_provides=IProject,
-            review_state='published'
+            review_state='published',
+            sort_on='getObjPositionInParent'
         )
         return items
 
@@ -86,8 +87,8 @@ class ShowRoomView(BrowserView):
 
     def _get_scaled_img(self, item, size):
         if (
-                    ICatalogBrain.providedBy(item) or
-                    IContentListingObject.providedBy(item)
+            ICatalogBrain.providedBy(item) or
+            IContentListingObject.providedBy(item)
         ):
             obj = item.getObject()
         else:
