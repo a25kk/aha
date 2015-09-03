@@ -36,7 +36,7 @@ class ShowRoomView(BrowserView):
             context=context,
             object_provides=IProject,
             review_state='published',
-            sort_on='getObjPositionInParent',
+            sort_on='modified',
             sort_order='reverse'
         )
         return items
