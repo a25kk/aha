@@ -5,6 +5,7 @@ import math
 from Acquisition import aq_inner
 from Products.Five.browser import BrowserView
 from Products.ZCatalog.interfaces import ICatalogBrain
+from OFS.interfaces import IOrderedContainer
 from plone import api
 from plone.app.contentlisting.interfaces import IContentListingObject
 from aha.sitecontent.project import IProject
@@ -30,11 +31,13 @@ class ShowRoomView(BrowserView):
 
     def projects(self):
         context = aq_inner(self.context)
+        catalog = api.portal.get_tool('portal_catalog')
         items = api.content.find(
             context=context,
             object_provides=IProject,
             review_state='published',
-            sort_on='getObjPositionInParent'
+            sort_on='getObjPositionInParent',
+            sort_order='reverse'
         )
         return items
 
