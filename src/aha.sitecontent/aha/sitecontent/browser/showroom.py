@@ -25,21 +25,31 @@ class ShowRoomView(BrowserView):
 
     def showrooms(self):
         context = aq_inner(self.context)
-        return context.restrictedTraverse('@@folderListing')(
+        return context.restrictedTraverse('@@contentlisting')(
             portal_type='aha.sitecontent.showroom',
             review_state='published')
 
-    def projects(self):
-        context = aq_inner(self.context)
+    def get_projects(self, item):
+        context = aq_inner(item)
         catalog = api.portal.get_tool('portal_catalog')
         items = api.content.find(
             context=context,
             object_provides=IProject,
             review_state='published',
-            sort_on='modified',
-            sort_order='reverse'
+            sort_on='getObjPositionInParent'
         )
         return items
+
+    def projects(self):
+        context = aq_inner(self.context)
+        if self.has_showrooms:
+            projects = list()
+            for showroom in self.showrooms():
+                obj = showroom.getObject()
+                showroom_projects = list(self.get_projects(obj))
+                projects = projects + showroom_projects
+            return projects
+        return list(self.get_projects(context))
 
     def subitems(self):
         """ A showroom containing other showrooms
