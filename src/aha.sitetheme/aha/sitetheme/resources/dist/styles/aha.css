@@ -7683,7 +7683,8 @@ div.riform .label {
 .app-navbar-divider {
   width: 2rem;
   margin: 2rem auto 0 15px;
-  text-align: left;
+  text-align: left; 
+  border: 1px solid #fff;
 }
 
 .app-navitem {
