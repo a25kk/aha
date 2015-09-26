@@ -9226,7 +9226,7 @@ body.section-front-page .app-pathbar {
   display: block;
   min-height: 200px;
   color: #fff;
-  text-decoration: none; 
+  text-decoration: none !important; 
   background-size: cover;
 }
 @media (min-width: 768px) {

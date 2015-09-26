@@ -286,12 +286,12 @@
     min-height: 200px;
     background-size: cover;
     color: #fff;
-    text-decoration: none;
+    text-decoration: none !important;
     @media (min-width: $grid-float-breakpoint) {
       min-height: 400px;
     }
     &:hover > .app-project-panel-overlay {
-      opacity: 1;
+      opacity: 1;   
     }
 }
 
