@@ -6925,7 +6925,7 @@ a.label:focus {
 }
 
 @media (max-width: 767px) {
-  .hidden-xs, .app-navbar-nav-main, .app-navbar-divider, .app-toolbar {
+  .hidden-xs, .app-navbar-nav-main, .app-navbar-divider, .section-licht .app-navbar-divider, .app-toolbar {
     display: none !important;
   }
 }
@@ -7685,6 +7685,13 @@ div.riform .label {
   margin: 2rem auto 0 15px;
   text-align: left; 
   border: 1px solid #fff;
+}
+
+.section-licht .app-navbar-divider {
+  width: 2rem;
+  margin: 2rem auto 0 15px;
+  text-align: left; 
+  border: 1px solid #000;
 }
 
 .app-navitem {

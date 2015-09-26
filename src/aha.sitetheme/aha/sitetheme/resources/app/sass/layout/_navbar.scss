@@ -178,6 +178,14 @@
     @extend .hidden-xs;
 }
 
+.section-licht .app-navbar-divider {
+    border: 1px solid #000;
+    width: 2rem;
+    margin: 2rem auto 0 15px;
+    text-align: left;
+    @extend .hidden-xs;
+}
+
 
 //== Navitems
 //
