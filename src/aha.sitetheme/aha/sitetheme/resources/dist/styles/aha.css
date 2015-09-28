@@ -9128,7 +9128,7 @@ body.section-front-page .app-pathbar {
   .app-page-content-news .app-page-abstract {
     padding: 0 1rem;
   }
-  .app-page-content-news .app-page-text h2 {
+  .app-page-content-news .app-page-text h2, .app-page-content-news .app-page-text p {
     padding: 0 1rem;
   }
 }

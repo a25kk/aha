@@ -67,7 +67,7 @@ class NewsListingView(BrowserView):
             context=portal['aktuell'],
             object_provides=IContentPage,
             review_state='published',
-            sort_on='effective'
+            sort_on='getObjPositionInParent'
         )
         return pages
 
