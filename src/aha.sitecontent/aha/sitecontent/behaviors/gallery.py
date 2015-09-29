@@ -18,7 +18,7 @@ class IGalleryEnabled(model.Schema):
     model.fieldset(
         'display',
         label=u"Display",
-        fields=['displayGallery', 'displayThumbnails']
+        fields=['displayGallery']
     )
 
     displayGallery = schema.Bool(
