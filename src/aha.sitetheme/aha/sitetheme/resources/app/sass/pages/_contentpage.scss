@@ -3,17 +3,17 @@
 // ----------------------------------------
 
 .app-main-default {
-    a {
-        color: #000;
-    }
-    a:hover {
-        color: #000;
-    }
+    //a {
+    //    color: #000;
+    //}
+    //a:hover {
+    //    color: #000;
+    //}
 
     .app-page-cards {
         a {
-           color: #fff; 
-        }       
+           color: #fff;
+        }
         a:hover {
             color: #fff;
         }
@@ -180,12 +180,6 @@
     }
 }
 
-.img-responsive {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    width: 100%;
-}
 
 .app-page-list .app-page-section {
     margin-top: 1rem;
@@ -225,36 +219,6 @@
     }
 }
 
-//.app-page-col-main {
-//    @media (min-width: $grid-float-breakpoint) {
-//        p {
-//            padding: 0 20px 0 20px;
-//        }
-//        .app-page-col-header {
-//            padding: 0 20px 0 20px;
-//        }
-//        h4 {
-//            padding: 0 20px 0 20px;
-//        }
-//        ul {
-//            padding: 0 20px 0 40px;
-//        }
-//    }
-//}
-
-.app-main-inverse .app-page-col-aside {
-    img {
-        padding: 0 0 2rem 2rem;
-    }
-}
-
-.app-main-default .app-page-col-aside {
-    img {
-        padding: 0 2rem 2rem 0;
-    }
-}
-
-
 
 .app-page-col-header {
     text-transform: uppercase;
@@ -291,7 +255,7 @@
       min-height: 400px;
     }
     &:hover > .app-project-panel-overlay {
-      opacity: 1;   
+      opacity: 1;
     }
 }
 

@@ -176,7 +176,7 @@
     margin: 2rem auto 0 15px;
     text-align: left;
     @extend .hidden-xs;
-    @extend when-inside('.app-main-inverse') {
+    @include when-inside('.app-main-inverse') {
       border-color: #fff;
     }
 }

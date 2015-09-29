@@ -1,9 +1,6 @@
 'use strict';
 (function ($) {
   $(document).ready(function () {
-    // Setup media query for enabling dynamic layouts only on
-    // larger screen sizes
-    var mq = window.matchMedia("(min-width: 480px)");
     if ($(".userrole-anonymous")[0]){
       $('input[type="password"]').showPassword('focus', {
       });
@@ -33,7 +30,11 @@
               }
         });
       });
-      // Enable gallery and masonry scripts based on screen size
+    }
+    // Setup media query for enabling dynamic layouts only on
+    // larger screen sizes
+    var mq = window.matchMedia("(min-width: 480px)");
+    // Enable gallery and masonry scripts based on screen size
       if (mq.matches) {
         var flkty = new Flickity('.main-gallery', {
           autoPlay: true,
@@ -43,8 +44,14 @@
           cellSelector: '.app-gallery-cell',
           cellAlign: 'left'
         });
+        var $thumbTrigger = document.querySelectorAll('.js-thumbtrigger');
+        $thumbTrigger.addEventListener('click', function(evt) {
+          evt.preventDefault();
+          var index = $thumbTrigger.getAttribute('data-index');
+          flkty.select(index);
+        });
       }
-    };
+
   }
   );
 }(jQuery));

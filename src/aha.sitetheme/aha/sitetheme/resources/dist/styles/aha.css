@@ -6925,7 +6925,7 @@ a.label:focus {
 }
 
 @media (max-width: 767px) {
-  .hidden-xs, .app-navbar-nav-main, .app-navbar-divider, .section-licht .app-navbar-divider, .app-toolbar {
+  .hidden-xs, .app-navbar-nav-main, .app-navbar-divider, .app-toolbar {
     display: none !important;
   }
 }
@@ -7001,7 +7001,7 @@ a.label:focus {
   }
 }
 
-/*! Flickity v1.1.1
+/*! Flickity v1.1.0
 http://flickity.metafizzy.co
 ---------------------------------------------- */
 .flickity-enabled {
@@ -7304,6 +7304,7 @@ strong {
 }
 
 a {
+  color: #222;
   outline: 0;
 }
 
@@ -7566,7 +7567,7 @@ div.riform .label {
   padding-left: 15px;
   font-weight: 500;
   line-height: 1.428571429rem;
-  color: #333;
+  color: #222;
 }
 @media (min-width: 768px) {
   .app-navbar-brand {
@@ -7616,7 +7617,7 @@ div.riform .label {
   border-color: transparent;
 }
 .app-navbar-toggle .icon-bar {
-  background-color: #333;
+  background-color: #222;
 }
 .app-header-inverse .app-navbar-toggle .icon-bar {
   background-color: #eee;
@@ -7684,14 +7685,10 @@ div.riform .label {
   width: 2rem;
   margin: 2rem auto 0 15px;
   text-align: left; 
-  border: 1px solid #fff;
-}
-
-.section-licht .app-navbar-divider {
-  width: 2rem;
-  margin: 2rem auto 0 15px;
-  text-align: left; 
   border: 1px solid #000;
+}
+.app-main-inverse .app-navbar-divider {
+  border-color: #fff;
 }
 
 .app-navitem {
@@ -7714,7 +7711,7 @@ div.riform .label {
 .app-navitem-tab {
   font-weight: 400;
   line-height: 1;
-  color: #333;
+  color: #222;
   text-transform: uppercase;
   background-color: #000;
   transition: background-color .5s ease;
@@ -7723,7 +7720,7 @@ div.riform .label {
   color: #eee;
 }
 .app-navitem-tab:hover {
-  color: #222;
+  color: #121212;
   text-decoration: underline; 
   background-color: black;
 }
@@ -7753,10 +7750,6 @@ div.riform .label {
   font-weight: 300;
   text-decoration: none; 
   text-transform: none;
-}
-
-.subsection-beratung360deg .beratung {
-  font-weight: 700;
 }
 
 .app-footer {
@@ -8572,7 +8565,7 @@ body.section-front-page .app-pathbar {
 }
 
 .app-card {
-  color: #333; 
+  color: #222; 
 
   -webkit-flex: 1;
       -ms-flex: 1;
@@ -8838,11 +8831,11 @@ body.section-front-page .app-pathbar {
   position: relative;
   display: block;
   height: 50vh;
-  color: #333;
+  color: #222;
   background-color: #fff;
 }
 .app-frontpage-section:hover {
-  color: #222;
+  color: #121212;
 }
 .app-frontpage-section-inverse {
   color: #fff; 
@@ -8861,7 +8854,7 @@ body.section-front-page .app-pathbar {
             flex: 1;
   }
   .app-frontpage-section:hover {
-    color: #222;
+    color: #121212;
     background: transparent;
     transition: background-color 3s linear;
   }
@@ -9018,14 +9011,6 @@ body.section-front-page .app-pathbar {
           transform: scale(1.1);
 }
 
-.app-main-default a {
-  color: #000;
-}
-
-.app-main-default a:hover {
-  color: #000;
-}
-
 .app-main-default .app-page-cards a {
   color: #fff;
 }
@@ -9141,13 +9126,6 @@ body.section-front-page .app-pathbar {
   margin: 0rem;
 }
 
-.img-responsive, .image-inline {
-  display: block;
-  width: 100%; 
-  max-width: 100%;
-  height: auto;
-}
-
 .app-page-list .app-page-section {
   margin-top: 1rem;
 }
@@ -9196,14 +9174,6 @@ body.section-front-page .app-pathbar {
         -ms-flex: 0 0 60%;
             flex: 0 0 60%;
   }
-}
-
-.app-main-inverse .app-page-col-aside img {
-  padding: 0 0 2rem 2rem;
-}
-
-.app-main-default .app-page-col-aside img {
-  padding: 0 2rem 2rem 0;
 }
 
 .app-page-col-header {
