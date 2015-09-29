@@ -171,19 +171,14 @@
 }
 
 .app-navbar-divider {
-    border: 1px solid #fff;
-    width: 2rem;
-    margin: 2rem auto 0 15px;
-    text-align: left;
-    @extend .hidden-xs;
-}
-
-.section-licht .app-navbar-divider {
     border: 1px solid #000;
     width: 2rem;
     margin: 2rem auto 0 15px;
     text-align: left;
     @extend .hidden-xs;
+    @extend when-inside('.app-main-inverse') {
+      border-color: #fff;
+    }
 }
 
 
@@ -244,8 +239,4 @@
         text-transform: none;
         text-decoration: none;
     }
-}
-
-.subsection-beratung360deg .beratung {
-  font-weight: 700;
 }
