@@ -36,6 +36,8 @@
         <div tal:replace="structure view/rendered_gallery" />
     </div>
 
+  <div tal:replace="structure provider:plone.belowcontentbody" />
+
   </metal:content-core>
 </metal:main>
 
