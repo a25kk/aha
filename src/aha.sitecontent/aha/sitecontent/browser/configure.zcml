@@ -13,6 +13,16 @@
       layer="..interfaces.IAhaSitecontentLayer"
       />
 
+  <!-- Page section view -->
+  <browser:page
+      for="aha.sitecontent.contentpage.IPageSection"
+      name="pagesection-view"
+      class=".pagesection.PageSectionView"
+      template="pagesection.pt"
+      permission="zope2.View"
+      layer="..interfaces.IAhaSitecontentLayer"
+      />
+
   <!-- Content page image gallery -->
   <browser:page
       for="aha.sitecontent.contentpage.IContentPage"
