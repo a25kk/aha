@@ -3,58 +3,58 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2015-10-05 14:15+0000\n"
-"PO-Revision-Date: 2015-10-05 16:31+0100\n"
+"PO-Revision-Date: 2015-10-05 16:39+0200\n"
 "Last-Translator: Christoph Böhner-Figas <boehner@team23.de>\n"
 "Language-Team: Team23 Language Team <info@team23.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Language-Code: de\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 "Language: de\n"
 "Language-Name: German\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Poedit 1.8.5\n"
 
-#: ./../pagepanel.py:24
+#: ../pagepanel.py:24
 msgid "Animated GIF"
 msgstr "Animiertes GIF"
 
-#: ./../behaviors/gallery.py:25
+#: ../behaviors/gallery.py:25
 msgid "Check to enable gallery display"
 msgstr "Auswählen, um die Gallerieansicht zu aktivieren"
 
-#: ./../profiles/default/types/aha.sitecontent.contentpage.xml
+#: ../profiles/default/types/aha.sitecontent.contentpage.xml
 msgid "Contentpage"
 msgstr "Inhaltsseite"
 
-#: ./../pagepanel.py:25
+#: ../pagepanel.py:25
 msgid "Enter external URL pointing to an animated gif"
 msgstr "Geben Sie hier eine (externe) URL an, die auf eine GIF-Datei zeigt"
 
-#: ./../profiles/default/types/aha.sitecontent.contentpage.xml
+#: ../profiles/default/types/aha.sitecontent.contentpage.xml
 msgid "Folderish content page"
 msgstr "Inhaltsseite als Ordner"
 
-#: ./../profiles/default/types/aha.sitecontent.pagepanel.xml
+#: ../profiles/default/types/aha.sitecontent.pagepanel.xml
 msgid "Pagepanel"
 msgstr "Inhaltsabschnitt"
 
-#: ./../profiles/default/types/aha.sitecontent.pagepanel.xml
+#: ../profiles/default/types/aha.sitecontent.pagepanel.xml
 msgid "Panel for content pages"
 msgstr "Abschnitt für eine Inhaltsseite"
 
-#: ./../profiles/default/types/aha.sitecontent.project.xml
+#: ../profiles/default/types/aha.sitecontent.project.xml
 msgid "Project"
 msgstr "Projekt"
 
-#: ./../project.py:21
+#: ../project.py:21
 msgid "Project References"
 msgstr "Projektreferenzen"
 
-#: ./../pagepanel.py:30
+#: ../pagepanel.py:30
 msgid ""
 "Provide URL of embeddable YouTube video.Note: this will override all added "
 "animations."
@@ -62,32 +62,30 @@ msgstr ""
 "Geben Sie bitte einen Embedlink zu einem YouTube Video an. Hinweis: alle "
 "hinterlegtern animierten GIF Dateien werden dadurch ausgeblendet."
 
-#: ./../project.py:24
+#: ../project.py:24
 msgid "Reference"
 msgstr "Referenz"
 
-#: ./../profiles/default/types/aha.sitecontent.project.xml
+#: ../profiles/default/types/aha.sitecontent.project.xml
 msgid "Reference project"
 msgstr "Referenzprojekt"
 
-#: ./../profiles/default/types/aha.sitecontent.showroom.xml
+#: ../profiles/default/types/aha.sitecontent.showroom.xml
 msgid "Showroom"
 msgstr "Showroom"
 
-#: ./../profiles/default/types/aha.sitecontent.showroom.xml
+#: ../profiles/default/types/aha.sitecontent.showroom.xml
 msgid "Showroom for reference projects"
 msgstr "Showrrom für Projekte"
 
-#: ./../pagepanel.py:29
+#: ../pagepanel.py:29
 msgid "Video Link"
 msgstr "Videolink"
 
-#: ./../behaviors/gallery.py:26
+#: ../behaviors/gallery.py:26
 msgid ""
 "When activated the view will attempt to display a gallery of all contained "
 "images"
 msgstr ""
 "Das Setzen der Hakens aktiviert eine Gallerieansicht auf Basis der im Ordner "
 "vorhandenen Bilder"
-
-
