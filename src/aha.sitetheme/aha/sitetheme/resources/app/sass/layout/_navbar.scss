@@ -228,8 +228,9 @@
       min-height: 70px;
     }
     @include when-inside('.active') {
-        font-weight: 700;
+        font-family: $app-font-family-base;
         @include when-inside('.app-navbar-subnav') {
+            font-family: $app-font-family-light;
             font-weight: 400;
         }
     }

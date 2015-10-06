@@ -171,6 +171,12 @@ module.exports = function (grunt) {
                 flatten: true,
                 src: ['<%= config.app %>/assets/ico/*'],
                 dest: '<%= config.dist %>/assets/ico/'
+            },
+            fonts: {
+                expand: true,
+                flatten: true,
+                src: ['<%= config.app %>/assets/fonts/*'],
+                dest: '<%= config.dist %>/assets/fonts/'
             }
         },
         imagemin: {

@@ -2659,7 +2659,7 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "FFDINWebProLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.428571429;
   color: #333;
@@ -7277,6 +7277,47 @@ http://flickity.metafizzy.co
   transition-delay: 1.8s;
 }
 
+/**
+ * @license
+ * MyFonts Webfont Build ID 3100937, 2015-10-01T06:01:40-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: FF DIN Web Pro Bold by FontFont
+ * URL: http://www.myfonts.com/fonts/fontfont/ff-din/pro-bold/
+ *
+ * Webfont: FF DIN Web Pro Light by FontFont
+ * URL: http://www.myfonts.com/fonts/fontfont/ff-din/pro-light/
+ *
+ *
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3100937
+ * Licensed pageviews: 50,000
+ * Webfonts copyright: 2009 Albert-Jan Pool published by FSI FontShop International GmbH
+ *
+ * © 2015 MyFonts Inc
+*/
+@font-face {
+  font-family: 'FFDINWebProBold';
+  font-style: normal; 
+  font-weight: normal;
+
+  src: url("../assets/fonts/2F5109_0_0.eot");
+  src: url("../assets/fonts/2F5109_0_0.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/2F5109_0_0.woff2") format("woff2"), url("../assets/fonts/2F5109_0_0.woff") format("woff"), url("../assets/fonts/2F5109_0_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'FFDINWebProLight';
+  font-style: normal; 
+  font-weight: normal;
+
+  src: url("../assets/fonts/2F5109_1_0.eot");
+  src: url("../assets/fonts/2F5109_1_0.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/2F5109_1_0.woff2") format("woff2"), url("../assets/fonts/2F5109_1_0.woff") format("woff"), url("../assets/fonts/2F5109_1_0.ttf") format("truetype");
+}
+
 html {
   font-size: 16px;
 }
@@ -7296,6 +7337,7 @@ body.template-theming-controlpanel .row {
 
 b,
 strong {
+  font-family: "FFDINWebProBold"; 
   font-weight: 700;
 }
 .wf-active b,
@@ -7740,9 +7782,10 @@ div.riform .label {
   }
 }
 .active .app-navitem-tab {
-  font-weight: 700;
+  font-family: "FFDINWebProBold";
 }
 .app-navbar-subnav .active .app-navitem-tab {
+  font-family: "FFDINWebProLight";
   font-weight: 400;
 }
 .app-navbar-subnav .app-navitem-tab {
@@ -7882,7 +7925,7 @@ textarea {
 .plone-toolbar-nav {
   padding: 0;
   margin: 0;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "FFDINWebProLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   list-style: none;
   /*states on first level*/
@@ -7931,7 +7974,7 @@ textarea {
   padding: 0;
   margin: 0;
   overflow-y: auto;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "FFDINWebProLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 30px;
   list-style: none;
@@ -8647,6 +8690,14 @@ body.section-front-page .app-pathbar {
   color: #eee;
   border: 1px solid #eee;
   border-radius: 50%;
+}
+
+.app-pagesection-toolbar {
+  padding: 1rem;
+  font-family: "FFDINWebProBold";
+  font-weight: normal;
+  text-transform: uppercase; 
+  background: #555;
 }
 
 .app-layout-simple {

@@ -10,6 +10,7 @@
 @import 'utils/mixins';
 
 @import 'base/animation';
+@import 'base/font';
 @import 'base/scaffolding';
 @import 'base/brand';
 
@@ -28,6 +29,7 @@
 @import 'components/pathbar';
 @import 'components/gallery';
 @import 'components/cards';
+@import 'components/editor';
 
 @import 'pages/signin';
 @import 'pages/frontpage';

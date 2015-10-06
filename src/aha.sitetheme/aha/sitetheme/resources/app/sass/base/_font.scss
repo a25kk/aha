@@ -25,11 +25,11 @@
 
 @font-face {
     font-family: 'FFDINWebProBold';
-    src: url('#{$fa-font-path}/2F5109_0_0.eot');
-    src: url('#{$fa-font-path}/2F5109_0_0.eot?#iefix') format('embedded-opentype'),
-         url('#{$fa-font-path}/2F5109_0_0.woff2') format('woff2'),
-         url('#{$fa-font-path}/2F5109_0_0.woff') format('woff'),
-         url('#{$fa-font-path}/2F5109_0_0.ttf') format('truetype');
+    src: url('#{$app-font-path}/2F5109_0_0.eot');
+    src: url('#{$app-font-path}/2F5109_0_0.eot?#iefix') format('embedded-opentype'),
+         url('#{$app-font-path}/2F5109_0_0.woff2') format('woff2'),
+         url('#{$app-font-path}/2F5109_0_0.woff') format('woff'),
+         url('#{$app-font-path}/2F5109_0_0.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -37,11 +37,11 @@
 
 @font-face {
     font-family: 'FFDINWebProLight';
-    src: url('#{$fa-font-path}/2F5109_1_0.eot');
-    src: url('#{$fa-font-path}/2F5109_1_0.eot?#iefix') format('embedded-opentype'),
-         url('#{$fa-font-path}/2F5109_1_0.woff2') format('woff2'),
-         url('#{$fa-font-path}/2F5109_1_0.woff') format('woff'),
-         url('#{$fa-font-path}/2F5109_1_0.ttf') format('truetype');
+    src: url('#{$app-font-path}/2F5109_1_0.eot');
+    src: url('#{$app-font-path}/2F5109_1_0.eot?#iefix') format('embedded-opentype'),
+         url('#{$app-font-path}/2F5109_1_0.woff2') format('woff2'),
+         url('#{$app-font-path}/2F5109_1_0.woff') format('woff'),
+         url('#{$app-font-path}/2F5109_1_0.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
