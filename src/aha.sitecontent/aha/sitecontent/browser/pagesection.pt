@@ -9,6 +9,9 @@
 
 <metal:main fill-slot="main">
   <metal:content-core define-macro="main">
+    <div class="app-pagesection-toolbar">
+      Contentpage Sections
+    </div>
     <div class="app-page-content" id="app-page-content">
         <div class="app-page-header">
           <div class="app-page-title">
