@@ -106,7 +106,7 @@
   <browser:page
       for="aha.sitecontent.contentpage.IContentPage"
       name="news-listing"
-      class=".frontpage.NewsListingView"
+      class=".contentpage.NewsListingView"
       template="newslisting.pt"
       permission="zope2.View"
       layer="..interfaces.IAhaSitecontentLayer"
