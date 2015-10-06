@@ -107,6 +107,11 @@ class ContentPageView(BrowserView):
         template = context.restrictedTraverse('@@gallery-view')()
         return template
 
+    def get_image_data(self, uuid):
+        tool = getUtility(IResponsiveImagesTool)
+        return tool.create(uuid)
+
+
     def image_tag(self, item):
         data = {}
         sizes = ['small', 'medium', 'large']
