@@ -17,6 +17,7 @@ env.port = '22'
 env.user = 'root'
 env.hosts = ['${fabric:host}']
 env.hostname = '${fabric:host}'
+env.hostname_staging = 'z3'
 env.webserver = '${fabric:webserver}'
 env.code_root = '${fabric:directory}'
 env.local_root = '${buildout:directory}'
@@ -24,10 +25,33 @@ env.sitename = 'aha'
 env.code_user = 'root'
 env.prod_user = 'www'
 # Uncomment and add your name here
-env.actor = 'Serge Davidov'
+# env.actor = 'Serge Davidov'
+
+env.roledefs = {
+    'production': ['${fabric:host}'],
+    'staging': ['z3']
+}
 
 
 @task
+@roles('staging')
+def stage(actor=None):
+    """ Deploy current master to production server """
+    opts = dict(
+        sitename=env.get('sitename'),
+        hostname=env.get('hostname_staging'),
+        actor=actor or env.get('actor') or getpass.getuser(),
+    )
+    project.site.update()
+    project.site.restart()
+    msg = '[%(hostname)s] *%(sitename)s* staged by %(actor)s' % opts
+    user = 'fabric'
+    icon = ':ship:'
+    slack.chat.post_message('#general', msg, username=user, icon_emoji=icon)
+
+
+@task
+@roles('production')
 def deploy(actor=None):
     """ Deploy current master to production server """
     opts = dict(
@@ -44,6 +68,7 @@ def deploy(actor=None):
 
 
 @task
+@roles('production')
 def deploy_full(actor=None):
     """ Deploy current master to production and run buildout """
     opts = dict(
@@ -61,6 +86,7 @@ def deploy_full(actor=None):
 
 
 @task
+@roles('production')
 def rebuild(actor=None):
     """ Deploy current master to production and run buildout """
     opts = dict(
@@ -78,6 +104,7 @@ def rebuild(actor=None):
 
 
 @task
+@roles('production')
 def develop():
     """ Restart all """
     with cd(env.code_root):
@@ -91,6 +118,7 @@ def get_data():
 
 
 @task
+@roles('production')
 def ctl(*cmd):
     """Runs an arbitrary supervisorctl command."""
     with cd(env.webserver):
@@ -98,38 +126,21 @@ def ctl(*cmd):
 
 
 @task
-def develop():
+@roles('staging')
+def develop_staging():
     """ Restart all """
     with cd(env.code_root):
         run('nice bin/develop up')
 
-
 @task
-def restart():
-    """ Restart all """
-    project.cluster.restart_clients()
-
-
-@task
-def restart_all():
-    """ Restart all """
-    with cd(env.webserver):
-        run('nice bin/supervisorctl restart all')
-
-
-@task
+@roles('staging')
 def restart_nginx():
     """ Restart Nginx """
     controls.restart_nginx()
 
 
 @task
+@roles('staging')
 def restart_varnish():
     """ Restart Varnish """
     controls.restart_varnish()
-
-
-@task
-def restart_haproxy():
-    """ Restart HAProxy """
-    controls.restart_haproxy()
