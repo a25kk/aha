@@ -17,7 +17,7 @@ class ContentPageView(BrowserView):
     """ Folderish content page default view """
 
     def __call__(self):
-        self.has_subitems = len(self.contained_pages()) > 0
+        self.has_subitems = len(self.contained_sections()) > 0
         return self.render()
 
     def render(self):
