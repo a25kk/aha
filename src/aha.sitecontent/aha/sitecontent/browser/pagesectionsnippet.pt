@@ -1,0 +1,44 @@
+<div class="app-page-section app-gutters"
+    tal:define="uuid context/UID">
+    <div class="app-page-col-aside">
+        <figure class="figure" tal:condition="view/show_image">
+          <img class="app-img-card lazyload"
+            tal:define="img_data python:view.get_image_data(uuid)"
+               src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+               data-sizes="auto"
+               data-srcset="${img_data/small},
+                            ${img_data/medium},
+                            ${img_data/large},
+                            ${img_data/original}" />
+        </figure>
+        <div class="app-page-asset" tal:condition="not:view/show_image">
+
+            <img class="app-img-card app-img-responsive lazyload"
+                tal:condition="view/has_external_image"
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                data-src="${context/externalImage}" />
+
+            <div class="embed-responsive embed-responsive-4by3"
+                tal:condition="view/has_video_link">
+                <iframe class="embed-responsive-item" src="${context/videoLink}" />
+            </div>
+
+        </div>
+    </div>
+    <div class="app-page-col-main">
+      <div class="app-page-header">
+          <div class="app-page-title">
+              <h1 class="app-page-headline">
+                      ${context/Title}
+              </h1>
+          </div>
+          <p class="app-page-abstract" tal:condition="item/Description">
+                  ${context/Description}
+          </p>
+      </div>
+      <div class="app-page-body" tal:condition="context/text">
+        <div class="app-page-text" id="parent-fieldname-text"
+                tal:content="structure context/text/output" />
+      </div>
+    </div>
+</div>

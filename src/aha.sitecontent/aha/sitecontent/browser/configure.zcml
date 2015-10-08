@@ -23,6 +23,16 @@
       layer="..interfaces.IAhaSitecontentLayer"
       />
 
+  <!-- Page section snippet -->
+  <browser:page
+      for="aha.sitecontent.pagesection.IPageSection"
+      name="pagesection-snippet"
+      class=".pagesection.PageSectionSnippet"
+      template="pagesectionsnippet.pt"
+      permission="zope2.View"
+      layer="..interfaces.IAhaSitecontentLayer"
+      />
+
   <!-- Content page image gallery -->
   <browser:page
       for="aha.sitecontent.contentpage.IContentPage"

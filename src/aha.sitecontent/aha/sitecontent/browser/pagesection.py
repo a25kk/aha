@@ -26,6 +26,31 @@ class PageSectionView(BrowserView):
 class PageSectionSnippet(BrowserView):
     """ Embeddable section content snippet """
 
+    def field_has_data(self, fieldname):
+        """ Check wether a given schema key returns a value"""
+        context = aq_inner(self.context)
+        try:
+            video_link = getattr(context, fieldname, None)
+        except AttributeError:
+            video_link = None
+        if video_link is not None:
+            return True
+        return False
+
+        return False
+
+    def has_video_link(self):
+        return self.field_has_data('videoLink')
+
+    def has_external_image(self):
+        return self.field_has_data('externalImage')
+
+    def show_image(self):
+        display = True
+        if self.has_video_link() or self.has_external_image():
+            display = False
+        return display
+
     def get_image_data(self, uuid):
         tool = getUtility(IResponsiveImagesTool)
         return tool.create(uuid)
