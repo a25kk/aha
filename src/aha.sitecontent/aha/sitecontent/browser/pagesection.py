@@ -11,7 +11,6 @@ class PageSectionView(BrowserView):
     """ Page Section default view """
 
     def __call__(self):
-        self.has_assets = len(self.contained_images()) > 0
         return self.render()
 
     def render(self):
