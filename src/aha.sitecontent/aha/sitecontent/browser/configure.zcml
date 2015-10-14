@@ -6,7 +6,7 @@
 
   <browser:page
       for="aha.sitecontent.contentpage.IContentPage"
-      name="contentpage_view"
+      name="contentpage-view"
       class=".contentpage.ContentPageView"
       template="contentpage.pt"
       permission="zope2.View"

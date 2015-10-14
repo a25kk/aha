@@ -32,7 +32,7 @@
                       ${context/Title}
               </h1>
           </div>
-          <p class="app-page-abstract" tal:condition="item/Description">
+          <p class="app-page-abstract" tal:condition="context/Description">
                   ${context/Description}
           </p>
       </div>

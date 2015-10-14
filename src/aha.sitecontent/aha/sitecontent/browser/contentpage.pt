@@ -23,9 +23,9 @@
         </div>
 
         <div class="app-page-body">
-            <div class="app-page-section" tal:condition="view/contained_sections">
+            <div class="app-page-snippets" tal:condition="view/has_subitems">
               <div class="app-page-list-item" tal:repeat="item view/contained_sections">
-                <p tal:content="item/Title" />
+                <div tal:replace="structure python:view.rendered_page_section(item.UID)" />
               </div>
             </div>
         </div>

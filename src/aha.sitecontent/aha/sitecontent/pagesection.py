@@ -3,13 +3,14 @@
 
 from plone.dexterity.content import Container
 from plone.supermodel import model
+from plone.namedfile.interfaces import IImageScaleTraversable
 from zope.interface import implementer
 from zope import schema
 
 from aha.sitecontent import _
 
 
-class IPageSection(model.Schema):
+class IPageSection(model.Schema, IImageScaleTraversable):
     """ A content page section
     """
 

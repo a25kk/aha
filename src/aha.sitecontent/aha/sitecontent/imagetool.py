@@ -5,6 +5,7 @@ from Products.ZCatalog.interfaces import ICatalogBrain
 from plone import api
 from plone.app.contentlisting.interfaces import IContentListingObject
 from zope.component import getMultiAdapter
+from zope.globalrequest import getRequest
 
 
 class ResponsiveImagesTool(object):
@@ -26,6 +27,7 @@ class ResponsiveImagesTool(object):
         return data
 
     def _get_scaled_img(self, item, size):
+        request = getRequest()
         if (
             ICatalogBrain.providedBy(item) or
             IContentListingObject.providedBy(item)
@@ -35,7 +37,7 @@ class ResponsiveImagesTool(object):
             obj = item
         info = {}
         if hasattr(obj, 'image'):
-            scales = getMultiAdapter((obj, self.request), name='images')
+            scales = getMultiAdapter((obj, request), name='images')
             if size == 'small':
                 scale = scales.scale('image', width=300, height=300)
             if size == 'medium':

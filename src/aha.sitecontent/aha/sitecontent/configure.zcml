@@ -25,6 +25,11 @@
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 
+    <utility
+        provides="aha.sitecontent.interfaces.IResponsiveImagesTool"
+        factory="aha.sitecontent.imagetool.ResponsiveImagesTool"
+        />
+
     <plone:static
         directory="resources"
         type="theme"

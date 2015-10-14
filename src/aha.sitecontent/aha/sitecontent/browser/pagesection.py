@@ -18,7 +18,7 @@ class PageSectionView(BrowserView):
 
     def rendered_page_snippet(self):
         context = aq_inner(self.context)
-        snippet = context.restrictedTraverse('@@pagesection-snippet')
+        snippet = context.restrictedTraverse('@@pagesection-snippet')()
         return snippet
 
 
@@ -34,8 +34,6 @@ class PageSectionSnippet(BrowserView):
             video_link = None
         if video_link is not None:
             return True
-        return False
-
         return False
 
     def has_video_link(self):
