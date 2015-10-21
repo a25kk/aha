@@ -15,13 +15,13 @@
                     tal:define="Batch python:modules['Products.CMFPlone'].Batch;
                     b_size python:int(request.get('b_size', 20));
                     b_start python:int(request.get('b_start', 0));
-                    results view/news;
+                    results view/jobs;
                     batch python:Batch(results, b_size, b_start);">
                 <div class="app-page-list-item" tal:repeat="item results">
                     <div class="app-page-section app-gutters"
                             tal:define="evenrow repeat/item/even">
                         <div class="app-page-col-aside"
-                                tal:define="img_data python:view.get_image_tag(item.UID)">
+                                tal:define="img_data python:view.get_image_data(item.UID)">
                             <img class="app-img-card lazyload"
                                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                  data-sizes="auto"
