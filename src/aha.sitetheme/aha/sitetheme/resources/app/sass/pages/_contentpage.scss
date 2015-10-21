@@ -9,7 +9,6 @@
     //a:hover {
     //    color: #000;
     //}
-
     .app-page-cards {
         a {
            color: #fff;
@@ -78,17 +77,6 @@
 .app-page-header {
     padding: 0 1rem;
 }
-
-//.subsection-unternehmen,
-//.subsection-konzeption,
-//.subsection-jobs {
-//    .app-page-header {
-//    padding: 0 3rem;
-//    }
-//    h3 {
-//        padding: 0 2rem;
-//    }
-//}
 
 .subsection-projekte .app-page-header {
     padding: 0 1rem;
@@ -197,6 +185,9 @@
         }
         @include when-inside('.app-main-inverse') {
             flex-direction: row-reverse;
+            &-inverse {
+                flex-direction: row;
+            }
         }
     }
 }

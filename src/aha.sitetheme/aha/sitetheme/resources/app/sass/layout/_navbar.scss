@@ -235,9 +235,14 @@
         }
     }
     @include when-inside('.app-navbar-subnav') {
+        font-family: $app-font-family-light;
         font-size: $font-size-small;
         font-weight: 300;
         text-transform: none;
         text-decoration: none;
+    }
+    @include when-inside('.app-subitem-active') {
+        font-family: $app-font-family-base;
+        font-weight: 400;
     }
 }
