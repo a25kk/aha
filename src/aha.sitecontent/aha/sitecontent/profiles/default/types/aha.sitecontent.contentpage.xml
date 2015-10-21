@@ -36,7 +36,10 @@
   <property name="immediate_view">view</property>
   <property name="default_view">contentpage-view</property>
   <property name="view_methods">
-   <element value="contentpage_view"/>
+    <element value="contentpage-view"/>
+    <element value="gallery-view" />
+    <element value="news-listing" />
+    <element value="jobs-lsiting" />
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>
