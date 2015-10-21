@@ -31,17 +31,18 @@ def setupCatalogIndexes(logger=None):
         if name not in indexes:
             catalog.addIndex(name, meta_name)
             indexables.append(name)
-            logger('Added {0} for field {1}'.format(meta_name, name))
+            logger.info('Added {0} for field {1}'.format(meta_name, name))
     if len(indexables) > 0:
-        logger.info('Indexing new indexes {0}'.format(
-            ', '.join(indexables)
-        ))
+        logger.info('Indexing new indexes')
         catalog.manage_reindexIndex(ids=indexables)
 
 
 def importVarious(context):
-    """ Import staps handler """
-    if context.readDataFile('aha.sitecontent-various.txt') in None:
+    """ Import staps handler
+
+    @param context: Products.GenericSetup.context.DirectoryImportContext instance
+    """
+    if context.readDataFile('aha.sitecontent-various.txt') is None:
         return
-    portal = api.portal.get()
-    setupCatalogIndexes(portal)
+    logger = context.getLogger('aha.sitecontent')
+    setupCatalogIndexes(logger)
