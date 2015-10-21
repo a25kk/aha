@@ -9,7 +9,6 @@ PROFILE_ID = 'profile-aha.sitecontent:default'
 def setupCatalogIndexes(logger=None):
     """ Add indexes to portal catalog and reindex content
 
-    :param context: The plone site object
     :param logger:  Custom progress logger
     """
     if logger is None:

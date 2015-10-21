@@ -16,4 +16,13 @@
     marker=".gallery.IGalleryEnabled"
     />
 
+  <plone:behavior
+    title="Display Preview Toggle"
+    description="Adds a boolean field to toggle listing previews"
+    provides=".preview.IPreviewEnabled"
+    factory=".preview.PreviewEnabled"
+    for="plone.dexterity.interfaces.IDexterityContent"
+    marker=".preview.IPreviewEnabled"
+    />
+
 </configure>
