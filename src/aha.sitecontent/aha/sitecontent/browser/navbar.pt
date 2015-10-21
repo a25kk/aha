@@ -68,11 +68,15 @@
             </a>
             <ul class="app-navbar-nav app-navbar-subnav"
                 tal:define="categories python:view.showrooms(section)">
-                <li class="app-navitem" tal:repeat="category categories">
-                    <a class="app-navitem-tab" href="${category/getURL}">
-                        <span>${category/Title}</span>
-                    </a>
-                </li>
+                <tal:items  tal:repeat="category categories">
+                    <li class="app-navitem"
+                            tal:define="active python:view.active_navitem(category.getId)"
+                            tal:attributes="class python:active and 'app-navitem app-subitem-active ' or 'app-navitem'">
+                        <a class="app-navitem-tab" href="${category/getURL}">
+                            <span>${category/Title}</span>
+                        </a>
+                    </li>
+                </tal:items>
             </ul>
         </li>
         <li class="app-navitem"
