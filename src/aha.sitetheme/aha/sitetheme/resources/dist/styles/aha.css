@@ -7001,7 +7001,7 @@ a.label:focus {
   }
 }
 
-/*! Flickity v1.1.1
+/*! Flickity v1.1.0
 http://flickity.metafizzy.co
 ---------------------------------------------- */
 .flickity-enabled {
@@ -9074,7 +9074,7 @@ body.section-front-page .app-pathbar {
   position: relative;
   min-height: 100vh;
 }
-.app-page.app-page-frontpage {
+.app-page-frontpage {
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -9174,7 +9174,7 @@ body.section-front-page .app-pathbar {
 }
 
 .app-page-section {
-  margin: 0rem;
+  margin: 0;
 }
 
 .app-page-list .app-page-section {
@@ -9199,6 +9199,12 @@ body.section-front-page .app-pathbar {
             flex-wrap: row wrap;
   }
   .app-page-section-inverse {
+            flex-direction: row-reverse; 
+
+    -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+  }
+  .app-main-inverse .app-page-section {
             flex-direction: row-reverse; 
 
     -webkit-flex-direction: row-reverse;
