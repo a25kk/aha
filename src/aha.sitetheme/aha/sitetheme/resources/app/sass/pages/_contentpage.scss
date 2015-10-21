@@ -26,7 +26,7 @@
 .app-page {
     position: relative;
     min-height: 100vh;
-    &.app-page-frontpage {
+    &-frontpage {
         padding-top: 0;
         padding-bottom: 0;
     }
@@ -161,7 +161,7 @@
 //
 //## Container providing visual separation
 .app-page-section {
-    margin: 0rem;
+    margin: 0;
 }
 
 //== Responsive image
@@ -201,6 +201,9 @@
         display: flex;
         flex-wrap: row wrap;
         &-inverse {
+            flex-direction: row-reverse;
+        }
+        @include when-inside('.app-main-inverse') {
             flex-direction: row-reverse;
         }
     }
