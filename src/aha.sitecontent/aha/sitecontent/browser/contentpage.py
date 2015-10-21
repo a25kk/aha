@@ -195,7 +195,7 @@ class NewsListingView(BrowserView):
 class JobListingView(BrowserView):
     """ Listing of all content pages located in a global news folder """
 
-    def news(self):
+    def jobs(self):
         portal = api.portal.get()
         pages = api.content.find(
             context=portal['jobs'],
@@ -205,8 +205,8 @@ class JobListingView(BrowserView):
         )
         return pages
 
-    def has_news(self):
-        return len(self.news()) > 0
+    def has_jobs(self):
+        return len(self.jobs()) > 0
 
     def image_tag(self, item):
         data = {}

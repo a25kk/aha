@@ -4,11 +4,50 @@
     xmlns:z3c="http://namespaces.zope.org/z3c"
     i18n_domain="aha.sitecontent">
 
+
+    <!-- Page section snippet -->
+    <browser:page
+        for="aha.sitecontent.pagesection.IPageSection"
+        name="pagesection-snippet"
+        class=".pagesection.PageSectionSnippet"
+        template="pagesectionsnippet.pt"
+        permission="zope2.View"
+        layer="..interfaces.IAhaSitecontentLayer"
+        />
+
+    <!-- Content page image gallery -->
+    <browser:page
+        for="aha.sitecontent.contentpage.IContentPage"
+        name="gallery-view"
+        class=".contentpage.GalleryView"
+        template="galleryview.pt"
+        permission="zope2.View"
+        layer="..interfaces.IAhaSitecontentLayer"
+        />
+
   <browser:page
       for="aha.sitecontent.contentpage.IContentPage"
       name="contentpage-view"
       class=".contentpage.ContentPageView"
       template="contentpage.pt"
+      permission="zope2.View"
+      layer="..interfaces.IAhaSitecontentLayer"
+      />
+  <!-- Newslisting Views -->
+  <browser:page
+      for="aha.sitecontent.contentpage.IContentPage"
+      name="news-listing"
+      class=".contentpage.NewsListingView"
+      template="newslisting.pt"
+      permission="zope2.View"
+      layer="..interfaces.IAhaSitecontentLayer"
+      />
+  <!-- Jobslisting Views -->
+  <browser:page
+      for="aha.sitecontent.contentpage.IContentPage"
+      name="jobs-listing"
+      class=".contentpage.JobsListingView"
+      template="jobslisting.pt"
       permission="zope2.View"
       layer="..interfaces.IAhaSitecontentLayer"
       />
@@ -19,26 +58,6 @@
       name="pagesection-view"
       class=".pagesection.PageSectionView"
       template="pagesection.pt"
-      permission="zope2.View"
-      layer="..interfaces.IAhaSitecontentLayer"
-      />
-
-  <!-- Page section snippet -->
-  <browser:page
-      for="aha.sitecontent.pagesection.IPageSection"
-      name="pagesection-snippet"
-      class=".pagesection.PageSectionSnippet"
-      template="pagesectionsnippet.pt"
-      permission="zope2.View"
-      layer="..interfaces.IAhaSitecontentLayer"
-      />
-
-  <!-- Content page image gallery -->
-  <browser:page
-      for="aha.sitecontent.contentpage.IContentPage"
-      name="gallery-view"
-      class=".contentpage.GalleryView"
-      template="galleryview.pt"
       permission="zope2.View"
       layer="..interfaces.IAhaSitecontentLayer"
       />
@@ -111,17 +130,5 @@
       permission="zope2.View"
       layer="..interfaces.IAhaSitecontentLayer"
       />
-
-  <!-- Newslisting Views -->
-  <browser:page
-      for="aha.sitecontent.contentpage.IContentPage"
-      name="news-listing"
-      class=".contentpage.NewsListingView"
-      template="newslisting.pt"
-      permission="zope2.View"
-      layer="..interfaces.IAhaSitecontentLayer"
-      />
-
-
 
 </configure>
