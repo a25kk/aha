@@ -119,7 +119,7 @@ class NewsListingView(BrowserView):
         portal = api.portal.get()
         pages = api.content.find(
             context=portal['aktuell'],
-            object_provides=IContentSection,
+            object_provides=IPageSection,
             review_state='published',
             sort_on='getObjPositionInParent'
         )
@@ -140,7 +140,7 @@ class JobListingView(BrowserView):
         portal = api.portal.get()
         pages = api.content.find(
             context=portal['jobs'],
-            object_provides=IContentSection,
+            object_provides=IPageSection,
             review_state='published',
             sort_on='getObjPositionInParent'
         )
