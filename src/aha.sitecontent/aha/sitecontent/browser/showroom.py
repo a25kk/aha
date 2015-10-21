@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Module providing views for the folderish content page type"""
+"""Module providing views for the showroom content type"""
 import math
 
 from Acquisition import aq_inner
