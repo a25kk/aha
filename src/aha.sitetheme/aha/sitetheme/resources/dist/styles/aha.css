@@ -8570,6 +8570,10 @@ body.section-front-page .app-pathbar {
   padding: .4761904763rem;
 }
 
+.js-thumbtrigger {
+  cursor: pointer;
+}
+
 /* ---- flickity overrides ---- */
 .flickity-prev-next-button {
   background: transparent;
