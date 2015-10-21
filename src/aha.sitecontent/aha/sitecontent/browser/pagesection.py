@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Module providing views for a contentpage section"""
 from Acquisition import aq_inner
+from Acquisition import aq_parent
 from Products.Five.browser import BrowserView
 from zope.component import getUtility
 
@@ -15,6 +16,9 @@ class PageSectionView(BrowserView):
 
     def render(self):
         return self.index()
+
+    def parent_page(self):
+        return aq_parent(aq_inner(self.context))
 
     def rendered_page_snippet(self):
         context = aq_inner(self.context)

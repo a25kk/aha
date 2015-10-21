@@ -9,8 +9,13 @@
 
 <metal:main fill-slot="main">
   <metal:content-core define-macro="main">
-    <div class="app-pagesection-toolbar">
-      Contentpage Sections
+    <div class="app-pagesection-toolbar"
+            tal:define="parent view/parent_page">
+      Contentpage Section
+        <a class="app-pagesection-toolbar-link"
+           tal:attributes="href string:${parent/absolute_url}">
+            ${parent/Title}
+        </a>
     </div>
     <div class="app-page-content" id="app-page-content">
         <div tal:replace="structure view/rendered_page_snippet" />
