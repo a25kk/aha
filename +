@@ -1,0 +1,205 @@
+Refactor browser view configuration
+
+# Bitte geben Sie eine Commit-Beschreibung für Ihre Änderungen ein. Zeilen,
+# die mit '#' beginnen, werden ignoriert, und eine leere Beschreibung
+# bricht den Commit ab.
+# Auf Branch staging
+# Ihr Branch ist vor 'origin/staging' um 2 Commits.
+#   (benutzen Sie "git push", um lokale Commits zu publizieren)
+#
+# zum Commit vorgemerkte Änderungen:
+#	geändert:       src/aha.sitecontent/aha/sitecontent/browser/configure.zcml
+#	geändert:       src/aha.sitecontent/aha/sitecontent/browser/contentpage.py
+#	neue Datei:     src/aha.sitecontent/aha/sitecontent/browser/jobslisting.pt
+#
+# ------------------------ >8 ------------------------
+# Ändern Sie nicht die obige Zeile.
+# Alles unterhalb von ihr wird entfernt.
+diff --git a/src/aha.sitecontent/aha/sitecontent/browser/configure.zcml b/src/aha.sitecontent/aha/sitecontent/browser/configure.zcml
+index e99a4d5..8ba76f3 100755
+--- a/src/aha.sitecontent/aha/sitecontent/browser/configure.zcml
++++ b/src/aha.sitecontent/aha/sitecontent/browser/configure.zcml
+@@ -4,6 +4,27 @@
+     xmlns:z3c="http://namespaces.zope.org/z3c"
+     i18n_domain="aha.sitecontent">
+ 
++
++    <!-- Page section snippet -->
++    <browser:page
++        for="aha.sitecontent.pagesection.IPageSection"
++        name="pagesection-snippet"
++        class=".pagesection.PageSectionSnippet"
++        template="pagesectionsnippet.pt"
++        permission="zope2.View"
++        layer="..interfaces.IAhaSitecontentLayer"
++        />
++
++    <!-- Content page image gallery -->
++    <browser:page
++        for="aha.sitecontent.contentpage.IContentPage"
++        name="gallery-view"
++        class=".contentpage.GalleryView"
++        template="galleryview.pt"
++        permission="zope2.View"
++        layer="..interfaces.IAhaSitecontentLayer"
++        />
++
+   <browser:page
+       for="aha.sitecontent.contentpage.IContentPage"
+       name="contentpage-view"
+@@ -12,33 +33,31 @@
+       permission="zope2.View"
+       layer="..interfaces.IAhaSitecontentLayer"
+       />
+-
+-  <!-- Page section view -->
++  <!-- Newslisting Views -->
+   <browser:page
+-      for="aha.sitecontent.pagesection.IPageSection"
+-      name="pagesection-view"
+-      class=".pagesection.PageSectionView"
+-      template="pagesection.pt"
++      for="aha.sitecontent.contentpage.IContentPage"
++      name="news-listing"
++      class=".contentpage.NewsListingView"
++      template="newslisting.pt"
+       permission="zope2.View"
+       layer="..interfaces.IAhaSitecontentLayer"
+       />
+-
+-  <!-- Page section snippet -->
++  <!-- Jobslisting Views -->
+   <browser:page
+-      for="aha.sitecontent.pagesection.IPageSection"
+-      name="pagesection-snippet"
+-      class=".pagesection.PageSectionSnippet"
+-      template="pagesectionsnippet.pt"
++      for="aha.sitecontent.contentpage.IContentPage"
++      name="jobs-listing"
++      class=".contentpage.JobsListingView"
++      template="jobslisting.pt"
+       permission="zope2.View"
+       layer="..interfaces.IAhaSitecontentLayer"
+       />
+ 
+-  <!-- Content page image gallery -->
++  <!-- Page section view -->
+   <browser:page
+-      for="aha.sitecontent.contentpage.IContentPage"
+-      name="gallery-view"
+-      class=".contentpage.GalleryView"
+-      template="galleryview.pt"
++      for="aha.sitecontent.pagesection.IPageSection"
++      name="pagesection-view"
++      class=".pagesection.PageSectionView"
++      template="pagesection.pt"
+       permission="zope2.View"
+       layer="..interfaces.IAhaSitecontentLayer"
+       />
+@@ -112,16 +131,4 @@
+       layer="..interfaces.IAhaSitecontentLayer"
+       />
+ 
+-  <!-- Newslisting Views -->
+-  <browser:page
+-      for="aha.sitecontent.contentpage.IContentPage"
+-      name="news-listing"
+-      class=".contentpage.NewsListingView"
+-      template="newslisting.pt"
+-      permission="zope2.View"
+-      layer="..interfaces.IAhaSitecontentLayer"
+-      />
+-
+-
+-
+ </configure>
+diff --git a/src/aha.sitecontent/aha/sitecontent/browser/contentpage.py b/src/aha.sitecontent/aha/sitecontent/browser/contentpage.py
+index 0d1b39b..f4911bf 100755
+--- a/src/aha.sitecontent/aha/sitecontent/browser/contentpage.py
++++ b/src/aha.sitecontent/aha/sitecontent/browser/contentpage.py
+@@ -195,7 +195,7 @@ class NewsListingView(BrowserView):
+ class JobListingView(BrowserView):
+     """ Listing of all content pages located in a global news folder """
+ 
+-    def news(self):
++    def jobs(self):
+         portal = api.portal.get()
+         pages = api.content.find(
+             context=portal['jobs'],
+@@ -205,8 +205,8 @@ class JobListingView(BrowserView):
+         )
+         return pages
+ 
+-    def has_news(self):
+-        return len(self.news()) > 0
++    def has_jobs(self):
++        return len(self.jobs()) > 0
+ 
+     def image_tag(self, item):
+         data = {}
+diff --git a/src/aha.sitecontent/aha/sitecontent/browser/jobslisting.pt b/src/aha.sitecontent/aha/sitecontent/browser/jobslisting.pt
+new file mode 100644
+index 0000000..d8d0811
+--- /dev/null
++++ b/src/aha.sitecontent/aha/sitecontent/browser/jobslisting.pt
+@@ -0,0 +1,60 @@
++<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
++      xmlns:tal="http://xml.zope.org/namespaces/tal"
++      xmlns:metal="http://xml.zope.org/namespaces/metal"
++      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
++      lang="en"
++        metal:use-macro="context/main_template/macros/master"
++        i18n:domain="aha.sitecontent">
++<body>
++
++<metal:main fill-slot="main">
++    <metal:content-core define-macro="main">
++        <div class="app-page-content app-page-content-news"
++                tal:define="context_url context/absolute_url">
++            <div class="app-page-list"
++                    tal:define="Batch python:modules['Products.CMFPlone'].Batch;
++                    b_size python:int(request.get('b_size', 20));
++                    b_start python:int(request.get('b_start', 0));
++                    results view/news;
++                    batch python:Batch(results, b_size, b_start);">
++                <div class="app-page-list-item" tal:repeat="item results">
++                    <div class="app-page-section app-gutters"
++                            tal:define="evenrow repeat/item/even">
++                        <div class="app-page-col-aside"
++                                tal:define="img_data python:view.image_tag(item)">
++                            <img class="app-img-card lazyload"
++                                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
++                                 data-sizes="auto"
++                                 data-srcset="${img_data/small},
++                                          ${img_data/medium},
++                                          ${img_data/large},
++                                          ${img_data/original}" />
++                        </div>
++                        <div class="app-page-col-main">
++                            <div class="app-page-header">
++                                <div class="app-page-title">
++                                    <h1 class="app-page-headline">
++                                            ${item/Title}
++                                    </h1>
++                                </div>
++                                <p class="app-page-abstract" tal:condition="item/Description">
++                                        ${item/Description}
++                                </p>
++                            </div>
++                            <div class="app-page-body"
++                                    tal:define="item_obj item/getObject">
++                                <div class="app-page-text" id="parent-fieldname-text"
++                                        tal:condition="item_obj/text"
++                                        tal:content="structure item_obj/text/output" />
++                            </div>
++                        </div>
++                    </div>
++                    <div metal:use-macro="context/batch_macros/macros/navigation" />
++                </div>
++            </div>
++
++        </div>
++    </metal:content-core>
++</metal:main>
++</body>
++</html>

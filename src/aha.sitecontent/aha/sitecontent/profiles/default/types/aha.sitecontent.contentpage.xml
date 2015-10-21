@@ -39,7 +39,7 @@
     <element value="contentpage-view"/>
     <element value="gallery-view" />
     <element value="news-listing" />
-    <element value="jobs-lsiting" />
+    <element value="jobs-listing" />
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>

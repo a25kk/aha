@@ -21,7 +21,7 @@
                     <div class="app-page-section app-gutters"
                             tal:define="evenrow repeat/item/even">
                         <div class="app-page-col-aside"
-                                tal:define="img_data python:view.image_tag(item)">
+                                tal:define="img_data python:view.get_image_tag(item.UID)">
                             <img class="app-img-card lazyload"
                                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                  data-sizes="auto"

@@ -4,7 +4,6 @@
     xmlns:z3c="http://namespaces.zope.org/z3c"
     i18n_domain="aha.sitecontent">
 
-
     <!-- Page section snippet -->
     <browser:page
         for="aha.sitecontent.pagesection.IPageSection"
@@ -15,7 +14,15 @@
         layer="..interfaces.IAhaSitecontentLayer"
         />
 
-    <!-- Content page image gallery -->
+    <browser:page
+        for="aha.sitecontent.contentpage.IContentPage"
+        name="contentpage-view"
+        class=".contentpage.ContentPageView"
+        template="contentpage.pt"
+        permission="zope2.View"
+        layer="..interfaces.IAhaSitecontentLayer"
+        />
+    <!-- Image gallery view for content page -->
     <browser:page
         for="aha.sitecontent.contentpage.IContentPage"
         name="gallery-view"
@@ -24,45 +31,16 @@
         permission="zope2.View"
         layer="..interfaces.IAhaSitecontentLayer"
         />
-
-  <browser:page
-      for="aha.sitecontent.contentpage.IContentPage"
-      name="contentpage-view"
-      class=".contentpage.ContentPageView"
-      template="contentpage.pt"
-      permission="zope2.View"
-      layer="..interfaces.IAhaSitecontentLayer"
-      />
-  <!-- Newslisting Views -->
-  <browser:page
-      for="aha.sitecontent.contentpage.IContentPage"
-      name="news-listing"
-      class=".contentpage.NewsListingView"
-      template="newslisting.pt"
-      permission="zope2.View"
-      layer="..interfaces.IAhaSitecontentLayer"
-      />
-  <!-- Jobslisting Views -->
-  <browser:page
-      for="aha.sitecontent.contentpage.IContentPage"
-      name="jobs-listing"
-      class=".contentpage.JobsListingView"
-      template="jobslisting.pt"
-      permission="zope2.View"
-      layer="..interfaces.IAhaSitecontentLayer"
-      />
-
-  <!-- Page section view -->
-  <browser:page
-      for="aha.sitecontent.pagesection.IPageSection"
-      name="pagesection-view"
-      class=".pagesection.PageSectionView"
-      template="pagesection.pt"
-      permission="zope2.View"
-      layer="..interfaces.IAhaSitecontentLayer"
-      />
-
-  <!-- Content page image gallery -->
+    <!-- Embeddable image gallery snippet -->
+    <browser:page
+        for="aha.sitecontent.contentpage.IContentPage"
+        name="gallery-snippet"
+        class=".contentpage.GallerySnippet"
+        template="gallerysnippet.pt"
+        permission="zope2.View"
+        layer="..interfaces.IAhaSitecontentLayer"
+        />
+    <!-- Embeddable image gallery thumbnails -->
     <browser:page
         for="aha.sitecontent.contentpage.IContentPage"
         name="gallery-thumbnails"
@@ -72,63 +50,82 @@
         layer="..interfaces.IAhaSitecontentLayer"
         />
 
-  <browser:page
-      for="aha.sitecontent.contentpage.IContentPage"
-      name="gallery-preview"
-      class=".contentpage.GalleryPreview"
-      template="gallerypreview.pt"
-      permission="zope2.View"
-      layer="..interfaces.IAhaSitecontentLayer"
-      />
+    <!-- Newslisting Views -->
+    <browser:page
+        for="aha.sitecontent.contentpage.IContentPage"
+        name="news-listing"
+        class=".contentpage.NewsListingView"
+        template="newslisting.pt"
+        permission="zope2.View"
+        layer="..interfaces.IAhaSitecontentLayer"
+        />
+    <!-- Jobslisting Views -->
+    <browser:page
+        for="aha.sitecontent.contentpage.IContentPage"
+        name="jobs-listing"
+        class=".contentpage.JobListingView"
+        template="jobslisting.pt"
+        permission="zope2.View"
+        layer="..interfaces.IAhaSitecontentLayer"
+        />
 
+    <!-- Page section view -->
+    <browser:page
+        for="aha.sitecontent.pagesection.IPageSection"
+        name="pagesection-view"
+        class=".pagesection.PageSectionView"
+        template="pagesection.pt"
+        permission="zope2.View"
+        layer="..interfaces.IAhaSitecontentLayer"
+        />
 
-  <browser:page
-      for="aha.sitecontent.showroom.IShowRoom"
-      name="showroom_view"
-      class=".showroom.ShowRoomView"
-      template="showroom.pt"
-      permission="zope2.View"
-      layer="..interfaces.IAhaSitecontentLayer"
-      />
+    <browser:page
+        for="aha.sitecontent.showroom.IShowRoom"
+        name="showroom_view"
+        class=".showroom.ShowRoomView"
+        template="showroom.pt"
+        permission="zope2.View"
+        layer="..interfaces.IAhaSitecontentLayer"
+        />
 
-  <!-- Project View -->
-  <browser:page
-      for="aha.sitecontent.project.IProject"
-      name="project_view"
-      class=".project.ProjectView"
-      template="project.pt"
-      permission="zope2.View"
-      layer="..interfaces.IAhaSitecontentLayer"
-      />
+    <!-- Project View -->
+    <browser:page
+        for="aha.sitecontent.project.IProject"
+        name="project_view"
+        class=".project.ProjectView"
+        template="project.pt"
+        permission="zope2.View"
+        layer="..interfaces.IAhaSitecontentLayer"
+        />
 
-  <!-- Project View -->
-  <browser:page
-      for="aha.sitecontent.project.IProject"
-      name="project-thumbnails"
-      class=".project.ThumbnailView"
-      template="project-thumbnails.pt"
-      permission="zope2.View"
-      layer="..interfaces.IAhaSitecontentLayer"
-      />
+    <!-- Project View -->
+    <browser:page
+        for="aha.sitecontent.project.IProject"
+        name="project-thumbnails"
+        class=".project.ThumbnailView"
+        template="project-thumbnails.pt"
+        permission="zope2.View"
+        layer="..interfaces.IAhaSitecontentLayer"
+        />
 
-  <!-- Frontpage Views -->
-  <browser:page
-      for="plone.app.layout.navigation.interfaces.INavigationRoot"
-      name="frontpage-view"
-      class=".frontpage.FrontPageView"
-      template="frontpage.pt"
-      permission="zope2.View"
-      layer="..interfaces.IAhaSitecontentLayer"
-      />
+    <!-- Frontpage Views -->
+    <browser:page
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        name="frontpage-view"
+        class=".frontpage.FrontPageView"
+        template="frontpage.pt"
+        permission="zope2.View"
+        layer="..interfaces.IAhaSitecontentLayer"
+        />
 
-  <!-- Navbar View -->
-  <browser:page
-      for="plone.app.layout.navigation.interfaces.INavigationRoot"
-      name="navbar-view"
-      class=".navbar.NavBarView"
-      template="navbar.pt"
-      permission="zope2.View"
-      layer="..interfaces.IAhaSitecontentLayer"
-      />
+    <!-- Navbar View -->
+    <browser:page
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        name="navbar-view"
+        class=".navbar.NavBarView"
+        template="navbar.pt"
+        permission="zope2.View"
+        layer="..interfaces.IAhaSitecontentLayer"
+        />
 
 </configure>
