@@ -9131,7 +9131,6 @@ body.section-front-page .app-pathbar {
 .app-page-header {
   padding: 0 1rem;
 }
-
 .subsection-projekte .app-page-header {
   padding: 0 1rem;
 }
@@ -9146,13 +9145,6 @@ body.section-front-page .app-pathbar {
   font-size: 1rem;
   color: #808080;
   letter-spacing: 2px;
-}
-
-.subsection-projekte .app-page-title {
-  font-size: 2rem;
-}
-.subsection-projekte .app-page-title .app-page-headline {
-  font-size: 2rem;
 }
 
 .app-page-lead,
@@ -9484,5 +9476,23 @@ body.section-front-page .app-pathbar {
         -ms-flex: 1;
             flex: 1;
   }
+}
+
+/**
+ * Project section content header fix.
+ *
+ * This should probably be fixed by adding a dedicated class to the project
+ * view template to reduce dependency on section naming conventions in the
+ * CMS backend
+ */
+.subsection-projekte .app-page-header {
+  padding: 0 1rem;
+}
+
+.subsection-projekte .app-page-title {
+  font-size: 2rem;
+}
+.subsection-projekte .app-page-title .app-page-headline {
+  font-size: 2rem;
 }
 /*# sourceMappingURL=aha.css.map */

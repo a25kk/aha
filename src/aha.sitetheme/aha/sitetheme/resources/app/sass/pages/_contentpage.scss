@@ -76,10 +76,9 @@
 
 .app-page-header {
     padding: 0 1rem;
-}
-
-.subsection-projekte .app-page-header {
-    padding: 0 1rem;
+    @include when-inside('.subsection-projekte') {
+        padding: 0 1rem;
+    }
 }
 
 .app-page-title {
@@ -93,13 +92,6 @@
         letter-spacing: 2px;
     }
 }
-
-.subsection-projekte .app-page-title {
-    font-size: 2rem;
-        .app-page-headline {
-            font-size: 2rem;
-            }
-        }
 
 
 // Use custom lead element for page desciptions
@@ -260,7 +252,7 @@
     }
 }
 
-// Tabnavigation for paroject content
+// Tabnavigation for project content
 .app-project-tabs {
   text-align: right;
   list-style: none;
