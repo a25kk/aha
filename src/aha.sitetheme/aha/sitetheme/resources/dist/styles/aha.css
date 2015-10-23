@@ -7001,7 +7001,7 @@ a.label:focus {
   }
 }
 
-/*! Flickity v1.1.0
+/*! Flickity v1.1.1
 http://flickity.metafizzy.co
 ---------------------------------------------- */
 .flickity-enabled {
@@ -9296,20 +9296,10 @@ body.section-front-page .app-pathbar {
   background: rgba(0, 0, 0, .65);
   opacity: 0;
 }
-@media (min-width: 768px) {
+@media (grid-float-breakpoint) {
   .app-project-panel-overlay {
     width: auto;
     min-height: 400px;
-  }
-}
-@media (min-width: 992px) {
-  .app-project-panel-overlay {
-    min-height: 600px;
-  }
-}
-@media (min-width: 1200px) {
-  .app-project-panel-overlay {
-    min-height: 780px;
   }
 }
 
