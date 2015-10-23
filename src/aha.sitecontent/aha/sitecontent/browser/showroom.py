@@ -85,7 +85,7 @@ class ShowRoomView(BrowserView):
         base = BG = 'background:url({0}) no-repeat 50% 50% transparent;'.format(
             img['url']
         )
-        bg_style = 'background-size; cover;'
+        bg_style = 'background-size: cover;'
         style = '{0}{1}'.format(base, bg_style)
         return style
 
