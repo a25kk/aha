@@ -9302,6 +9302,16 @@ body.section-front-page .app-pathbar {
     min-height: 400px;
   }
 }
+@media (min-width: 992px) {
+  .app-project-panel-overlay {
+    min-height: 600px;
+  }
+}
+@media (min-width: 1200px) {
+  .app-project-panel-overlay {
+    min-height: 780px;
+  }
+}
 
 .app-project-tabs {
   text-align: right;
