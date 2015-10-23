@@ -7001,7 +7001,7 @@ a.label:focus {
   }
 }
 
-/*! Flickity v1.1.0
+/*! Flickity v1.1.1
 http://flickity.metafizzy.co
 ---------------------------------------------- */
 .flickity-enabled {
@@ -9104,6 +9104,10 @@ body.section-front-page .app-pathbar {
 
 .app-page-frontpage .app-page-content {
   padding-left: 0;
+}
+
+.app-page-list-item {
+  padding: 1rem;
 }
 
 .app-theme-content {
