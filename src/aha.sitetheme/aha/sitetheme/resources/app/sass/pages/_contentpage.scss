@@ -250,7 +250,7 @@
     opacity: 0;
     background: rgba(0, 0, 0, .65);
     min-height: 200px;
-    @media  (grid-float-breakpoint) {
+    @media  (min-width: $grid-float-breakpoint) {
       width:auto;
       min-height: 400px;
     }
