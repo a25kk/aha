@@ -78,7 +78,7 @@ class ShowRoomView(BrowserView):
         return matrix
 
     def preview_image(self, item):
-        return self._get_scaled_img(item, 'medium')
+        return self._get_scaled_img(item, 'original')
 
     def computed_inline_styles(self, item):
         img = self.preview_image(item)
