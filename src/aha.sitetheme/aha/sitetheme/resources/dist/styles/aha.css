@@ -8630,8 +8630,7 @@ body.section-front-page .app-pathbar {
   display:         flex;
   height: 8rem;
   min-height: 8rem;
-  padding: 1rem .625rem;
-  background: #588c73; 
+  padding: .25rem .625rem; 
 
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -8640,7 +8639,6 @@ body.section-front-page .app-pathbar {
 
 .app-card-main {
   padding: .3125rem .625rem;
-  background: #000;
 }
 
 .app-card-footer {

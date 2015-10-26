@@ -27,14 +27,12 @@
   align-items: center;
   height: 8rem;
   min-height: 8rem;
-  padding: 1rem $padding-small-horizontal;
-  background: $app-secondary;
+  padding: 0.25rem $padding-small-horizontal;
 }
 
 //** Card content
 .app-card-main {
   padding: $padding-small-vertical $padding-small-horizontal;
-  background: $app-primary;
 }
 
 //** Card footer
