@@ -23,8 +23,26 @@
 
             <div class="app-page-body">
                 <div class="app-page-list" tal:condition="view/has_downloads">
-                    <div class="app-page-list-item" tal:repeat="item view/contained_sections">
-                        ${item/Title}
+                    <div class="app-page-list-item" tal:repeat="item view/get_available_downloads">
+                        <div class="app-download-item"
+                                tal:define="file_obj item/getObject;
+                                            content_type context/file_obj/contentType|nothing;
+                                            download_url string:${context/absolute_url}/@@download/file/${file_obj/file/filename}">
+                            <div class="app-download-item-title">
+                                <a class="btn btn-primary pull-right" tal:attributes="href download_url">Download</a>
+                                <a tal:attributes="href download_url">
+                                    <img tal:attributes="src python:view.get_mimetype_icon(file_obj.file);
+                                        alt content_type;" border="0"/>
+                                        ${file_obj/Title}
+                                </a>
+                            </div>
+                            <p class="text-muted">
+                                <tal:name tal:content="file_obj/file/filename" >Filename</tal:name>
+                                <span class="discreet" tal:define="size file_obj/file/getSize;
+                                                                   kb python:size/1024">
+                                &mdash; <span tal:replace="kb" /> KB</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,12 +1,7 @@
 # -*- coding: utf-8 -*-
 """Module providing views for the site navigation root"""
 from Products.Five.browser import BrowserView
-from Products.ZCatalog.interfaces import ICatalogBrain
 from plone import api
-from plone.app.contentlisting.interfaces import IContentListingObject
-from zope.component import getMultiAdapter
-
-from aha.sitecontent.contentpage import IContentPage
 
 IMG = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs='
 
@@ -32,9 +27,24 @@ class FrontPageIntranet(BrowserView):
         results = api.content.find(
             portal_type='File',
             sort_on='getObjPositionInParent',
-            review_state='published_internal'
+            review_state='internally_published'
         )
         return results
 
     def has_downloads(self):
         return len(self.get_available_downloads()) > 0
+
+    def get_mimetype_icon(self, content_file):
+        portal_url = api.portal.get().absolute_url()
+        mtr = api.portal.get_tool(name="mimetypes_registry")
+        mime = []
+        if content_file.contentType:
+            mime.append(mtr.lookup(content_file.contentType))
+        if content_file.filename:
+            mime.append(mtr.lookupExtension(content_file.filename))
+        mime.append(mtr.lookup("application/octet-stream")[0])
+        icon_paths = [m.icon_path for m in mime if hasattr(m, 'icon_path')]
+        if icon_paths:
+            return icon_paths[0]
+
+        return portal_url + "/" + guess_icon_path(mime[0])
