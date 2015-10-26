@@ -11,49 +11,23 @@
   <metal:content-core define-macro="main">
     <div class="app-page-content app-page-content-news"
         tal:define="context_url context/absolute_url">
-        <div class="app-page-list"
-          tal:define="Batch python:modules['Products.CMFPlone'].Batch;
-                      b_size python:int(request.get('b_size', 20));
-                      b_start python:int(request.get('b_start', 0));
-                      results view/news;
-                      batch python:Batch(results, b_size, b_start);">
-            <div class="app-page-list-item" tal:repeat="item results">
-              <div class="app-page-section app-gutters"
-                      tal:define="evenrow repeat/item/even">
-                  <div class="app-page-col-main">
-                    <div class="app-page-header">
-                        <div class="app-page-title">
-                            <h1 class="app-page-headline">
-                                    ${item/Title}
-                            </h1>
-                        </div>
-                        <p class="app-page-abstract" tal:condition="item/Description">
-                                ${item/Description}
-                        </p>
-                    </div>
-                    <div class="app-page-body"
-                      tal:define="item_obj item/getObject">
-                      <div class="app-page-text" id="parent-fieldname-text"
-                              tal:condition="item_obj/text"
-                              tal:content="structure item_obj/text/output" />
-                    </div>
-                  </div>
-                  <div class="app-page-col-aside"
-                      tal:define="img_data python:view.get_image_data(item.UID)">
-                        <img class="app-img-card lazyload"
-                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                             data-sizes="auto"
-                             data-srcset="${img_data/small},
-                                          ${img_data/medium},
-                                          ${img_data/large},
-                                          ${img_data/original}" />
-                  </div>
-                  
-              </div>
-            <div metal:use-macro="context/batch_macros/macros/navigation" />
+        <div class="app-page-header">
+            <div class="app-page-title">
+                <h1 class="app-page-headline" tal:content="context/Title">
+                        ${context/Title}
+                </h1>
+            </div>
+            <p class="app-page-abstract" tal:condition="context/Description">
+                    ${context/Description}
+            </p>
+        </div>
+        <div class="app-page-body">
+            <div class="app-page-snippets" tal:condition="view/has_news">
+                <div class="app-page-list-item" tal:repeat="item view/news">
+                    <div tal:replace="structure python:view.rendered_page_section(item.UID)" />
+                </div>
             </div>
         </div>
-
     </div>
   </metal:content-core>
 </metal:main>

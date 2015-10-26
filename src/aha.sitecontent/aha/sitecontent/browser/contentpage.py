@@ -128,9 +128,10 @@ class NewsListingView(BrowserView):
     def has_news(self):
         return len(self.news()) > 0
 
-    def get_image_data(self, uuid):
-        tool = getUtility(IResponsiveImagesTool)
-        return tool.create(uuid)
+    def rendered_page_section(self, section_uid):
+        context = api.content.get(UID=section_uid)
+        template = context.restrictedTraverse('@@pagesection-snippet')()
+        return template
 
 
 class JobListingView(BrowserView):
@@ -149,6 +150,7 @@ class JobListingView(BrowserView):
     def has_jobs(self):
         return len(self.jobs()) > 0
 
-    def get_image_data(self, uuid):
-        tool = getUtility(IResponsiveImagesTool)
-        return tool.create(uuid)
+    def rendered_page_section(self, section_uid):
+        context = api.content.get(UID=section_uid)
+        template = context.restrictedTraverse('@@pagesection-snippet')()
+        return template
