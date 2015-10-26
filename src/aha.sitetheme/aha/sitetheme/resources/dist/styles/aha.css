@@ -7001,7 +7001,7 @@ a.label:focus {
   }
 }
 
-/*! Flickity v1.1.1
+/*! Flickity v1.1.0
 http://flickity.metafizzy.co
 ---------------------------------------------- */
 .flickity-enabled {
@@ -8731,6 +8731,11 @@ body.section-front-page .app-pathbar {
   text-align: center;
 }
 
+.app-signin-brand {
+  width: 200px;
+  margin: 0 auto;
+}
+
 .app-signin-title {
   font-weight: 400;
   color: #000;
@@ -9329,6 +9334,10 @@ body.section-front-page .app-pathbar {
 }
 .app-main-inverse .app-project-tab > a:hover {
   color: #fff;
+}
+
+.app-download-item {
+  border-bottom: 1px solid #777;
 }
 
 .section-licht .app-summary-wrapper {

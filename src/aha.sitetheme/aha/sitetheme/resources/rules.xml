@@ -16,6 +16,9 @@
     <theme href="dist/theme-inverse/index.html" css:if-content="body.section-raum" />
     <theme href="dist/theme/index.html" css:if-content="body.section-licht" />
 
+    <!-- Intranet theme -->
+    <theme href="dist/intranet/index.html" if="$mode = 'intranet'" />
+
 
     <!-- Rules applying to a standard Plone web page -->
     <rules css:if-content="#visual-portal-wrapper">
@@ -52,6 +55,10 @@
             <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/++theme++aha.sitetheme/dist/assets/ico/apple-touch-icon-144-precomposed.png" />
             <link rel="shortcut icon" href="/++theme++aha.sitetheme/dist/assets/ico/favicon.png" />
         </after>
+
+        <before css:theme-children="body" if="$mode = 'staging'">
+            <div class="app-callout app-callout-danger">Warning: This is the staging server</div>
+        </before>
 
         <!-- Copy over the id/class attributes on the body tag.
              This is important for per-section styling -->
@@ -293,11 +300,26 @@
             </xsl:choose>
         </replace>
 
-        <replace css:content=".configlets">
-            <ul class="nav nav-list">
-                <xsl:apply-templates />
-            </ul>
+        <!--  transform all portlets  -->
+        <replace css:content=".portlet">
+            <div class="card">
+                <xsl:for-each css:select=".portlet > *">
+                    <div>
+                        <xsl:if test="@class[contains(.,'portletHeader')]">
+                            <xsl:attribute name="class">card-header</xsl:attribute>
+                        </xsl:if>
+                        <xsl:if test="@class[contains(.,'portletContent')]">
+                            <xsl:attribute name="class">card-block</xsl:attribute>
+                        </xsl:if>
+                        <xsl:if test="@class[contains(.,'portletFooter')]">
+                            <xsl:attribute name="class">card-footer</xsl:attribute>
+                        </xsl:if>
+                        <xsl:copy-of select="node()"/>
+                    </div>
+                </xsl:for-each>
+            </div>
         </replace>
+
 
         <!-- Columns -->
         <replace css:content-children="#portal-column-one > *"
