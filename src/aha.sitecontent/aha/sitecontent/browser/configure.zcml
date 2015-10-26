@@ -118,6 +118,15 @@
         layer="..interfaces.IAhaSitecontentLayer"
         />
 
+    <browser:page
+        for="plone.app.layout.navigation.interfaces.INavigationRoot"
+        name="frontpage-intranet"
+        class=".frontpage.FrontPageIntranet"
+        template="frontpage-intranet.pt"
+        permission="zope2.View"
+        layer="..interfaces.IAhaSitecontentLayer"
+        />
+
     <!-- Navbar View -->
     <browser:page
         for="plone.app.layout.navigation.interfaces.INavigationRoot"

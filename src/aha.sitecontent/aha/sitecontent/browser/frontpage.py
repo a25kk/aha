@@ -23,3 +23,18 @@ class FrontPageView(BrowserView):
     def get_image_data(self, uuid):
         tool = getUtility(IResponsiveImagesTool)
         return tool.create(uuid)
+
+
+class FrontPageIntranet(BrowserView):
+    """ Intranet frontpage providing a list of downloads """
+
+    def get_available_downloads(self):
+        results = api.content.find(
+            portal_type='File',
+            sort_on='getObjPositionInParent',
+            review_state='published_internal'
+        )
+        return results
+
+    def has_downloads(self):
+        return len(self.get_available_downloads()) > 0
