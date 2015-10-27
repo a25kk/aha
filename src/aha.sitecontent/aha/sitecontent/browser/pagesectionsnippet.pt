@@ -3,7 +3,7 @@
     <div class="app-page-col-main">
       <div class="app-page-header">
           <div class="app-page-title">
-              <h1 class="app-page-headline">
+              <h1 class="app-page-headline-content">
                       ${context/Title}
               </h1>
           </div>

@@ -9192,6 +9192,37 @@ body.section-front-page .app-pathbar {
 .subsection-projekte .app-page-header {
   padding: 0 1rem;
 }
+.app-page-header .app-page-title {
+  font-size: 1rem;
+  color: #808080;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.app-page-header .app-page-title .app-page-headline {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #808080;
+  letter-spacing: 2px;
+}
+
+.app-page-header {
+  padding: 0 1rem;
+}
+.subsection-projekte .app-page-header {
+  padding: 0 1rem;
+}
+.app-page-header .app-page-title {
+  font-size: 1rem;
+  color: #808080;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.app-page-header .app-page-title .app-page-headline {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #808080;
+  letter-spacing: 2px;
+}
 
 .app-page-title {
   font-size: 1rem;
@@ -9199,7 +9230,8 @@ body.section-front-page .app-pathbar {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-.app-page-title .app-page-headline {
+.app-page-title .app-page-headline-content {
+  margin-top: 0rem;
   font-size: 1rem;
   color: #808080;
   letter-spacing: 2px;
@@ -9556,5 +9588,9 @@ body.section-front-page .app-pathbar {
 }
 .subsection-projekte .app-page-title .app-page-headline {
   font-size: 2rem;
+}
+
+#login-forgotten-password {
+  display: none;
 }
 /*# sourceMappingURL=aha.css.map */
