@@ -3,12 +3,6 @@
 // ----------------------------------------
 
 .app-main-default {
-    //a {
-    //    color: #000;
-    //}
-    //a:hover {
-    //    color: #000;
-    //}
     .app-page-cards {
         a {
            color: #fff;
@@ -83,40 +77,7 @@
     @include when-inside('.subsection-projekte') {
         padding: 0 1rem;
     }
-        .app-page-title {
-        text-transform: uppercase;
-        font-size: 1rem;
-        color: #808080;
-        letter-spacing: 2px;
-        .app-page-headline {
-            margin-top: 1rem;
-            font-size: 1rem;
-            color: #808080;
-            letter-spacing: 2px;
-        }
-    }
 }
-
-
-.app-page-header {
-    padding: 0 1rem;
-    @include when-inside('.subsection-projekte') {
-        padding: 0 1rem;
-    }
-        .app-page-title {
-        text-transform: uppercase;
-        font-size: 1rem;
-        color: #808080;
-        letter-spacing: 2px;
-        .app-page-headline {
-            margin-top: 1rem;
-            font-size: 1rem;
-            color: #808080;
-            letter-spacing: 2px;
-        }
-    }
-}
-
 
 
 .app-page-title {
@@ -124,12 +85,13 @@
     font-size: 1rem;
     color: #808080;
     letter-spacing: 2px;
-    .app-page-headline-content {
-        margin-top: 0rem;
-        font-size: 1rem;
-        color: #808080;
-        letter-spacing: 2px;
-    }
+}
+
+.app-page-headline-content {
+    margin-top: 0rem;
+    font-size: 1rem;
+    color: #808080;
+    letter-spacing: 2px;
 }
 
 // Use custom lead element for page desciptions

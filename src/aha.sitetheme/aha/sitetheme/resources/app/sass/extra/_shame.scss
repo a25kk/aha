@@ -33,7 +33,13 @@
     }
 }
 
-
-#login-forgotten-password {
+/**
+* Login form password send link
+*
+* This should be resolved by setting the appropriate security in the plone
+* control panel. Since ids should be avoided for styling at any cost, we
+* fall back to attribute selector usage
+*/
+[id="login-forgotten-password"] {
 	display: none;
 }
