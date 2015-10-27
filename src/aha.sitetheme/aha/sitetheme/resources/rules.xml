@@ -67,7 +67,7 @@
 
         <!-- CMSUI Editbar replacements -->
         <drop css:theme="#app-toolbar"
-            css:if-content=".userrole-anonymous" />
+            css:if-content=".userrole-anonymous, .userrole-member" />
 
         <!--<replace css:theme="#app-toolbar"
             css:content="#app-toolbar" />-->
@@ -76,7 +76,7 @@
         <replace css:theme="#app-toolbar"
             css:content="#edit-bar"
             css:if-not-content=".ajax_load"
-            css:if-content=".userrole-authenticated"/>
+            css:if-content=".userrole-site-administrator, .userrole-manager"/>
 
         <!-- Logo (link target) -->
         <copy attributes="href" css:content="#portal-logo" css:theme="a.app-navbar-brand" />

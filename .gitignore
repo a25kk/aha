@@ -46,3 +46,4 @@ src/watchdog
 src/yapf
 src/z3c.*
 var
+.Python
