@@ -23,6 +23,14 @@ class FrontPageView(BrowserView):
 class FrontPageIntranet(BrowserView):
     """ Intranet frontpage providing a list of downloads """
 
+    def __call__(self):
+        return self.render()
+
+    def render(self):
+        if api.user.is_anonymous():
+            return self.request.response.redirect(self.login_url())
+        return self.index()
+
     def get_available_downloads(self):
         results = api.content.find(
             portal_type='File',
@@ -30,6 +38,10 @@ class FrontPageIntranet(BrowserView):
             review_state='internally_published'
         )
         return results
+
+    def login_url(self):
+        portal_url = api.portal.get().absolute_url()
+        return '{0}/login_form'.format(portal_url)
 
     def has_downloads(self):
         return len(self.get_available_downloads()) > 0

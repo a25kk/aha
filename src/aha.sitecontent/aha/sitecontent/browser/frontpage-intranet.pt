@@ -27,7 +27,7 @@
                         <div class="app-download-item"
                                 tal:define="file_obj item/getObject;
                                             content_type context/file_obj/contentType|nothing;
-                                            download_url string:${context/absolute_url}/@@download/file/${file_obj/file/filename}">
+                                            download_url string:${file_obj/absolute_url}/@@download/file/${file_obj/file/filename}">
                             <div class="app-download-item-title">
                                 <a class="btn btn-primary pull-right" tal:attributes="href download_url">Download</a>
                                 <a tal:attributes="href download_url">
