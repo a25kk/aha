@@ -1,37 +1,22 @@
-<div class="app-page-gallery" id="app-page-gallery">
-  <div class="app-gallery" tal:define="images view/contained_images">
-      <div class="project-gallery main-gallery">
-        <div class="app-gallery-caption">
-          <div class="app-page-header">
-            <div class="app-page-title">
-              <h1 class="app-page-headline" tal:content="context/Title">
-                ${context/Title}
-              </h1>
-            </div>
-            <p class="app-page-abstract" tal:condition="context/Description">
-              ${context/Description}
-            </p>
-          </div>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="aha.sitecontent">
+<body>
 
-          <div class="app-page-body">
-            <div class="app-page-text" id="parent-fieldname-text"
-              tal:condition="context/text"
-              tal:content="structure context/text/output" />
-          </div>
-        </div>
-        <tal:block tal:condition="images">
-          <div class="app-gallery-cell project-gallery-item item" tal:repeat="item images">
-            <tal:item tal:define="img_data python:view.image_tag(item)">
-              <img class="app-img-card lazyload"
-                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                  data-sizes="auto"
-                  data-srcset="${img_data/small},
-                               ${img_data/medium},
-                               ${img_data/large},
-                               ${img_data/original}" />
-            </tal:item>
-          </div>
-        </tal:block>
-      </div>
-  </div>
-</div>
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main">
+
+    <div class="app-page-body">
+      <div tal:replace="structure view/rendered_gallery" />
+    </div>
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+

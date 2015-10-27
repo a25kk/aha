@@ -1,12 +1,7 @@
 # -*- coding: utf-8 -*-
 """Module providing views for the site navigation root"""
 from Products.Five.browser import BrowserView
-from Products.ZCatalog.interfaces import ICatalogBrain
 from plone import api
-from plone.app.contentlisting.interfaces import IContentListingObject
-from zope.component import getMultiAdapter
-
-from aha.sitecontent.contentpage import IContentPage
 
 IMG = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs='
 
@@ -20,99 +15,48 @@ class FrontPageView(BrowserView):
     def render(self):
         return self.index()
 
-    def image_tag(self, item):
-        data = {}
-        sizes = ['small', 'medium', 'large']
-        idx = 0
-        for size in sizes:
-            idx += 0
-            img = self._get_scaled_img(item, size)
-            data[size] = '{0} {1}w'.format(img['url'], img['width'])
-        return data
-
-    def _get_scaled_img(self, item, size):
-        if (
-            ICatalogBrain.providedBy(item) or
-            IContentListingObject.providedBy(item)
-        ):
-            obj = item.getObject()
-        else:
-            obj = item
-        info = {}
-        if hasattr(obj, 'image'):
-            scales = getMultiAdapter((obj, self.request), name='images')
-            if size == 'small':
-                scale = scales.scale('image', width=300, height=300)
-            if size == 'medium':
-                scale = scales.scale('image', width=600, height=600)
-            else:
-                scale = scales.scale('image', width=900, height=900)
-            if scale is not None:
-                info['url'] = scale.url
-                info['width'] = scale.width
-                info['height'] = scale.height
-        else:
-            info['url'] = IMG
-            info['width'] = '1px'
-            info['height'] = '1px'
-        return info
+    def get_image_data(self, uuid):
+        tool = getUtility(IResponsiveImagesTool)
+        return tool.create(uuid)
 
 
-class NewsListingView(BrowserView):
-    """ Listing of all content pages located in a global news folder """
+class FrontPageIntranet(BrowserView):
+    """ Intranet frontpage providing a list of downloads """
 
-    def news(self):
-        portal = api.portal.get()
-        pages = api.content.find(
-            context=portal['aktuell'],
-            object_provides=IContentPage,
-            review_state='published',
-            sort_on='getObjPositionInParent'
+    def __call__(self):
+        return self.render()
+
+    def render(self):
+        if api.user.is_anonymous():
+            return self.request.response.redirect(self.login_url())
+        return self.index()
+
+    def get_available_downloads(self):
+        results = api.content.find(
+            portal_type='File',
+            sort_on='getObjPositionInParent',
+            review_state='internally_published'
         )
-        return pages
+        return results
 
-    def has_news(self):
-        return len(self.news()) > 0
+    def login_url(self):
+        portal_url = api.portal.get().absolute_url()
+        return '{0}/login_form'.format(portal_url)
 
-    def image_tag(self, item):
-        data = {}
-        sizes = ['small', 'medium', 'large', 'original']
-        idx = 0
-        for size in sizes:
-            idx += 0
-            img = self._get_scaled_img(item, size)
-            data[size] = '{0} {1}w'.format(img['url'], img['width'])
-        return data
+    def has_downloads(self):
+        return len(self.get_available_downloads()) > 0
 
-    def _get_scaled_img(self, item, size):
-        if (
-                    ICatalogBrain.providedBy(item) or
-                    IContentListingObject.providedBy(item)
-        ):
-            obj = item.getObject()
-        else:
-            obj = item
-        info = {}
-        try:
-            scales = getMultiAdapter((obj, self.request), name='images')
-            if size == 'small':
-                scale = scales.scale('image', width=300, height=300)
-            if size == 'medium':
-                scale = scales.scale('image', width=600, height=600)
-            if size == 'large':
-                scale = scales.scale('image', width=900, height=900)
-            else:
-                scale = scales.scale('image', width=1200, height=1200)
-            if scale is not None:
-                info['url'] = scale.url
-                info['width'] = scale.width
-                info['height'] = scale.height
-            else:
-                info['url'] = IMG
-                info['width'] = '1px'
-                info['height'] = '1px'
-        except:
-            info['url'] = IMG
-            info['width'] = '1px'
-            info['height'] = '1px'
-        return info
+    def get_mimetype_icon(self, content_file):
+        portal_url = api.portal.get().absolute_url()
+        mtr = api.portal.get_tool(name="mimetypes_registry")
+        mime = []
+        if content_file.contentType:
+            mime.append(mtr.lookup(content_file.contentType))
+        if content_file.filename:
+            mime.append(mtr.lookupExtension(content_file.filename))
+        mime.append(mtr.lookup("application/octet-stream")[0])
+        icon_paths = [m.icon_path for m in mime if hasattr(m, 'icon_path')]
+        if icon_paths:
+            return icon_paths[0]
+
+        return portal_url + "/" + guess_icon_path(mime[0])

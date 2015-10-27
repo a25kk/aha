@@ -1,0 +1,83 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-10-05 14:15+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: aha.sitecontent\n"
+
+#: ./../pagepanel.py:24
+msgid "Animated GIF"
+msgstr ""
+
+#: ./../behaviors/gallery.py:25
+msgid "Check to enable gallery display"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.contentpage.xml
+msgid "Contentpage"
+msgstr ""
+
+#: ./../pagepanel.py:25
+msgid "Enter external URL pointing to an animated gif"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.contentpage.xml
+msgid "Folderish content page"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.pagepanel.xml
+msgid "Pagepanel"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.pagepanel.xml
+msgid "Panel for content pages"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.project.xml
+msgid "Project"
+msgstr ""
+
+#: ./../project.py:21
+msgid "Project References"
+msgstr ""
+
+#: ./../pagepanel.py:30
+msgid "Provide URL of embeddable YouTube video.Note: this will override all added animations."
+msgstr ""
+
+#: ./../project.py:24
+msgid "Reference"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.project.xml
+msgid "Reference project"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.showroom.xml
+msgid "Showroom"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.showroom.xml
+msgid "Showroom for reference projects"
+msgstr ""
+
+#: ./../pagepanel.py:29
+msgid "Video Link"
+msgstr ""
+
+#: ./../behaviors/gallery.py:26
+msgid "When activated the view will attempt to display a gallery of all contained images"
+msgstr ""
+

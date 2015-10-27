@@ -12,6 +12,7 @@
   <property name="global_allow">False</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
+    <element value="aha.sitecontent.pagesection" />
     <element value="aha.sitecontent.contentpage" />
     <element value="aha.sitecontent.showroom" />
     <element value="Image" />
@@ -33,9 +34,12 @@
   <!-- View information -->
   <property name="link_target"></property>
   <property name="immediate_view">view</property>
-  <property name="default_view">contentpage_view</property>
+  <property name="default_view">contentpage-view</property>
   <property name="view_methods">
-   <element value="contentpage_view"/>
+    <element value="contentpage-view"/>
+    <element value="gallery-view" />
+    <element value="news-listing" />
+    <element value="jobs-listing" />
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>

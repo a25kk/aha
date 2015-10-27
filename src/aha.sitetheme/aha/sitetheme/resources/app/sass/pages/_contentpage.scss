@@ -3,17 +3,16 @@
 // ----------------------------------------
 
 .app-main-default {
-    a {
-        color: #000;
-    }
-    a:hover {
-        color: #000;
-    }
-
+    //a {
+    //    color: #000;
+    //}
+    //a:hover {
+    //    color: #000;
+    //}
     .app-page-cards {
         a {
-           color: #fff; 
-        }       
+           color: #fff;
+        }
         a:hover {
             color: #fff;
         }
@@ -26,7 +25,7 @@
 .app-page {
     position: relative;
     min-height: 100vh;
-    &.app-page-frontpage {
+    &-frontpage {
         padding-top: 0;
         padding-bottom: 0;
     }
@@ -47,6 +46,10 @@
 
 .app-page-frontpage .app-page-content {
     padding-left: 0;
+}
+
+.app-page-list-item {
+    padding: 1rem;
 }
 
 // Make content body visible
@@ -77,50 +80,57 @@
 
 .app-page-header {
     padding: 0 1rem;
+    @include when-inside('.subsection-projekte') {
+        padding: 0 1rem;
+    }
+        .app-page-title {
+        text-transform: uppercase;
+        font-size: 1rem;
+        color: #808080;
+        letter-spacing: 2px;
+        .app-page-headline {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: #808080;
+            letter-spacing: 2px;
+        }
+    }
 }
 
-//.subsection-unternehmen,
-//.subsection-konzeption,
-//.subsection-jobs {
-//    .app-page-header {
-//    padding: 0 3rem;
-//    }
-//    h3 {
-//        padding: 0 2rem;
-//    }
-//}
 
-
-
-
-
-.subsection-projekte .app-page-header {
+.app-page-header {
     padding: 0 1rem;
+    @include when-inside('.subsection-projekte') {
+        padding: 0 1rem;
+    }
+        .app-page-title {
+        text-transform: uppercase;
+        font-size: 1rem;
+        color: #808080;
+        letter-spacing: 2px;
+        .app-page-headline {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: #808080;
+            letter-spacing: 2px;
+        }
+    }
 }
+
+
 
 .app-page-title {
     text-transform: uppercase;
     font-size: 1rem;
     color: #808080;
     letter-spacing: 2px;
-    .app-page-headline {
+    .app-page-headline-content {
+        margin-top: 0rem;
         font-size: 1rem;
         color: #808080;
         letter-spacing: 2px;
     }
 }
-
-.subsection-projekte .app-page-title {
-    font-size: 2rem;
-        .app-page-headline {
-            font-size: 2rem;
-            }
-        }
-
-
-
-
-
 
 // Use custom lead element for page desciptions
 // that has proper line-height on all media types
@@ -161,7 +171,7 @@
 //
 //## Container providing visual separation
 .app-page-section {
-    margin: 0rem;
+    margin: 0;
 }
 
 //== Responsive image
@@ -180,12 +190,6 @@
     }
 }
 
-.img-responsive {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    width: 100%;
-}
 
 .app-page-list .app-page-section {
     margin-top: 1rem;
@@ -209,6 +213,12 @@
         &-inverse {
             flex-direction: row-reverse;
         }
+        @include when-inside('.app-main-inverse') {
+            flex-direction: row-reverse;
+            &-inverse {
+                flex-direction: row;
+            }
+        }
     }
 }
 
@@ -224,36 +234,6 @@
         }
     }
 }
-
-//.app-page-col-main {
-//    @media (min-width: $grid-float-breakpoint) {
-//        p {
-//            padding: 0 20px 0 20px;
-//        }
-//        .app-page-col-header {
-//            padding: 0 20px 0 20px;
-//        }
-//        h4 {
-//            padding: 0 20px 0 20px;
-//        }
-//        ul {
-//            padding: 0 20px 0 40px;
-//        }
-//    }
-//}
-
-.app-main-inverse .app-page-col-aside {
-    img {
-        padding: 0 0 2rem 2rem;
-    }
-}
-
-.app-main-default .app-page-col-aside {
-    img {
-        padding: 0 2rem 2rem 0;
-    }
-}
-
 
 
 .app-page-col-header {
@@ -291,7 +271,7 @@
       min-height: 400px;
     }
     &:hover > .app-project-panel-overlay {
-      opacity: 1;   
+      opacity: 1;
     }
 }
 
@@ -308,9 +288,15 @@
       width:auto;
       min-height: 400px;
     }
+    //@media (min-width: $screen-md-min) {
+    //    min-height: 600px;
+    //}
+    //@media (min-width: $screen-lg-min) {
+    //    min-height: 780px;
+    //}
 }
 
-// Tabnavigation for paroject content
+// Tabnavigation for project content
 .app-project-tabs {
   text-align: right;
   list-style: none;
@@ -337,4 +323,10 @@
   > a:hover {
     color: #fff;
   }
+}
+
+
+// Download item styling
+.app-download-item {
+    border-bottom: 1px solid $gray-light;
 }

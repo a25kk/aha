@@ -25,6 +25,18 @@
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 
+    <genericsetup:importStep
+            name="aha.sitecontent"
+            title="aha.sitecontent additional import handlers"
+            description="Various additional installation step handlers"
+            handler="aha.sitecontent.setuphandlers.importVarious"
+        />
+
+    <utility
+        provides="aha.sitecontent.interfaces.IResponsiveImagesTool"
+        factory="aha.sitecontent.imagetool.ResponsiveImagesTool"
+        />
+
     <plone:static
         directory="resources"
         type="theme"

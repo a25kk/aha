@@ -3,9 +3,13 @@
         <div class="app-thumbnails app-gutter">
             <tal:block tal:condition="images">
                 <div class="app-thumbnail app-gutter-cell" tal:repeat="item images">
-                    <tal:item tal:define="img python:view.image_tag(item)">
-                        <img class="lazyload" src="${img/url}"
-                             width="${img/width}" height="${img/height}"
+                    <tal:item tal:define="img python:view.image_tag(item);
+                                          img_idx repeat/item/index">
+                        <img class="js-thumbtrigger lazyload"
+                             src="${img/url}"
+                             width="${img/width}"
+                             height="${img/height}"
+                             tal:attributes="data-index string:${img_idx}"
                              alt="" />
                     </tal:item>
                 </div>

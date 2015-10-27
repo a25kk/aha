@@ -49,9 +49,9 @@
                                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                        data-sizes="auto"
                                        data-srcset="${img_data/small},
-                               ${img_data/medium},
-                               ${img_data/large},
-                               ${img_data/original}" />
+                                                    ${img_data/medium},
+                                                    ${img_data/large},
+                                                    ${img_data/original}" />
                               </tal:item>
                           </div>
                       </tal:block>

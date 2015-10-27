@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Module providing views for the folderish content page type"""
+"""Module providing views for the showroom content type"""
 import math
 
 from Acquisition import aq_inner
@@ -36,7 +36,8 @@ class ShowRoomView(BrowserView):
             context=context,
             object_provides=IProject,
             review_state='published',
-            sort_on='getObjPositionInParent'
+            sort_on='getObjPositionInParent',
+            hasPreview=True
         )
         return items
 
@@ -77,14 +78,14 @@ class ShowRoomView(BrowserView):
         return matrix
 
     def preview_image(self, item):
-        return self._get_scaled_img(item, 'medium')
+        return self._get_scaled_img(item, 'original')
 
     def computed_inline_styles(self, item):
         img = self.preview_image(item)
         base = BG = 'background:url({0}) no-repeat 50% 50% transparent;'.format(
             img['url']
         )
-        bg_style = 'background-size; cover;'
+        bg_style = 'background-size: cover;'
         style = '{0}{1}'.format(base, bg_style)
         return style
 

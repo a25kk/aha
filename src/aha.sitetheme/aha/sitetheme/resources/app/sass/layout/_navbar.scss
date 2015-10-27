@@ -171,19 +171,14 @@
 }
 
 .app-navbar-divider {
-    border: 1px solid #fff;
-    width: 2rem;
-    margin: 2rem auto 0 15px;
-    text-align: left;
-    @extend .hidden-xs;
-}
-
-.section-licht .app-navbar-divider {
     border: 1px solid #000;
     width: 2rem;
     margin: 2rem auto 0 15px;
     text-align: left;
     @extend .hidden-xs;
+    @include when-inside('.app-main-inverse') {
+      border-color: #fff;
+    }
 }
 
 
@@ -233,19 +228,21 @@
       min-height: 70px;
     }
     @include when-inside('.active') {
-        font-weight: 700;
+        font-family: $app-font-family-base;
         @include when-inside('.app-navbar-subnav') {
+            font-family: $app-font-family-light;
             font-weight: 400;
         }
     }
     @include when-inside('.app-navbar-subnav') {
+        font-family: $app-font-family-light;
         font-size: $font-size-small;
         font-weight: 300;
         text-transform: none;
         text-decoration: none;
     }
-}
-
-.subsection-beratung360deg .beratung {
-  font-weight: 700;
+    @include when-inside('.app-subitem-active') {
+        font-family: $app-font-family-base;
+        font-weight: 400;
+    }
 }

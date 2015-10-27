@@ -18,27 +18,13 @@ class IGalleryEnabled(model.Schema):
     model.fieldset(
         'display',
         label=u"Display",
-        fields=['displayCards', 'displayGallery', 'displayThumbnails']
-    )
-
-    displayCards = schema.Bool(
-        title=_(u"Enable preview cards"),
-        description=_(u"Activate preview card listing of contained items."
-                      u"This will override all other display options when "
-                      u"activated"),
-        required=False,
+        fields=['displayGallery']
     )
 
     displayGallery = schema.Bool(
         title=_(u"Check to enable gallery display"),
         description=_(u"When activated the view will attempt to display a "
                       u"gallery of all contained images"),
-        required=False,
-    )
-    displayThumbnails = schema.Bool(
-        title=_(u"Check to enable thumbnail previews"),
-        description=_(u"Setting will trigger thumbnail overlays with galley "
-                      u"preview thumbnails and description"),
         required=False,
     )
 

@@ -16,6 +16,9 @@
     <theme href="dist/theme-inverse/index.html" css:if-content="body.section-raum" />
     <theme href="dist/theme/index.html" css:if-content="body.section-licht" />
 
+    <!-- Intranet theme -->
+    <theme href="dist/intranet/index.html" if="$mode = 'intranet'" />
+
 
     <!-- Rules applying to a standard Plone web page -->
     <rules css:if-content="#visual-portal-wrapper">
@@ -53,6 +56,10 @@
             <link rel="shortcut icon" href="/++theme++aha.sitetheme/dist/assets/ico/favicon.png" />
         </after>
 
+        <before css:theme-children="body" if="$mode = 'staging'">
+            <div class="app-callout app-callout-danger">Warning: This is the staging server</div>
+        </before>
+
         <!-- Copy over the id/class attributes on the body tag.
              This is important for per-section styling -->
         <merge attributes="class" css:content="body" css:theme="body" />
@@ -60,7 +67,7 @@
 
         <!-- CMSUI Editbar replacements -->
         <drop css:theme="#app-toolbar"
-            css:if-content=".userrole-anonymous" />
+            css:if-content=".userrole-anonymous, .userrole-member" />
 
         <!--<replace css:theme="#app-toolbar"
             css:content="#app-toolbar" />-->
@@ -69,7 +76,7 @@
         <replace css:theme="#app-toolbar"
             css:content="#edit-bar"
             css:if-not-content=".ajax_load"
-            css:if-content=".userrole-authenticated"/>
+            css:if-content=".userrole-site-administrator, .userrole-manager"/>
 
         <!-- Logo (link target) -->
         <copy attributes="href" css:content="#portal-logo" css:theme="a.app-navbar-brand" />
@@ -291,6 +298,26 @@
                     <xsl:copy-of select="."/>
                 </xsl:otherwise>
             </xsl:choose>
+        </replace>
+
+        <!--  transform all portlets  -->
+        <replace css:content=".portlet">
+            <div class="app-card">
+                <xsl:for-each css:select=".portlet > *">
+                    <div>
+                        <xsl:if test="@class[contains(.,'portletHeader')]">
+                            <xsl:attribute name="class">app-card-header</xsl:attribute>
+                        </xsl:if>
+                        <xsl:if test="@class[contains(.,'portletContent')]">
+                            <xsl:attribute name="class">app-card-main</xsl:attribute>
+                        </xsl:if>
+                        <xsl:if test="@class[contains(.,'portletFooter')]">
+                            <xsl:attribute name="class">app-card-footer</xsl:attribute>
+                        </xsl:if>
+                        <xsl:copy-of select="node()"/>
+                    </div>
+                </xsl:for-each>
+            </div>
         </replace>
 
         <replace css:content=".configlets">

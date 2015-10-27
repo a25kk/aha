@@ -171,6 +171,12 @@ module.exports = function (grunt) {
                 flatten: true,
                 src: ['<%= config.app %>/assets/ico/*'],
                 dest: '<%= config.dist %>/assets/ico/'
+            },
+            fonts: {
+                expand: true,
+                flatten: true,
+                src: ['<%= config.app %>/assets/fonts/*'],
+                dest: '<%= config.dist %>/assets/fonts/'
             }
         },
         imagemin: {
@@ -192,6 +198,16 @@ module.exports = function (grunt) {
                     src: ['**/*.jpg'],
                     dest: '<%= config.dist %>/assets/img/',
                     ext: '.jpg'
+                }]
+            },
+            gif: {
+                options: { interlaced: true },
+                files: [{
+                    expand: true,
+                    cwd: '<%= config.app %>/assets/img/',
+                    src: ['**/*.gif'],
+                    dest: '<%= config.dist %>/assets/img/',
+                    ext: '.gif'
                 }]
             }
         },

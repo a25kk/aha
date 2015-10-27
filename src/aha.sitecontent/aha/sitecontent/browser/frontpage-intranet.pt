@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+        metal:use-macro="context/main_template/macros/master"
+        i18n:domain="aha.sitecontent">
+<body>
+
+<metal:main fill-slot="main">
+    <metal:content-core define-macro="main">
+        <div class="app-page-content" id="app-page-content">
+            <div class="app-page-header">
+                <div class="app-page-title">
+                    <h1 class="app-page-headline" tal:content="context/Title">
+                            ${context/Title}
+                    </h1>
+                </div>
+                <p class="app-page-abstract" tal:condition="context/Description">
+                        ${context/Description}
+                </p>
+            </div>
+
+            <div class="app-page-body">
+                <div class="app-page-list" tal:condition="view/has_downloads">
+                    <div class="app-page-list-item" tal:repeat="item view/get_available_downloads">
+                        <div class="app-download-item"
+                                tal:define="file_obj item/getObject;
+                                            content_type context/file_obj/contentType|nothing;
+                                            download_url string:${file_obj/absolute_url}/@@download/file/${file_obj/file/filename}">
+                            <div class="app-download-item-title">
+                                <a class="btn btn-primary pull-right" tal:attributes="href download_url">Download</a>
+                                <a tal:attributes="href download_url">
+                                    <img tal:attributes="src python:view.get_mimetype_icon(file_obj.file);
+                                        alt content_type;" border="0"/>
+                                        ${file_obj/Title}
+                                </a>
+                            </div>
+                            <p class="text-muted">
+                                <tal:name tal:content="file_obj/file/filename" >Filename</tal:name>
+                                <span class="discreet" tal:define="size file_obj/file/getSize;
+                                                                   kb python:size/1024">
+                                &mdash; <span tal:replace="kb" /> KB</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </metal:content-core>
+</metal:main>
+</body>
+</html>

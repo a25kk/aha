@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    {% include base/head.html %}
+</head>
+<body class="app-main app-main-default section-light userrole-anonymous dim-in dim-in-3">
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+{% include components/toolbar.html %}
+{% include layout/header-intranet.html %}
+<main class="app-content" role="main">
+    {{ content }}
+</main>
+
+{% include base/javascript.html %}
+<div>
+    {% include base/piwik.html %}
+</div>
+</body>
+</html>

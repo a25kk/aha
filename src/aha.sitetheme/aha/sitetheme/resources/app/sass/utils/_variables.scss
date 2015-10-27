@@ -11,7 +11,7 @@
 $app-gray:                      rgba(237, 234, 234, 1);
 
 // Text color override
-$text-color:                    $gray-darker !default;
+$text-color:                    $gray-darker;
 
 // Brand primary (green)
 $app-primary:                   #000;
@@ -48,9 +48,16 @@ $app-section-default:         $app-primary-base;
 
 $brand-primary:                 $app-primary;
 $link-color:                    $text-color;
-$link-hover-color:      		    darken($text-color, 6.5%);
+$link-hover-color:      		darken($text-color, 6.5%);
 
-$font-family-base:              'Open Sans', $font-family-sans-serif;
+// Project webfonts
+$app-font-path:                  "../assets/fonts";
+
+$app-font-family-base:          'FFDINWebProBold';
+$app-font-family-light:         'FFDINWebProLight';
+
+
+$font-family-base:              $app-font-family-light, $font-family-sans-serif !default;
 
 //** Font awesome font path
 $fa-font-path:                  "../assets/fonts";
