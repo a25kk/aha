@@ -32,7 +32,7 @@ module.exports = function (grunt) {
                 src: [
                   'bower_components/jquery/dist/jquery.js',
                   'bower_components/modernizr/modernizr.js',
-                  'bower_components/bootstrap/dist/js/bootstrap.js',
+                  'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
                   'bower_components/mailcheck/src/mailcheck.js',
                   'bower_components/JVFloat/jvfloat.js',
                   'bower_components/hideShowPassword/hideShowPassword.js',
@@ -48,7 +48,7 @@ module.exports = function (grunt) {
             },
             theme: {
                 src: [
-                    'bower_components/bootstrap/dist/js/bootstrap.js',
+                    'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
                     'bower_components/lazysizes/plugins/ls.parent-fit.js',
                     'bower_components/lazysizes/plugins/ls.bgset.js',
                     'bower_components/lazysizes/plugins/ls.unveilhooks.js',
