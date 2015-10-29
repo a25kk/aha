@@ -67,7 +67,7 @@
 
         <!-- CMSUI Editbar replacements -->
         <drop css:theme="#app-toolbar"
-            css:if-content=".userrole-anonymous, .userrole-member" />
+            css:if-content=".userrole-anonymous, .userrole-reviewer" />
 
         <!--<replace css:theme="#app-toolbar"
             css:content="#app-toolbar" />-->
