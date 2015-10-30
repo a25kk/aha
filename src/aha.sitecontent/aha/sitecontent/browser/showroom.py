@@ -29,7 +29,7 @@ class ShowRoomView(BrowserView):
             portal_type='aha.sitecontent.showroom',
             review_state='published')
 
-    def get_projects(self, item):
+    def get_projects(self, item, preview=False):
         context = aq_inner(item)
         catalog = api.portal.get_tool('portal_catalog')
         items = api.content.find(
@@ -47,7 +47,7 @@ class ShowRoomView(BrowserView):
             projects = list()
             for showroom in self.showrooms():
                 obj = showroom.getObject()
-                showroom_projects = list(self.get_projects(obj))
+                showroom_projects = list(self.get_projects(obj, preview=True))
                 projects = projects + showroom_projects
             return projects
         return list(self.get_projects(context))
