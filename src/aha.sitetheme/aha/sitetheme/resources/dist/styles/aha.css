@@ -7445,7 +7445,6 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: FFDINWebProBold; 
   text-transform: uppercase;
 }
 
@@ -9190,40 +9189,6 @@ body.section-front-page .app-pathbar {
 .app-page-header {
   padding: 0 1rem;
 }
-.subsection-projekte .app-page-header {
-  padding: 0 1rem;
-}
-.app-page-header .app-page-title {
-  font-size: 1rem;
-  color: #808080;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-.app-page-header .app-page-title .app-page-headline {
-  margin-top: 1rem;
-  font-size: 1rem;
-  color: #808080;
-  letter-spacing: 2px;
-}
-
-.app-page-header {
-  padding: 0 1rem;
-}
-.subsection-projekte .app-page-header {
-  padding: 0 1rem;
-}
-.app-page-header .app-page-title {
-  font-size: 1rem;
-  color: #808080;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-.app-page-header .app-page-title .app-page-headline {
-  margin-top: 1rem;
-  font-size: 1rem;
-  color: #808080;
-  letter-spacing: 2px;
-}
 
 .app-page-title {
   font-size: 1rem;
@@ -9231,7 +9196,12 @@ body.section-front-page .app-pathbar {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-.app-page-title .app-page-headline-content {
+
+.app-page-headline-lg {
+  font-size: 2rem;
+}
+
+.app-page-headline-content {
   margin-top: 0rem;
   font-size: 1rem;
   color: #808080;
@@ -9574,24 +9544,13 @@ body.section-front-page .app-pathbar {
 }
 
 /**
- * Project section content header fix.
- *
- * This should probably be fixed by adding a dedicated class to the project
- * view template to reduce dependency on section naming conventions in the
- * CMS backend
- */
-.subsection-projekte .app-page-header {
-  padding: 0 1rem;
-}
-
-.subsection-projekte .app-page-title {
-  font-size: 2rem;
-}
-.subsection-projekte .app-page-title .app-page-headline {
-  font-size: 2rem;
-}
-
-#login-forgotten-password {
+* Login form password send link
+*
+* This should be resolved by setting the appropriate security in the plone
+* control panel. Since ids should be avoided for styling at any cost, we
+* fall back to attribute selector usage
+*/
+[id="login-forgotten-password"] {
   display: none;
 }
 /*# sourceMappingURL=aha.css.map */

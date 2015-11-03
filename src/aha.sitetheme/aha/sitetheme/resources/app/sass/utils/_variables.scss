@@ -58,6 +58,8 @@ $app-font-family-light:         'FFDINWebProLight';
 
 
 $font-family-base:              $app-font-family-light, $font-family-sans-serif !default;
+//** By default, this inherits from the `<body>`.
+$headings-font-family:          $app-font-family-base, $font-family-sans-serif;
 
 //** Font awesome font path
 $fa-font-path:                  "../assets/fonts";

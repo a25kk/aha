@@ -16,24 +16,6 @@
 
 
 /**
- * Project section content header fix.
- *
- * This should probably be fixed by adding a dedicated class to the project
- * view template to reduce dependency on section naming conventions in the
- * CMS backend
- */
-.subsection-projekte .app-page-header {
-    padding: 0 1rem;
-}
-
-.subsection-projekte .app-page-title {
-    font-size: 2rem;
-    .app-page-headline {
-        font-size: 2rem;
-    }
-}
-
-/**
 * Login form password send link
 *
 * This should be resolved by setting the appropriate security in the plone

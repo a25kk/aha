@@ -74,9 +74,6 @@
 
 .app-page-header {
     padding: 0 1rem;
-    @include when-inside('.subsection-projekte') {
-        padding: 0 1rem;
-    }
 }
 
 
@@ -87,12 +84,17 @@
     letter-spacing: 2px;
 }
 
+.app-page-headline-lg {
+    font-size: 2rem;
+}
+
 .app-page-headline-content {
     margin-top: 0rem;
     font-size: 1rem;
     color: #808080;
     letter-spacing: 2px;
 }
+
 
 // Use custom lead element for page desciptions
 // that has proper line-height on all media types

@@ -16,7 +16,7 @@
                       <div class="app-gallery-caption">
                           <div class="app-page-header">
                               <div class="app-page-title">
-                                  <h1 class="app-page-headline" tal:content="context/Title">
+                                  <h1 class="app-page-headline app-page-headline-lg" tal:content="context/Title">
                                           ${context/Title}
                                   </h1>
                               </div>
