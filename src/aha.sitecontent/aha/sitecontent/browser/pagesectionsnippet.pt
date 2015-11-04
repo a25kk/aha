@@ -1,18 +1,19 @@
-<div class="app-page-section app-gutters"
+<div class="app-page-section app-page-snippet app-gutters"
     tal:define="uuid context/UID">
     <div class="app-page-col-main">
       <div class="app-page-header">
           <div class="app-page-title">
-              <h1 class="app-page-headline-content">
+              <h2 class="app-page-headline-content app-page-snippet-header">
                       ${context/Title}
-              </h1>
+              </h2>
           </div>
-          <p class="app-page-abstract" tal:condition="context/Description">
+          <p class="app-page-abstract app-page-snippet-abstract"
+                  tal:condition="context/Description">
                   ${context/Description}
           </p>
       </div>
       <div class="app-page-body" tal:condition="context/text">
-        <div class="app-page-text" id="parent-fieldname-text"
+        <div class="app-page-text app-page-snippet-text" id="parent-fieldname-text-${context/getId}"
                 tal:content="structure context/text/output" />
       </div>
     </div>
