@@ -36,7 +36,7 @@ class ShowRoomView(BrowserView):
             'review_state': 'published',
             'sort_on': 'getObjPositionInParent'
         }
-        if preview == 'True':
+        if preview == True:
             query.update({'hasPreview': True})
         items = api.content.find(context=context, **query)
         return items
