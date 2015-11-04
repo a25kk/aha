@@ -85,7 +85,13 @@
 }
 
 .app-page-headline-lg {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    @media (min-width: $screen-md-min) {
+        font-size: 1.75rem;
+    }
+    @media (min-width: $screen-lg-min) {
+        font-size: 2rem;
+    }
 }
 
 .app-page-headline-content {
@@ -129,6 +135,19 @@
 
 .app-page-text {
     padding: 0 1rem;
+}
+
+// Text inside page section snippets
+.app-page-snippet-text {
+    h2 {
+        font-size: 1.25rem;
+        @media (min-width: $screen-md-min) {
+            font-size: 1.5rem;
+        }
+        @media (min-width: $screen-lg-min) {
+            font-size: 1.75rem;
+        }
+    }
 }
 
 //== Page section
@@ -188,7 +207,7 @@
 
 .app-page-col {
     padding: 0.5rem;
-    @media (min-width: $grid-float-breakpoint) {
+    @media (min-width: $screen-md-min) {
         flex: 1;
         &-main {
             flex: 0 0 40%;

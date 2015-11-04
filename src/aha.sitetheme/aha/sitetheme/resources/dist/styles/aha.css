@@ -9198,7 +9198,17 @@ body.section-front-page .app-pathbar {
 }
 
 .app-page-headline-lg {
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+@media (min-width: 992px) {
+  .app-page-headline-lg {
+    font-size: 1.75rem;
+  }
+}
+@media (min-width: 1200px) {
+  .app-page-headline-lg {
+    font-size: 2rem;
+  }
 }
 
 .app-page-headline-content {
@@ -9237,6 +9247,20 @@ body.section-front-page .app-pathbar {
 
 .app-page-text {
   padding: 0 1rem;
+}
+
+.app-page-snippet-text h2 {
+  font-size: 1.25rem;
+}
+@media (min-width: 992px) {
+  .app-page-snippet-text h2 {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .app-page-snippet-text h2 {
+    font-size: 1.75rem;
+  }
 }
 
 .app-page-section {
@@ -9287,7 +9311,7 @@ body.section-front-page .app-pathbar {
 .app-page-col {
   padding: .5rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .app-page-col {
     -webkit-flex: 1;
         -ms-flex: 1;

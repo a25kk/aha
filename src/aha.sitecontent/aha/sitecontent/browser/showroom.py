@@ -31,13 +31,14 @@ class ShowRoomView(BrowserView):
 
     def get_projects(self, item, preview=False):
         context = aq_inner(item)
-        items = api.content.find(
-            context=context,
-            object_provides=IProject,
-            review_state='published',
-            sort_on='getObjPositionInParent',
-            hasPreview=preview
-        )
+        query = {
+            'object_provides': IProject,
+            'review_state': 'published',
+            'sort_on': 'getObjPositionInParent'
+        }
+        if preview == 'True':
+            query.update({'hasPreview': True})
+        items = api.content.find(context=context, **query)
         return items
 
     def projects(self):
