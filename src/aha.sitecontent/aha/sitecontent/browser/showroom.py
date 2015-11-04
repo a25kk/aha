@@ -31,13 +31,12 @@ class ShowRoomView(BrowserView):
 
     def get_projects(self, item, preview=False):
         context = aq_inner(item)
-        catalog = api.portal.get_tool('portal_catalog')
         items = api.content.find(
             context=context,
             object_provides=IProject,
             review_state='published',
             sort_on='getObjPositionInParent',
-            hasPreview=True
+            hasPreview=preview
         )
         return items
 
