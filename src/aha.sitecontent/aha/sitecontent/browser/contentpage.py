@@ -27,8 +27,8 @@ class ContentPageView(BrowserView):
             context=context,
             depth=1,
             object_provides=IPageSection,
-            review_state='published'
-        )
+            review_state='published',
+            sort_on='getObjPositionInParent')
         return items
 
     def rendered_page_section(self, section_uid):
