@@ -47,3 +47,4 @@ src/yapf
 src/z3c.*
 var
 .Python
+share/
