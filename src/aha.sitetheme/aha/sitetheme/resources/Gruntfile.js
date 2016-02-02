@@ -180,34 +180,16 @@ module.exports = function (grunt) {
             }
         },
         imagemin: {
-            png: {
-                options: { optimizationLevel: 7 },
+            dynamic: {
+              options: {
+                  optimizationLevel: 5,
+                  svgoPlugins: [{ removeViewBox: false }]
+              },
                 files: [{
                     expand: true,
                     cwd: '<%= config.app %>/assets/img',
-                    src: ['**/*.png'],
-                    dest: '<%= config.dist %>/assets/img/',
-                    ext: '.png'
-                }]
-            },
-            jpg: {
-                options: { progressive: true },
-                files: [{
-                    expand: true,
-                    cwd: '<%= config.app %>/assets/img/',
-                    src: ['**/*.jpg'],
-                    dest: '<%= config.dist %>/assets/img/',
-                    ext: '.jpg'
-                }]
-            },
-            gif: {
-                options: { interlaced: true },
-                files: [{
-                    expand: true,
-                    cwd: '<%= config.app %>/assets/img/',
-                    src: ['**/*.gif'],
-                    dest: '<%= config.dist %>/assets/img/',
-                    ext: '.gif'
+                    src: ['*.{png,jpg,gif}'],
+                    dest: '<%= config.dist %>/assets/img/'
                 }]
             }
         },
