@@ -6,7 +6,7 @@ from aha.sitecontent.project import IProject
 
 def _unicode_save_string_concat(*args):
     """
-    concats args with spaces between and returns utf-8 string, it does not
+    Concat args with spaces between and returns utf-8 string, it does not
     matter if input was unicode or str
     """
     result = ''
