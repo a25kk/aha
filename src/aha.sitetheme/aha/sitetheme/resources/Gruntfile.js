@@ -6,7 +6,9 @@ module.exports = function (grunt) {
         app: 'app',
         dev: '_site',
         dist: 'dist',
-        diazoPrefix: '/++theme++<%= pkg.name %>.sitetheme'
+        diazoPrefix: '/++theme++<%= pkg.name %>.sitetheme',
+        modules: 'node_modules',
+        bower: 'bower_components'
     };
     grunt.initConfig({
         config: config,
@@ -87,8 +89,8 @@ module.exports = function (grunt) {
         sass: {
             options: {
                 sourceMap: true,
-                includePaths: ['bower_components'],
-                loadPath: 'bower_components'
+                includePaths: ['<%= config.bower %>'],
+                loadPath: '<%= config.bower %>'
             },
             dist: {
                 files: { '<%= config.dist %>/styles/<%= pkg.name %>.css': '<%= config.app %>/sass/main.scss' }
