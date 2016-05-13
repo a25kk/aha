@@ -168,9 +168,7 @@
 //}
 
 .image-inline {
-    @media (max-width: $grid-float-breakpoint) {
-        @extend .img-responsive;
-    }
+    @extend .img-responsive;
 }
 
 

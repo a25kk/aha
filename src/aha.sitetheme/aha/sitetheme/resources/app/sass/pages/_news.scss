@@ -1,7 +1,7 @@
 // Listing
 
 .section-licht .app-summary-wrapper {
-  @extend .make-row;
+  @include make-row();
   min-height: 500px;
   border-bottom: 1px solid $app-gray;
   padding-top: $line-height-computed;
@@ -18,7 +18,7 @@
 }
 
 .section-raum .app-summary-wrapper {
-  @extend .make-row;
+  @include make-row();
   min-height: 500px;
   border-bottom: 1px solid $app-gray;
   padding-top: $line-height-computed;
