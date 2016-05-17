@@ -8527,14 +8527,44 @@ body.section-front-page .app-pathbar {
     left: 4rem;
     z-index: 1001;
     width: 35%;
-    padding: 4rem 2rem 2rem 2rem;
     background: #000;
   }
 }
 
 .section-licht .app-gallery-caption {
-  padding: 4rem 2rem 2rem 2rem; 
   background: #fff;
+}
+
+.app-caption-toggle {
+  padding-right: 1rem;
+  font-size: 2rem; 
+  text-align: right;
+}
+
+.js-caption-collapsible {
+  text-decoration: none !important;
+}
+.js-caption-collapsible:hover {
+  text-decoration: none;
+}
+.js-caption-collapsible::before {
+  content: '+';
+  transition: all .3s;
+}
+.toggleable-open .js-caption-collapsible::before {
+  content: 'x';
+}
+.toggleable-open .js-caption-collapsible {
+  transform: rotate(135deg); 
+  transform-origin: center center;
+}
+
+.app-gallery-caption-block {
+  display: none;
+  padding: 4rem 2rem 2rem 2rem;
+}
+.toggleable-open .app-gallery-caption-block {
+  display: block;
 }
 
 .app-gallery-cell {

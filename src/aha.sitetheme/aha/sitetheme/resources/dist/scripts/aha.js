@@ -20760,6 +20760,19 @@ return Flickity;
 'use strict';
 (function ($) {
     $(document).ready(function () {
+        // Toogle gallery caption display
+        var $captionToggle = $('.js-caption-collapsible'),
+            $toggleableSection = $('.js-togglable'),
+            $toggleOpenClass = 'toggleable-open';
+        $captionToggle.on('click', function(event) {
+            event.preventDefault();
+            console.log('Toggle triggered');
+            if($toggleableSection.hasClass($toggleOpenClass)) {
+                $toggleableSection.removeClass($toggleOpenClass);
+            } else {
+                $toggleableSection.addClass($toggleOpenClass);
+            }
+        });
             if ($(".userrole-anonymous")[0]) {
                 $('input[type="password"]').showPassword('focus', {});
                 $('.app-signin-input').jvFloat();

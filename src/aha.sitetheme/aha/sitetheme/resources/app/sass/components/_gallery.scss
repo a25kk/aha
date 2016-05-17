@@ -19,15 +19,49 @@
         left: 4rem;
         z-index: 1001;
         width: 35%;
-        padding: 4rem 2rem 2rem 2rem;
+        // padding: 4rem 2rem 2rem 2rem;
         background: $app-primary;
     }
 }
 
 .section-licht .app-gallery-caption {
     background: #fff;
-    padding: 4rem 2rem 2rem 2rem;
+    // padding: 4rem 2rem 2rem 2rem;
 }
+
+// Collapsible gallery caption
+.app-caption-toggle {
+    padding-right: 1rem;
+    text-align: right;
+    font-size: 2rem;
+}
+
+.js-caption-collapsible {
+    text-decoration: none !important;
+    &:hover {
+      text-decoration: none;
+    }
+    &::before {
+        content: '+';
+        transition: all .3s;
+        @include when-inside('.toggleable-open') {
+          content: 'x';
+        }
+    }
+    @include when-inside('.toggleable-open') {
+        transform-origin: center center;
+        transform: rotate(135deg);
+    }
+}
+
+.app-gallery-caption-block {
+    display: none;
+    padding: 4rem 2rem 2rem 2rem;
+    @include when-inside('.toggleable-open') {
+        display: block;
+    }
+}
+
 
 .app-gallery-cell {
     width: 100%;
