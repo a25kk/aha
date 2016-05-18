@@ -40,8 +40,16 @@
 .js-caption-collapsible {
     text-decoration: none !important;
     text-align: center;
+    outline: none;
     &:hover {
       text-decoration: none;
+      outline: none;
+    }
+    &:visited {
+       outline: none; 
+    }
+    &:focus{
+       outline: none; 
     }
     &::before {
         content: '+';

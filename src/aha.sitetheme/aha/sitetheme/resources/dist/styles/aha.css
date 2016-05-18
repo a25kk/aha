@@ -8575,11 +8575,19 @@ body.section-front-page .app-pathbar {
 }
 
 .js-caption-collapsible {
-  text-align: center; 
+  text-align: center;
   text-decoration: none !important;
+  outline: none;
 }
 .js-caption-collapsible:hover {
   text-decoration: none;
+  outline: none;
+}
+.js-caption-collapsible:visited {
+  outline: none;
+}
+.js-caption-collapsible:focus {
+  outline: none;
 }
 .js-caption-collapsible::before {
   display: inline-block;
@@ -9171,6 +9179,10 @@ body.section-front-page .app-pathbar {
 
 .app-page-header {
   padding: 0 1rem;
+}
+
+.app-page-header-alt {
+  font-size: 1.2rem;
 }
 
 .app-page-title {
