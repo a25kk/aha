@@ -18,7 +18,7 @@
                               <span class="app-page-header-title hidden">${context/Title}</span>
                               <a href="#projectText" class="app-page-header-close js-caption-collapsible">&nbsp;</a>
                           </div>
-                          <div class="app-gallery-caption-block animated" id="pp-gallery-caption-block">
+                          <div class="app-gallery-caption-block animated" id="app-gallery-caption-block">
                               <div class="app-page-header">
                                   <div class="app-page-title">
                                       <h1 class="app-page-headline app-page-headline-lg" tal:content="context/Title">
