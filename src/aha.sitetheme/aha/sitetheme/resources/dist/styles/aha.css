@@ -7555,6 +7555,11 @@ div.riform .label {
       flex: 1;
 }
 
+.app-shopbutton img {
+  width: 50%;
+  height: 50%;
+}
+
 .app-navbar {
   border-radius: 0;
 }
