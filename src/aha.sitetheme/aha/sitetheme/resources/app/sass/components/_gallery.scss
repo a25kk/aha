@@ -20,7 +20,7 @@
         z-index: 1001;
         width: 35%;
         // padding: 4rem 2rem 2rem 2rem;
-        background: $app-primary;
+        // background: $app-primary;
     }
 }
 
@@ -34,6 +34,7 @@
     padding-right: 1rem;
     text-align: right;
     font-size: 2rem;
+    background: $app-primary;
 }
 
 .js-caption-collapsible {
@@ -67,6 +68,7 @@
 .app-gallery-caption-block {
     display: none;
     padding: 4rem 2rem 2rem 2rem;
+    background: $app-primary;
     @include when-inside('.toggleable-open') {
         display: block;
     }

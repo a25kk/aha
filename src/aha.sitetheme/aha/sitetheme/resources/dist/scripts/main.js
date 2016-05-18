@@ -8736,13 +8736,19 @@ return Flickity;
         // Toogle gallery caption display
         var $captionToggle = $('.js-caption-collapsible'),
             $toggleableSection = $('.js-togglable'),
-            $toggleOpenClass = 'toggleable-open';
+            $toggleOpenClass = 'toggleable-open',
+            $collapsingElement = $('#app-gallery-caption-block');
         $captionToggle.on('click', function(event) {
             event.preventDefault();
-            console.log('Toggle triggered');
             if($toggleableSection.hasClass($toggleOpenClass)) {
-                $toggleableSection.removeClass($toggleOpenClass);
+                $collapsingElement.removeClass('fadeInDown')
+                    .addClass('fadeOutUp');
+                $toggleableSection.delay(1000).queue(function (next) {
+                    $(this).removeClass($toggleOpenClass);
+                    next();
+                });
             } else {
+                $collapsingElement.removeClass('fadeOutUp').addClass('fadeInDown');
                 $toggleableSection.addClass($toggleOpenClass);
             }
         });

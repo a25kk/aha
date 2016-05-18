@@ -8560,7 +8560,6 @@ body.section-front-page .app-pathbar {
     left: 4rem;
     z-index: 1001;
     width: 35%;
-    background: #000;
   }
 }
 
@@ -8570,8 +8569,9 @@ body.section-front-page .app-pathbar {
 
 .app-caption-toggle {
   padding-right: 1rem;
-  font-size: 2rem; 
+  font-size: 2rem;
   text-align: right;
+  background: #000;
 }
 
 .js-caption-collapsible {
@@ -8605,6 +8605,7 @@ body.section-front-page .app-pathbar {
 .app-gallery-caption-block {
   display: none;
   padding: 4rem 2rem 2rem 2rem;
+  background: #000;
 }
 .toggleable-open .app-gallery-caption-block {
   display: block;
