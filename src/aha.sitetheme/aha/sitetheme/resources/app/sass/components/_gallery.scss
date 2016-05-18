@@ -38,11 +38,21 @@
 
 .js-caption-collapsible {
     text-decoration: none !important;
+    text-align: center;
     &:hover {
       text-decoration: none;
     }
     &::before {
         content: '+';
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        padding-top: 4px;
+        margin-bottom: .5rem;
+        border: 2px solid white;
+        border-radius: 50%;
+        font-size: 20px;
+        line-height: 1;
         transition: all .3s;
         @include when-inside('.toggleable-open') {
           content: 'x';

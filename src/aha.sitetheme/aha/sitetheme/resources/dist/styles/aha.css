@@ -7273,6 +7273,34 @@ http://flickity.metafizzy.co
   animation-name: fadeOutUp;
 }
 
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.slideInDown {
+  animation-name: slideInDown;
+}
+
+@keyframes slideOutUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-2000px);
+  }
+}
+
+.slideOutUp {
+  animation-name: slideOutUp;
+}
+
 @keyframes dimmer-animation {
   from {
     opacity: 0;
@@ -8547,13 +8575,23 @@ body.section-front-page .app-pathbar {
 }
 
 .js-caption-collapsible {
+  text-align: center; 
   text-decoration: none !important;
 }
 .js-caption-collapsible:hover {
   text-decoration: none;
 }
 .js-caption-collapsible::before {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  padding-top: 4px;
+  margin-bottom: .5rem;
+  font-size: 20px;
+  line-height: 1;
   content: '+';
+  border: 2px solid white;
+  border-radius: 50%;
   transition: all .3s;
 }
 .toggleable-open .js-caption-collapsible::before {
