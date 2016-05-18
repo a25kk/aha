@@ -15,7 +15,7 @@
                   <div class="project-gallery main-gallery">
                       <div class="app-gallery-caption js-togglable toggleable-open">
                           <div class="app-caption-toggle">
-                              <span class="app-page-header-title hidden">${context/Title}</span>
+                              <span class="app-page-header-alt">${context/Title}</span>
                               <a href="#projectText" class="app-page-header-close js-caption-collapsible">&nbsp;</a>
                           </div>
                           <div class="app-gallery-caption-block animated" id="pp-gallery-caption-block">
