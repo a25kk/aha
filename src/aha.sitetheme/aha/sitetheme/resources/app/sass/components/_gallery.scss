@@ -40,6 +40,7 @@
 }
 
 .app-caption-toggle-title {
+    display: inline-block;
     font-size: 1.1rem;
     color: gray;
     text-transform: uppercase;
@@ -66,13 +67,18 @@
         height: 36px;
         padding-top: 4px;
         margin-bottom: .5rem;
-        border: 2px solid white;
+        color: #fff;
+        border: 2px solid #fff;
         border-radius: 50%;
         font-size: 20px;
         line-height: 1;
         transition: all .3s;
         @include when-inside('.toggleable-open') {
           content: 'x';
+        }
+        @include when-inside('.section-licht') {
+            color: $app-primary;
+            border-color: $app-primary;
         }
     }
     @include when-inside('.toggleable-open') {

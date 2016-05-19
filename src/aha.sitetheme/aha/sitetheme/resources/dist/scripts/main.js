@@ -8774,7 +8774,6 @@ return Flickity;
                 $(this).on('click', function (evt) {
                     evt.preventDefault();
                     var index = $(this).data('index');
-                    console.log(index);
                     $(this).toggleClass('js-thumbtrigger-active');
                     flkty.select(index);
                 });
@@ -8786,14 +8785,11 @@ return Flickity;
             var $mcNote = $('#app-signin-suggestion');
             Mailcheck.defaultDomains.push('aha.kreativkombinat.de')
             $('[data-appui="mailcheck"]').on('blur', function (event) {
-                console.log("event ", event);
-                console.log("this ", $(this));
                 $(this).mailcheck({
                     // domains: domains,                       // optional
                     // topLevelDomains: topLevelDomains,       // optional
                     suggested: function (element, suggestion) {
                         // callback code
-                        console.log("suggestion ", suggestion.full);
                         $mcNote.removeClass('hidden').addClass('fadeInDown');
                         $mcNote.html("Meinten Sie <i>" + suggestion.full + "</i>?");
                         $mcNote.on('click', function (evt) {

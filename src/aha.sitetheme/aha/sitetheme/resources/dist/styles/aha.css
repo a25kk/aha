@@ -8581,6 +8581,7 @@ body.section-front-page .app-pathbar {
 }
 
 .app-caption-toggle-title {
+  display: inline-block;
   font-size: 1.1rem;
   color: gray;
   text-transform: uppercase;
@@ -8609,13 +8610,18 @@ body.section-front-page .app-pathbar {
   margin-bottom: .5rem;
   font-size: 20px;
   line-height: 1;
+  color: #fff;
   content: '+';
-  border: 2px solid white;
+  border: 2px solid #fff;
   border-radius: 50%;
   transition: all .3s;
 }
 .toggleable-open .js-caption-collapsible::before {
   content: 'x';
+}
+.section-licht .js-caption-collapsible::before {
+  color: #000;
+  border-color: #000;
 }
 .toggleable-open .js-caption-collapsible {
   transform: rotate(135deg); 
