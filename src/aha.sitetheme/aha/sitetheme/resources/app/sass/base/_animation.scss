@@ -10,6 +10,24 @@
 // Fades
 // ----------------------------------------
 
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.fadeOut {
+    animation-name: fadeOut;
+}
+
 @keyframes fadeInDown {
     0% {
         opacity: 0;
@@ -40,6 +58,38 @@
 
 .fadeOutUp {
     animation-name: fadeOutUp;
+}
+
+
+@keyframes slideInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-2000px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.slideInDown {
+    animation-name: slideInDown;
+}
+
+
+@keyframes slideOutUp {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-2000px);
+    }
+}
+
+.slideOutUp {
+    animation-name: slideOutUp;
 }
 
 

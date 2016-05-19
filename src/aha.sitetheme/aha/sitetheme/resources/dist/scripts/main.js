@@ -6,7 +6,7 @@
 * Designed and built by ade25
 */
 /*!
- * Bootstrap v3.3.5 (http://getbootstrap.com)
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under the MIT license
  */
@@ -18,13 +18,13 @@ if (typeof jQuery === 'undefined') {
 +function ($) {
   'use strict';
   var version = $.fn.jquery.split(' ')[0].split('.')
-  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1)) {
-    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher')
+  if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 2)) {
+    throw new Error('Bootstrap\'s JavaScript requires jQuery version 1.9.1 or higher, but lower than version 3')
   }
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: transition.js v3.3.5
+ * Bootstrap: transition.js v3.3.6
  * http://getbootstrap.com/javascript/#transitions
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -84,7 +84,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: alert.js v3.3.5
+ * Bootstrap: alert.js v3.3.6
  * http://getbootstrap.com/javascript/#alerts
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -103,7 +103,7 @@ if (typeof jQuery === 'undefined') {
     $(el).on('click', dismiss, this.close)
   }
 
-  Alert.VERSION = '3.3.5'
+  Alert.VERSION = '3.3.6'
 
   Alert.TRANSITION_DURATION = 150
 
@@ -179,7 +179,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: button.js v3.3.5
+ * Bootstrap: button.js v3.3.6
  * http://getbootstrap.com/javascript/#buttons
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -199,7 +199,7 @@ if (typeof jQuery === 'undefined') {
     this.isLoading = false
   }
 
-  Button.VERSION  = '3.3.5'
+  Button.VERSION  = '3.3.6'
 
   Button.DEFAULTS = {
     loadingText: 'loading...'
@@ -300,7 +300,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: carousel.js v3.3.5
+ * Bootstrap: carousel.js v3.3.6
  * http://getbootstrap.com/javascript/#carousel
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -331,7 +331,7 @@ if (typeof jQuery === 'undefined') {
       .on('mouseleave.bs.carousel', $.proxy(this.cycle, this))
   }
 
-  Carousel.VERSION  = '3.3.5'
+  Carousel.VERSION  = '3.3.6'
 
   Carousel.TRANSITION_DURATION = 600
 
@@ -538,7 +538,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: collapse.js v3.3.5
+ * Bootstrap: collapse.js v3.3.6
  * http://getbootstrap.com/javascript/#collapse
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -568,7 +568,7 @@ if (typeof jQuery === 'undefined') {
     if (this.options.toggle) this.toggle()
   }
 
-  Collapse.VERSION  = '3.3.5'
+  Collapse.VERSION  = '3.3.6'
 
   Collapse.TRANSITION_DURATION = 350
 
@@ -750,7 +750,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: dropdown.js v3.3.5
+ * Bootstrap: dropdown.js v3.3.6
  * http://getbootstrap.com/javascript/#dropdowns
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -770,7 +770,7 @@ if (typeof jQuery === 'undefined') {
     $(element).on('click.bs.dropdown', this.toggle)
   }
 
-  Dropdown.VERSION = '3.3.5'
+  Dropdown.VERSION = '3.3.6'
 
   function getParent($this) {
     var selector = $this.attr('data-target')
@@ -802,7 +802,7 @@ if (typeof jQuery === 'undefined') {
       if (e.isDefaultPrevented()) return
 
       $this.attr('aria-expanded', 'false')
-      $parent.removeClass('open').trigger('hidden.bs.dropdown', relatedTarget)
+      $parent.removeClass('open').trigger($.Event('hidden.bs.dropdown', relatedTarget))
     })
   }
 
@@ -836,7 +836,7 @@ if (typeof jQuery === 'undefined') {
 
       $parent
         .toggleClass('open')
-        .trigger('shown.bs.dropdown', relatedTarget)
+        .trigger($.Event('shown.bs.dropdown', relatedTarget))
     }
 
     return false
@@ -916,7 +916,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: modal.js v3.3.5
+ * Bootstrap: modal.js v3.3.6
  * http://getbootstrap.com/javascript/#modals
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -950,7 +950,7 @@ if (typeof jQuery === 'undefined') {
     }
   }
 
-  Modal.VERSION  = '3.3.5'
+  Modal.VERSION  = '3.3.6'
 
   Modal.TRANSITION_DURATION = 300
   Modal.BACKDROP_TRANSITION_DURATION = 150
@@ -1254,7 +1254,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: tooltip.js v3.3.5
+ * Bootstrap: tooltip.js v3.3.6
  * http://getbootstrap.com/javascript/#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ========================================================================
@@ -1281,7 +1281,7 @@ if (typeof jQuery === 'undefined') {
     this.init('tooltip', element, options)
   }
 
-  Tooltip.VERSION  = '3.3.5'
+  Tooltip.VERSION  = '3.3.6'
 
   Tooltip.TRANSITION_DURATION = 150
 
@@ -1769,7 +1769,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: popover.js v3.3.5
+ * Bootstrap: popover.js v3.3.6
  * http://getbootstrap.com/javascript/#popovers
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -1789,7 +1789,7 @@ if (typeof jQuery === 'undefined') {
 
   if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
 
-  Popover.VERSION  = '3.3.5'
+  Popover.VERSION  = '3.3.6'
 
   Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
     placement: 'right',
@@ -1878,7 +1878,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: scrollspy.js v3.3.5
+ * Bootstrap: scrollspy.js v3.3.6
  * http://getbootstrap.com/javascript/#scrollspy
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -1907,7 +1907,7 @@ if (typeof jQuery === 'undefined') {
     this.process()
   }
 
-  ScrollSpy.VERSION  = '3.3.5'
+  ScrollSpy.VERSION  = '3.3.6'
 
   ScrollSpy.DEFAULTS = {
     offset: 10
@@ -2051,7 +2051,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: tab.js v3.3.5
+ * Bootstrap: tab.js v3.3.6
  * http://getbootstrap.com/javascript/#tabs
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -2071,7 +2071,7 @@ if (typeof jQuery === 'undefined') {
     // jscs:enable requireDollarBeforejQueryAssignment
   }
 
-  Tab.VERSION = '3.3.5'
+  Tab.VERSION = '3.3.6'
 
   Tab.TRANSITION_DURATION = 150
 
@@ -2207,7 +2207,7 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 /* ========================================================================
- * Bootstrap: affix.js v3.3.5
+ * Bootstrap: affix.js v3.3.6
  * http://getbootstrap.com/javascript/#affix
  * ========================================================================
  * Copyright 2011-2015 Twitter, Inc.
@@ -2236,7 +2236,7 @@ if (typeof jQuery === 'undefined') {
     this.checkPosition()
   }
 
-  Affix.VERSION  = '3.3.5'
+  Affix.VERSION  = '3.3.6'
 
   Affix.RESET    = 'affix affix-top affix-bottom'
 
@@ -2374,10 +2374,8 @@ if (typeof jQuery === 'undefined') {
 	window.lazySizes = lazySizes;
 	if(typeof module == 'object' && module.exports){
 		module.exports = lazySizes;
-	} else if (typeof define == 'function' && define.amd) {
-		define(lazySizes);
 	}
-}(window, function(window, document) {
+}(window, function l(window, document) {
 	'use strict';
 	/*jshint eqnull:true */
 	if(!document.getElementsByClassName){return;}
@@ -2386,15 +2384,21 @@ if (typeof jQuery === 'undefined') {
 
 	var docElem = document.documentElement;
 
-	var supportPicture = window.HTMLPictureElement && ('sizes' in document.createElement('img'));
+	var Date = window.Date;
+
+	var supportPicture = window.HTMLPictureElement;
 
 	var _addEventListener = 'addEventListener';
+
+	var _getAttribute = 'getAttribute';
 
 	var addEventListener = window[_addEventListener];
 
 	var setTimeout = window.setTimeout;
 
-	var rAF = window.requestAnimationFrame || setTimeout;
+	var requestAnimationFrame = window.requestAnimationFrame || setTimeout;
+
+	var requestIdleCallback = window.requestIdleCallback;
 
 	var regPicture = /^picture$/i;
 
@@ -2408,19 +2412,19 @@ if (typeof jQuery === 'undefined') {
 		if(!regClassCache[cls]){
 			regClassCache[cls] = new RegExp('(\\s|^)'+cls+'(\\s|$)');
 		}
-		return regClassCache[cls].test(ele.className) && regClassCache[cls];
+		return regClassCache[cls].test(ele[_getAttribute]('class') || '') && regClassCache[cls];
 	};
 
 	var addClass = function(ele, cls) {
 		if (!hasClass(ele, cls)){
-			ele.className = ele.className.trim() + ' ' + cls;
+			ele.setAttribute('class', (ele[_getAttribute]('class') || '').trim() + ' ' + cls);
 		}
 	};
 
 	var removeClass = function(ele, cls) {
 		var reg;
 		if ((reg = hasClass(ele,cls))) {
-			ele.className = ele.className.replace(reg, ' ');
+			ele.setAttribute('class', (ele[_getAttribute]('class') || '').replace(reg, ' '));
 		}
 	};
 
@@ -2467,74 +2471,77 @@ if (typeof jQuery === 'undefined') {
 		return width;
 	};
 
-	var throttle = function(fn){
-		var running;
-		var lastTime = 0;
-		var Date = window.Date;
+	var rAF = (function(){
+		var running, waiting;
+		var fns = [];
+
 		var run = function(){
+			var fn;
+			running = true;
+			waiting = false;
+			while(fns.length){
+				fn = fns.shift();
+				fn[0].apply(fn[1], fn[2]);
+			}
 			running = false;
-			lastTime = Date.now();
-			fn();
-		};
-		var afterAF = function(){
-			setTimeout(run);
-		};
-		var getAF = function(){
-			rAF(afterAF);
 		};
 
-		return function(){
+		return function(fn){
 			if(running){
-				return;
-			}
-			var delay = 125 - (Date.now() - lastTime);
+				fn.apply(this, arguments);
+			} else {
+				fns.push([fn, this, arguments]);
 
-			running =  true;
-
-			if(delay < 6){
-				delay = 6;
+				if(!waiting){
+					waiting = true;
+					(document.hidden ? setTimeout : requestAnimationFrame)(run);
+				}
 			}
-			setTimeout(getAF, delay);
 		};
+	})();
+
+	var rAFIt = function(fn, simple){
+		return simple ?
+			function() {
+				rAF(fn);
+			} :
+			function(){
+				var that = this;
+				var args = arguments;
+				rAF(function(){
+					fn.apply(that, args);
+				});
+			}
+		;
 	};
 
-	/*
 	var throttle = function(fn){
 		var running;
 		var lastTime = 0;
-		var Date = window.Date;
-		var requestIdleCallback = window.requestIdleCallback;
 		var gDelay = 125;
-		var dTimeout = 999;
-		var timeout = dTimeout;
-		var fastCallThreshold = 0;
+		var RIC_DEFAULT_TIMEOUT = 999;
+		var rICTimeout = RIC_DEFAULT_TIMEOUT;
 		var run = function(){
 			running = false;
 			lastTime = Date.now();
 			fn();
 		};
-		var afterAF = function(){
-			setTimeout(run);
-		};
-		var getAF = function(){
-			rAF(afterAF);
-		};
-
-		if(requestIdleCallback){
-			gDelay = 66;
-			fastCallThreshold = 22;
-			getAF = function(){
-				requestIdleCallback(run, {timeout: timeout});
-				if(timeout !== dTimeout){
-					timeout = dTimeout;
+		var idleCallback = requestIdleCallback ?
+			function(){
+				requestIdleCallback(run, {timeout: rICTimeout});
+				if(rICTimeout !== RIC_DEFAULT_TIMEOUT){
+					rICTimeout = RIC_DEFAULT_TIMEOUT;
 				}
-			};
-		}
+			}:
+			rAFIt(function(){
+				setTimeout(run);
+			}, true)
+		;
 
 		return function(isPriority){
 			var delay;
 			if((isPriority = isPriority === true)){
-				timeout = 40;
+				rICTimeout = 66;
 			}
 
 			if(running){
@@ -2543,14 +2550,47 @@ if (typeof jQuery === 'undefined') {
 
 			running =  true;
 
-			if(isPriority || (delay = gDelay - (Date.now() - lastTime)) < fastCallThreshold){
-				getAF();
+			delay = gDelay - (Date.now() - lastTime);
+
+			if(delay < 0){
+				delay = 0;
+			}
+
+			if(isPriority || (delay < 9 && requestIdleCallback)){
+				idleCallback();
 			} else {
-				setTimeout(getAF, delay);
+				setTimeout(idleCallback, delay);
 			}
 		};
 	};
-	*/
+
+	//based on http://modernjavascript.blogspot.de/2013/08/building-better-debounce.html
+	var debounce = function(func) {
+		var timeout, timestamp;
+		var wait = 99;
+		var run = function(){
+			timeout = null;
+			func();
+		};
+		var later = function() {
+			var last = Date.now() - timestamp;
+
+			if (last < wait) {
+				setTimeout(later, wait - last);
+			} else {
+				(requestIdleCallback || run)(run);
+			}
+		};
+
+		return function() {
+			timestamp = Date.now();
+
+			if (!timeout) {
+				timeout = setTimeout(later, wait);
+			}
+		};
+	};
+
 
 	var loader = (function(){
 		var lazyloadElems, preloadElems, isCompleted, resetPreloadingTimer, loadMode, started;
@@ -2584,22 +2624,22 @@ if (typeof jQuery === 'undefined') {
 		var isNestedVisible = function(elem, elemExpand){
 			var outerRect;
 			var parent = elem;
-			var visible = getCSS(elem, 'visibility') != 'hidden';
+			var visible = getCSS(document.body, 'visibility') == 'hidden' || getCSS(elem, 'visibility') != 'hidden';
 
 			eLtop -= elemExpand;
 			eLbottom += elemExpand;
 			eLleft -= elemExpand;
 			eLright += elemExpand;
 
-			while(visible && (parent = parent.offsetParent)){
+			while(visible && (parent = parent.offsetParent) && parent != document.body && parent != docElem){
 				visible = ((getCSS(parent, 'opacity') || 1) > 0);
 
 				if(visible && getCSS(parent, 'overflow') != 'visible'){
 					outerRect = parent.getBoundingClientRect();
 					visible = eLright > outerRect.left &&
-					eLleft < outerRect.right &&
-					eLbottom > outerRect.top - 1 &&
-					eLtop < outerRect.bottom + 1
+						eLleft < outerRect.right &&
+						eLbottom > outerRect.top - 1 &&
+						eLtop < outerRect.bottom + 1
 					;
 				}
 			}
@@ -2616,6 +2656,15 @@ if (typeof jQuery === 'undefined') {
 
 				lowRuns++;
 
+				if(preloadExpand == null){
+					if(!('expand' in lazySizesConfig)){
+						lazySizesConfig.expand = docElem.clientHeight > 500 ? 500 : 400;
+					}
+
+					defaultExpand = lazySizesConfig.expand;
+					preloadExpand = defaultExpand * lazySizesConfig.expFactor;
+				}
+
 				if(currentExpand < preloadExpand && isLoading < 1 && lowRuns > 3 && loadMode > 2){
 					currentExpand = preloadExpand;
 					lowRuns = 0;
@@ -2631,7 +2680,7 @@ if (typeof jQuery === 'undefined') {
 
 					if(!supportScroll){unveilElement(lazyloadElems[i]);continue;}
 
-					if(!(elemExpandVal = lazyloadElems[i].getAttribute('data-expand')) || !(elemExpand = elemExpandVal * 1)){
+					if(!(elemExpandVal = lazyloadElems[i][_getAttribute]('data-expand')) || !(elemExpand = elemExpandVal * 1)){
 						elemExpand = currentExpand;
 					}
 
@@ -2656,7 +2705,7 @@ if (typeof jQuery === 'undefined') {
 					} else if(!loadedSomething && isCompleted && !autoLoadElem &&
 						isLoading < 4 && lowRuns < 4 && loadMode > 2 &&
 						(preloadElems[0] || lazySizesConfig.preloadAfterLoad) &&
-						(preloadElems[0] || (!elemExpandVal && ((eLbottom || eLright || eLleft || eLtop) || lazyloadElems[i].getAttribute(lazySizesConfig.sizesAttr) != 'auto')))){
+						(preloadElems[0] || (!elemExpandVal && ((eLbottom || eLright || eLleft || eLtop) || lazyloadElems[i][_getAttribute](lazySizesConfig.sizesAttr) != 'auto')))){
 						autoLoadElem = preloadElems[0] || lazyloadElems[i];
 					}
 				}
@@ -2672,7 +2721,11 @@ if (typeof jQuery === 'undefined') {
 		var switchLoadingClass = function(e){
 			addClass(e.target, lazySizesConfig.loadedClass);
 			removeClass(e.target, lazySizesConfig.loadingClass);
-			addRemoveLoadEvents(e.target, switchLoadingClass);
+			addRemoveLoadEvents(e.target, rafSwitchLoadingClass);
+		};
+		var rafedSwitchLoadingClass = rAFIt(switchLoadingClass);
+		var rafSwitchLoadingClass = function(e){
+			rafedSwitchLoadingClass({target: e.target});
 		};
 
 		var changeIframeSrc = function(elem, src){
@@ -2686,9 +2739,9 @@ if (typeof jQuery === 'undefined') {
 		var handleSources = function(source){
 			var customMedia, parent;
 
-			var sourceSrcset = source.getAttribute(lazySizesConfig.srcsetAttr);
+			var sourceSrcset = source[_getAttribute](lazySizesConfig.srcsetAttr);
 
-			if( (customMedia = lazySizesConfig.customMedia[source.getAttribute('data-media') || source.getAttribute('media')]) ){
+			if( (customMedia = lazySizesConfig.customMedia[source[_getAttribute]('data-media') || source[_getAttribute]('media')]) ){
 				source.setAttribute('media', customMedia);
 			}
 
@@ -2696,6 +2749,7 @@ if (typeof jQuery === 'undefined') {
 				source.setAttribute('srcset', sourceSrcset);
 			}
 
+			//https://bugzilla.mozilla.org/show_bug.cgi?id=1170572
 			if(customMedia){
 				parent = source.parentNode;
 				parent.insertBefore(source.cloneNode(), source);
@@ -2703,99 +2757,64 @@ if (typeof jQuery === 'undefined') {
 			}
 		};
 
-		var rafBatch = (function(){
-			var isRunning;
-			var batch = [];
-			var runBatch = function(){
-				while(batch.length){
-					(batch.shift())();
+		var lazyUnveil = rAFIt(function (elem, detail, isAuto, sizes, isImg){
+			var src, srcset, parent, isPicture, event, firesLoad;
+
+			if(!(event = triggerEvent(elem, 'lazybeforeunveil', detail)).defaultPrevented){
+
+				if(sizes){
+					if(isAuto){
+						addClass(elem, lazySizesConfig.autosizesClass);
+					} else {
+						elem.setAttribute('sizes', sizes);
+					}
 				}
-				isRunning = false;
-			};
-			return function(fn){
-				batch.push(fn);
-				if(!isRunning){
-					isRunning = true;
-					rAF(runBatch);
+
+				srcset = elem[_getAttribute](lazySizesConfig.srcsetAttr);
+				src = elem[_getAttribute](lazySizesConfig.srcAttr);
+
+				if(isImg) {
+					parent = elem.parentNode;
+					isPicture = parent && regPicture.test(parent.nodeName || '');
 				}
-			};
-		})();
 
-		var unveilElement = function (elem){
-			var src, srcset, parent, isPicture, event, firesLoad, width;
+				firesLoad = detail.firesLoad || (('src' in elem) && (srcset || src || isPicture));
 
-			var isImg = regImg.test(elem.nodeName);
+				event = {target: elem};
 
-			//allow using sizes="auto", but don't use. it's invalid. Use data-sizes="auto" or a valid value for sizes instead (i.e.: sizes="80vw")
-			var sizes = isImg && (elem.getAttribute(lazySizesConfig.sizesAttr) || elem.getAttribute('sizes'));
-			var isAuto = sizes == 'auto';
+				if(firesLoad){
+					addRemoveLoadEvents(elem, resetPreloading, true);
+					clearTimeout(resetPreloadingTimer);
+					resetPreloadingTimer = setTimeout(resetPreloading, 2500);
 
-			if( (isAuto || !isCompleted) && isImg && (elem.src || elem.srcset) && !elem.complete && !hasClass(elem, lazySizesConfig.errorClass)){return;}
+					addClass(elem, lazySizesConfig.loadingClass);
+					addRemoveLoadEvents(elem, rafSwitchLoadingClass, true);
+				}
 
-			if(isAuto){
-				width = elem.offsetWidth;
+				if(isPicture){
+					forEach.call(parent.getElementsByTagName('source'), handleSources);
+				}
+
+				if(srcset){
+					elem.setAttribute('srcset', srcset);
+				} else if(src && !isPicture){
+					if(regIframe.test(elem.nodeName)){
+						changeIframeSrc(elem, src);
+					} else {
+						elem.src = src;
+					}
+				}
+
+				if(srcset || isPicture){
+					updatePolyfill(elem, {src: src});
+				}
 			}
 
-			elem._lazyRace = true;
-			isLoading++;
-
-			rafBatch(function lazyUnveil(){
+			rAF(function(){
 				if(elem._lazyRace){
 					delete elem._lazyRace;
 				}
-
 				removeClass(elem, lazySizesConfig.lazyClass);
-
-				if(!(event = triggerEvent(elem, 'lazybeforeunveil')).defaultPrevented){
-
-					if(sizes){
-						if(isAuto){
-							addClass(elem, lazySizesConfig.autosizesClass);
-							autoSizer.updateElem(elem, true, width);
-						} else {
-							elem.setAttribute('sizes', sizes);
-						}
-					}
-
-					srcset = elem.getAttribute(lazySizesConfig.srcsetAttr);
-					src = elem.getAttribute(lazySizesConfig.srcAttr);
-
-					if(isImg) {
-						parent = elem.parentNode;
-						isPicture = parent && regPicture.test(parent.nodeName || '');
-					}
-
-					firesLoad = event.detail.firesLoad || (('src' in elem) && (srcset || src || isPicture));
-
-					event = {target: elem};
-
-					if(firesLoad){
-						addRemoveLoadEvents(elem, resetPreloading, true);
-						clearTimeout(resetPreloadingTimer);
-						resetPreloadingTimer = setTimeout(resetPreloading, 2500);
-
-						addClass(elem, lazySizesConfig.loadingClass);
-						addRemoveLoadEvents(elem, switchLoadingClass, true);
-					}
-
-					if(isPicture){
-						forEach.call(parent.getElementsByTagName('source'), handleSources);
-					}
-
-					if(srcset){
-						elem.setAttribute('srcset', srcset);
-					} else if(src && !isPicture){
-						if(regIframe.test(elem.nodeName)){
-							changeIframeSrc(elem, src);
-						} else {
-							elem.src = src;
-						}
-					}
-
-					if(srcset || isPicture){
-						updatePolyfill(elem, {src: src});
-					}
-				}
 
 				if( !firesLoad || elem.complete ){
 					if(firesLoad){
@@ -2806,6 +2825,29 @@ if (typeof jQuery === 'undefined') {
 					switchLoadingClass(event);
 				}
 			});
+		});
+
+		var unveilElement = function (elem){
+			var detail;
+
+			var isImg = regImg.test(elem.nodeName);
+
+			//allow using sizes="auto", but don't use. it's invalid. Use data-sizes="auto" or a valid value for sizes instead (i.e.: sizes="80vw")
+			var sizes = isImg && (elem[_getAttribute](lazySizesConfig.sizesAttr) || elem[_getAttribute]('sizes'));
+			var isAuto = sizes == 'auto';
+
+			if( (isAuto || !isCompleted) && isImg && (elem.src || elem.srcset) && !elem.complete && !hasClass(elem, lazySizesConfig.errorClass)){return;}
+
+			detail = triggerEvent(elem, 'lazyunveilread').detail;
+
+			if(isAuto){
+				 autoSizer.updateElem(elem, true, elem.offsetWidth);
+			}
+
+			elem._lazyRace = true;
+			isLoading++;
+
+			lazyUnveil(elem, detail, isAuto, sizes, isImg);
 		};
 
 		var onload = function(){
@@ -2814,63 +2856,24 @@ if (typeof jQuery === 'undefined') {
 				setTimeout(onload, 999);
 				return;
 			}
-			var scrollTimer;
-			var afterScroll = function(){
+			var afterScroll = debounce(function(){
 				lazySizesConfig.loadMode = 3;
 				throttledCheckElements();
-			};
+			});
 
 			isCompleted = true;
 
 			lazySizesConfig.loadMode = 3;
 
-			if(!isLoading){
-				throttledCheckElements();
-			}
+			throttledCheckElements();
 
 			addEventListener('scroll', function(){
 				if(lazySizesConfig.loadMode == 3){
 					lazySizesConfig.loadMode = 2;
 				}
-				clearTimeout(scrollTimer);
-				scrollTimer = setTimeout(afterScroll, 99);
+				afterScroll();
 			}, true);
 		};
-
-		/*
-		var onload = function(){
-			var scrollTimer, timestamp;
-			var wait = 99;
-			var afterScroll = function(){
-				var last = (Date.now()) - timestamp;
-
-				// if the latest call was less that the wait period ago
-				// then we reset the timeout to wait for the difference
-				if (last < wait) {
-					scrollTimer = setTimeout(afterScroll, wait - last);
-
-					// or if not we can null out the timer and run the latest
-				} else {
-					scrollTimer = null;
-					lazySizesConfig.loadMode = 3;
-					throttledCheckElements();
-				}
-			};
-
-			isCompleted = true;
-			lowRuns += 8;
-
-			lazySizesConfig.loadMode = 3;
-
-			addEventListener('scroll', function(){
-				timestamp = Date.now();
-				if(!scrollTimer){
-					lazySizesConfig.loadMode = 2;
-					scrollTimer = setTimeout(afterScroll, wait);
-				}
-			}, true);
-		};
-		*/
 
 		return {
 			_: function(){
@@ -2879,9 +2882,6 @@ if (typeof jQuery === 'undefined') {
 				lazyloadElems = document.getElementsByClassName(lazySizesConfig.lazyClass);
 				preloadElems = document.getElementsByClassName(lazySizesConfig.lazyClass + ' ' + lazySizesConfig.preloadClass);
 				hFac = lazySizesConfig.hFac;
-
-				defaultExpand = lazySizesConfig.expand;
-				preloadExpand = defaultExpand * lazySizesConfig.expFactor;
 
 				addEventListener('scroll', throttledCheckElements, true);
 
@@ -2921,8 +2921,26 @@ if (typeof jQuery === 'undefined') {
 	var autoSizer = (function(){
 		var autosizesElems;
 
-		var sizeElement = function (elem, dataAttr, width){
-			var sources, i, len, event;
+		var sizeElement = rAFIt(function(elem, parent, event, width){
+			var sources, i, len;
+			elem._lazysizesWidth = width;
+			width += 'px';
+
+			elem.setAttribute('sizes', width);
+
+			if(regPicture.test(parent.nodeName || '')){
+				sources = parent.getElementsByTagName('source');
+				for(i = 0, len = sources.length; i < len; i++){
+					sources[i].setAttribute('sizes', width);
+				}
+			}
+
+			if(!event.detail.dataAttr){
+				updatePolyfill(elem, event.detail);
+			}
+		});
+		var getSizeElement = function (elem, dataAttr, width){
+			var event;
 			var parent = elem.parentNode;
 
 			if(parent){
@@ -2933,20 +2951,7 @@ if (typeof jQuery === 'undefined') {
 					width = event.detail.width;
 
 					if(width && width !== elem._lazysizesWidth){
-						elem._lazysizesWidth = width;
-						width += 'px';
-						elem.setAttribute('sizes', width);
-
-						if(regPicture.test(parent.nodeName || '')){
-							sources = parent.getElementsByTagName('source');
-							for(i = 0, len = sources.length; i < len; i++){
-								sources[i].setAttribute('sizes', width);
-							}
-						}
-
-						if(!event.detail.dataAttr){
-							updatePolyfill(elem, event.detail);
-						}
+						sizeElement(elem, parent, event, width);
 					}
 				}
 			}
@@ -2959,20 +2964,20 @@ if (typeof jQuery === 'undefined') {
 				i = 0;
 
 				for(; i < len; i++){
-					sizeElement(autosizesElems[i]);
+					getSizeElement(autosizesElems[i]);
 				}
 			}
 		};
 
-		var throttledUpdateElementsSizes = throttle(updateElementsSizes);
+		var debouncedUpdateElementsSizes = debounce(updateElementsSizes);
 
 		return {
 			_: function(){
 				autosizesElems = document.getElementsByClassName(lazySizesConfig.autosizesClass);
-				addEventListener('resize', throttledUpdateElementsSizes);
+				addEventListener('resize', debouncedUpdateElementsSizes);
 			},
-			checkElems: throttledUpdateElementsSizes,
-			updateElem: sizeElement
+			checkElems: debouncedUpdateElementsSizes,
+			updateElem: getSizeElement
 		};
 	})();
 
@@ -3002,9 +3007,8 @@ if (typeof jQuery === 'undefined') {
 			minSize: 40,
 			customMedia: {},
 			init: true,
-			expFactor: 1.7,
+			expFactor: 1.6,
 			hFac: 0.8,
-			expand: docElem.clientHeight > 600 ? docElem.clientWidth > 860 ? 500 : 410 : 359,
 			loadMode: 2
 		};
 
@@ -3035,9 +3039,11 @@ if (typeof jQuery === 'undefined') {
 		rC: removeClass,
 		hC: hasClass,
 		fire: triggerEvent,
-		gW: getWidth
+		gW: getWidth,
+		rAF: rAF,
 	};
-}));
+}
+));
 
 /*! respimage - v1.4.2 - 2015-08-22
  Licensed MIT */
@@ -3544,7 +3550,7 @@ if ( typeof define === 'function' && define.amd ) {
  */
 
 ;(function () {
-    
+    'use strict';
 
     /**
      * Class for managing events.
@@ -4491,7 +4497,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 ( function( ElemProto ) {
 
-  
+  'use strict';
 
   var matchesMethod = ( function() {
     // check for the standard method name first
@@ -4597,7 +4603,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 ( function( window, factory ) {
   /*global define: false, module: false, require: false */
-  
+  'use strict';
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -4860,7 +4866,7 @@ return utils;
 }));
 
 ( function( window, factory ) {
-  
+  'use strict';
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -4954,7 +4960,7 @@ return Cell;
 }));
 
 ( function( window, factory ) {
-  
+  'use strict';
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -5210,19 +5216,12 @@ return proto;
 
 }));
 
-/*!
- * Flickity v1.1.1
- * Touch, responsive, flickable galleries
- *
- * Licensed GPLv3 for open source use
- * or Flickity Commercial License for commercial use
- *
- * http://flickity.metafizzy.co
- * Copyright 2015 Metafizzy
+/**
+ * Flickity main
  */
 
 ( function( window, factory ) {
-  
+  'use strict';
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -5339,7 +5338,7 @@ Flickity.prototype._create = function() {
   this.element.flickityGUID = id; // expando
   instances[ id ] = this; // associate via id
   // initial properties
-  this.selectedIndex = this.options.initialIndex || 0;
+  this.selectedIndex = 0;
   // how many frames slider has been in same position
   this.restingFrames = 0;
   // initial physics properties
@@ -5407,8 +5406,19 @@ Flickity.prototype.activate = function() {
 
   this.emit('activate');
 
-  this.positionSliderAtSelected();
-  this.select( this.selectedIndex );
+  var index;
+  var initialIndex = this.options.initialIndex;
+  if ( this.isInitActivated ) {
+    index = this.selectedIndex;
+  } else if ( initialIndex !== undefined ) {
+    index = this.cells[ initialIndex ] ? initialIndex : 0;
+  } else {
+    index = 0;
+  }
+  // select instantly
+  this.select( index, false, true );
+  // flag for initial activation, for using initialIndex
+  this.isInitActivated = true;
 };
 
 // slider positions the cells
@@ -5639,11 +5649,13 @@ Flickity.prototype.dispatchEvent = function( type, event, args ) {
 /**
  * @param {Integer} index - index of the cell
  * @param {Boolean} isWrap - will wrap-around to last/first if at the end
+ * @param {Boolean} isInstant - will immediately set position at selected cell
  */
-Flickity.prototype.select = function( index, isWrap ) {
+Flickity.prototype.select = function( index, isWrap, isInstant ) {
   if ( !this.isActive ) {
     return;
   }
+  index = parseInt( index, 10 );
   // wrap position so slider is within normal area
   var len = this.cells.length;
   if ( this.options.wrapAround && len > 1 ) {
@@ -5657,13 +5669,18 @@ Flickity.prototype.select = function( index, isWrap ) {
   if ( this.options.wrapAround || isWrap ) {
     index = utils.modulo( index, len );
   }
-
-  if ( this.cells[ index ] ) {
-    this.selectedIndex = index;
-    this.setSelectedCell();
-    this.startAnimation();
-    this.dispatchEvent('cellSelect');
+  // bail if invalid index
+  if ( !this.cells[ index ] ) {
+    return;
   }
+  this.selectedIndex = index;
+  this.setSelectedCell();
+  if ( isInstant ) {
+    this.positionSliderAtSelected();
+  } else {
+    this.startAnimation();
+  }
+  this.dispatchEvent('cellSelect');
 };
 
 Flickity.prototype.previous = function( isWrap ) {
@@ -5971,7 +5988,7 @@ return Flickity;
 /*global define: false, module: false, require: false */
 
 ( function( window, factory ) {
-  
+  'use strict';
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -6279,7 +6296,7 @@ return Unipointer;
 }));
 
 /*!
- * Unidragger v1.1.5
+ * Unidragger v1.1.6
  * Draggable base class
  * MIT license
  */
@@ -6288,7 +6305,7 @@ return Unipointer;
 
 ( function( window, factory ) {
   /*global define: false, module: false, require: false */
-  
+  'use strict';
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -6509,7 +6526,7 @@ Unidragger.prototype._dragPointerUp = function( event, pointer ) {
   }
 };
 
-Unipointer.prototype.pointerDone = function() {
+Unidragger.prototype.pointerDone = function() {
   eventie.unbind( window, 'scroll', this );
 };
 
@@ -6646,7 +6663,7 @@ return Unidragger;
 }));
 
 ( function( window, factory ) {
-  
+  'use strict';
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -6792,9 +6809,15 @@ var focusNodes = {
 
 Flickity.prototype.pointerDownFocus = function( event ) {
   // focus element, if not touch, and its not an input or select
-  if ( this.options.accessibility && !touchStartEvents[ event.type ] &&
-      !focusNodes[ event.target.nodeName ] ) {
-    this.element.focus();
+  if ( !this.options.accessibility || touchStartEvents[ event.type ] ||
+      focusNodes[ event.target.nodeName ] ) {
+    return;
+  }
+  var prevScrollY = window.pageYOffset;
+  this.element.focus();
+  // hack to fix scroll jump after focus, #76
+  if ( window.pageYOffset != prevScrollY ) {
+    window.scrollTo( window.pageXOffset, prevScrollY );
   }
 };
 
@@ -7019,7 +7042,7 @@ return Flickity;
 
 ( function( window, factory ) {
   /*global define: false, module: false, require: false */
-  
+  'use strict';
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -7133,7 +7156,7 @@ return TapListener;
 // -------------------------- prev/next button -------------------------- //
 
 ( function( window, factory ) {
-  
+  'use strict';
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -7211,6 +7234,9 @@ PrevNextButton.prototype._create = function() {
   element.className += this.isPrevious ? ' previous' : ' next';
   // prevent button from submitting form http://stackoverflow.com/a/10836076/182183
   element.setAttribute( 'type', 'button' );
+  // init as disabled
+  this.disable();
+
   Flickity.setUnselectable( element );
   // create arrow
   if ( supportsInlineSVG() ) {
@@ -7236,7 +7262,6 @@ PrevNextButton.prototype._create = function() {
 };
 
 PrevNextButton.prototype.activate = function() {
-  this.update();
   this.bindTap( this.element );
   // click events from keyboard
   eventie.bind( this.element, 'click', this );
@@ -7393,7 +7418,7 @@ return Flickity;
 }));
 
 ( function( window, factory ) {
-  
+  'use strict';
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -7462,7 +7487,6 @@ PageDots.prototype._create = function() {
 
 PageDots.prototype.activate = function() {
   this.setDots();
-  this.updateSelected();
   this.bindTap( this.holder );
   // add to DOM
   this.parent.element.appendChild( this.holder );
@@ -7578,7 +7602,7 @@ return Flickity;
 }));
 
 ( function( window, factory ) {
-  
+  'use strict';
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -7586,15 +7610,17 @@ return Flickity;
     define( 'flickity/js/player',[
       'eventEmitter/EventEmitter',
       'eventie/eventie',
+      'fizzy-ui-utils/utils',
       './flickity'
-    ], function( EventEmitter, eventie, Flickity ) {
-      return factory( EventEmitter, eventie, Flickity );
+    ], function( EventEmitter, eventie, utils, Flickity ) {
+      return factory( EventEmitter, eventie, utils, Flickity );
     });
   } else if ( typeof exports == 'object' ) {
     // CommonJS
     module.exports = factory(
       require('wolfy87-eventemitter'),
       require('eventie'),
+      require('fizzy-ui-utils'),
       require('./flickity')
     );
   } else {
@@ -7602,11 +7628,12 @@ return Flickity;
     factory(
       window.EventEmitter,
       window.eventie,
+      window.fizzyUIUtils,
       window.Flickity
     );
   }
 
-}( window, function factory( EventEmitter, eventie, Flickity ) {
+}( window, function factory( EventEmitter, eventie, utils, Flickity ) {
 
 
 
@@ -7705,9 +7732,9 @@ Player.prototype.visibilityChange = function() {
 
 // -------------------------- Flickity -------------------------- //
 
-// utils.extend( Flickity.defaults, {
-//   autoPlay: false
-// });
+utils.extend( Flickity.defaults, {
+  pauseAutoPlayOnHover: true
+});
 
 Flickity.createMethods.push('_createPlayer');
 
@@ -7745,6 +7772,9 @@ Flickity.prototype.deactivatePlayer = function() {
 
 // pause auto-play on hover
 Flickity.prototype.onmouseenter = function() {
+  if ( !this.options.pauseAutoPlayOnHover ) {
+    return;
+  }
   this.player.pause();
   eventie.bind( this.element, 'mouseleave', this );
 };
@@ -7764,7 +7794,7 @@ return Flickity;
 }));
 
 ( function( window, factory ) {
-  
+  'use strict';
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -7941,7 +7971,7 @@ return Flickity;
 }));
 
 ( function( window, factory ) {
-  
+  'use strict';
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -7975,7 +8005,7 @@ return Flickity;
   }
 
 }( window, function factory( window, classie, eventie, Flickity, utils ) {
-
+'use strict';
 
 Flickity.createMethods.push('_createLazyload');
 
@@ -8042,7 +8072,7 @@ LazyLoader.prototype.onload = function( event ) {
   this.complete( event, 'flickity-lazyloaded' );
 };
 
-LazyLoader.prototype.onerror = function() {
+LazyLoader.prototype.onerror = function( event ) {
   this.complete( event, 'flickity-lazyerror' );
 };
 
@@ -8067,13 +8097,19 @@ return Flickity;
 
 }));
 
-/**
- * Flickity index
- * used for AMD and CommonJS exports
+/*!
+ * Flickity v1.1.1
+ * Touch, responsive, flickable galleries
+ *
+ * Licensed GPLv3 for open source use
+ * or Flickity Commercial License for commercial use
+ *
+ * http://flickity.metafizzy.co
+ * Copyright 2015 Metafizzy
  */
 
 ( function( window, factory ) {
-  
+  'use strict';
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -8114,7 +8150,7 @@ return Flickity;
 
 ( function( window, factory ) {
   /*global define: false, module: false, require: false */
-  
+  'use strict';
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -8245,17 +8281,17 @@ return Flickity;
 }));
 
 /*!
- * imagesLoaded v3.1.8
+ * imagesLoaded v3.2.0
  * JavaScript is all like "You images are done yet or what?"
  * MIT License
  */
 
-( function( window, factory ) { 
+( function( window, factory ) { 'use strict';
   // universal module definition
 
   /*global define: false, module: false, require: false */
 
-  if ( typeof define === 'function' && define.amd ) {
+  if ( typeof define == 'function' && define.amd ) {
     // AMD
     define( 'imagesloaded/imagesloaded',[
       'eventEmitter/EventEmitter',
@@ -8263,7 +8299,7 @@ return Flickity;
     ], function( EventEmitter, eventie ) {
       return factory( window, EventEmitter, eventie );
     });
-  } else if ( typeof exports === 'object' ) {
+  } else if ( typeof module == 'object' && module.exports ) {
     // CommonJS
     module.exports = factory(
       window,
@@ -8289,7 +8325,6 @@ function factory( window, EventEmitter, eventie ) {
 
 var $ = window.jQuery;
 var console = window.console;
-var hasConsole = typeof console !== 'undefined';
 
 // -------------------------- helpers -------------------------- //
 
@@ -8303,7 +8338,7 @@ function extend( a, b ) {
 
 var objToString = Object.prototype.toString;
 function isArray( obj ) {
-  return objToString.call( obj ) === '[object Array]';
+  return objToString.call( obj ) == '[object Array]';
 }
 
 // turn element or nodeList into an array
@@ -8312,9 +8347,9 @@ function makeArray( obj ) {
   if ( isArray( obj ) ) {
     // use object if already an array
     ary = obj;
-  } else if ( typeof obj.length === 'number' ) {
+  } else if ( typeof obj.length == 'number' ) {
     // convert nodeList to array
-    for ( var i=0, len = obj.length; i < len; i++ ) {
+    for ( var i=0; i < obj.length; i++ ) {
       ary.push( obj[i] );
     }
   } else {
@@ -8334,17 +8369,17 @@ function makeArray( obj ) {
   function ImagesLoaded( elem, options, onAlways ) {
     // coerce ImagesLoaded() without new, to be new ImagesLoaded()
     if ( !( this instanceof ImagesLoaded ) ) {
-      return new ImagesLoaded( elem, options );
+      return new ImagesLoaded( elem, options, onAlways );
     }
     // use elem as selector string
-    if ( typeof elem === 'string' ) {
+    if ( typeof elem == 'string' ) {
       elem = document.querySelectorAll( elem );
     }
 
     this.elements = makeArray( elem );
     this.options = extend( {}, this.options );
 
-    if ( typeof options === 'function' ) {
+    if ( typeof options == 'function' ) {
       onAlways = options;
     } else {
       extend( this.options, options );
@@ -8376,25 +8411,71 @@ function makeArray( obj ) {
     this.images = [];
 
     // filter & find items if we have an item selector
-    for ( var i=0, len = this.elements.length; i < len; i++ ) {
+    for ( var i=0; i < this.elements.length; i++ ) {
       var elem = this.elements[i];
-      // filter siblings
-      if ( elem.nodeName === 'IMG' ) {
-        this.addImage( elem );
-      }
-      // find children
-      // no non-element nodes, #143
-      var nodeType = elem.nodeType;
-      if ( !nodeType || !( nodeType === 1 || nodeType === 9 || nodeType === 11 ) ) {
-        continue;
-      }
-      var childElems = elem.querySelectorAll('img');
-      // concat childElems to filterFound array
-      for ( var j=0, jLen = childElems.length; j < jLen; j++ ) {
-        var img = childElems[j];
-        this.addImage( img );
+      this.addElementImages( elem );
+    }
+  };
+
+  /**
+   * @param {Node} element
+   */
+  ImagesLoaded.prototype.addElementImages = function( elem ) {
+    // filter siblings
+    if ( elem.nodeName == 'IMG' ) {
+      this.addImage( elem );
+    }
+    // get background image on element
+    if ( this.options.background === true ) {
+      this.addElementBackgroundImages( elem );
+    }
+
+    // find children
+    // no non-element nodes, #143
+    var nodeType = elem.nodeType;
+    if ( !nodeType || !elementNodeTypes[ nodeType ] ) {
+      return;
+    }
+    var childImgs = elem.querySelectorAll('img');
+    // concat childElems to filterFound array
+    for ( var i=0; i < childImgs.length; i++ ) {
+      var img = childImgs[i];
+      this.addImage( img );
+    }
+
+    // get child background images
+    if ( typeof this.options.background == 'string' ) {
+      var children = elem.querySelectorAll( this.options.background );
+      for ( i=0; i < children.length; i++ ) {
+        var child = children[i];
+        this.addElementBackgroundImages( child );
       }
     }
+  };
+
+  var elementNodeTypes = {
+    1: true,
+    9: true,
+    11: true
+  };
+
+  ImagesLoaded.prototype.addElementBackgroundImages = function( elem ) {
+    var style = getStyle( elem );
+    // get url inside url("...")
+    var reURL = /url\(['"]*([^'"\)]+)['"]*\)/gi;
+    var matches = reURL.exec( style.backgroundImage );
+    while ( matches !== null ) {
+      var url = matches && matches[1];
+      if ( url ) {
+        this.addBackground( url, elem );
+      }
+      matches = reURL.exec( style.backgroundImage );
+    }
+  };
+
+  // IE8
+  var getStyle = window.getComputedStyle || function( elem ) {
+    return elem.currentStyle;
   };
 
   /**
@@ -8405,73 +8486,63 @@ function makeArray( obj ) {
     this.images.push( loadingImage );
   };
 
+  ImagesLoaded.prototype.addBackground = function( url, elem ) {
+    var background = new Background( url, elem );
+    this.images.push( background );
+  };
+
   ImagesLoaded.prototype.check = function() {
     var _this = this;
-    var checkedCount = 0;
-    var length = this.images.length;
+    this.progressedCount = 0;
     this.hasAnyBroken = false;
     // complete if no images
-    if ( !length ) {
+    if ( !this.images.length ) {
       this.complete();
       return;
     }
 
-    function onConfirm( image, message ) {
-      if ( _this.options.debug && hasConsole ) {
-        console.log( 'confirm', image, message );
-      }
-
-      _this.progress( image );
-      checkedCount++;
-      if ( checkedCount === length ) {
-        _this.complete();
-      }
-      return true; // bind once
+    function onProgress( image, elem, message ) {
+      // HACK - Chrome triggers event before object properties have changed. #83
+      setTimeout( function() {
+        _this.progress( image, elem, message );
+      });
     }
 
-    for ( var i=0; i < length; i++ ) {
+    for ( var i=0; i < this.images.length; i++ ) {
       var loadingImage = this.images[i];
-      loadingImage.on( 'confirm', onConfirm );
+      loadingImage.once( 'progress', onProgress );
       loadingImage.check();
     }
   };
 
-  ImagesLoaded.prototype.progress = function( image ) {
+  ImagesLoaded.prototype.progress = function( image, elem, message ) {
+    this.progressedCount++;
     this.hasAnyBroken = this.hasAnyBroken || !image.isLoaded;
-    // HACK - Chrome triggers event before object properties have changed. #83
-    var _this = this;
-    setTimeout( function() {
-      _this.emit( 'progress', _this, image );
-      if ( _this.jqDeferred && _this.jqDeferred.notify ) {
-        _this.jqDeferred.notify( _this, image );
-      }
-    });
+    // progress event
+    this.emit( 'progress', this, image, elem );
+    if ( this.jqDeferred && this.jqDeferred.notify ) {
+      this.jqDeferred.notify( this, image );
+    }
+    // check if completed
+    if ( this.progressedCount == this.images.length ) {
+      this.complete();
+    }
+
+    if ( this.options.debug && console ) {
+      console.log( 'progress: ' + message, image, elem );
+    }
   };
 
   ImagesLoaded.prototype.complete = function() {
     var eventName = this.hasAnyBroken ? 'fail' : 'done';
     this.isComplete = true;
-    var _this = this;
-    // HACK - another setTimeout so that confirm happens after progress
-    setTimeout( function() {
-      _this.emit( eventName, _this );
-      _this.emit( 'always', _this );
-      if ( _this.jqDeferred ) {
-        var jqMethod = _this.hasAnyBroken ? 'reject' : 'resolve';
-        _this.jqDeferred[ jqMethod ]( _this );
-      }
-    });
+    this.emit( eventName, this );
+    this.emit( 'always', this );
+    if ( this.jqDeferred ) {
+      var jqMethod = this.hasAnyBroken ? 'reject' : 'resolve';
+      this.jqDeferred[ jqMethod ]( this );
+    }
   };
-
-  // -------------------------- jquery -------------------------- //
-
-  if ( $ ) {
-    $.fn.imagesLoaded = function( options, callback ) {
-      var instance = new ImagesLoaded( this, options, callback );
-      return instance.jqDeferred.promise( $(this) );
-    };
-  }
-
 
   // --------------------------  -------------------------- //
 
@@ -8482,106 +8553,120 @@ function makeArray( obj ) {
   LoadingImage.prototype = new EventEmitter();
 
   LoadingImage.prototype.check = function() {
-    // first check cached any previous images that have same src
-    var resource = cache[ this.img.src ] || new Resource( this.img.src );
-    if ( resource.isConfirmed ) {
-      this.confirm( resource.isLoaded, 'cached was confirmed' );
-      return;
-    }
-
     // If complete is true and browser supports natural sizes,
     // try to check for image status manually.
-    if ( this.img.complete && this.img.naturalWidth !== undefined ) {
+    var isComplete = this.getIsImageComplete();
+    if ( isComplete ) {
       // report based on naturalWidth
       this.confirm( this.img.naturalWidth !== 0, 'naturalWidth' );
       return;
     }
 
     // If none of the checks above matched, simulate loading on detached element.
-    var _this = this;
-    resource.on( 'confirm', function( resrc, message ) {
-      _this.confirm( resrc.isLoaded, message );
-      return true;
-    });
+    this.proxyImage = new Image();
+    eventie.bind( this.proxyImage, 'load', this );
+    eventie.bind( this.proxyImage, 'error', this );
+    // bind to image as well for Firefox. #191
+    eventie.bind( this.img, 'load', this );
+    eventie.bind( this.img, 'error', this );
+    this.proxyImage.src = this.img.src;
+  };
 
-    resource.check();
+  LoadingImage.prototype.getIsImageComplete = function() {
+    return this.img.complete && this.img.naturalWidth !== undefined;
   };
 
   LoadingImage.prototype.confirm = function( isLoaded, message ) {
     this.isLoaded = isLoaded;
-    this.emit( 'confirm', this, message );
-  };
-
-  // -------------------------- Resource -------------------------- //
-
-  // Resource checks each src, only once
-  // separate class from LoadingImage to prevent memory leaks. See #115
-
-  var cache = {};
-
-  function Resource( src ) {
-    this.src = src;
-    // add to cache
-    cache[ src ] = this;
-  }
-
-  Resource.prototype = new EventEmitter();
-
-  Resource.prototype.check = function() {
-    // only trigger checking once
-    if ( this.isChecked ) {
-      return;
-    }
-    // simulate loading on detached element
-    var proxyImage = new Image();
-    eventie.bind( proxyImage, 'load', this );
-    eventie.bind( proxyImage, 'error', this );
-    proxyImage.src = this.src;
-    // set flag
-    this.isChecked = true;
+    this.emit( 'progress', this, this.img, message );
   };
 
   // ----- events ----- //
 
   // trigger specified handler for event type
-  Resource.prototype.handleEvent = function( event ) {
+  LoadingImage.prototype.handleEvent = function( event ) {
     var method = 'on' + event.type;
     if ( this[ method ] ) {
       this[ method ]( event );
     }
   };
 
-  Resource.prototype.onload = function( event ) {
+  LoadingImage.prototype.onload = function() {
     this.confirm( true, 'onload' );
-    this.unbindProxyEvents( event );
+    this.unbindEvents();
   };
 
-  Resource.prototype.onerror = function( event ) {
+  LoadingImage.prototype.onerror = function() {
     this.confirm( false, 'onerror' );
-    this.unbindProxyEvents( event );
+    this.unbindEvents();
   };
 
-  // ----- confirm ----- //
+  LoadingImage.prototype.unbindEvents = function() {
+    eventie.unbind( this.proxyImage, 'load', this );
+    eventie.unbind( this.proxyImage, 'error', this );
+    eventie.unbind( this.img, 'load', this );
+    eventie.unbind( this.img, 'error', this );
+  };
 
-  Resource.prototype.confirm = function( isLoaded, message ) {
-    this.isConfirmed = true;
+  // -------------------------- Background -------------------------- //
+
+  function Background( url, element ) {
+    this.url = url;
+    this.element = element;
+    this.img = new Image();
+  }
+
+  // inherit LoadingImage prototype
+  Background.prototype = new LoadingImage();
+
+  Background.prototype.check = function() {
+    eventie.bind( this.img, 'load', this );
+    eventie.bind( this.img, 'error', this );
+    this.img.src = this.url;
+    // check if image is already complete
+    var isComplete = this.getIsImageComplete();
+    if ( isComplete ) {
+      this.confirm( this.img.naturalWidth !== 0, 'naturalWidth' );
+      this.unbindEvents();
+    }
+  };
+
+  Background.prototype.unbindEvents = function() {
+    eventie.unbind( this.img, 'load', this );
+    eventie.unbind( this.img, 'error', this );
+  };
+
+  Background.prototype.confirm = function( isLoaded, message ) {
     this.isLoaded = isLoaded;
-    this.emit( 'confirm', this, message );
+    this.emit( 'progress', this, this.element, message );
   };
 
-  Resource.prototype.unbindProxyEvents = function( event ) {
-    eventie.unbind( event.target, 'load', this );
-    eventie.unbind( event.target, 'error', this );
-  };
+  // -------------------------- jQuery -------------------------- //
 
-  // -----  ----- //
+  ImagesLoaded.makeJQueryPlugin = function( jQuery ) {
+    jQuery = jQuery || window.jQuery;
+    if ( !jQuery ) {
+      return;
+    }
+    // set local variable
+    $ = jQuery;
+    // $().imagesLoaded()
+    $.fn.imagesLoaded = function( options, callback ) {
+      var instance = new ImagesLoaded( this, options, callback );
+      return instance.jqDeferred.promise( $(this) );
+    };
+  };
+  // try making plugin
+  ImagesLoaded.makeJQueryPlugin();
+
+  // --------------------------  -------------------------- //
 
   return ImagesLoaded;
 
 });
 
 /*!
- * Flickity imagesLoaded v1.0.1
+ * Flickity imagesLoaded v1.0.2
  * enables imagesLoaded option for Flickity
  */
 
@@ -8589,7 +8674,7 @@ function makeArray( obj ) {
 
 ( function( window, factory ) {
   /*global define: false, module: false, require: false */
-  
+  'use strict';
   // universal module definition
 
   if ( typeof define == 'function' && define.amd ) {
@@ -8617,7 +8702,7 @@ function makeArray( obj ) {
   }
 
 }( window, function factory( window, Flickity, imagesLoaded ) {
-
+'use strict';
 
 Flickity.createMethods.push('_createImagesLoaded');
 
@@ -8648,58 +8733,77 @@ return Flickity;
 'use strict';
 (function ($) {
     $(document).ready(function () {
-            if ($(".userrole-anonymous")[0]) {
-                $('input[type="password"]').showPassword('focus', {});
-                $('.app-signin-input').jvFloat();
-                var $mcNote = $('#app-signin-suggestion');
-                Mailcheck.defaultDomains.push('aha.kreativkombinat.de')
-                $('[data-appui="mailcheck"]').on('blur', function (event) {
-                    console.log("event ", event);
-                    console.log("this ", $(this));
-                    $(this).mailcheck({
-                        // domains: domains,                       // optional
-                        // topLevelDomains: topLevelDomains,       // optional
-                        suggested: function (element, suggestion) {
-                            // callback code
-                            console.log("suggestion ", suggestion.full);
-                            $mcNote.removeClass('hidden').addClass('fadeInDown');
-                            $mcNote.html("Meinten Sie <i>" + suggestion.full + "</i>?");
-                            $mcNote.on('click', function (evt) {
-                                evt.preventDefault();
-                                $('#ac-name').val(suggestion.full);
-                                $mcNote.removeClass('fadeInDown').addClass('fadeOutUp').delay(2000).addClass('hidden');
-                            });
-                        },
-                        empty: function (element) {
-                            // callback code
-                            $mcNote.html('').addClass('hidden');
-                        }
-                    });
+        // Toogle gallery caption display
+        var $captionToggle = $('.js-caption-collapsible'),
+            $captionToggleTitle = $('.js-toggleable-title'),
+            $toggleableSection = $('.js-toggleable'),
+            $toggleOpenClass = 'toggleable-open',
+            $collapsingElement = $('#app-gallery-caption-block');
+        $captionToggle.on('click', function(event) {
+            event.preventDefault();
+            if($toggleableSection.hasClass($toggleOpenClass)) {
+                $collapsingElement.removeClass('fadeInDown')
+                    .addClass('fadeOutUp');
+                $captionToggleTitle.removeClass('fadeOut').addClass('fadeIn');
+                $toggleableSection.delay(1000).queue(function (next) {
+                    $(this).removeClass($toggleOpenClass);
+                    next();
+                });
+            } else {
+                $collapsingElement.removeClass('fadeOutUp').addClass('fadeInDown');
+                $captionToggleTitle.removeClass('fadeIn').addClass('fadeOut');
+                $toggleableSection.delay(1000).queue(function (next) {
+                    $(this).addClass($toggleOpenClass);
+                    next();
                 });
             }
-            // Setup media query for enabling dynamic layouts only on
-            // larger screen sizes
-            var mq = window.matchMedia("(min-width: 480px)");
-            // Enable gallery and masonry scripts based on screen size
-            if (mq.matches) {
-                var flkty = new Flickity('.main-gallery', {
-                    autoPlay: true,
-                    contain: true,
-                    wrapAround: true,
-                    imagesLoaded: true,
-                    cellSelector: '.app-gallery-cell',
-                    cellAlign: 'left'
+        });
+        // Initialize flickity galleries
+        var $galleryContainer = $('.main-gallery');
+        if ($galleryContainer) {
+            var flkty = new Flickity('.main-gallery', {
+                autoPlay: true,
+                contain: true,
+                wrapAround: true,
+                imagesLoaded: true,
+                cellSelector: '.app-gallery-cell',
+                cellAlign: 'left'
+            });
+            // Trigger flickity gallery transitions via thumbnail anchors
+            $('.js-thumbtrigger').each( function() {
+                $(this).on('click', function (evt) {
+                    evt.preventDefault();
+                    var index = $(this).data('index');
+                    $(this).toggleClass('js-thumbtrigger-active');
+                    flkty.select(index);
                 });
-                $('.js-thumbtrigger').each( function() {
-                    $(this).on('click', function (evt) {
-                        evt.preventDefault();
-                        var index = $(this).data('index');
-                        console.log(index);
-                        $(this).toggleClass('js-thumbtrigger-active');
-                        flkty.select(index);
-                    });
-                });
-            }
+            });
         }
-    );
+        if ($(".userrole-anonymous")[0]) {
+            $('input[type="password"]').showPassword('focus', {});
+            $('.app-signin-input').jvFloat();
+            var $mcNote = $('#app-signin-suggestion');
+            Mailcheck.defaultDomains.push('aha.kreativkombinat.de')
+            $('[data-appui="mailcheck"]').on('blur', function (event) {
+                $(this).mailcheck({
+                    // domains: domains,                       // optional
+                    // topLevelDomains: topLevelDomains,       // optional
+                    suggested: function (element, suggestion) {
+                        // callback code
+                        $mcNote.removeClass('hidden').addClass('fadeInDown');
+                        $mcNote.html("Meinten Sie <i>" + suggestion.full + "</i>?");
+                        $mcNote.on('click', function (evt) {
+                            evt.preventDefault();
+                            $('#ac-name').val(suggestion.full);
+                            $mcNote.removeClass('fadeInDown').addClass('fadeOutUp').delay(2000).addClass('hidden');
+                        });
+                    },
+                    empty: function (element) {
+                        // callback code
+                        $mcNote.html('').addClass('hidden');
+                    }
+                });
+            });
+        }
+    });
 }(jQuery));

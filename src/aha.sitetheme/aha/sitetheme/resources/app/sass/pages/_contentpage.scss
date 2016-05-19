@@ -76,7 +76,6 @@
     padding: 0 1rem;
 }
 
-
 .app-page-title {
     text-transform: uppercase;
     font-size: 1rem;
@@ -168,9 +167,7 @@
 //}
 
 .image-inline {
-    @media (max-width: $grid-float-breakpoint) {
-        @extend .img-responsive;
-    }
+    @extend .img-responsive;
 }
 
 
@@ -227,10 +224,10 @@
 //
 // Add spacing to grid cells
 .app-gutters {
-  margin: -1rem 0 1rem -1rem;
+  margin: 0 -1rem 1rem -1rem;
 }
 .app-gutters > .app-page-col {
-  padding: 1em 0 1rem 1em;
+  margin: 0 1em 1rem 1em;
 }
 
 // Column masonry support

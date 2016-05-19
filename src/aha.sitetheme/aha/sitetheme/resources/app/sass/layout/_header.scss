@@ -5,6 +5,8 @@
 
 .app-header {
   @media (min-width: $grid-float-breakpoint-max) {
+    display: flex;
+    flex-direction: row;
     padding: $line-height-computed $line-height-computed 0 $line-height-computed;
     border-bottom: none;
   }
@@ -15,10 +17,18 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    min-height: 100vh;
+    // min-height: 100vh;
   }
 }
 
 .app-header-panel {
-  flex: 1;
+  flex: 0 1 1;
+  &-shopbutton {
+    align-self: flex-end;
+  }
+}
+
+.app-header-panel-shopbutton {
+  width: 100%;
+  padding-left: 1rem;
 }
