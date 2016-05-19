@@ -8552,6 +8552,7 @@ body.section-front-page .app-pathbar {
 
 .app-gallery-caption {
   width: 100%;
+  background-color: #000;
 }
 @media (min-width: 992px) {
   .app-gallery-caption {
@@ -8562,16 +8563,21 @@ body.section-front-page .app-pathbar {
     width: 35%;
   }
 }
-
 .section-licht .app-gallery-caption {
-  background: #fff;
+  background-color: #fff;
+}
+.app-gallery-caption-collapsible {
+  background: transparent;
 }
 
 .app-caption-toggle {
   padding-right: 1rem;
   font-size: 2rem;
   text-align: right;
-  background: #000;
+  background-color: #000;
+}
+.section-licht .app-caption-toggle {
+  background-color: #fff;
 }
 
 .app-caption-toggle-title {
