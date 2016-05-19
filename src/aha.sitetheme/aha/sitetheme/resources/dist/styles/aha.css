@@ -7561,8 +7561,13 @@ div.riform .label {
 
 @media (min-width: 767px) {
   .app-header {
+    display: -ms-flexbox;
+    display: flex;
     padding: 1.428571429rem 1.428571429rem 0 1.428571429rem;
-    border-bottom: none;
+        flex-direction: row;
+    border-bottom: none; 
+
+    -ms-flex-direction: row;
   }
 }
 
@@ -7570,8 +7575,7 @@ div.riform .label {
   .app-header-content {
     display: -ms-flexbox;
     display: flex;
-    height: 100vh;
-    min-height: 100vh; 
+    height: 100vh; 
         flex-direction: column;
 
     -ms-flex-direction: column;
@@ -7579,8 +7583,12 @@ div.riform .label {
 }
 
 .app-header-panel {
-  -ms-flex: 1;
-      flex: 1;
+  -ms-flex: 0 1 1;
+      flex: 0 1 1;
+}
+.app-header-panel-shopbutton {
+  -ms-flex-item-align: end;
+  align-self: flex-end;
 }
 
 .app-shopbutton img {
@@ -8622,10 +8630,6 @@ body.section-front-page .app-pathbar {
 .section-licht .js-caption-collapsible::before {
   color: #000;
   border-color: #000;
-}
-.toggleable-open .js-caption-collapsible {
-  transform: rotate(135deg); 
-  transform-origin: center center;
 }
 
 .app-gallery-caption-block {

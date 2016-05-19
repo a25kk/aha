@@ -600,6 +600,7 @@ module.exports = function (grunt) {
             'html',
             'js',
             'css',
+            'replace:diazo',
             'connect:livereload',
             'watch'
         ]);
