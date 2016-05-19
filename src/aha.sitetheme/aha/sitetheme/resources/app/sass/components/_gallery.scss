@@ -84,7 +84,10 @@
 .app-gallery-caption-block {
     display: none;
     padding: 4rem 2rem 2rem 2rem;
-    background: $app-primary;
+    background-color: $app-primary;
+    @include when-inside('.section-licht') {
+        background-color: #fff;
+    }
     @include when-inside('.toggleable-open') {
         display: block;
     }

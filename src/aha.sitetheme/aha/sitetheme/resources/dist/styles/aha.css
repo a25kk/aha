@@ -8625,7 +8625,10 @@ body.section-front-page .app-pathbar {
 .app-gallery-caption-block {
   display: none;
   padding: 4rem 2rem 2rem 2rem;
-  background: #000;
+  background-color: #000;
+}
+.section-licht .app-gallery-caption-block {
+  background-color: #fff;
 }
 .toggleable-open .app-gallery-caption-block {
   display: block;
