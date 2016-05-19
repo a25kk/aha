@@ -12,14 +12,14 @@
             if($toggleableSection.hasClass($toggleOpenClass)) {
                 $collapsingElement.removeClass('fadeInDown')
                     .addClass('fadeOutUp');
-                $captionToggleTitle.removeClass('slideOutUp').addClass('slideInDown');
+                $captionToggleTitle.removeClass('fadeOut').addClass('fadeIn');
                 $toggleableSection.delay(1000).queue(function (next) {
                     $(this).removeClass($toggleOpenClass);
                     next();
                 });
             } else {
                 $collapsingElement.removeClass('fadeOutUp').addClass('fadeInDown');
-                $captionToggleTitle.removeClass('slideInDown').addClass('slideOutUp');
+                $captionToggleTitle.removeClass('fadeIn').addClass('fadeOut');
                 $toggleableSection.delay(1000).queue(function (next) {
                     $(this).addClass($toggleOpenClass);
                     next();

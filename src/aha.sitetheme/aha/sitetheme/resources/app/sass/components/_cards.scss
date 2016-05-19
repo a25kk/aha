@@ -44,9 +44,9 @@
 //
 //## Add spacing to cards
 .app-card-gutter {
-  margin: -1rem 0 0 -1rem;
+  margin: 0 -1rem 0 -1rem;
   .app-card {
-    padding: 1rem 0 0 1rem;
+    margin: 0 1rem 0 1rem;
   }
 }
 

@@ -7243,6 +7243,32 @@ http://flickity.metafizzy.co
   animation-fill-mode: both;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+}
+
 @keyframes fadeInDown {
   0% {
     opacity: 0;
@@ -8614,7 +8640,7 @@ body.section-front-page .app-pathbar {
   display: inline-block;
   width: 36px;
   height: 36px;
-  padding-top: 4px;
+  padding-top: 6px;
   margin-bottom: .5rem;
   font-size: 20px;
   line-height: 1;
@@ -8726,10 +8752,10 @@ body.section-front-page .app-pathbar {
 }
 
 .app-card-gutter {
-  margin: -1rem 0 0 -1rem;
+  margin: 0 -1rem 0 -1rem;
 }
 .app-card-gutter .app-card {
-  padding: 1rem 0 0 1rem;
+  margin: 0 1rem 0 1rem;
 }
 
 .app-subcard {
@@ -9342,11 +9368,11 @@ body.section-front-page .app-pathbar {
 }
 
 .app-gutters {
-  margin: -1rem 0 1rem -1rem;
+  margin: 0 -1rem 1rem -1rem;
 }
 
 .app-gutters > .app-page-col {
-  padding: 1em 0 1rem 1em;
+  margin: 0 1em 1rem 1em;
 }
 
 .app-page-masonry {
