@@ -37,6 +37,12 @@
     background: $app-primary;
 }
 
+.app-caption-toggle-title {
+    font-size: 1.1rem;
+    color: gray;
+    text-transform: uppercase;
+}
+
 .js-caption-collapsible {
     text-decoration: none !important;
     text-align: center;
@@ -46,10 +52,10 @@
       outline: none;
     }
     &:visited {
-       outline: none; 
+       outline: none;
     }
     &:focus{
-       outline: none; 
+       outline: none;
     }
     &::before {
         content: '+';

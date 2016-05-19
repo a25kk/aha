@@ -2518,7 +2518,7 @@ if (typeof jQuery === 'undefined') {
 	var throttle = function(fn){
 		var running;
 		var lastTime = 0;
-		var gDelay = 125;
+		var gDelay = 99;
 		var RIC_DEFAULT_TIMEOUT = 999;
 		var rICTimeout = RIC_DEFAULT_TIMEOUT;
 		var run = function(){
@@ -2658,7 +2658,7 @@ if (typeof jQuery === 'undefined') {
 
 				if(preloadExpand == null){
 					if(!('expand' in lazySizesConfig)){
-						lazySizesConfig.expand = docElem.clientHeight > 500 ? 500 : 400;
+						lazySizesConfig.expand = docElem.clientHeight > 600 ? docElem.clientWidth > 600 ? 550 : 410 : 359;
 					}
 
 					defaultExpand = lazySizesConfig.expand;
@@ -3007,7 +3007,7 @@ if (typeof jQuery === 'undefined') {
 			minSize: 40,
 			customMedia: {},
 			init: true,
-			expFactor: 1.6,
+			expFactor: 1.7,
 			hFac: 0.8,
 			loadMode: 2
 		};
@@ -8735,7 +8735,8 @@ return Flickity;
     $(document).ready(function () {
         // Toogle gallery caption display
         var $captionToggle = $('.js-caption-collapsible'),
-            $toggleableSection = $('.js-togglable'),
+            $captionToggleTitle = $('.js-toggleable-title'),
+            $toggleableSection = $('.js-toggleable'),
             $toggleOpenClass = 'toggleable-open',
             $collapsingElement = $('#app-gallery-caption-block');
         $captionToggle.on('click', function(event) {
@@ -8743,67 +8744,70 @@ return Flickity;
             if($toggleableSection.hasClass($toggleOpenClass)) {
                 $collapsingElement.removeClass('fadeInDown')
                     .addClass('fadeOutUp');
+                $captionToggleTitle.removeClass('slideOutUp').addClass('slideInDown');
                 $toggleableSection.delay(1000).queue(function (next) {
                     $(this).removeClass($toggleOpenClass);
                     next();
                 });
             } else {
                 $collapsingElement.removeClass('fadeOutUp').addClass('fadeInDown');
-                $toggleableSection.addClass($toggleOpenClass);
+                $captionToggleTitle.removeClass('slideInDown').addClass('slideOutUp');
+                $toggleableSection.delay(1000).queue(function (next) {
+                    $(this).addClass($toggleOpenClass);
+                    next();
+                });
             }
         });
-            if ($(".userrole-anonymous")[0]) {
-                $('input[type="password"]').showPassword('focus', {});
-                $('.app-signin-input').jvFloat();
-                var $mcNote = $('#app-signin-suggestion');
-                Mailcheck.defaultDomains.push('aha.kreativkombinat.de')
-                $('[data-appui="mailcheck"]').on('blur', function (event) {
-                    console.log("event ", event);
-                    console.log("this ", $(this));
-                    $(this).mailcheck({
-                        // domains: domains,                       // optional
-                        // topLevelDomains: topLevelDomains,       // optional
-                        suggested: function (element, suggestion) {
-                            // callback code
-                            console.log("suggestion ", suggestion.full);
-                            $mcNote.removeClass('hidden').addClass('fadeInDown');
-                            $mcNote.html("Meinten Sie <i>" + suggestion.full + "</i>?");
-                            $mcNote.on('click', function (evt) {
-                                evt.preventDefault();
-                                $('#ac-name').val(suggestion.full);
-                                $mcNote.removeClass('fadeInDown').addClass('fadeOutUp').delay(2000).addClass('hidden');
-                            });
-                        },
-                        empty: function (element) {
-                            // callback code
-                            $mcNote.html('').addClass('hidden');
-                        }
-                    });
+        // Initialize flickity galleries
+        var $galleryContainer = $('.main-gallery');
+        if ($galleryContainer) {
+            var flkty = new Flickity('.main-gallery', {
+                autoPlay: true,
+                contain: true,
+                wrapAround: true,
+                imagesLoaded: true,
+                cellSelector: '.app-gallery-cell',
+                cellAlign: 'left'
+            });
+            // Trigger flickity gallery transitions via thumbnail anchors
+            $('.js-thumbtrigger').each( function() {
+                $(this).on('click', function (evt) {
+                    evt.preventDefault();
+                    var index = $(this).data('index');
+                    console.log(index);
+                    $(this).toggleClass('js-thumbtrigger-active');
+                    flkty.select(index);
                 });
-            }
-            // Setup media query for enabling dynamic layouts only on
-            // larger screen sizes
-            var mq = window.matchMedia("(min-width: 480px)");
-            // Enable gallery and masonry scripts based on screen size
-            if (mq.matches) {
-                var flkty = new Flickity('.main-gallery', {
-                    autoPlay: true,
-                    contain: true,
-                    wrapAround: true,
-                    imagesLoaded: true,
-                    cellSelector: '.app-gallery-cell',
-                    cellAlign: 'left'
-                });
-                $('.js-thumbtrigger').each( function() {
-                    $(this).on('click', function (evt) {
-                        evt.preventDefault();
-                        var index = $(this).data('index');
-                        console.log(index);
-                        $(this).toggleClass('js-thumbtrigger-active');
-                        flkty.select(index);
-                    });
-                });
-            }
+            });
         }
-    );
+        if ($(".userrole-anonymous")[0]) {
+            $('input[type="password"]').showPassword('focus', {});
+            $('.app-signin-input').jvFloat();
+            var $mcNote = $('#app-signin-suggestion');
+            Mailcheck.defaultDomains.push('aha.kreativkombinat.de')
+            $('[data-appui="mailcheck"]').on('blur', function (event) {
+                console.log("event ", event);
+                console.log("this ", $(this));
+                $(this).mailcheck({
+                    // domains: domains,                       // optional
+                    // topLevelDomains: topLevelDomains,       // optional
+                    suggested: function (element, suggestion) {
+                        // callback code
+                        console.log("suggestion ", suggestion.full);
+                        $mcNote.removeClass('hidden').addClass('fadeInDown');
+                        $mcNote.html("Meinten Sie <i>" + suggestion.full + "</i>?");
+                        $mcNote.on('click', function (evt) {
+                            evt.preventDefault();
+                            $('#ac-name').val(suggestion.full);
+                            $mcNote.removeClass('fadeInDown').addClass('fadeOutUp').delay(2000).addClass('hidden');
+                        });
+                    },
+                    empty: function (element) {
+                        // callback code
+                        $mcNote.html('').addClass('hidden');
+                    }
+                });
+            });
+        }
+    });
 }(jQuery));

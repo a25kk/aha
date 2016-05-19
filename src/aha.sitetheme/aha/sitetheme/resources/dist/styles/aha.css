@@ -8574,6 +8574,12 @@ body.section-front-page .app-pathbar {
   background: #000;
 }
 
+.app-caption-toggle-title {
+  font-size: 1.1rem;
+  color: gray;
+  text-transform: uppercase;
+}
+
 .js-caption-collapsible {
   text-align: center;
   text-decoration: none !important;
@@ -9179,12 +9185,6 @@ body.section-front-page .app-pathbar {
 
 .app-page-header {
   padding: 0 1rem;
-}
-
-.app-page-header-alt {
-  font-size: 1.1rem;
-  color: gray;
-  text-transform: uppercase;
 }
 
 .app-page-title {
