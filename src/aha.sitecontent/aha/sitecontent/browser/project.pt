@@ -15,7 +15,7 @@
                   <div class="project-gallery main-gallery">
                       <div class="app-gallery-caption app-gallery-caption-collapsible js-toggleable toggleable-open">
                           <div class="app-caption-toggle">
-                              <span class="app-caption-toggle-title js-toggleable-title animated slideOutUp">${context/Title}</span>
+                              <span class="app-caption-toggle-title js-toggleable-title animated fadeOut">${context/Title}</span>
                               <a href="#projectText" class="app-page-header-close js-caption-collapsible">&nbsp;</a>
                           </div>
                           <div class="app-gallery-caption-block animated" id="app-gallery-caption-block">
