@@ -7618,6 +7618,7 @@ div.riform .label {
 }
 
 .app-header-panel-shopbutton {
+  display: none; 
   width: 100%;
   padding-left: 1rem;
 }
