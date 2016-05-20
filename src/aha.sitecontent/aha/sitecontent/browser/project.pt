@@ -13,34 +13,39 @@
           <div class="app-page-gallery" id="app-page-gallery">
               <div class="app-gallery" tal:define="images view/contained_images">
                   <div class="project-gallery main-gallery">
-                      <div class="app-gallery-caption">
-                          <div class="app-page-header">
-                              <div class="app-page-title">
-                                  <h1 class="app-page-headline app-page-headline-lg" tal:content="context/Title">
-                                          ${context/Title}
-                                  </h1>
-                              </div>
-                              <p class="app-page-abstract" tal:condition="context/Description">
-                                      ${context/Description}
-                              </p>
+                      <div class="app-gallery-caption app-gallery-caption-collapsible js-toggleable toggleable-open">
+                          <div class="app-caption-toggle">
+                              <span class="app-caption-toggle-title js-toggleable-title animated fadeOut">${context/Title}</span>
+                              <a href="#projectText" class="app-page-header-close js-caption-collapsible">&nbsp;</a>
                           </div>
-                          <div class="app-page-body">
-                              <ul class="app-project-tabs text-right" role="tablist">
-                                  <li role="presentation" class="app-project-tab active"><a href="#projectText" aria-controls="projectText" role="tab" data-toggle="collapse">Projekt</a></li>
-                                  <li role="presentation" class="app-project-tab"><a href="#projectThumbnails" aria-controls="projectThumbnails" role="tab" data-toggle="collapse">Galerie</a></li>
-                              </ul>
-                              <div class="app-project-tabs-content">
-                                  <div role="tabpanel" class="collapse" id="projectText">
-                                      <div class="app-page-text" id="parent-fieldname-text"
-                                              tal:condition="context/text"
-                                              tal:content="structure context/text/output" />
+                          <div class="app-gallery-caption-block animated" id="app-gallery-caption-block">
+                              <div class="app-page-header">
+                                  <div class="app-page-title">
+                                      <h1 class="app-page-headline app-page-headline-lg" tal:content="context/Title">
+                                              ${context/Title}
+                                      </h1>
                                   </div>
-                                  <div role="tabpanel" class="collapse" id="projectThumbnails">
-                                      <div tal:replace="structure view/rendered_thumbnails" />
+                                  <p class="app-page-abstract" tal:condition="context/Description">
+                                          ${context/Description}
+                                  </p>
+                              </div>
+                              <div class="app-page-body">
+                                  <ul class="app-project-tabs text-right" role="tablist">
+                                      <li role="presentation" class="app-project-tab active"><a href="#projectText" aria-controls="projectText" role="tab" data-toggle="collapse">Projekt</a></li>
+                                      <li role="presentation" class="app-project-tab"><a href="#projectThumbnails" aria-controls="projectThumbnails" role="tab" data-toggle="collapse">Galerie</a></li>
+                                  </ul>
+                                  <div class="app-project-tabs-content">
+                                      <div role="tabpanel" class="collapse" id="projectText">
+                                          <div class="app-page-text" id="parent-fieldname-text"
+                                                  tal:condition="context/text"
+                                                  tal:content="structure context/text/output" />
+                                      </div>
+                                      <div role="tabpanel" class="collapse" id="projectThumbnails">
+                                          <div tal:replace="structure view/rendered_thumbnails" />
+                                      </div>
                                   </div>
                               </div>
                           </div>
-
                       </div>
                       <tal:block tal:condition="images">
                           <div class="app-gallery-cell project-gallery-item item" tal:repeat="item images">
