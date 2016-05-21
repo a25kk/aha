@@ -8606,7 +8606,6 @@ body.section-front-page .app-pathbar {
 }
 
 .app-caption-toggle {
-  padding-right: 1rem;
   font-size: 2rem;
   text-align: right;
   background-color: #000;
@@ -8617,8 +8616,10 @@ body.section-front-page .app-pathbar {
 
 .app-caption-toggle-title {
   display: inline-block;
+  width: 80%;
   font-size: 1.1rem;
   color: gray;
+  text-align: left;
   text-transform: uppercase;
 }
 
