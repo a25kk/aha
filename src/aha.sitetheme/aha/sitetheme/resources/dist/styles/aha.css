@@ -8687,7 +8687,7 @@ body.section-front-page .app-pathbar {
 
 .app-thumbnail {
   display: inline-block;
-  padding: .4761904763rem;
+  padding: .3rem;
 }
 
 .js-thumbtrigger {
@@ -9421,8 +9421,9 @@ body.section-front-page .app-pathbar {
 }
 
 .app-project-tabs {
-  text-align: right;
-  text-transform: uppercase; 
+  padding-left: .2rem; 
+  text-align: left;
+  text-transform: uppercase;
   list-style: none;
 }
 
@@ -9431,10 +9432,10 @@ body.section-front-page .app-pathbar {
   padding: 0 .7142857145rem;
 }
 .app-project-tab > a {
-  color: #000;
+  color: gray;
 }
 .app-project-tab > a:hover {
-  color: #000;
+  color: gray;
 }
 
 .app-main-inverse .app-project-tab {
@@ -9442,10 +9443,10 @@ body.section-front-page .app-pathbar {
   padding: 0 .7142857145rem;
 }
 .app-main-inverse .app-project-tab > a {
-  color: #fff;
+  color: gray;
 }
 .app-main-inverse .app-project-tab > a:hover {
-  color: #fff;
+  color: gray;
 }
 
 .app-download-item {
