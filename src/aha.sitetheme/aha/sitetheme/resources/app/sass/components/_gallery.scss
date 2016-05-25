@@ -30,7 +30,6 @@
 
 // Collapsible gallery caption
 .app-caption-toggle {
-    padding-right: 1rem;
     text-align: right;
     font-size: 2rem;
     background-color: $app-primary;
@@ -41,7 +40,9 @@
 
 .app-caption-toggle-title {
     display: inline-block;
-    font-size: 1.1rem;
+    text-align: left;
+    width: 80%;
+    font-size: .9rem;
     color: gray;
     text-transform: uppercase;
 }
@@ -63,9 +64,9 @@
     &::before {
         content: '+';
         display: inline-block;
-        width: 36px;
-        height: 36px;
-        padding-top: 6px;
+        width: 32px;
+        height: 32px;
+        padding-top: 5px;
         margin-bottom: .5rem;
         color: #fff;
         border: 2px solid #fff;
@@ -120,7 +121,7 @@
 .app-thumbnail {
   //flex: 0 0 33.3333%;
   display: inline-block;
-  padding: $line-height-computed / 3;
+  padding: .3rem;
 }
 
 // Thumbnail trigger

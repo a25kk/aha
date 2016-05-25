@@ -13,9 +13,9 @@
           <div class="app-page-gallery" id="app-page-gallery">
               <div class="app-gallery" tal:define="images view/contained_images">
                   <div class="project-gallery main-gallery">
-                      <div class="app-gallery-caption app-gallery-caption-collapsible js-toggleable toggleable-open">
+                      <div class="app-gallery-caption app-gallery-caption-collapsible js-toggleable toggleable">
                           <div class="app-caption-toggle">
-                              <span class="app-caption-toggle-title js-toggleable-title animated fadeOut">${context/Title}</span>
+                              <span class="app-caption-toggle-title js-toggleable-title animated fadeIn">${context/Title}</span>
                               <a href="#projectText" class="app-page-header-close js-caption-collapsible">&nbsp;</a>
                           </div>
                           <div class="app-gallery-caption-block animated" id="app-gallery-caption-block">
@@ -31,7 +31,7 @@
                               </div>
                               <div class="app-page-body">
                                   <ul class="app-project-tabs text-right" role="tablist">
-                                      <li role="presentation" class="app-project-tab active"><a href="#projectText" aria-controls="projectText" role="tab" data-toggle="collapse">Projekt</a></li>
+                                      <li role="presentation" class="app-project-tab active hidden"><a href="#projectText" aria-controls="projectText" role="tab" data-toggle="collapse">Projekt</a></li>
                                       <li role="presentation" class="app-project-tab"><a href="#projectThumbnails" aria-controls="projectThumbnails" role="tab" data-toggle="collapse">Galerie</a></li>
                                   </ul>
                                   <div class="app-project-tabs-content">
