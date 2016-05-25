@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Module providing custom navbar"""
 from urlparse import urlsplit
-from Acquisition import aq_inner
 from Products.Five.browser import BrowserView
 from plone import api
 from zope.component import getMultiAdapter
@@ -50,8 +49,12 @@ class NavBarView(BrowserView):
             return section.getId()
         return portal.getId()
 
+    def active_section(self, section):
+        if section == self.section():
+            return True
+        return False
+
     def active_navitem(self, section):
-        context = aq_inner(self.context)
         request = self.request
         parent_request = request['PARENT_REQUEST']
         path = urlsplit(parent_request['URL']).path
