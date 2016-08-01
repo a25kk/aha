@@ -1,0 +1,53 @@
+
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
+    i18n_domain="aha.sitecontent">
+
+  <!-- Inquiry form view -->
+  <browser:page
+      for="Products.CMFCore.interfaces.IContentish"
+      name="inquiry-form"
+      class=".inquiry.InquiryFormView"
+      template="inquiryform.pt"
+      permission="zope2.View"
+      layer="ade25.contacts.interfaces.IAhaSitecontentLayer"
+      />
+
+  <!-- Inquiry form dispatched aka thank you page -->
+  <browser:page
+      for="Products.CMFCore.interfaces.IContentish"
+      name="inquiry-form-dispatched"
+      class=".inquiry.InquiryFormDispatchedView"
+      template="inquiryformdispatched.pt"
+      permission="zope2.View"
+      layer="aha.sitecontent.interfaces.IAhaSitecontentLayer"
+      />
+
+  <browser:page
+      for="Products.CMFCore.interfaces.IContentish"
+      name="inquiry-form-email"
+      class=".inquiry.InquiryFormEmail"
+      template="inquiryformemail.pt"
+      permission="zope2.View"
+      layer="aha.sitecontent.interfaces.IAhaSitecontentLayer"
+      />
+  <browser:page
+      for="Products.CMFCore.interfaces.IContentish"
+      name="inquiry-form-subject"
+      class=".inquiry.InquiryFormSubject"
+      template="inquiryformsubject.pt"
+      permission="zope2.View"
+      layer="aha.sitecontent.interfaces.IAhaSitecontentLayer"
+      />
+  <browser:page
+      for="Products.CMFCore.interfaces.IContentish"
+      name="inquiry-form-comment"
+      class=".inquiry.InquiryFormCommentView"
+      template="inquiryformcomment.pt"
+      permission="zope2.View"
+      layer="aha.sitecontent.interfaces.IAhaSitecontentLayer"
+      />
+
+</configure>
