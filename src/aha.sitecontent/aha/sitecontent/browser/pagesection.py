@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Module providing views for a contentpage section"""
+from AccessControl import Unauthorized
 from Acquisition import aq_inner
 from Acquisition import aq_parent
 from plone import api

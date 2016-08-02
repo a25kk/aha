@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-08-02 13:30+0000\n"
+"POT-Creation-Date: 2016-08-02 14:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,10 @@ msgstr ""
 msgid "Adds a boolean field to toggle listing previews"
 msgstr ""
 
+#: ./../browser/pagesectionform.pt:22
+msgid "All fields marked with <code>*</code> are required."
+msgstr ""
+
 #: ./../behaviors/gallery.py:25
 msgid "Check to enable gallery display"
 msgstr ""
@@ -37,6 +41,10 @@ msgstr ""
 msgid "Check, if this item should include a preview snippet in listings"
 msgstr ""
 
+#: ./../browser/pagesectionform.pt:88
+msgid "Company"
+msgstr ""
+
 #: ./../profiles/default/types/aha.sitecontent.pagesection.xml
 msgid "Content section for content pages"
 msgstr ""
@@ -47,6 +55,10 @@ msgstr ""
 
 #: ./../behaviors/configure.zcml:26
 msgid "Display Preview Toggle"
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:34
+msgid "E-Mail"
 msgstr ""
 
 #: ./../pagesection.py:19
@@ -69,12 +81,20 @@ msgstr ""
 msgid "Folderish content page"
 msgstr ""
 
+#: ./../browser/pagesectionform.pt:63
+msgid "Fullname"
+msgstr ""
+
 #: ./../behaviors/configure.zcml:17
 msgid "Gallery Display Toggle"
 msgstr ""
 
 #: ./../profiles/default/types/aha.sitecontent.pagesection.xml
 msgid "PageSection"
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:105
+msgid "Phone"
 msgstr ""
 
 #: ./../profiles/default/types/aha.sitecontent.project.xml
@@ -105,11 +125,16 @@ msgstr ""
 msgid "Showroom for reference projects"
 msgstr ""
 
+#: ./../browser/pagesectionform.pt:142
+msgid "Submit"
+msgstr ""
+
 #: ./../browser/formdispatched.pt:26
 msgid "Thank you for your interest. We will get in touch with you as soon as possible."
 msgstr ""
 
-#: ./../browser/pagesection.py:98
+#: ./../browser/pagesection.py:99
+#: ./../browser/pagesectionform.pt:52
 msgid "This field is required"
 msgstr ""
 
@@ -123,6 +148,10 @@ msgstr ""
 
 #: ./../pagesection.py:38
 msgid "When activated the view will attempt to display a web form inside the given page component"
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:122
+msgid "Your message"
 msgstr ""
 
 #: ./../configure.zcml:26

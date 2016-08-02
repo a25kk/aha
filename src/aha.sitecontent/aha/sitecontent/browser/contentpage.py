@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 """Module providing views for the folderish content page type"""
 import datetime
+from AccessControl import Unauthorized
 from Acquisition import aq_inner
 from plone import api
 from Products.Five.browser import BrowserView
 from zope.component import getMultiAdapter
 from zope.component import getUtility
-
 from aha.sitecontent.contentpage import IContentPage
 from aha.sitecontent.interfaces import IResponsiveImagesTool
 from aha.sitecontent.pagesection import IPageSection
@@ -166,6 +166,18 @@ class FormDispatchedView(BrowserView):
         was processed after successful submit of page section embedded
         inquiry form contents
     """
+
+    def __call__(self):
+        authenticator = getMultiAdapter(
+            (self.context, self.request),
+            name=u"authenticator"
+        )
+        if not authenticator.verify():
+            raise Unauthorized
+        return self.render()
+
+    def render(self):
+        return self.index()
 
     def processed_timestamp(self):
         datetime_now = datetime.datetime.utcnow()
