@@ -7681,6 +7681,11 @@ textarea {
   outline: transparent;
 }
 
+.app-form-inquiry {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
 .app-sidebar {
   position: relative;
   height: 100vh;
