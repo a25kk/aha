@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2015-10-05 14:15+0000\n"
+"POT-Creation-Date: 2016-08-02 13:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,32 +17,64 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: aha.sitecontent\n"
 
-#: ./../pagepanel.py:24
-msgid "Animated GIF"
+#: ./../behaviors/configure.zcml:17
+msgid "Adds a boolean field to toggle gallery display"
+msgstr ""
+
+#: ./../behaviors/configure.zcml:26
+msgid "Adds a boolean field to toggle listing previews"
 msgstr ""
 
 #: ./../behaviors/gallery.py:25
 msgid "Check to enable gallery display"
 msgstr ""
 
+#: ./../pagesection.py:37
+msgid "Check to enable inquiry form display"
+msgstr ""
+
+#: ./../behaviors/preview.py:25
+msgid "Check, if this item should include a preview snippet in listings"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.pagesection.xml
+msgid "Content section for content pages"
+msgstr ""
+
 #: ./../profiles/default/types/aha.sitecontent.contentpage.xml
 msgid "Contentpage"
 msgstr ""
 
-#: ./../pagepanel.py:25
-msgid "Enter external URL pointing to an animated gif"
+#: ./../behaviors/configure.zcml:26
+msgid "Display Preview Toggle"
+msgstr ""
+
+#: ./../pagesection.py:19
+msgid "Enter URL of externally hosted image asset link e.g. animated GIFs"
+msgstr ""
+
+#: ./../pagesection.py:26
+msgid "Enter URL to embed external videos from YouTube"
+msgstr ""
+
+#: ./../configure.zcml:26
+msgid "Extension profile for aha.sitecontent."
+msgstr ""
+
+#: ./../pagesection.py:18
+msgid "External Image"
 msgstr ""
 
 #: ./../profiles/default/types/aha.sitecontent.contentpage.xml
 msgid "Folderish content page"
 msgstr ""
 
-#: ./../profiles/default/types/aha.sitecontent.pagepanel.xml
-msgid "Pagepanel"
+#: ./../behaviors/configure.zcml:17
+msgid "Gallery Display Toggle"
 msgstr ""
 
-#: ./../profiles/default/types/aha.sitecontent.pagepanel.xml
-msgid "Panel for content pages"
+#: ./../profiles/default/types/aha.sitecontent.pagesection.xml
+msgid "PageSection"
 msgstr ""
 
 #: ./../profiles/default/types/aha.sitecontent.project.xml
@@ -53,16 +85,16 @@ msgstr ""
 msgid "Project References"
 msgstr ""
 
-#: ./../pagepanel.py:30
-msgid "Provide URL of embeddable YouTube video.Note: this will override all added animations."
-msgstr ""
-
 #: ./../project.py:24
 msgid "Reference"
 msgstr ""
 
 #: ./../profiles/default/types/aha.sitecontent.project.xml
 msgid "Reference project"
+msgstr ""
+
+#: ./../browser/formdispatched.pt:30
+msgid "Return to last visited page"
 msgstr ""
 
 #: ./../profiles/default/types/aha.sitecontent.showroom.xml
@@ -73,11 +105,26 @@ msgstr ""
 msgid "Showroom for reference projects"
 msgstr ""
 
-#: ./../pagepanel.py:29
-msgid "Video Link"
+#: ./../browser/formdispatched.pt:26
+msgid "Thank you for your interest. We will get in touch with you as soon as possible."
+msgstr ""
+
+#: ./../browser/pagesection.py:98
+msgid "This field is required"
+msgstr ""
+
+#: ./../pagesection.py:25
+msgid "Videolink"
 msgstr ""
 
 #: ./../behaviors/gallery.py:26
 msgid "When activated the view will attempt to display a gallery of all contained images"
 msgstr ""
 
+#: ./../pagesection.py:38
+msgid "When activated the view will attempt to display a web form inside the given page component"
+msgstr ""
+
+#: ./../configure.zcml:26
+msgid "aha.sitecontent"
+msgstr ""
