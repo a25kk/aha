@@ -25,3 +25,14 @@
 [id="login-forgotten-password"] {
 	display: none;
 }
+
+/**
+* Anchor tag styled as button
+*
+* Since we need to revert link colors globally for theme inverse switching
+* the use case where a link gets styled to look like a button needs to
+* be catered to via forced color.
+*/
+.app-btn {
+    color: #333 !important;
+}

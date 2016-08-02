@@ -68,9 +68,12 @@ $fa-font-path:                  "../assets/fonts";
 //== Compontent border reset
 //
 //## Bootstrap border radius reset
-$border-radius-base:        0px;
-$border-radius-large:       0px;
-$border-radius-small:       0px;
+$border-radius-base:        0;
+$border-radius-large:       0;
+$border-radius-small:       0;
+$input-border-radius:       0;
+
+$input-border:                   #000;
 
 //** Navbar toggle
 $navbar-default-toggle-hover-bg:           #ddd;

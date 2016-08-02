@@ -12,6 +12,13 @@ $font-family-base:              'FFDINWebProLight', $font-family-sans-serif;
 $font-size-root: 16px;
 $font-unit: 1rem; // Pick em or rem here
 
+//== Compontent border reset
+//
+//## Bootstrap border radius reset
+$border-radius-base:        0;
+$border-radius-large:       0;
+$border-radius-small:       0;
+$input-border-radius:       0;
 
 // Convert all variables to em
 

@@ -2,13 +2,29 @@
 // Forms
 //------------------------------------
 
+// Standard applciation button styles
+.app-btn {
+    @extend .btn;
+    @include button-variant(#333, #fff, #333);
+    border-radius: 0;
+    text-transform: uppercase;
+    &-lg {
+        // line-height: ensure even-numbered height of button next to large input
+        @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, 0);
+    }
+}
 
 //** Webfont specific adjustments
 label {
+    text-transform: uppercase;
   font-weight: 700;
   .wf-active & {
     font-weight: 400;
   }
+}
+
+.app-form-group {
+    @extend .form-group;
 }
 
 //== Inputs
@@ -30,13 +46,110 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"] {
-  @extend  .form-control;
+    display: block;
+    width: 100%;
+    height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+    padding: $padding-base-vertical $padding-base-horizontal;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $input-color;
+    background-color: $input-bg;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: 1px solid #000;
+    border-radius: 0; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+    @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+
+    // Customize the `:focus` state to imitate native WebKit styles.
+    @include form-control-focus;
+
+    // Placeholder
+    @include placeholder;
+
+    // Unstyle the caret on `<select>`s in IE10+.
+    &::-ms-expand {
+        border: 0;
+        background-color: transparent;
+    }
+
+    // Disabled and read-only inputs
+    //
+    // HTML5 says that controls under a fieldset > legend:first-child won't be
+    // disabled if the fieldset is disabled. Due to implementation difficulty, we
+    // don't honor that edge case; we style them as disabled anyway.
+    &[disabled],
+    &[readonly],
+    fieldset[disabled] & {
+        background-color: $input-bg-disabled;
+        opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+    }
+
+    &[disabled],
+    fieldset[disabled] & {
+        cursor: $cursor-disabled;
+    }
 }
 
 //** Reset textarea height
 textarea {
     height: auto;
 }
+
+//== Required field
+//
+//## Mark fields as required
+.app-field-required {
+    position: relative;
+}
+
+.app-field-required .required-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin: -0.25em 0.25em 0em;
+    background-color: #E8E8E8;
+    border-color: #E8E8E8;
+    padding: 0.5em 0.8em;
+    color: rgba(0, 0, 0, 0.65);
+    text-transform: uppercase;
+    font-weight: normal;
+    border-radius: 0.325em;
+    box-sizing: border-box;
+    transition: background 0.1s linear;
+    font-size: 75%;
+}
+
+.app-field-required .required-icon {
+    background-color: transparent;
+    position: absolute;
+    top: 2.25em;
+    right: 0em;
+    z-index: 10;
+    margin: 0em;
+    width: 45px;
+    height: 45px;
+    padding: 0em;
+    text-align: center;
+    transition: color 0.2s ease;
+}
+
+.app-field-required .required-icon:after {
+    position: absolute;
+    content: "";
+    right: 1px;
+    top: 1px;
+    z-index: -1;
+    width: 0em;
+    height: 0em;
+    transition: border-color 0.2s ease;
+}
+
+.app-field-required .required-icon .text {
+    margin: -3px 0 0 12px;
+    color: #000;
+    font-size: 2.25rem;
+    font-weight: 300;
+}
+
 
 //== Password toggle
 //
