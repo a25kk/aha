@@ -27,6 +27,19 @@ class IPageSection(model.Schema, IImageScaleTraversable):
         required=False
     )
 
+    model.fieldset(
+        'display',
+        label=u"Display",
+        fields=['displayInquiryForm']
+    )
+
+    displayInquiryForm = schema.Bool(
+        title=_(u"Check to enable inquiry form display"),
+        description=_(u"When activated the view will attempt to display a "
+                      u"web form inside the given page component"),
+        required=False,
+    )
+
 
 @implementer(IPageSection)
 class PageSection(Container):
