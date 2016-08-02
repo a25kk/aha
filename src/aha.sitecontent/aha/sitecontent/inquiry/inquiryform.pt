@@ -111,7 +111,7 @@
             <!-- Form actions -->
             <div class="app-form-group app-form-actions">
                 <span tal:replace="structure context/@@authenticator/authenticator"/>
-                <button class="btn btn-primary btn-lg"
+                <button class="app-btn app-btn-default app-btn-lg"
                     name="form.button.Submit"
                     id="form.button.Submit"
                     i18n:translate="">Submit</button>

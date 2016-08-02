@@ -12,7 +12,7 @@
       class=".inquiry.InquiryFormView"
       template="inquiryform.pt"
       permission="zope2.View"
-      layer="ade25.contacts.interfaces.IAhaSitecontentLayer"
+      layer="aha.sitecontent.interfaces.IAhaSitecontentLayer"
       />
 
   <!-- Inquiry form dispatched aka thank you page -->
@@ -21,31 +21,6 @@
       name="inquiry-form-dispatched"
       class=".inquiry.InquiryFormDispatchedView"
       template="inquiryformdispatched.pt"
-      permission="zope2.View"
-      layer="aha.sitecontent.interfaces.IAhaSitecontentLayer"
-      />
-
-  <browser:page
-      for="Products.CMFCore.interfaces.IContentish"
-      name="inquiry-form-email"
-      class=".inquiry.InquiryFormEmail"
-      template="inquiryformemail.pt"
-      permission="zope2.View"
-      layer="aha.sitecontent.interfaces.IAhaSitecontentLayer"
-      />
-  <browser:page
-      for="Products.CMFCore.interfaces.IContentish"
-      name="inquiry-form-subject"
-      class=".inquiry.InquiryFormSubject"
-      template="inquiryformsubject.pt"
-      permission="zope2.View"
-      layer="aha.sitecontent.interfaces.IAhaSitecontentLayer"
-      />
-  <browser:page
-      for="Products.CMFCore.interfaces.IContentish"
-      name="inquiry-form-comment"
-      class=".inquiry.InquiryFormCommentView"
-      template="inquiryformcomment.pt"
       permission="zope2.View"
       layer="aha.sitecontent.interfaces.IAhaSitecontentLayer"
       />

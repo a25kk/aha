@@ -4,17 +4,18 @@ import datetime
 import pytz
 from AccessControl import Unauthorized
 from Acquisition import aq_inner
+from Acquisition import aq_parent
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five.browser import BrowserView
 from plone import api
 from zope.component import getMultiAdapter
 
-from ade25.contacts.inquiry.mailer import create_plaintext_message
-from ade25.contacts.inquiry.mailer import prepare_email_message
-from ade25.contacts.inquiry.mailer import get_mail_template
-from ade25.contacts.inquiry.mailer import send_mail
+from aha.sitecontent.inquiry.mailer import create_plaintext_message
+from aha.sitecontent.inquiry.mailer import prepare_email_message
+from aha.sitecontent.inquiry.mailer import get_mail_template
+from aha.sitecontent.inquiry.mailer import send_mail
 
-from ade25.contacts import _
+from aha.sitecontent import _
 
 
 class InquiryFormView(BrowserView):
@@ -22,6 +23,7 @@ class InquiryFormView(BrowserView):
 
     def __call__(self):
         self.errors = {}
+        self.subpath = []
         return self.render()
 
     def update(self):
@@ -46,7 +48,7 @@ class InquiryFormView(BrowserView):
                         error['active'] = True
                         error['msg'] = translation_service.translate(
                             error_msg,
-                            'ade25.contacts',
+                            'aha.sitecontent',
                             target_language=api.portal.get_default_language()
                         )
                         form_errors[value] = error
@@ -89,14 +91,14 @@ class InquiryFormView(BrowserView):
         subject = _(u"Inquiry from website visitor")
         email_subject = api.portal.translate(
             "Inquiry from website visitor",
-            'ade25.contacts',
+            'aha.sitecontent',
             api.portal.get_current_language())
         mail_tpl = self._compose_message(data)
         mail_plain = create_plaintext_message(mail_tpl)
         msg = prepare_email_message(mail_tpl, mail_plain)
         default_email = api.portal.get_registry_record('plone.email_from_address')
         recipient_email = getattr(context, 'email', default_email)
-        if contact_obj:
+        if self.subpath:
             recipient_email = getattr(contact_obj, 'email', default_email)
         recipients = [recipient_email, ]
         send_mail(
@@ -104,9 +106,9 @@ class InquiryFormView(BrowserView):
             recipients,
             email_subject
         )
-        next_url = '{0}/@@inquiry-form-dispatched/{1}'.format(
-            context.absolute_url(),
-            self.traverse_subpath[0]
+        context_parent = aq_parent(context)
+        next_url = '{0}/@@inquiry-form-dispatched/'.format(
+            parent.absolute_url()
         )
         return self.request.response.redirect(next_url)
 
@@ -154,54 +156,3 @@ class InquiryFormDispatchedView(BrowserView):
             'time': api.portal.get_localized_time(now, time_only=True),
         }
         return timestamp_data
-
-
-class InquiryFormEmail(BrowserView):
-    """ Embeddable email field """
-
-    def __call__(self):
-        self.errors = {}
-        return self.render()
-
-    def render(self):
-        return self.index()
-
-    def default_value(self, error):
-        value = ''
-        if error['active'] is False:
-            value = error['msg']
-        return value
-
-
-class InquiryFormSubject(BrowserView):
-    """ Embeddable email field """
-
-    def __call__(self):
-        self.errors = {}
-        return self.render()
-
-    def render(self):
-        return self.index()
-
-    def default_value(self, error):
-        value = ''
-        if error['active'] is False:
-            value = error['msg']
-        return value
-
-
-class InquiryFormCommentView(BrowserView):
-    """ Embeddable comment textarea """
-
-    def __call__(self):
-        self.errors = {}
-        return self.render()
-
-    def render(self):
-        return self.index()
-
-    def default_value(self, error):
-        value = ''
-        if error['active'] is False:
-            value = error['msg']
-        return value
