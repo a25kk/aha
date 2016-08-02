@@ -1,5 +1,6 @@
 <div class="app-page-section app-page-snippet app-gutters"
-         tal:define="uuid context/UID">
+         tal:define="uuid context/UID"
+        i18n:domain="aha.sitecontent">
     <div class="app-page-col-main">
         <div class="app-page-header">
             <div class="app-page-title">
