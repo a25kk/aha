@@ -22,14 +22,10 @@
 }
 
 .app-header-panel {
-  flex: 0 1 1;
-  &-shopbutton {
-    align-self: flex-end;
-  }
-}
-
-.app-header-panel-shopbutton {
-  width: 100%;
-  padding-left: 1rem;
-  display: none;
+    flex: 0 1 1;
+    &-shopbutton {
+        align-self: flex-end;
+        width: 100%;
+        padding-left: 1rem;
+    }
 }

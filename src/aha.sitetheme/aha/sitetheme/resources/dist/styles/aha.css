@@ -7037,14 +7037,11 @@ div.riform .label {
       flex: 0 1 1;
 }
 .app-header-panel-shopbutton {
+  width: 100%;
+  padding-left: 1rem; 
+
   -ms-flex-item-align: end;
   align-self: flex-end;
-}
-
-.app-header-panel-shopbutton {
-  display: none; 
-  width: 100%;
-  padding-left: 1rem;
 }
 
 .app-navbar {
@@ -8568,6 +8565,7 @@ body.section-front-page .app-pathbar {
 
 .app-pagesection-toolbar {
   padding: 1rem;
+  margin-bottom: 1rem;
   font-family: "FFDINWebProBold";
   font-weight: normal;
   text-transform: uppercase; 
