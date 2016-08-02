@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+         metal:use-macro="context/main_template/macros/master"
+         i18n:domain="aha.sitecontent">
+<body>
+
+<metal:main fill-slot="main">
+    <metal:content-core define-macro="main">
+
+        <div class="app-page-content" id="app-page-content">
+            <div class="app-page-header">
+                <div class="app-page-title">
+                    <h1 class="app-page-headline" tal:content="context/Title">
+                            ${context/Title}
+                    </h1>
+                </div>
+                <p class="app-page-abstract" tal:condition="context/Description">
+                        ${context/Description}
+                </p>
+            </div>
+
+            <div class="app-page-body">
+                <p i18n:translate="">
+                    Thank you for your interest. We will get in touch with you as soon as possible.
+                </p>
+                <p>
+                    <a class="app-btn app-btn-default" href="${context/absolute_url}" i18n:translate="">
+                        Return to last visited page</a>
+                </p>
+            </div>
+        </div>
+
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </metal:content-core>
+</metal:main>
+
+</body>
+</html>

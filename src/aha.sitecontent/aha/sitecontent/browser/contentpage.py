@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Module providing views for the folderish content page type"""
+import datetime
 from Acquisition import aq_inner
 from plone import api
 from Products.Five.browser import BrowserView
@@ -34,6 +35,8 @@ class ContentPageView(BrowserView):
     def rendered_page_section(self, section_uid):
         context = api.content.get(UID=section_uid)
         template = context.restrictedTraverse('@@pagesection-snippet')()
+        if context.displayInquiryForm:
+            template = context.restrictedTraverse('@@page-section-form')()
         return template
 
 
@@ -154,3 +157,21 @@ class JobListingView(BrowserView):
         context = api.content.get(UID=section_uid)
         template = context.restrictedTraverse('@@pagesection-snippet')()
         return template
+
+
+class FormDispatchedView(BrowserView):
+    """ Inquiry form dispatched
+
+        Show thank you page with feedback on how and when the request
+        was processed after successful submit of page section embedded
+        inquiry form contents
+    """
+
+    def processed_timestamp(self):
+        datetime_now = datetime.datetime.utcnow()
+        now = datetime_now.replace(tzinfo=pytz.utc)
+        timestamp_data = {
+            'date': api.portal.get_localized_time(now),
+            'time': api.portal.get_localized_time(now, time_only=True),
+        }
+        return timestamp_data

@@ -15,6 +15,15 @@
         />
 
     <browser:page
+        for="aha.sitecontent.pagesection.IPageSection"
+        name="page-section-form"
+        class=".pagesection.PageSectionForm"
+        template="pagesectionform.pt"
+        permission="zope2.View"
+        layer="..interfaces.IAhaSitecontentLayer"
+        />
+
+    <browser:page
         for="aha.sitecontent.contentpage.IContentPage"
         name="contentpage-view"
         class=".contentpage.ContentPageView"
@@ -67,6 +76,16 @@
         template="jobslisting.pt"
         permission="zope2.View"
         layer="..interfaces.IAhaSitecontentLayer"
+        />
+
+    <!-- Inquiry form dispatched aka thank you page -->
+    <browser:page
+        for="aha.sitecontent.contentpage.IContentPage"
+        name="inquiry-form-dispatched"
+        class=".contentpage.FormDispatchedView"
+        template="formdispatched.pt"
+        permission="zope2.View"
+        layer="aha.sitecontent.interfaces.IAhaSitecontentLayer"
         />
 
     <!-- Page section view -->
