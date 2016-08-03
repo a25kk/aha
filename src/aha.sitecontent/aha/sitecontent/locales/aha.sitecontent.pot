@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-08-02 14:33+0000\n"
+"POT-Creation-Date: 2016-08-03 09:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,6 +87,10 @@ msgstr ""
 
 #: ./../behaviors/configure.zcml:17
 msgid "Gallery Display Toggle"
+msgstr ""
+
+#: ./../browser/pagesection.py:130
+msgid "Inquiry from website visitor"
 msgstr ""
 
 #: ./../profiles/default/types/aha.sitecontent.pagesection.xml

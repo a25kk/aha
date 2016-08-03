@@ -127,6 +127,7 @@ class PageSectionForm(BrowserView):
 
     def send_inquiry(self, data):
         context = aq_inner(self.context)
+        subject = _(u"Inquiry from website visitor")
         email_subject = api.portal.translate(
             "Inquiry from website visitor",
             'aha.sitecontent',
