@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: aha.sitecontent\n"
-"POT-Creation-Date: 2016-08-03 09:50+0000\n"
-"PO-Revision-Date: 2016-08-03 11:52+0200\n"
+"POT-Creation-Date: 2016-08-03 13:19+0000\n"
+"PO-Revision-Date: 2016-08-03 15:20+0200\n"
 "Last-Translator: Christoph Böhner-Figas <boehner@team23.de>\n"
 "Language-Team: Team23 Language Team <info@team23.de>\n"
 "MIME-Version: 1.0\n"
@@ -83,7 +83,7 @@ msgstr "Inhaltsseite als Ordner"
 
 #: ../browser/pagesectionform.pt:63
 msgid "Fullname"
-msgstr "Voller Name"
+msgstr "Vor- und Zuname"
 
 #: ../behaviors/configure.zcml:17
 msgid "Gallery Display Toggle"

@@ -10,7 +10,7 @@
     text-transform: uppercase;
     &-lg {
         // line-height: ensure even-numbered height of button next to large input
-        @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, 0);
+        @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-small, $line-height-large, 0);
     }
 }
 
@@ -25,6 +25,11 @@ label {
 
 .app-form-group {
     @extend .form-group;
+    font-size: .8rem;
+}
+
+.app-form-actions {
+    font-size: .6rem;
 }
 
 //== Inputs
@@ -53,7 +58,7 @@ input[type="color"] {
     font-size: $font-size-base;
     line-height: $line-height-base;
     color: $input-color;
-    background-color: $input-bg;
+    background-color: #999999;
     background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
     border: 1px solid #000;
     border-radius: 0; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.

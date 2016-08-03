@@ -7342,7 +7342,7 @@ div.riform .label {
 }
 .app-btn-lg {
   padding: .625rem 1rem;
-  font-size: 1.25rem;
+  font-size: .85rem;
   line-height: 1.3333333;
   border-radius: 0;
 }
@@ -7353,6 +7353,14 @@ label {
 }
 .wf-active label {
   font-weight: 400;
+}
+
+.app-form-group {
+  font-size: .8rem;
+}
+
+.app-form-actions {
+  font-size: .6rem;
 }
 
 select,
@@ -7378,7 +7386,7 @@ input[type="color"] {
   font-size: 1rem;
   line-height: 1.428571429;
   color: #555;
-  background-color: #fff;
+  background-color: #999;
   background-image: none;
   border: 1px solid #000;
   border-radius: 0;
