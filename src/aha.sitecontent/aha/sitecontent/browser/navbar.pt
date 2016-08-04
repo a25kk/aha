@@ -81,6 +81,16 @@
         </li>
         <li class="app-navitem"
                 tal:condition="python:view.active_section('raum')"
+                tal:define="active python:view.active_navitem('filterkaffeemaschine')"
+                tal:attributes="class python:active and 'app-navitem active ' or 'app-navitem'">
+              <a class="app-navitem-tab"
+                      tal:attributes="class python:active and 'app-navitem-tab active ' or 'app-navitem-tab'"
+                      href="${portal_url}/${section}/filterkaffeemaschine">
+                <span>Filterkaffeemaschine</span>
+              </a>
+        </li>
+        <li class="app-navitem"
+                tal:condition="python:view.active_section('raum')"
                 tal:define="active python:view.active_navitem('konzeption')"
                 tal:attributes="class python:active and 'app-navitem active ' or 'app-navitem'">
             <a class="app-navitem-tab"
