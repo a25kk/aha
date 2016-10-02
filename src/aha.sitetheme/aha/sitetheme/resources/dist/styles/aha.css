@@ -2665,7 +2665,6 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -4239,7 +4238,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -4892,7 +4890,6 @@ select[multiple].input-lg,
   border-radius: 4px;
 }
 .btn:focus, .searchButton:focus, .app-btn:focus, .btn.focus, .focus.searchButton, .focus.app-btn, .btn:active:focus, .searchButton:active:focus, .app-btn:active:focus, .btn:active.focus, .searchButton:active.focus, .app-btn:active.focus, .btn.active:focus, .active.searchButton:focus, .active.app-btn:focus, .btn.active.focus, .active.focus.searchButton, .active.focus.app-btn {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -9144,9 +9141,8 @@ body.section-front-page .app-pathbar {
 
 .app-page-masonry {
   columns-count: 2;
-  -webkit-column-gap: 1rem;
-     -moz-column-gap: 1rem;
-          column-gap: 1rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
 }
 .app-page-masonry .app-page-column {
   display: inline-block;
