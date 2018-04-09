@@ -142,9 +142,7 @@
 :root .fa-rotate-270,
 :root .fa-flip-horizontal,
 :root .fa-flip-vertical {
-          filter: none; 
-
-  -webkit-filter: none;
+  filter: none;
 }
 
 .fa-stack {
@@ -9141,8 +9139,7 @@ body.section-front-page .app-pathbar {
 
 .app-page-masonry {
   columns-count: 2;
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
+  column-gap: 1rem;
 }
 .app-page-masonry .app-page-column {
   display: inline-block;
