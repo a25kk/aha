@@ -41,3 +41,10 @@
 .app-callout-warning {
   @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
 }
+
+//.site-cc {
+//    border: 1px solid red;
+//    display: block !important;
+//    min-height: 200px;
+//}
+//
