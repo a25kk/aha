@@ -155,6 +155,15 @@
                 <span>Impressum</span>
             </a>
         </li>
+        <li class="app-navitem"
+                tal:define="active python:view.active_navitem('datenschutzerklaerung')"
+                tal:attributes="class python:active and 'app-navitem active ' or 'app-navitem'">
+            <a class="app-navitem-tab"
+                    tal:attributes="class python:active and 'app-navitem-tab active ' or 'app-navitem-tab'"
+               href="${portal_url}/${section}/datenschutzerklaerung">
+                <span>Datenschutz</span>
+            </a>
+        </li>
     </ul>
     </div>
   </metal:content-core>
