@@ -1,129 +1,161 @@
+'use strict'
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
-import browserSync from 'browser-sync';
-import del from 'del';
-import args from 'yargs';
-import {stream as wiredep} from 'wiredep';
+import {create as bsCreate} from 'browser-sync';
+
+var HubRegistry = require('gulp-hub');
+
+/* load some files into the registry */
+var hub = new HubRegistry([
+    './tasks/clean.js',
+    './tasks/collect.js',
+    './tasks/favicon.js',
+    './tasks/sprite.js',
+    './tasks/jekyll.js',
+    './tasks/styles.js',
+    './tasks/inject.js',
+    './tasks/revision.js',
+    './tasks/replace.js'
+]);
+
+/* tell gulp to use the tasks just loaded */
+gulp.registry(hub);
+
 
 const $ = gulpLoadPlugins();
-const reload = browserSync.reload;
+const browserSync = bsCreate();
 
-var cp = require('child_process');
-var pkg = require('./package.json');
+// Load configuration
+var cfg = require('./config.json');
 
-var messages = {
-    jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
-};
 
-var basePaths = {
-    app: 'app',
-    dev: '_site',
-    dist: 'dist',
-    diazoPrefix: '/++theme++pkg.name.sitetheme',
-    bower: 'bower_components/'
-};
 
-var sourcesJS = {
-  base: [
-    basePaths.bower + 'bootstrap-without-jquery/bootstrap3/bootstrap-without-jquery.js',
-    basePaths.bower + 'lazysizes/lazysizes.js',
-    basePaths.bower + 'flickity/dist/flickity.pkgd.js'
-  ],
-  all: [
-    basePaths.bower +'jquery/dist/jquery.js',
-    basePaths.bower +'modernizr/modernizr.js',
-    basePaths.bower + 'bootstrap-without-jquery/bootstrap3/bootstrap-without-jquery.js',
-    basePaths.bower +'mailcheck/src/mailcheck.js',
-    basePaths.bower +'JVFloat/jvfloat.js',
-    basePaths.bower +'hideShowPassword/hideShowPassword.js',
-    basePaths.bower + 'lazysizes/lazysizes.js',
-    basePaths.bower + 'flickity/dist/flickity.pkgd.js'
-
-  ]
-}
-
-var isProduction = args.env === 'dist';
-
-/**
- * Build the Jekyll Site
+/*
+ * TASKS
+ *
  */
-gulp.task('jekyll-build', function (done) {
-    browserSync.notify(messages.jekyllBuild);
-    return cp.spawn('jekyll', ['build'], {stdio: 'inherit'})
-        .on('close', done);
+
+// Browser sync
+gulp.task('bs:reload', function (done) {
+    browserSync.reload();
+    done();
 });
 
-gulp.task('browser-sync', function() {
-  browserSync({
-    server: {
-       baseDir: "./"
-    }
-  });
+
+// Build tasks
+const buildInit = gulp.series(
+    'clean:dist',
+    gulp.parallel('collect:fonts', 'collect:images', 'collect:scripts:vendor')
+);
+
+buildInit.description = 'Delete distribution and collect fresh copies of static assets';
+
+gulp.task('build:init', buildInit);
+
+// Build collect
+const buildCollect = gulp.parallel(
+    'collect:fonts', 'collect:images', 'collect:scripts:vendor'
+);
+buildCollect.description = 'Collect static assets for production build';
+
+gulp.task('build:collect', buildCollect);
+
+// Base tasks
+const buildBase = gulp.series(
+    'jekyll:build',
+    gulp.parallel('styles:dist', 'collect:scripts:app'),
+    'inject:head'
+);
+
+buildBase.description = 'Compile templates/styles and collect scripts for production';
+
+gulp.task('build:base', buildBase);
+
+
+const buildPat = gulp.series(
+    'build:base',
+    'replace:pat',
+    'collect:html'
+);
+buildPat.description = 'Build distribution for ++theme++ support';
+
+gulp.task('build:pat', buildPat);
+
+const buildDevelopment = gulp.series(
+    'build:base',
+    'replace:base',
+    'collect:html'
+);
+buildDevelopment.description = 'Build local development environment';
+
+gulp.task('build:dev', buildDevelopment);
+
+
+const buildDistBase = gulp.series(
+    'build:base',
+    'replace:base',
+    'revision:styles',
+    'replace:revision:styles',
+    'collect:html'
+);
+buildDistBase.description = 'Build production distribution';
+
+gulp.task('build:dist:base', buildDistBase);
+
+
+const buildDistFull = gulp.series(
+    'build:init',
+    'build:dist:base'
+);
+buildDistFull.description = 'Clean distribution and build full production bundle';
+
+gulp.task('build:dist:full', buildDistFull);
+
+
+gulp.task('dev:watch:styles', function () {
+    gulp.watch(cfg.paths.app + "sass/**/*.scss", gulp.series(
+        'styles:dist'
+        // browserSync.reload()
+        )
+    )
 });
 
-gulp.task('bs-reload', function () {
-  browserSync.reload();
+gulp.task('dev:watch', function () {
+    gulp.watch(cfg.paths.app + "sass/**/*.scss", gulp.series(
+        'styles:dist'
+    )
+    );
+    gulp.watch(cfg.paths.app + "scripts/**/*.js", gulp.series(
+        'collect:scripts:app'
+        )
+    );
+    gulp.watch(cfg.paths.app + "**/*.html", gulp.series(
+        'build:dist:base'
+        )
+    );
 });
 
-gulp.task('images', function(){
-  gulp.src('src/images/**/*')
-    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('dist/images/'));
-});
+// Run development build
+gulp.task('collect', buildCollect);
 
-//gulp.task('styles', () => {
-//    return gulp.src('app/styles/*.scss')
-//        .pipe($.plumber())
-//        .pipe($.sourcemaps.init())
-//        .pipe($.sass.sync({
-//            outputStyle: 'expanded',
-//            precision: 10,
-//            includePaths: ['.']
-//        }).on('error', $.sass.logError))
-//        .pipe($.autoprefixer({browsers: ['last 1 version']}))
-//        .pipe($.sourcemaps.write())
-//        .pipe(gulp.dest('.tmp/styles'))
-//        .pipe(reload({stream: true}));
-//});
+// Build distribution versions of styles and scripts
+gulp.task('dist', buildDistBase);
 
+// Rebuild whole theme for distribution
+gulp.task('build', buildDistFull);
 
-gulp.task('styles', () =>  {
-  return gulp.src('app/sass/main.scss')
-    .pipe($.plumber())
-    .pipe($.sourcemaps.init())
-    .pipe($.sass.sync({
-      outputStyle: 'expanded',
-      precision: 10,
-      includePaths: ['bower_components']
-    }).on('error', $.sass.logError))
-    .pipe($.autoprefixer({browsers: ['last 1 version']}))
-    .pipe(gulp.dest('dist/styles'))
-    .pipe($.minifyCss())
-    .pipe($.rename({suffix: '.min'}))
-    .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('dist/styles/'))
-    .pipe(reload({stream: true}));
-});
+// Development build usable with standalone Plone backend
+gulp.task('pat', buildPat);
 
-gulp.task('scripts', function(){
-  return gulp.src(isProduction ? sourcesJS.all : sourcesJS.base)
-    .pipe($.plumber({
-      errorHandler: function (error) {
-        console.log(error.message);
-        this.emit('end');
-    }}))
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('default'))
-    .pipe(concat(pkg.name + '.js'))
-    .pipe(gulp.dest(basePaths.dist + 'scripts/'))
-    .pipe($.rename({suffix: '.min'}))
-    .pipe($.uglify())
-    .pipe(gulp.dest(basePaths.dist + 'scripts/'))
-    .pipe(browserSync.reload({stream:true}));
-});
+// Development Server
+// gulp.task('serve', ['dev:serve']);
 
-gulp.task('default', ['browser-sync'], function(){
-  gulp.watch("sass/**/*.scss", ['styles']);
-  gulp.watch("src/scripts/**/*.js", ['scripts']);
-  gulp.watch("*.html", ['bs-reload']);
-});
+// gulp.task('watch', ['dev:watch'])
+
+// Start working with the styles
+gulp.task('default',
+    gulp.series(
+        'dev:watch:styles'
+    )
+);
+
