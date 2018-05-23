@@ -8,7 +8,6 @@ services:
     labels:
       - traefik.enable=true
       - traefik.docker.network=traefik_gateway
-      - traefik.frontend.rule=HostRegexp:web.vox.{domain},{something:[a-z]+}.web.vox.{domain}
 networks:
   default:
   traefik_gateway:
