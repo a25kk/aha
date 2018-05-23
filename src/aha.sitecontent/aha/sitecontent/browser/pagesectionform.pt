@@ -168,7 +168,7 @@
                         <input type="checkbox" class="form__control form__control--checkbox" id="privacy-policy-agreement" name="privacy-policy-agreement">
                         <label class="form__label" for="privacy-policy-agreement">
                             <span i18n:translate="" tal:omit-tag="">I have acknowledged the</span>
-                            <a href="${context/absolute_url}" i18n:translate="">privacy policy</a>
+                            <a href="${view/privacy_policy_url}" i18n:translate="">privacy policy</a>
                             <span i18n:translate="" tal:omit-tag="">and accept it.</span>
                         </label>
                         <div class="required-icon">

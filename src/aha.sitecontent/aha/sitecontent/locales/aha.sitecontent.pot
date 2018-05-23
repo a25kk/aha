@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-08-03 13:19+0000\n"
+"POT-Creation-Date: 2018-05-23 19:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,6 +27,10 @@ msgstr ""
 
 #: ./../browser/pagesectionform.pt:22
 msgid "All fields marked with <code>*</code> are required."
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:147
+msgid "By sending this message, I confirm that my details are correct and I agree to the collection and further processing of the provided data. The data will only be used for the purpose stated in your inquiry."
 msgstr ""
 
 #: ./../behaviors/gallery.py:25
@@ -89,7 +93,11 @@ msgstr ""
 msgid "Gallery Display Toggle"
 msgstr ""
 
-#: ./../browser/pagesection.py:130
+#: ./../browser/pagesectionform.pt:170
+msgid "I have acknowledged the"
+msgstr ""
+
+#: ./../browser/pagesection.py:153
 msgid "Inquiry from website visitor"
 msgstr ""
 
@@ -129,7 +137,7 @@ msgstr ""
 msgid "Showroom for reference projects"
 msgstr ""
 
-#: ./../browser/pagesectionform.pt:142
+#: ./../browser/pagesectionform.pt:190
 msgid "Submit"
 msgstr ""
 
@@ -137,7 +145,7 @@ msgstr ""
 msgid "Thank you for your interest. We will get in touch with you as soon as possible."
 msgstr ""
 
-#: ./../browser/pagesection.py:99
+#: ./../browser/pagesection.py:131
 #: ./../browser/pagesectionform.pt:52
 msgid "This field is required"
 msgstr ""
@@ -160,4 +168,12 @@ msgstr ""
 
 #: ./../configure.zcml:26
 msgid "aha.sitecontent"
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:172
+msgid "and accept it."
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:171
+msgid "privacy policy"
 msgstr ""

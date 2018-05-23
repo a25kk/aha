@@ -82,6 +82,7 @@ class PageSectionForm(BrowserView):
         self.errors = {}
         unwanted = ('_authenticator', 'form.button.Submit')
         required = ['email']
+        required_boolean = ('privacy-policy-agreement', 'privacy-policy')
         if 'form.button.Submit' in self.request:
             authenticator = getMultiAdapter((self.context, self.request),
                                             name=u"authenticator")
