@@ -145,7 +145,7 @@ class PageSectionForm(BrowserView):
     def privacy_policy_url():
         portal = api.portal.get()
         portal_url = portal.absolute_url()
-        url = '{0}/raum/datenschutzbestimmung'.format(portal_url)
+        url = '{0}/raum/datenschutzerklaerung'.format(portal_url)
         return url
 
     def send_inquiry(self, data):
