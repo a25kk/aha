@@ -2,6 +2,7 @@
 """Module providing views for the site navigation root"""
 from Products.Five.browser import BrowserView
 from plone import api
+from zope.component import getUtility
 
 IMG = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs='
 

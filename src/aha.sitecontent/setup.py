@@ -32,13 +32,12 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'plone.api',
-        'plone.app.dexterity [grok, relations]',
-        'plone.app.relationfield',
-        'plone.formwidget.contenttree',
-        'plone.namedfile [blobs]',
-        'requests[security]',
         'setuptools',
+        'plone.api',
+        'plone.app.dexterity [relations]',
+        'plone.app.relationfield',
+        'plone.namedfile [blobs]',
+        'plone.formwidget.contenttree',
     ],
     extras_require={
         'test': [

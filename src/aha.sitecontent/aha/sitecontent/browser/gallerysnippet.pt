@@ -22,7 +22,7 @@
         <tal:block tal:condition="images">
           <div class="app-gallery-cell project-gallery-item item" tal:repeat="item images">
             <tal:item tal:define="img_data python:view.get_image_data(item.UID)">
-              <img class="app-img-card lazyload"
+              <img class="app-img-card lazy-load"
                   src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                   data-sizes="auto"
                   data-srcset="${img_data/small},
