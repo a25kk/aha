@@ -5,7 +5,7 @@
                 <div class="app-thumbnail app-gutter-cell" tal:repeat="item images">
                     <tal:item tal:define="img python:view.image_tag(item);
                                           img_idx repeat/item/index">
-                        <img class="js-thumbtrigger lazyload"
+                        <img class="js-thumbtrigger lazy-load"
                              src="${img/url}"
                              width="${img/width}"
                              height="${img/height}"

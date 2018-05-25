@@ -198,7 +198,7 @@
     </div>
     <div class="app-page-col-aside">
         <figure class="figure" tal:condition="view/show_image">
-            <img class="app-img-card lazyload"
+            <img class="app-img-card lazy-load"
                      tal:define="img_data python:view.get_image_data(uuid)"
                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                  data-sizes="auto"
@@ -209,7 +209,7 @@
         </figure>
         <div class="app-page-asset" tal:condition="not:view/show_image">
 
-            <img class="app-img-card app-img-responsive lazyload"
+            <img class="app-img-card app-img-responsive lazy-load"
                      tal:condition="view/has_external_image"
                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                  data-src="${context/externalImage}" />
