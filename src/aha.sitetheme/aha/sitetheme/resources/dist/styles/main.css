@@ -4700,7 +4700,7 @@ https://flickity.metafizzy.co
  * © 2015 MyFonts Inc
 */
 @font-face {
-  font-family: 'FFDINWebProBold';
+  font-family: 'PTSansBold';
   src: url("../assets/fonts/2F5109_0_0.eot");
   src: url("../assets/fonts/2F5109_0_0.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/2F5109_0_0.woff2") format("woff2"), url("../assets/fonts/2F5109_0_0.woff") format("woff"), url("../assets/fonts/2F5109_0_0.ttf") format("truetype");
   font-weight: normal;
@@ -4708,7 +4708,7 @@ https://flickity.metafizzy.co
 }
 
 @font-face {
-  font-family: 'FFDINWebProLight';
+  font-family: 'PTSansRegular';
   src: url("../assets/fonts/2F5109_1_0.eot");
   src: url("../assets/fonts/2F5109_1_0.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/2F5109_1_0.woff2") format("woff2"), url("../assets/fonts/2F5109_1_0.woff") format("woff"), url("../assets/fonts/2F5109_1_0.ttf") format("truetype");
   font-weight: normal;
@@ -6766,11 +6766,11 @@ body.section-front-page .app-pathbar {
     -ms-flex: 1;
         flex: 1;
     height: 100vh;
-    background: url(../assets/img/fp-licht.jpg) no-repeat top center #fff;
+    background: url(../assets/images/fp-licht.jpg) no-repeat top center #fff;
     background-size: cover;
   }
   .app-frontpage-card-inverse {
-    background-image: url(../assets/img/fp-raum.jpg);
+    background-image: url(../assets/images/fp-raum.jpg);
   }
 }
 

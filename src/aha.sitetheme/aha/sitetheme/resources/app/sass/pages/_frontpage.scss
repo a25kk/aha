@@ -25,10 +25,10 @@
     @media (min-width: $grid-float-breakpoint) {
         flex: 1;
         height: 100vh;
-        background: url(../assets/img/fp-licht.jpg) no-repeat top center #fff;
+        background: url(../assets/images/fp-licht.jpg) no-repeat top center #fff;
         background-size: cover;
         &-inverse {
-            background-image: url(../assets/img/fp-raum.jpg);
+            background-image: url(../assets/images/fp-raum.jpg);
         }
     }
 }
