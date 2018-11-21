@@ -227,21 +227,21 @@
       min-height: 70px;
     }
     @include when-inside('.active') {
-        font-family: $app-font-family-base;
+        //font-family: $app-font-family-base;
         @include when-inside('.app-navbar-subnav') {
-            font-family: $app-font-family-light;
+            //font-family: $app-font-family-light;
             font-weight: 400;
         }
     }
     @include when-inside('.app-navbar-subnav') {
-        font-family: $app-font-family-light;
+        //font-family: $app-font-family-light;
         font-size: $font-size-small;
         font-weight: 300;
         text-transform: none;
         text-decoration: none;
     }
     @include when-inside('.app-subitem-active') {
-        font-family: $app-font-family-base;
+        //font-family: $app-font-family-base;
         font-weight: 400;
     }
 }

@@ -5158,17 +5158,11 @@ div.riform .label {
   }
 }
 
-.active .app-navitem-tab {
-  font-family: "FFDINWebProBold";
-}
-
 .app-navbar-subnav .active .app-navitem-tab {
-  font-family: "FFDINWebProLight";
   font-weight: 400;
 }
 
 .app-navbar-subnav .app-navitem-tab {
-  font-family: "FFDINWebProLight";
   font-size: 0.85rem;
   font-weight: 300;
   text-transform: none;
@@ -5176,7 +5170,6 @@ div.riform .label {
 }
 
 .app-subitem-active .app-navitem-tab {
-  font-family: "FFDINWebProBold";
   font-weight: 400;
 }
 
