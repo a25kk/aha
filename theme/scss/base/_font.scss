@@ -1,0 +1,47 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3100937, 2015-10-01T06:01:40-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: FF DIN Web Pro Bold by FontFont
+ * URL: http://www.myfonts.com/fonts/fontfont/ff-din/pro-bold/
+ *
+ * Webfont: FF DIN Web Pro Light by FontFont
+ * URL: http://www.myfonts.com/fonts/fontfont/ff-din/pro-light/
+ *
+ *
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3100937
+ * Licensed pageviews: 50,000
+ * Webfonts copyright: 2009 Albert-Jan Pool published by FSI FontShop International GmbH
+ *
+ * © 2015 MyFonts Inc
+*/
+
+
+@font-face {
+    font-family: 'PTSansBold';
+    src: url('#{$app-font-path}/2F5109_0_0.eot');
+    src: url('#{$app-font-path}/2F5109_0_0.eot?#iefix') format('embedded-opentype'),
+         url('#{$app-font-path}/2F5109_0_0.woff2') format('woff2'),
+         url('#{$app-font-path}/2F5109_0_0.woff') format('woff'),
+         url('#{$app-font-path}/2F5109_0_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'PTSansRegular';
+    src: url('#{$app-font-path}/2F5109_1_0.eot');
+    src: url('#{$app-font-path}/2F5109_1_0.eot?#iefix') format('embedded-opentype'),
+         url('#{$app-font-path}/2F5109_1_0.woff2') format('woff2'),
+         url('#{$app-font-path}/2F5109_1_0.woff') format('woff'),
+         url('#{$app-font-path}/2F5109_1_0.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

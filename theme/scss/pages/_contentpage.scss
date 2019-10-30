@@ -1,0 +1,313 @@
+//
+// Content page
+// ----------------------------------------
+
+.app-main-default {
+    .app-page-cards {
+        a {
+           color: #fff;
+        }
+        a:hover {
+            color: #fff;
+        }
+    }
+}
+
+//== Page styles
+//
+//## Define content specific styles
+.app-page {
+    position: relative;
+    min-height: 100vh;
+    &-frontpage {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    @media (min-width: $grid-float-breakpoint) {
+        &-frontpage {
+            padding-left: 0;
+        }
+    }
+}
+
+//== Fullscreen background gallery
+//
+//## Add full page gallery and layer page contents
+.app-page-content {
+    z-index: 1051;
+    padding-left: 1.5rem;
+}
+
+.app-page-frontpage .app-page-content {
+    padding-left: 0;
+}
+
+.app-page-list-item {
+    padding: 1rem;
+}
+
+// Make content body visible
+.app-theme-content {
+    padding: 1rem;
+    @media (min-width: $grid-float-breakpoint) {
+        position: absolute;
+        top: 2em;
+        left: 2em;
+        width: 33.3333%;
+        background: #fff;
+        .app-main-inverse & {
+            right: 2em;
+            background: $gray-dark;
+        }
+    }
+}
+
+.app-page-gallery {
+    height: 100%;
+    width: 100%;
+}
+
+
+//== Page content
+//
+//## Text body layout and styling
+
+.app-page-header {
+    padding: 0 1rem;
+}
+
+.app-page-title {
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #808080;
+    letter-spacing: 2px;
+}
+
+.app-page-headline-lg {
+    font-size: 1.5rem;
+    @media (min-width: $screen-md-min) {
+        font-size: 1.75rem;
+    }
+    @media (min-width: $screen-lg-min) {
+        font-size: 2rem;
+    }
+}
+
+.app-page-headline-content {
+    margin-top: 0rem;
+    font-size: 1rem;
+    color: #808080;
+    letter-spacing: 2px;
+}
+
+
+// Use custom lead element for page desciptions
+// that has proper line-height on all media types
+.app-page-lead,
+.app-page-abstract {
+    margin-bottom: $line-height-computed;
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.5;
+    @media (min-width: $screen-sm-min) {
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+}
+
+.app-page-content-news {
+    @media (min-width: $screen-sm-min) {
+        .app-page-title {
+            padding: 0 1rem;
+            }
+        .app-page-abstract {
+            padding: 0 1rem;
+        }
+        .app-page-text {
+            h2, p {
+                padding: 0 1rem;
+            }
+        }
+    }
+}
+
+
+.app-page-text {
+    padding: 0 1rem;
+}
+
+// Text inside page section snippets
+.app-page-snippet-text {
+    h2 {
+        font-size: 1.25rem;
+        @media (min-width: $screen-md-min) {
+            font-size: 1.5rem;
+        }
+        @media (min-width: $screen-lg-min) {
+            font-size: 1.75rem;
+        }
+    }
+}
+
+//== Page section
+//
+//## Container providing visual separation
+.app-page-section {
+    margin: 0;
+}
+
+//== Responsive image
+//
+//## Class to resize standalone images based
+//## on viewport sizes
+//.app-image {
+//    @media (max-width: $grid-float-breakpoint) {
+//        @extend .img-responsive;
+//    }
+//}
+
+.image-inline {
+    @extend .img-responsive;
+}
+
+
+.app-page-list .app-page-section {
+    margin-top: 1rem;
+}
+
+.app-img-card {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+//== Content grid
+//
+//## Flexbox based grid classes
+.app-page-section {
+    //@include container-fixed;
+    @media (min-width: $grid-float-breakpoint) {
+        display: flex;
+        flex-wrap: row wrap;
+        &-inverse {
+            flex-direction: row-reverse;
+        }
+        @include when-inside('.app-main-inverse') {
+            flex-direction: row-reverse;
+            &-inverse {
+                flex-direction: row;
+            }
+        }
+    }
+}
+
+.app-page-col {
+    padding: 0.5rem;
+    @media (min-width: $screen-md-min) {
+        flex: 1;
+        &-main {
+            flex: 0 0 40%;
+        }
+        &-aside {
+            flex: 0 0 60%;
+        }
+    }
+}
+
+
+.app-page-col-header {
+    text-transform: uppercase;
+}
+
+// Gutter modifier class
+//
+// Add spacing to grid cells
+.app-gutters {
+  margin: 0 -1rem 1rem -1rem;
+}
+.app-gutters > .app-page-col {
+  margin: 0 1em 1rem 1em;
+}
+
+// Column masonry support
+// NOTE: not available in IE9 and below
+.app-page-masonry {
+  columns-count: 2;
+  column-gap: 1rem;
+  .app-page-column {
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+.app-project-panel {
+    display: block;
+    min-height: 200px;
+    background-size: cover;
+    color: #fff;
+    text-decoration: none !important;
+    @media (min-width: $grid-float-breakpoint) {
+      min-height: 400px;
+    }
+    &:hover > .app-project-panel-overlay {
+      opacity: 1;
+    }
+}
+
+// Overlay visible during parent :hover pseudostate
+.app-project-panel-overlay {
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    padding: 1.25rem;
+    opacity: 0;
+    background: rgba(0, 0, 0, .65);
+    min-height: 200px;
+    @media  (min-width: $grid-float-breakpoint) {
+      width:auto;
+      min-height: 400px;
+    }
+    //@media (min-width: $screen-md-min) {
+    //    min-height: 600px;
+    //}
+    //@media (min-width: $screen-lg-min) {
+    //    min-height: 780px;
+    //}
+}
+
+// Tabnavigation for project content
+.app-project-tabs {
+  text-align: left;
+  list-style: none;
+  text-transform: uppercase;
+  padding-left: .2rem;
+}
+
+.app-project-tab {
+  display: inline-block;
+  padding: 0 ($line-height-computed / 2);
+  > a {
+    color: gray;
+  }
+  > a:hover {
+    color: gray;
+  }
+}
+
+.app-main-inverse .app-project-tab {
+  display: inline-block;
+  padding: 0 ($line-height-computed / 2);
+  > a {
+    color: gray;
+  }
+  > a:hover {
+    color: gray;
+  }
+}
+
+
+// Download item styling
+.app-download-item {
+    border-bottom: 1px solid $gray-light;
+}

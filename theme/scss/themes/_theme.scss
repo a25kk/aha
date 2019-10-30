@@ -1,0 +1,61 @@
+//
+// Main site theme
+// --------------------------------------
+
+
+//== Main content area
+//
+//## Provides optional fullscreen layouts
+.app-main {
+  min-height: 100vh;
+  background: #fff;
+  @media (min-width: $grid-float-breakpoint) {
+      display: flex;
+      flex-direction: row-reverse;
+      &-inverse {
+        flex-direction: row;
+      }
+  }
+    &-inverse {
+      background: $app-primary;
+      a {
+        color: #fff;
+        &:hover {
+          color: darken(#fff, 6.5%);
+        }
+      }
+        // Redefine text color variable for inverse theme
+      $text-color: $gray-lighter;
+      color: $gray-lighter;
+  }
+}
+
+//** Add full height to layout components
+.app-aside,
+.app-content {
+    @media (min-width: $screen-sm-min) {
+        height: 100%;
+        min-height: 100%;
+        min-height: 100vh;
+    }
+}
+
+.app-aside {
+    @media (min-width: $screen-sm-min) {
+        flex: 0 0 15rem;
+        width: 15rem;
+        padding: 1rem;
+        &-inverse {
+          position: absolute;
+          top: 0;
+          right: 0;
+          border: 1px solid blue;
+        }
+    }
+}
+
+.app-content {
+    @media (min-width: $grid-float-breakpoint) {
+      flex: 1;
+    }
+}

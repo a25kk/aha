@@ -1,0 +1,247 @@
+//
+// Navbar
+// -----------------------------------------
+
+.app-navbar {
+  @extend .navbar;
+  border-radius: 0;
+  @media (min-width: $grid-float-breakpoint-max) {
+    margin-bottom: 0;
+      // position: absolute;
+      // bottom: 0;
+      // left: 0;
+      // background: transparent;
+  }
+}
+
+// Navbar content container
+.app-navbar-content {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $gray-dark;
+    .app-header-inverse & {
+      border-color: $gray-lighter;
+    }
+    @media (min-width: $grid-float-breakpoint) {
+      border-bottom: 0;
+    }
+}
+
+//== Navbar header
+//
+//## Default display of global site navigation
+//## Hidden on larger displays
+.app-navbar-header {
+  @include clearfix;
+    display: flex;
+    align-items: flex-end;
+    padding: 0;
+    background: transparent;
+}
+
+//** Navbar toggle text
+.app-navbar-header-title {
+    flex: 0 0 60%;
+}
+
+//== Brand info
+//
+//## Includes logo svg
+.app-navbar-brand {
+  height: ($navbar-height * 1.5);
+  padding-top: $navbar-padding-vertical;
+  padding-left: $navbar-padding-horizontal;
+  font-weight: 500;
+  line-height: $line-height-computed;
+  color: $text-color;
+  @media (min-width: $grid-float-breakpoint) {
+    padding: $navbar-padding-vertical $navbar-padding-horizontal;
+  }
+}
+
+.app-logo {
+    display: block;
+    @include when-inside('.app-main-inverse') {
+        display: none;
+    }
+}
+
+.app-logo-inverse {
+    display: none;
+    @include when-inside('.app-frontpage-section-inverse') {
+        display: block;
+    }
+    @include when-inside('.app-main-inverse') {
+        display: block;
+    }
+}
+
+
+//** Icon bar navigation toggle
+.app-navbar-header-toggle {
+  flex: 0 0 20%;
+  background: $app-secondary;
+  min-height: $navbar-height;
+  padding-top: $navbar-padding-vertical;
+  padding-bottom: $navbar-padding-vertical;
+  text-align: center;
+}
+
+// Navbar toggle button visible on small displays
+.app-navbar-toggle {
+  position: relative;
+  width: 50px;
+  border-color: transparent;
+  background: transparent;
+  text-align: right;
+  &:hover,
+  &:focus {
+    background: transparent;
+    border-color: transparent;
+  }
+  .icon-bar {
+    background-color: $text-color;
+    .app-header-inverse & {
+      background-color: $gray-lighter;
+    }
+  }
+  // Bars
+  .icon-bar {
+    display: block;
+    width: 44px;
+    height: 2px;
+    border-radius: 2px;
+  }
+  .icon-bar + .icon-bar {
+    margin-top: 10px;
+  }
+    @media (min-width: $grid-float-breakpoint) {
+        display: none;
+    }
+}
+
+//** Section marker
+//** Enhance hamburger icon menu by providing a clickable
+//** section info link
+.app-navbar-section {
+  flex: 0 0 20%;
+  // font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $gray-dark;
+  padding-top: $navbar-padding-vertical;
+  padding-bottom: $navbar-padding-vertical;
+  .app-header-inverse & {
+    color: $gray-lighter;
+  }
+}
+
+.app-navbar-collapse {
+  border-top: 1px solid $gray-dark;
+  padding-left: 0;
+  padding-right: 0;
+  @media (min-width: $grid-float-breakpoint) {
+    border-top: none;
+  }
+}
+
+// Unordered list main navigation
+.app-navbar-nav {
+  margin-bottom: 0;
+  padding-left: 0; // Override default ul/ol
+  list-style: none;
+}
+
+// Main section and global navitems
+.app-navbar-nav-main {
+    @extend .hidden-xs;
+}
+
+.app-navbar-subnav {
+    display: none;
+    font-weight: 400px;
+    @include when-inside('.active') {
+        display: block;
+    }
+}
+
+// Two adjacent navbars need spacing
+.app-navbar-nav + .app-navbar-nav {
+    margin-top: 2rem;
+}
+
+.app-navbar-divider {
+    border: 1px solid #000;
+    width: 2rem;
+    margin: 2rem auto 0 15px;
+    text-align: left;
+    @extend .hidden-xs;
+    @include when-inside('.app-main-inverse') {
+      border-color: #fff;
+    }
+}
+
+
+//== Navitems
+//
+//## Color coded based on parent inverse class
+.app-navitem {
+  width: 100%;
+  padding-left: $navbar-padding-horizontal;
+  border-bottom: 1px solid $gray-dark;
+  .app-header-inverse & {
+    border-color: $gray-lighter;
+  }
+  &:last-child {
+    border-bottom: 0;
+  }
+  @media (min-width: $grid-float-breakpoint) {
+    border-bottom: none;
+  }
+}
+
+.app-navitem-tab {
+    color: $text-color;
+    background-color: $app-primary;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+    transition: background-color 0.5s ease;
+    .app-header-inverse & {
+        color: $gray-lighter;
+    }
+    &:hover {
+      color: darken($text-color, 6.5%);
+      background-color: darken($app-primary, 6.5%);
+      text-decoration: underline;
+        .app-header-inverse & {
+            color: darken($gray-lighter, 6.5%);
+        }
+    }
+    > span {
+      display: block;
+      margin: 0 auto;
+      @include navbar-vertical-align($line-height-computed);
+    }
+    @media (min-width: $grid-float-breakpoint-max) {
+      height: 70px;
+      min-height: 70px;
+    }
+    @include when-inside('.active') {
+        //font-family: $app-font-family-base;
+        @include when-inside('.app-navbar-subnav') {
+            //font-family: $app-font-family-light;
+            font-weight: 400;
+        }
+    }
+    @include when-inside('.app-navbar-subnav') {
+        //font-family: $app-font-family-light;
+        font-size: $font-size-small;
+        font-weight: 300;
+        text-transform: none;
+        text-decoration: none;
+    }
+    @include when-inside('.app-subitem-active') {
+        //font-family: $app-font-family-base;
+        font-weight: 400;
+    }
+}

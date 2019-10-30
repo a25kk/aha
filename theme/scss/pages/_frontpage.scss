@@ -1,0 +1,207 @@
+//
+// Frontpage
+//---------------------------------------
+
+// Adjust padding on wrapper for fullscreen boxes
+.app-page-frontpage {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.app-frontpage-content {
+    @media (min-width: $grid-float-breakpoint) {
+        display: flex;
+    }
+}
+
+
+//== Frontpage sections
+//
+//## Anchor tags spanning the whole section and revealing
+//## the background image on hover
+.app-frontpage-card {
+    display: block;
+    height: 50vh;
+    @media (min-width: $grid-float-breakpoint) {
+        flex: 1;
+        height: 100vh;
+        background: url(../assets/images/fp-licht.jpg) no-repeat top center #fff;
+        background-size: cover;
+        &-inverse {
+            background-image: url(../assets/images/fp-raum.jpg);
+        }
+    }
+}
+
+.app-frontpage-section {
+    display: block;
+    position: relative;
+    height: 50vh;
+    color: $text-color;
+    background-color: #fff;
+    &:hover {
+        color: darken($text-color, 6.5%);
+    }
+    &-inverse {
+        background-color: $app-primary;
+        color: #fff;
+        &:hover {
+            color: darken($gray-lighter, 6.5%);
+        }
+    }
+    @media (min-width: $grid-float-breakpoint) {
+        flex: 1;
+        height: 100vh;
+        transition: background-color 3s ease;
+        &:hover {
+            color: darken($text-color, 6.5%);
+            background: transparent;
+            transition: background-color 3s linear;
+        }
+        &-inverse {
+            background-color: $app-primary;
+            color: #fff;
+            &:hover {
+                color: darken($gray-lighter, 6.5%);
+                background: transparent;
+            }
+        }
+    }
+}
+
+.app-frontpage-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25%;
+    text-align: center;
+    .app-brand-img {
+        flex: 0 0 auto;
+        width: 120px;
+        @media (min-width: $grid-float-breakpoint) {
+            width: 280px;
+        }
+    }
+}
+
+//== Brand image animation
+//
+//## Nest the .app-logo class for better isolation
+.app-brand-img-frontpage {
+  .app-logo {
+      transition: all 0.2s ease-in-out 0s;
+  }
+  .app-logo:hover {
+      transform: scale(1.1);
+  }
+}
+
+.app-frontpage-action {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.15rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    @media (min-width: $grid-float-breakpoint) {
+        right: 25%;
+        bottom: 5%;
+        font-size: 2rem;
+        text-align: right;
+        .app-frontpage-section-inverse & {
+            left: 25%;
+            bottom: 5%;
+            text-align: right;
+        }
+    }
+}
+
+.app-fp-wrapper {
+    display: table;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+//Space
+
+.app-fp-block-wrapper-space {
+    width: 50%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    position: absolute;
+    background: url(../assets/img/fp-raum.jpg) no-repeat top center transparent;
+    background-size: cover;
+    color: #fff;
+    a {
+        color: #fff;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.app-fp-block-space {
+    background: #000;
+    transition: all 0.5s ease;
+    width: 100%;
+    height: 100%;
+    padding-top: 25%;
+
+}
+
+.app-fp-block-space:hover {
+    background: transparent;
+}
+
+//Light
+
+.app-fp-block-wrapper-light {
+    width: 50%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    position: absolute;
+    top:0;
+    right:0;
+    background: url(../assets/img/fp-licht.jpg) no-repeat top center #fff;
+    background-size: cover;
+    color: #000;
+    a {
+        color: #000;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.app-fp-block-light {
+    background: #fff;
+    transition: all 0.5s ease;
+    width: 100%;
+    height: 100%;
+    padding-top: 25%;
+}
+
+.app-fp-block-light:hover {
+    background: transparent;
+}
+
+
+.app-fp-block-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.app-fp-heading {
+    padding: $line-height-computed 0;
+    font-size: 2rem;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.app-fp-heading:hover {
+    transform: scale(1.1);
+}
