@@ -11,7 +11,7 @@
 $app-gray:                      rgba(237, 234, 234, 1);
 
 // Text color override
-$text-color:                    $gray-darker;
+$text-color:                    rgba(51, 51, 51, 1);
 
 // Brand primary (green)
 $app-primary:                   #000;
@@ -57,12 +57,12 @@ $app-font-family-base:          'FFDINWebProBold';
 $app-font-family-light:         'FFDINWebProLight';
 
 
-$font-family-base:              $app-font-family-light, $font-family-sans-serif !default;
-//** By default, this inherits from the `<body>`.
-$headings-font-family:          $app-font-family-base, $font-family-sans-serif;
-
-//** Font awesome font path
-$fa-font-path:                  "../assets/fonts";
+// $font-family-base:              $app-font-family-light, $font-family-sans-serif !default;
+// //** By default, this inherits from the `<body>`.
+// $headings-font-family:          $app-font-family-base, $font-family-sans-serif;
+//
+// //** Font awesome font path
+// $fa-font-path:                  "../assets/fonts";
 
 
 //== Compontent border reset
@@ -83,8 +83,16 @@ $navbar-default-toggle-border-color:       #ddd;
 //** Button primary uses default link color not brand primary
 $btn-primary-bg:                 $app-primary;
 
-// Navbar collapse
-//** Point at which the navbar becomes uncollapsed.
-$grid-float-breakpoint:     $screen-sm-min !default;
-//** Point at which the navbar begins collapsing.
-$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+// LEGACY Variable support
+$gray-lighter:                  #e9ecef;
+
+$grid-float-breakpoint:         768px;
+
+$line-height-computed:          1.5;
+
+$padding-large-vertical:          1.25rem;
+$padding-large-horizontal:         1.25rem;
+
+$navbar-height:                   4rem;
+$navbar-padding-vertical:         1.25rem;
+$navbar-padding-horizontal:       1.25rem;

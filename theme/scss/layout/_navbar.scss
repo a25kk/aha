@@ -5,7 +5,7 @@
 .app-navbar {
   @extend .navbar;
   border-radius: 0;
-  @media (min-width: $grid-float-breakpoint-max) {
+  @include mq($from: md) {
     margin-bottom: 0;
       // position: absolute;
       // bottom: 0;
@@ -17,11 +17,11 @@
 // Navbar content container
 .app-navbar-content {
     padding-bottom: 1rem;
-    border-bottom: 1px solid $gray-dark;
+    border-bottom: 1px solid $gray-700;
     .app-header-inverse & {
-      border-color: $gray-lighter;
+      border-color: $gray-200;
     }
-    @media (min-width: $grid-float-breakpoint) {
+  @include mq($from: md) {
       border-bottom: 0;
     }
 }
@@ -101,7 +101,7 @@
   .icon-bar {
     background-color: $text-color;
     .app-header-inverse & {
-      background-color: $gray-lighter;
+      background-color: $gray-200;
     }
   }
   // Bars
@@ -114,9 +114,9 @@
   .icon-bar + .icon-bar {
     margin-top: 10px;
   }
-    @media (min-width: $grid-float-breakpoint) {
+  @include mq($from: md) {
         display: none;
-    }
+  }
 }
 
 //** Section marker
@@ -127,19 +127,19 @@
   // font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: $gray-dark;
+  color: $gray-700;
   padding-top: $navbar-padding-vertical;
   padding-bottom: $navbar-padding-vertical;
   .app-header-inverse & {
-    color: $gray-lighter;
+    color: $gray-200;
   }
 }
 
 .app-navbar-collapse {
-  border-top: 1px solid $gray-dark;
+  border-top: 1px solid $gray-700;
   padding-left: 0;
   padding-right: 0;
-  @media (min-width: $grid-float-breakpoint) {
+  @include mq($from: md) {
     border-top: none;
   }
 }
@@ -187,9 +187,9 @@
 .app-navitem {
   width: 100%;
   padding-left: $navbar-padding-horizontal;
-  border-bottom: 1px solid $gray-dark;
+  border-bottom: 1px solid $gray-700;
   .app-header-inverse & {
-    border-color: $gray-lighter;
+    border-color: $gray-200;
   }
   &:last-child {
     border-bottom: 0;
@@ -214,15 +214,14 @@
       background-color: darken($app-primary, 6.5%);
       text-decoration: underline;
         .app-header-inverse & {
-            color: darken($gray-lighter, 6.5%);
+            color: darken($gray-200, 6.5%);
         }
     }
     > span {
       display: block;
       margin: 0 auto;
-      @include navbar-vertical-align($line-height-computed);
     }
-    @media (min-width: $grid-float-breakpoint-max) {
+    @include mq($from: md) {
       height: 70px;
       min-height: 70px;
     }
