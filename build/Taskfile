@@ -154,3 +154,10 @@ task:db:download() {
     fi
     virtualenv:run fab "$1" download:"${2:-}"
 }
+
+task:venv:reset() {
+    cd ../ &&
+    rm -rf ./bin &&
+    rm -rf ./lib &&
+    rm -rf ./include
+}
