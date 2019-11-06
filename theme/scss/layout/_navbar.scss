@@ -153,7 +153,7 @@
 
 // Main section and global navitems
 .app-navbar-nav-main {
-    @extend .hidden-xs;
+    @extend .hidden-xs !optional;
 }
 
 .app-navbar-subnav {
@@ -174,7 +174,7 @@
     width: 2rem;
     margin: 2rem auto 0 15px;
     text-align: left;
-    @extend .hidden-xs;
+    @extend .hidden-xs !optional;
     @include when-inside('.app-main-inverse') {
       border-color: #fff;
     }

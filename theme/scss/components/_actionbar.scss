@@ -43,7 +43,7 @@
   background-color: $app-gray;
   border-color: $app-gray;
     // Placeholder
-  @include placeholder($app-primary);
+  //@include placeholder($app-primary);
 }
 
 .app-searchbox-btn {
