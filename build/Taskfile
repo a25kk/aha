@@ -155,9 +155,15 @@ task:db:download() {
     virtualenv:run fab "$1" download:"${2:-}"
 }
 
+# Cleanup venv
 task:venv:reset() {
     cd ../ &&
     rm -rf ./bin &&
     rm -rf ./lib &&
     rm -rf ./include
+}
+
+task:venv:build:reset() {
+    cd ../ &&
+    rm -rf ./build/ENV
 }
