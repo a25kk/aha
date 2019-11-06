@@ -100,8 +100,8 @@
 
 //** Round hellip sign
 .app-card-placeholder-sign {
-  @include square(4rem);
-  @extend .center-block;
+  //@include square(4rem);
+  //@extend .center-block;
   padding-top: 0.5rem;
   border-radius: 50%;
   border: 1px solid $gray-lighter;
