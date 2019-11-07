@@ -1,7 +1,6 @@
 //
 // Main application stylesheet
 // ----------------------------------------------
-// Tools
 @import 'tools/_tools.animations';
 @import 'tools/functions.bootstrap';
 @import 'tools/functions.color';
@@ -11,9 +10,10 @@
 @import 'tools/mixins.icon';
 
 @import 'vendors/mq';
-// @import 'vendors/rfs';
 
-// Settings
+@import 'utils/variables';
+// @import 'utils/functions';
+// @import 'utils/mixins.scss';
 
 // Global settings
 @import 'settings/settings.config';
@@ -24,8 +24,9 @@
 // Project colors
 @import 'settings/settings.color';
 
-//@import 'settings/settings.font.base';
-@import 'settings/settings.font.custom';
+@import 'settings/settings.fonts.base';
+@import 'settings/settings.fonts.custom';
+
 
 @import 'settings/settings.spacers';
 
@@ -42,10 +43,10 @@
 @import 'settings/settings.identifier';
 @import 'settings/settings.component.pagination';
 @import 'settings/settings.component.widgets';
-@import 'settings/settings.quick-links';
-@import 'settings/settings.nav-bar';
+// @import 'settings/settings.quick-links';
+// @import 'settings/settings.nav-bar';
 @import 'settings/settings.panels';
-@import 'settings/settings.toc';
+// @import 'settings/settings.toc';
 
 // Generic
 @import 'generic/generic.fonts';
@@ -54,7 +55,7 @@
 @import 'generic/generic.aspect-ratio';
 
 @import 'vendors/bootstrap';
-@import 'vendors/dropmic';
+// @import 'vendors/dropmic';
 @import 'vendors/x-ray';
 
 // DEPRECATED

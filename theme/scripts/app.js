@@ -19,48 +19,77 @@ requirejs(['require',
 
 
         // Trigger font face observer protection
-        //var fontPrimary = new FontFaceObserver('Raleway');
-        //var fontSecondary = new FontFaceObserver('Special Elite');
+        var fontPrimary = new FontFaceObserver('FFDINWebProLight', {
+            weight: 400
+        });
+        var fontSecondary = new FontFaceObserver('FFDINWebProBold');
 
-        //fontPrimary.load().then(function () {
-        //    document.documentElement.className += " font__primary--loaded";
-        //});
+        fontPrimary.load(null, 3000).then(function () {
+            document.documentElement.className += " font__primary--loaded";
+        });
 
-        //fontSecondary.load().then(function () {
-        //    document.documentElement.className += " font__secondary--loaded";
-        //});
+        fontSecondary.load(null, 3000).then(function () {
+            document.documentElement.className += " font__secondary--loaded";
+        });
 
-        //Promise.all([fontPrimary.load(), fontSecondary.load()]).then(function () {
-        //    document.documentElement.className += " fonts--loaded";
-        //});
-
-        var $bannerBar = document.querySelector('.app-js-carousel'),
-            $galleryContainer = document.querySelector('.js-gallery');
-        if ($bannerBar !== null) {
-            var bannerflkty = new Flickity('.app-js-carousel', {
-                pauseAutoPlayOnHover: false,
-                autoPlay: 7000,
-                contain: true,
-                wrapAround: true,
-                imagesLoaded: true,
-                cellSelector: '.app-banner-item',
-                cellAlign: 'left',
-                selectedAttraction: 0.025,
-                friction: 0.28
+        Promise.all([fontPrimary.load(null, 3000),
+            fontSecondary.load(null, 3000)
+        ])
+            .then(function () {
+                document.documentElement.className += " fonts--loaded";
             });
-            $bannerBar.classList.add('app-banner--loaded');
-        }
-        // Content image galleries
+
+        if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+            document.documentElement.className += " u-device--ios";
+        };
+
+        // Toogle gallery caption display
+        var $captionToggle = $('.js-caption-collapsible'),
+            $captionToggleTitle = $('.js-toggleable-title'),
+            $toggleableSection = $('.js-toggleable'),
+            $toggleOpenClass = 'toggleable-open',
+            $collapsingElement = $('#app-gallery-caption-block');
+        $captionToggle.on('click', function(event) {
+            event.preventDefault();
+            if($toggleableSection.hasClass($toggleOpenClass)) {
+                $collapsingElement.removeClass('fadeInDown')
+                    .addClass('fadeOutUp');
+                $captionToggleTitle.removeClass('fadeOut').addClass('fadeIn');
+                $toggleableSection.delay(1000).queue(function (next) {
+                    $(this).removeClass($toggleOpenClass);
+                    next();
+                });
+            } else {
+                $collapsingElement.removeClass('fadeOutUp').addClass('fadeInDown');
+                $captionToggleTitle.removeClass('fadeIn').addClass('fadeOut');
+                $toggleableSection.delay(1000).queue(function (next) {
+                    $(this).addClass($toggleOpenClass);
+                    next();
+                });
+            }
+        });
+        // Initialize flickity galleries
+        var $galleryContainer = document.querySelector('.main-gallery');
         if ($galleryContainer !== null) {
-            var flkty = new Flickity('.js-gallery', {
+            var flkty = new Flickity('.main-gallery', {
                 autoPlay: true,
                 contain: true,
                 wrapAround: true,
                 imagesLoaded: true,
                 cellSelector: '.app-gallery-cell',
-                cellAlign: 'left'
+                cellAlign: 'left',
+                selectedAttraction: 0.025,
+                friction: 0.28
             });
-            $galleryContainer.classList.add('app-banner--loaded');
+            // Trigger flickity gallery transitions via thumbnail anchors
+            $('.js-thumbtrigger').each( function() {
+                $(this).on('click', function (evt) {
+                    evt.preventDefault();
+                    var index = $(this).data('index');
+                    $(this).toggleClass('js-thumbtrigger-active');
+                    flkty.select(index);
+                });
+            });
         }
 
         // Initialize scripts

@@ -20,7 +20,10 @@ class NavBarView(BrowserView):
         plone_url = api.portal.get().absolute_url()
         plone_url_len = len(plone_url)
         request = self.request
-        parent_request = request['PARENT_REQUEST']
+        try:
+            parent_request = request['PARENT_REQUEST']
+        except KeyError:
+            parent_request = request
         valid_actions = []
         url = parent_request['URL']
         path = url[plone_url_len:]
@@ -56,7 +59,10 @@ class NavBarView(BrowserView):
 
     def active_navitem(self, section):
         request = self.request
-        parent_request = request['PARENT_REQUEST']
+        try:
+            parent_request = request['PARENT_REQUEST']
+        except KeyError:
+            parent_request = request
         path = urlsplit(parent_request['URL']).path
         if section in path.split('/'):
             return True
@@ -64,7 +70,11 @@ class NavBarView(BrowserView):
 
     def showrooms(self, section):
         portal = api.portal.get()
-        container = portal[section]['projekte']
+        try:
+            container = portal[section]['projekte']
+        except KeyError:
+            # Fallback for invalid section parameter
+            container = portal['raum']['projekte']
         catalog = api.portal.get_tool('portal_catalog')
         items = catalog(
             object_provides=IShowRoom.__identifier__,

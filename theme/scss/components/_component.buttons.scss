@@ -95,3 +95,7 @@ a.c-button--active-action {
     // Uncomment to disable drag and drop support
     // pointer-events: none;
 }
+
+.c-button--link-parent {
+    margin-bottom: $app-spacer-base;
+}

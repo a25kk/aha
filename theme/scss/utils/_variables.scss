@@ -6,6 +6,7 @@
 //== Colors
 //
 //## Brand colors used across the project
+$color-black:               rgba(0,0,0,1) !default; // #000
 
 // Gray baseline
 $app-gray:                      rgba(237, 234, 234, 1);
@@ -22,7 +23,7 @@ $app-secondary:                 rgba(88, 140, 115, 1);
 //## Used in mixin and modifier classes
 
 //** Primary brand color
-$app-primary-base:              rgba(39, 77, 56, 1) !default;
+$app-primary-base:              $color-black !default;
 $app-primary-darker:            darken($app-primary-base, 15%)  !default;
 $app-primary-dark:              darken($app-primary-base, 7.5%) !default;
 $app-primary:                   $app-primary-base               !default; // #274d38

@@ -47,7 +47,7 @@ export function injectSprite() {
     return gulp.src(cfg.paths.dev + '**/*.html')
     // Look for any CSS files in the 'stylesheets' directory
     // Don't read the files for performance and ignore the base directory
-        .pipe($.inject(gulp.src(cfg.paths.dist + 'assets/symbol/svg/' + '*.svg',
+        .pipe($.inject(gulp.src(cfg.paths.dist + 'assets/sprite/' + '*.svg',
             {read: false}),
             {relative: false},
             {removeTags: true},

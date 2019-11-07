@@ -50,8 +50,8 @@
 // @import 'settings/settings.toc';
 
 // Generic
-// @import 'generic/generic.fonts';
-@import 'generic/generic.fonts.custom';
+@import 'generic/generic.fonts';
+// @import 'generic/generic.fonts.custom';
 @import 'generic/generic.syntax';
 @import 'generic/generic.aspect-ratio';
 
@@ -97,7 +97,7 @@
 // @import 'vendors/font-awesome';
 
 @import 'base/animation';
-@import 'base/font';
+// @import 'base/font';
 @import 'base/scaffolding';
 @import 'base/brand';
 

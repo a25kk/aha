@@ -1,6 +1,7 @@
 //** Adjust font weight for initialized webfonts
 body {
     color: $element-body-color;
+    font-family: $app-font-family-base !important;
     @if $enable-responsive-font-sizes == true {
         @include font-size($app-font-size-base);
     } @else {
@@ -26,6 +27,9 @@ body {
     // Set body background color
     &:not(.mce-content-body) {
         background-color: $element-body-background-color;
+    }
+    &.app-main-inverse {
+        background-color: $element-body-background-color-inverse;
     }
     // Alternative styles for wysiwyg editor body
     &.mce-content-body {

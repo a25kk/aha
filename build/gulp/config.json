@@ -5,7 +5,7 @@
     "base": "../../resources/theme/aha.theme/",
     "dev": "../../theme/_site/",
     "dist": "../../resources/theme/aha.theme/",
-    "diazoPrefix": "/++theme++aha.sitetheme/",
+    "diazoPrefix": "/++theme++aha.theme/",
     "src": "node_modules/",
     "theme": "../../theme/"
   },
@@ -76,68 +76,12 @@
   "replacementPatterns": {
     "base": [
       {
-        "match": "/../dist/styles/",
+        "match": "/../../resources/theme/aha.theme/styles/",
         "replacement": "/styles/"
       },
       {
         "match": "/dist/styles/",
         "replacement": "/styles/"
-      }
-    ],
-    "server": [
-      {
-        "match": "../../assets/",
-        "replacement": "../assets/"
-      },
-      {
-        "match": "../../dist/styles/",
-        "replacement": "/styles/"
-      },
-      {
-        "match": "../dist/styles/",
-        "replacement": "/styles/"
-      },
-      {
-        "match": "../../dist/scripts/",
-        "replacement": "/scripts/"
-      },
-      {
-        "match": "../dist/scripts/",
-        "replacement": "/scripts/"
-      }
-    ],
-    "pat": [
-      {
-        "match": "/../dist/",
-        "replacement": "/++theme++aha.sitetheme/dist/++theme++aha.sitetheme/dist/"
-      },
-      {
-        "match": "../assets/",
-        "replacement": "assets/"
-      },
-      {
-        "match": "assets/",
-        "replacement": "/++theme++aha.sitetheme//dist/assets/"
-      },
-      {
-        "match": "../styles/",
-        "replacement": "/++theme++aha.sitetheme/dist/styles/"
-      },
-      {
-        "match": "styles/",
-        "replacement": "/++theme++aha.sitetheme/dist/styles/"
-      },
-      {
-        "match": "/styles/",
-        "replacement": "/++theme++aha.sitetheme/dist/styles/"
-      },
-      {
-        "match": "../scripts/",
-        "replacement": "/++theme++aha.sitetheme/scripts/"
-      },
-      {
-        "match": "scripts/",
-        "replacement": "/++theme++aha.sitetheme/scripts/"
       }
     ]
   }
