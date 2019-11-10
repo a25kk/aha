@@ -29,3 +29,10 @@
         padding-left: 1rem;
     }
 }
+
+.app-header-panel-shopbutton {
+  padding-left: 0;
+  @include mq($from: md) {
+    padding-left: 1rem;
+  }
+}

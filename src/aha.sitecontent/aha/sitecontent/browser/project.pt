@@ -35,12 +35,12 @@
                                       <li role="presentation" class="app-project-tab"><a href="#projectThumbnails" aria-controls="projectThumbnails" role="tab" data-toggle="collapse">Galerie</a></li>
                                   </ul>
                                   <div class="app-project-tabs-content">
-                                      <div role="tabpanel" class="collapse" id="projectText">
+                                      <div role="tabpanel" class="app-collapse" id="projectText">
                                           <div class="app-page-text" id="parent-fieldname-text"
                                                   tal:condition="context/text"
                                                   tal:content="structure context/text/output" />
                                       </div>
-                                      <div role="tabpanel" class="collapse" id="projectThumbnails">
+                                      <div role="tabpanel" class="app-collapse" id="projectThumbnails">
                                           <div tal:replace="structure view/rendered_thumbnails" />
                                       </div>
                                   </div>

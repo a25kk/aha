@@ -16,13 +16,14 @@
 
 // Navbar content container
 .app-navbar-content {
-    padding-bottom: 1rem;
+    padding-top: 1rem;
     border-bottom: 1px solid $gray-700;
     .app-header-inverse & {
       border-color: $gray-200;
     }
   @include mq($from: md) {
       border-bottom: 0;
+      padding-top: 3rem;
     }
 }
 
@@ -170,11 +171,14 @@
 }
 
 .app-navbar-divider {
+    display: none;
     border: 1px solid #000;
     width: 2rem;
-    margin: 2rem auto 0 15px;
+    margin: 2rem auto 1rem 15px;
     text-align: left;
-    @extend .hidden-xs !optional;
+    @include media-breakpoint-up(sm) {
+      display: block;
+    }
     @include when-inside('.app-main-inverse') {
       border-color: #fff;
     }
@@ -186,7 +190,7 @@
 //## Color coded based on parent inverse class
 .app-navitem {
   width: 100%;
-  padding-left: $navbar-padding-horizontal;
+  padding-left: 1rem;
   border-bottom: 1px solid $gray-700;
   .app-header-inverse & {
     border-color: $gray-200;
@@ -220,10 +224,14 @@
     > span {
       display: block;
       margin: 0 auto;
-    }
-    @include mq($from: md) {
-      height: 70px;
-      min-height: 70px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      @include media-breakpoint-up(md) {
+      height: 30px;
+      min-height: 30px;
+      padding-top: 0;
+      padding-bottom: 0;
+      }
     }
     @include when-inside('.active') {
         //font-family: $app-font-family-base;

@@ -15,7 +15,7 @@
     window.lazySizesConfig.loadedClass = 'image--loaded';
 </script>
 <!-- inject:css -->
-<link rel="stylesheet" href="/styles/aha-e2678f4cf0.min.css">
+<link rel="stylesheet" href="/styles/aha-3fecb87c16.min.css">
 <!-- endinject -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../assets/ico/apple-touch-icon-144-precomposed.png">
                                <link rel="shortcut icon" href="../../assets/ico/favicon.png">
@@ -89,7 +89,7 @@
     <header class="app-header app-header-inverse" id="app-header" role="banner">
   <div class="app-header-content">
     <div class="app-header-panel app-header-brandbar">
-      <a class="app-brand app-brand-panel hidden-xs" href="/">
+      <a class="app-brand app-brand-panel d-none d-sm-none d-md-block" href="/">
     <div class="app-brand-img">
         <div class="app-logo app-logo-inverse" id="app-logo-inverse">
     <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -132,7 +132,7 @@
       <nav class="app-navbar" id="app-navbar" role="navigation">
 <div class="app-navbar-content">
   <div class="app-navbar-header">
-      <a class="app-navbar-brand app-navbar-header-title visible-xs" href="/">
+      <a class="app-navbar-brand app-navbar-header-title d-block d-sm-block d-md-none" href="/">
           <span class="app-brand-img app-brand-img-sm">
               <div class="app-logo" id="app-logo">
     <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -208,10 +208,11 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="app-navbar-section visible-xs" href="#">Licht</a>
+    <a class="app-navbar-section d-block d-sm-block d-md-none" href="#">Licht</a>
   </div>
 
-  <div class="collapse navbar-collapse app-navbar-collapse">
+  <div class="d-block d-sm-block d-md-none">
+  <div class="app-collapse navbar-collapse app-navbar-collapse">
     <ul class="xnav xnavbar-nav app-navbar-nav" id="app-navbar-nav">
       <li class="app-navitem active">
         <a class="app-navitem-tab app-navitem-tab-home" href="../../">
@@ -250,6 +251,52 @@
       </li>
     </ul>
   </div><!-- /.navbar-collapse -->
+</div>
+
+
+  <div class="d-none d-md-block d-lg-block">
+  <div class="app-navbar-collapse">
+    <ul class="xnav xnavbar-nav app-navbar-nav" id="app-navbar-nav">
+      <li class="app-navitem active">
+        <a class="app-navitem-tab app-navitem-tab-home" href="../../">
+          <span>Startseite</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab app-navitem-tab-aktuelles" href="../../aktuelles">
+          <span>Unternehmen</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab app-navitem-tab-landratsamt" href="../../landratsamt">
+          <span>Projekte</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab app-navitem-tab-service" href="../../service">
+          <span>Konzeption</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab app-navitem-tab-info" href="../../info">
+          <span>Beratung</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab app-navitem-tab-hier-leben" href="../../hier-leben">
+          <span>Kontakt</span>
+        </a>
+      </li>
+      <li class="app-navitem">
+        <a class="app-navitem-tab app-navitem-tab-hier-leben" href="../../hier-leben">
+          <span>Impressum</span>
+        </a>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</div>
+
+
 </div>
 </nav>
 
