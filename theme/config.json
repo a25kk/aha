@@ -19,8 +19,8 @@
     "androidColor": "#ffffff",
     "safariColor": "#5bbad5",
     "revisionKey": "iet7OjeChoz1",
-    "html": "_includes/base/head.html",
-    "htmlDist": "_includes/base/"
+    "html": "templates/_includes/base/head.html",
+    "htmlDist": "templates/_includes/base/"
   },
   "sprite": {
     "mode": {
