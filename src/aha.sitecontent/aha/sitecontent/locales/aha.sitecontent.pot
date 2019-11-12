@@ -1,0 +1,179 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-05-23 19:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: aha.sitecontent\n"
+
+#: ./../behaviors/configure.zcml:17
+msgid "Adds a boolean field to toggle gallery display"
+msgstr ""
+
+#: ./../behaviors/configure.zcml:26
+msgid "Adds a boolean field to toggle listing previews"
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:22
+msgid "All fields marked with <code>*</code> are required."
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:147
+msgid "By sending this message, I confirm that my details are correct and I agree to the collection and further processing of the provided data. The data will only be used for the purpose stated in your inquiry."
+msgstr ""
+
+#: ./../behaviors/gallery.py:25
+msgid "Check to enable gallery display"
+msgstr ""
+
+#: ./../pagesection.py:37
+msgid "Check to enable inquiry form display"
+msgstr ""
+
+#: ./../behaviors/preview.py:25
+msgid "Check, if this item should include a preview snippet in listings"
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:88
+msgid "Company"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.pagesection.xml
+msgid "Content section for content pages"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.contentpage.xml
+msgid "Contentpage"
+msgstr ""
+
+#: ./../behaviors/configure.zcml:26
+msgid "Display Preview Toggle"
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:34
+msgid "E-Mail"
+msgstr ""
+
+#: ./../pagesection.py:19
+msgid "Enter URL of externally hosted image asset link e.g. animated GIFs"
+msgstr ""
+
+#: ./../pagesection.py:26
+msgid "Enter URL to embed external videos from YouTube"
+msgstr ""
+
+#: ./../configure.zcml:26
+msgid "Extension profile for aha.sitecontent."
+msgstr ""
+
+#: ./../pagesection.py:18
+msgid "External Image"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.contentpage.xml
+msgid "Folderish content page"
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:63
+msgid "Fullname"
+msgstr ""
+
+#: ./../behaviors/configure.zcml:17
+msgid "Gallery Display Toggle"
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:170
+msgid "I have acknowledged the"
+msgstr ""
+
+#: ./../browser/pagesection.py:153
+msgid "Inquiry from website visitor"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.pagesection.xml
+msgid "PageSection"
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:105
+msgid "Phone"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.project.xml
+msgid "Project"
+msgstr ""
+
+#: ./../project.py:21
+msgid "Project References"
+msgstr ""
+
+#: ./../project.py:24
+msgid "Reference"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.project.xml
+msgid "Reference project"
+msgstr ""
+
+#: ./../browser/formdispatched.pt:30
+msgid "Return to last visited page"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.showroom.xml
+msgid "Showroom"
+msgstr ""
+
+#: ./../profiles/default/types/aha.sitecontent.showroom.xml
+msgid "Showroom for reference projects"
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:190
+msgid "Submit"
+msgstr ""
+
+#: ./../browser/formdispatched.pt:26
+msgid "Thank you for your interest. We will get in touch with you as soon as possible."
+msgstr ""
+
+#: ./../browser/pagesection.py:131
+#: ./../browser/pagesectionform.pt:52
+msgid "This field is required"
+msgstr ""
+
+#: ./../pagesection.py:25
+msgid "Videolink"
+msgstr ""
+
+#: ./../behaviors/gallery.py:26
+msgid "When activated the view will attempt to display a gallery of all contained images"
+msgstr ""
+
+#: ./../pagesection.py:38
+msgid "When activated the view will attempt to display a web form inside the given page component"
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:122
+msgid "Your message"
+msgstr ""
+
+#: ./../configure.zcml:26
+msgid "aha.sitecontent"
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:172
+msgid "and accept it."
+msgstr ""
+
+#: ./../browser/pagesectionform.pt:171
+msgid "privacy policy"
+msgstr ""

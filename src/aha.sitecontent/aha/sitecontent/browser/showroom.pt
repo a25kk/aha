@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="aha.sitecontent">
+<body>
+
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main">
+    <div class="app-showroom">
+      <div class="app-page-cards" tal:condition="view/has_subitems">
+          <tal:row tal:repeat="row view/content_matrix">
+              <div class="app-page-section app-gutters"
+                      tal:define="evenrow repeat/row/even"
+                      tal:attributes="class python:evenrow and 'app-page-section app-page-section-inverse app-gutter' or 'app-page-section app-gutter'">
+                  <tal:col tal:repeat="col row">
+                      <div class="app-page-col"
+                              tal:define="evenrow repeat/col/even;
+                                          item col/item;
+                                          preview_image python:view.preview_image(item);
+                                          image_data python:view.image_tag(item)"
+                              tal:attributes="class python:evenrow and 'app-page-col app-page-col-main' or 'app-page-col app-page-col-aside'">
+                        <a class="app-project-panel"
+                          href="${item/getURL}"
+                          tal:attributes="style python:view.computed_inline_styles(item)">
+                          <div class="app-project-panel-overlay">
+                              <h4 class="card-title">${item/Title}</h4>
+                              <p class="card-text" tal:condition="item/Description">${item/Description}</p>
+                          </div>
+                          </a>
+                      </div>
+                  </tal:col>
+              </div>
+          </tal:row>
+      </div>
+    </div>
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>

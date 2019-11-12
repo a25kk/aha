@@ -1,0 +1,37 @@
+<div class="app-page-gallery" id="app-page-gallery">
+  <div class="app-gallery" tal:define="images view/contained_images">
+      <div class="project-gallery main-gallery">
+        <div class="app-gallery-caption">
+          <div class="app-page-header">
+            <div class="app-page-title">
+              <h1 class="app-page-headline" tal:content="context/Title">
+                ${context/Title}
+              </h1>
+            </div>
+            <p class="app-page-abstract" tal:condition="context/Description">
+              ${context/Description}
+            </p>
+          </div>
+
+          <div class="app-page-body">
+            <div class="app-page-text" id="parent-fieldname-text"
+              tal:condition="context/text"
+              tal:content="structure context/text/output" />
+          </div>
+        </div>
+        <tal:block tal:condition="images">
+          <div class="app-gallery-cell project-gallery-item item" tal:repeat="item images">
+            <tal:item tal:define="img_data python:view.get_image_data(item.UID)">
+              <img class="app-img-card lazy-load"
+                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-sizes="auto"
+                  data-srcset="${img_data/small},
+                               ${img_data/medium},
+                               ${img_data/large},
+                               ${img_data/original}" />
+            </tal:item>
+          </div>
+        </tal:block>
+      </div>
+  </div>
+</div>

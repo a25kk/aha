@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="aha.sitecontent">
+<body>
+
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main">
+      <div class="app-page-gallery" id="app-page-gallery">
+          <div class="app-page-gallery" id="app-page-gallery">
+              <div class="app-gallery" tal:define="images view/contained_images">
+                  <div class="project-gallery main-gallery">
+                      <div class="app-gallery-caption app-gallery-caption-collapsible js-toggleable toggleable">
+                          <div class="app-caption-toggle">
+                              <span class="app-caption-toggle-title js-toggleable-title animated fadeIn">${context/Title}</span>
+                              <a href="#projectText" class="app-page-header-close js-caption-collapsible">&nbsp;</a>
+                          </div>
+                          <div class="app-gallery-caption-block animated" id="app-gallery-caption-block">
+                              <div class="app-page-header">
+                                  <div class="app-page-title">
+                                      <h1 class="app-page-headline app-page-headline-lg" tal:content="context/Title">
+                                              ${context/Title}
+                                      </h1>
+                                  </div>
+                                  <p class="app-page-abstract" tal:condition="context/Description">
+                                          ${context/Description}
+                                  </p>
+                              </div>
+                              <div class="app-page-body">
+                                  <ul class="app-project-tabs text-right" role="tablist">
+                                      <li role="presentation" class="app-project-tab active hidden"><a href="#projectText" aria-controls="projectText" role="tab" data-toggle="collapse">Projekt</a></li>
+                                      <li role="presentation" class="app-project-tab"><a href="#projectThumbnails" aria-controls="projectThumbnails" role="tab" data-toggle="collapse">Galerie</a></li>
+                                  </ul>
+                                  <div class="app-project-tabs-content">
+                                      <div role="tabpanel" class="app-collapse" id="projectText">
+                                          <div class="app-page-text" id="parent-fieldname-text"
+                                                  tal:condition="context/text"
+                                                  tal:content="structure context/text/output" />
+                                      </div>
+                                      <div role="tabpanel" class="app-collapse" id="projectThumbnails">
+                                          <div tal:replace="structure view/rendered_thumbnails" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <tal:block tal:condition="images">
+                          <div class="app-gallery-cell project-gallery-item item" tal:repeat="item images">
+                              <tal:item tal:define="img_data python:view.image_tag(item)">
+                                  <img class="app-img-card lazy-load"
+                                       src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                       data-sizes="auto"
+                                       data-srcset="${img_data/small},
+                                                    ${img_data/medium},
+                                                    ${img_data/large},
+                                                    ${img_data/original}" />
+                              </tal:item>
+                          </div>
+                      </tal:block>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </metal:content-core>
+</metal:main>
+</body>
+</html>

@@ -1,0 +1,178 @@
+# Christoph Böhner-Figas <boehner@team23.de>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: aha.sitecontent\n"
+"POT-Creation-Date: 2018-05-23 19:50+0000\n"
+"PO-Revision-Date: 2018-05-23 21:51+0200\n"
+"Last-Translator: Christoph Böhner-Figas <boehner@team23.de>\n"
+"Language-Team: Team23 Language Team <info@team23.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: de\n"
+"Language-Name: German\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: aha.sitecontent\n"
+"Language: de\n"
+"X-Generator: Poedit 2.0.7\n"
+
+#: ../behaviors/configure.zcml:17
+msgid "Adds a boolean field to toggle gallery display"
+msgstr "Fügt eine Checkbox hinzu, um die Galerieansicht zu aktivieren"
+
+#: ../behaviors/configure.zcml:26
+msgid "Adds a boolean field to toggle listing previews"
+msgstr "Fügt eine Checkbox hinzu, um automatische Auflistungen einzuschalten"
+
+#: ../browser/pagesectionform.pt:22
+msgid "All fields marked with <code>*</code> are required."
+msgstr "Alle mit <code>*</code> markierten Felder sind Pflichtangaben."
+
+#: ../browser/pagesectionform.pt:147
+msgid "By sending this message, I confirm that my details are correct and I agree to the collection and further processing of the provided data. The data will only be used for the purpose stated in your inquiry."
+msgstr "Mit Versenden der Nachricht bestätige ich die Richtigkeit meiner angegebenen Daten und willige einer Erhebung und weitergehenden Verarbeitung ein. Diese Daten werden nur zu dem von Ihnen angegebenen Anlass genutzt."
+
+#: ../behaviors/gallery.py:25
+msgid "Check to enable gallery display"
+msgstr "Auswählen, um die Gallerieansicht zu aktivieren"
+
+#: ../pagesection.py:37
+msgid "Check to enable inquiry form display"
+msgstr "Auswählen, um ein Anfrageformular in diesem Seitenabschnitt anzuzeigen"
+
+#: ../behaviors/preview.py:25
+msgid "Check, if this item should include a preview snippet in listings"
+msgstr "Auswählen, falls dieses Objekt eine Vorschau in Listen anzeigen soll"
+
+#: ../browser/pagesectionform.pt:88
+msgid "Company"
+msgstr "Firma"
+
+#: ../profiles/default/types/aha.sitecontent.pagesection.xml
+msgid "Content section for content pages"
+msgstr "Inhaltsabschnitt für Inhaltsseiten"
+
+#: ../profiles/default/types/aha.sitecontent.contentpage.xml
+msgid "Contentpage"
+msgstr "Inhaltsseite"
+
+#: ../behaviors/configure.zcml:26
+msgid "Display Preview Toggle"
+msgstr "Vorschauansicht aktivieren"
+
+#: ../browser/pagesectionform.pt:34
+msgid "E-Mail"
+msgstr "E-Mail-Adresse"
+
+#: ../pagesection.py:19
+msgid "Enter URL of externally hosted image asset link e.g. animated GIFs"
+msgstr "Geben Sie die URL eines externen Bildes ein (z.B. ein animiertes GIF)"
+
+#: ../pagesection.py:26
+msgid "Enter URL to embed external videos from YouTube"
+msgstr "Geben Sie den Link zur Einbindung von externen Videos aus YouTube hier ein."
+
+#: ../configure.zcml:26
+msgid "Extension profile for aha.sitecontent."
+msgstr "Erweiterung für AHA360 Seiteninhalte"
+
+#: ../pagesection.py:18
+msgid "External Image"
+msgstr "Externes Bild"
+
+#: ../profiles/default/types/aha.sitecontent.contentpage.xml
+msgid "Folderish content page"
+msgstr "Inhaltsseite als Ordner"
+
+#: ../browser/pagesectionform.pt:63
+msgid "Fullname"
+msgstr "Vor- und Zuname"
+
+#: ../behaviors/configure.zcml:17
+msgid "Gallery Display Toggle"
+msgstr "Galerieansicht"
+
+#: ../browser/pagesectionform.pt:170
+msgid "I have acknowledged the"
+msgstr "Ich habe die "
+
+#: ../browser/pagesection.py:153
+msgid "Inquiry from website visitor"
+msgstr "[aha360.com] Anfrage eines Seitenbesuchers"
+
+#: ../profiles/default/types/aha.sitecontent.pagesection.xml
+msgid "PageSection"
+msgstr "Inhaltsabschnitt"
+
+#: ../browser/pagesectionform.pt:105
+msgid "Phone"
+msgstr "Telefonnummer"
+
+#: ../profiles/default/types/aha.sitecontent.project.xml
+msgid "Project"
+msgstr "Projekt"
+
+#: ../project.py:21
+msgid "Project References"
+msgstr "Projektreferenzen"
+
+#: ../project.py:24
+msgid "Reference"
+msgstr "Referenz"
+
+#: ../profiles/default/types/aha.sitecontent.project.xml
+msgid "Reference project"
+msgstr "Referenzprojekt"
+
+#: ../browser/formdispatched.pt:30
+msgid "Return to last visited page"
+msgstr "Zur Inhaltsseite zurückkehren"
+
+#: ../profiles/default/types/aha.sitecontent.showroom.xml
+msgid "Showroom"
+msgstr "Showroom"
+
+#: ../profiles/default/types/aha.sitecontent.showroom.xml
+msgid "Showroom for reference projects"
+msgstr "Showrrom für Projekte"
+
+#: ../browser/pagesectionform.pt:190
+msgid "Submit"
+msgstr "Abschicken"
+
+#: ../browser/formdispatched.pt:26
+msgid "Thank you for your interest. We will get in touch with you as soon as possible."
+msgstr "Vielen Dank für Ihr Interesse. Wir werden uns baldmöglichst mit Ihnen in Verbindung setzen."
+
+#: ../browser/pagesection.py:131 ../browser/pagesectionform.pt:52
+msgid "This field is required"
+msgstr "Dieses Feld ist ein Pflichtfeld."
+
+#: ../pagesection.py:25
+msgid "Videolink"
+msgstr "Videolink"
+
+#: ../behaviors/gallery.py:26
+msgid "When activated the view will attempt to display a gallery of all contained images"
+msgstr "Das Setzen der Hakens aktiviert eine Gallerieansicht auf Basis der im Ordner vorhandenen Bilder"
+
+#: ../pagesection.py:38
+msgid "When activated the view will attempt to display a web form inside the given page component"
+msgstr "Sobald aktiviert, wird ein Anfrage Formular innerhalb dieses Inhaltsanschnittes eingeblendet."
+
+#: ../browser/pagesectionform.pt:122
+msgid "Your message"
+msgstr "Ihre Nachricht an uns"
+
+#: ../configure.zcml:26
+msgid "aha.sitecontent"
+msgstr "aha.sitecontent"
+
+#: ../browser/pagesectionform.pt:172
+msgid "and accept it."
+msgstr "zur Kenntnis genommen und akzeptiere diese."
+
+#: ../browser/pagesectionform.pt:171
+msgid "privacy policy"
+msgstr "Datenschutzbestimmungen"

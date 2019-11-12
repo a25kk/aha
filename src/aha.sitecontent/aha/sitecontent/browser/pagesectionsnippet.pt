@@ -1,0 +1,45 @@
+<div class="app-page-section app-page-snippet app-gutters"
+    tal:define="uuid context/UID">
+    <div class="app-page-col-main">
+      <div class="app-page-header">
+          <div class="app-page-title">
+              <h2 class="app-page-headline-content app-page-snippet-header">
+                      ${context/Title}
+              </h2>
+          </div>
+          <p class="app-page-abstract app-page-snippet-abstract"
+                  tal:condition="context/Description">
+                  ${context/Description}
+          </p>
+      </div>
+      <div class="app-page-body" tal:condition="context/text">
+        <div class="app-page-text app-page-snippet-text" id="parent-fieldname-text-${context/getId}"
+                tal:content="structure context/text/output" />
+      </div>
+    </div>
+    <div class="app-page-col-aside">
+        <figure class="figure" tal:condition="view/show_image">
+            <img class="app-img-card lazy-load"
+                    tal:define="img_data python:view.get_image_data(uuid)"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                 data-sizes="auto"
+                 data-srcset="${img_data/small},
+                            ${img_data/medium},
+                            ${img_data/large},
+                            ${img_data/original}" />
+        </figure>
+        <div class="app-page-asset" tal:condition="not:view/show_image">
+
+            <img class="app-img-card app-img-responsive lazy-load"
+                    tal:condition="view/has_external_image"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                 data-src="${context/externalImage}" />
+
+            <div class="embed-responsive embed-responsive-16by9"
+                    tal:condition="view/has_video_link">
+                <iframe class="embed-responsive-item" src="${context/videoLink}" />
+            </div>
+
+        </div>
+    </div>
+</div>

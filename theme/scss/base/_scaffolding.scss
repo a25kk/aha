@@ -1,0 +1,115 @@
+//
+// Basic scaffolding and resets
+// ----------------------------------
+
+// Set root font size
+html {
+    font-size: $app-font-size-base;
+}
+
+
+//** Adjust font weight for initialized webfonts
+body {
+    .wf-active & {
+        font-weight: 300;
+    }
+    &.template-theming-controlpanel .row {
+        // Fix theming control panel
+        margin: 0 $app-spacer-base;
+    }
+}
+
+// Set font weights if webfont is active
+.wf-active {
+    b,
+    strong {
+        font-weight: 500;
+    }
+}
+
+// prevent fake bolds
+b,
+strong {
+    font-weight: 700;
+    font-family: $app-font-family-base;
+    .wf-active & {
+        font-weight: 500;
+    }
+}
+
+// Remove dotted outline
+a {
+    color: $link-color;
+    outline: 0;
+}
+
+// Transistion link color on :hover state
+a:hover {
+  transition: color 0.5s linear;
+  text-decoration: underline;
+}
+
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6, {
+    text-transform: uppercase;
+}
+
+
+// Change styling for elements that mix pixels and rems
+//
+// Form input is calculated based on line and font sizes and needs to be
+// adjusted manually
+// Change styling for elements that mix pixels and ems
+
+pre {
+  font-size: $app-font-size-base;
+}
+
+
+// Optional plone settings and adjustments
+// ---------------------------------------
+// Combat plone.app.widget styling (also using bootstrap) and correct
+// display errors caused by grid system inconsistencies
+
+// Combat plone hidden element class via mixin
+.hiddenStructure {
+    @extend .hidden;
+}
+
+// Reenable type selection in navigation control panel
+// Hidden by bootstrap label component
+.template-navigation-controlpanel .label:empty {
+    display: inline;
+}
+
+// Reset widget styling
+.mce-edit-area,
+#content .field textarea,
+#content .field input[type="text"] {
+    background: #fff;
+    background-image: none;
+}
+
+// Fix recurrence widget overlay styling
+div.riform .label {
+    float: none;
+}
+// Fix datepicker header year + month select
+.pattern-pickadate-wrapper .picker__select--month,
+.pattern-pickadate-wrapper .picker__select--year {
+    display: inline-block;
+}
+
+// Force search button to display styled
+.searchButton {
+    @extend .btn;
+    //@extend .btn-default;
+}
+
+// Reset tiny mce content body styling for better readability
+.mceContentBody {
+    padding: $app-spacer-base;
+}

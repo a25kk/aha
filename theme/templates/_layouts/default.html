@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    {% include base/head.html %}
+</head>
+<body class="app-main app-main-default section-light userrole-anonymous dim-in dim-in-3">
+    {% include components/toolbar.html %}
+    {% include layout/header.html %}
+    <main class="app-content" role="main">
+        {{ content }}
+    </main>
+    {% include layout/footer.html %}
+    {% include base/piwik.html %}
+</body>
+</html>

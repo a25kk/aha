@@ -1,0 +1,153 @@
+//
+// Gallery
+// ---------------------------------------------------
+
+.app-gallery {
+    height: 100vh;
+}
+
+.project-gallery {
+    position: relative;
+}
+
+.app-gallery-caption {
+    width: 100%;
+    padding-top: 1rem;
+    @media (min-width: $screen-md-min) {
+        position: absolute;
+        top: 2rem;
+        left: 4rem;
+        z-index: 1001;
+        width: 35%;
+    }
+    background-color: $app-primary;
+    @include when-inside('.section-licht') {
+      background-color: #fff;
+    }
+    &-collapsible {
+      background: transparent;
+    }
+}
+
+// Collapsible gallery caption
+.app-caption-toggle {
+    text-align: right;
+    font-size: 2rem;
+    background-color: $app-primary;
+    @include when-inside('.section-licht') {
+        background-color: #fff;
+    }
+}
+
+.app-caption-toggle-title {
+    display: inline-block;
+    text-align: left;
+    width: 80%;
+    font-size: .9rem;
+    color: gray;
+    text-transform: uppercase;
+}
+
+.js-caption-collapsible {
+    text-decoration: none !important;
+    text-align: center;
+    outline: none;
+    &:hover {
+      text-decoration: none;
+      outline: none;
+    }
+    &:visited {
+       outline: none;
+    }
+    &:focus{
+       outline: none;
+    }
+    &::before {
+        content: '+';
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        padding-top: 5px;
+        margin-bottom: .5rem;
+        color: #fff;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        font-size: 20px;
+        line-height: 1;
+        transition: all .3s;
+        @include when-inside('.toggleable-open') {
+          content: 'x';
+        }
+        @include when-inside('.section-licht') {
+            color: $app-primary;
+            border-color: $app-primary;
+        }
+    }
+    @include when-inside('.toggleable-open') {
+        // transform-origin: center center;
+        // transform: rotate(135deg);
+    }
+}
+
+.app-gallery-caption-block {
+    display: none;
+    padding: 4rem 2rem 2rem 2rem;
+    background-color: $app-primary;
+    @include when-inside('.section-licht') {
+        background-color: #fff;
+    }
+    @include when-inside('.toggleable-open') {
+        display: block;
+    }
+}
+
+
+.app-gallery-cell {
+    width: 100%;
+    @media (min-width: $screen-lg-min) {
+        height: 100vh;
+        // @extend .ratio-container;
+    }
+}
+
+.app-gallery-thumbs {
+    //border: 0px solid red;
+    padding: $line-height-computed / 2;
+}
+
+.app-thumbnails {
+  //display: flex;
+}
+
+.app-thumbnail {
+  //flex: 0 0 33.3333%;
+  display: inline-block;
+  padding: .3rem;
+}
+
+// Thumbnail trigger
+.js-thumbtrigger {
+    cursor: pointer;
+}
+
+/* ---- flickity overrides ---- */
+
+.flickity-prev-next-button {
+  background: transparent;
+}
+
+.flickity-prev-next-button .arrow {
+  fill: #fff;
+}
+
+.flickity-prev-next-button:hover {
+    background: none;
+}
+
+.flickity-page-dots {
+    bottom: 40px !important;
+}
+
+.flickity-page-dots .dot {
+    background: #fff;
+}

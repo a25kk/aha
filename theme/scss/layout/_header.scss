@@ -1,0 +1,38 @@
+//
+// Header
+// ------------------------------------------
+
+
+.app-header {
+  @include mq($from: md) {
+    display: flex;
+    flex-direction: row;
+    padding: $app-spacer-base $app-spacer-base 0 $app-spacer-base;
+    border-bottom: none;
+  }
+}
+
+.app-header-content {
+  @include mq($from: md) {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    // min-height: 100vh;
+  }
+}
+
+.app-header-panel {
+    flex: 0 1 1;
+    &-shopbutton {
+        align-self: flex-end;
+        width: 100%;
+        padding-left: 1rem;
+    }
+}
+
+.app-header-panel-shopbutton {
+  padding-left: 0;
+  @include mq($from: md) {
+    padding-left: 1rem;
+  }
+}

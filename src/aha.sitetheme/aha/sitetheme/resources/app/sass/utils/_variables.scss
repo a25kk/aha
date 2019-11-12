@@ -1,0 +1,90 @@
+//
+// Application settings and variables
+// -------------------------------------------------
+
+
+//== Colors
+//
+//## Brand colors used across the project
+
+// Gray baseline
+$app-gray:                      rgba(237, 234, 234, 1);
+
+// Text color override
+$text-color:                    $gray-darker;
+
+// Brand primary (green)
+$app-primary:                   #000;
+$app-secondary:                 rgba(88, 140, 115, 1);
+
+//== Brand and Section specific variables
+//
+//## Used in mixin and modifier classes
+
+//** Primary brand color
+$app-primary-base:              rgba(39, 77, 56, 1) !default;
+$app-primary-darker:            darken($app-primary-base, 15%)  !default;
+$app-primary-dark:              darken($app-primary-base, 7.5%) !default;
+$app-primary:                   $app-primary-base               !default; // #274d38
+$app-primary-light:             lighten($app-primary-base, 7.5%) !default;
+$app-primary-lighter:           lighten($app-primary-base, 15%) !default;
+
+//** Secondary brand color
+$app-secondary-base:			rgba(88, 140, 115, 1) !default;
+$app-secondary-darker:			darken($app-secondary-base, 15%)  !default;
+$app-secondary-dark:			darken($app-secondary-base, 7.5%) !default;
+$app-secondary:					$app-secondary-base               !default; // #588c73
+$app-secondary-light:			lighten($app-secondary-base, 7.5%) !default;
+$app-secondary-lighter:			lighten($app-secondary-base, 15%) !default;
+
+
+//** Brand primary color schema used as default
+$app-default:                 $app-primary-base;
+$app-section-default:         $app-primary-base;
+
+//== Bootstrap variable overides
+//
+//## Reset and adjust existing variables
+
+$brand-primary:                 $app-primary;
+$link-color:                    $text-color;
+$link-hover-color:      		darken($text-color, 6.5%);
+
+// Project webfonts
+$app-font-path:                  "../assets/fonts";
+
+$app-font-family-base:          'FFDINWebProBold';
+$app-font-family-light:         'FFDINWebProLight';
+
+
+$font-family-base:              $app-font-family-light, $font-family-sans-serif !default;
+//** By default, this inherits from the `<body>`.
+$headings-font-family:          $app-font-family-base, $font-family-sans-serif;
+
+//** Font awesome font path
+$fa-font-path:                  "../assets/fonts";
+
+
+//== Compontent border reset
+//
+//## Bootstrap border radius reset
+$border-radius-base:        0;
+$border-radius-large:       0;
+$border-radius-small:       0;
+$input-border-radius:       0;
+
+$input-border:                   #000;
+
+//** Navbar toggle
+$navbar-default-toggle-hover-bg:           #ddd;
+$navbar-default-toggle-icon-bar-bg:        #888;
+$navbar-default-toggle-border-color:       #ddd;
+
+//** Button primary uses default link color not brand primary
+$btn-primary-bg:                 $app-primary;
+
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-sm-min !default;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
