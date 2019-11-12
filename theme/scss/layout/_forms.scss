@@ -5,12 +5,19 @@
 // Standard applciation button styles
 .app-btn {
     @extend .btn;
-    @include button-variant(#333, #fff, #333);
+    //@include button-variant(#333, none, #333);
+    color: #fff;
+    border: 0;
+    background-color: #333;
     border-radius: 0;
     text-transform: uppercase;
     &-lg {
         // line-height: ensure even-numbered height of button next to large input
         @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-small, $app-line-height-lg, 0);
+    }
+
+    &:hover {
+        color: #fff;
     }
 }
 
@@ -53,7 +60,7 @@ input[type="tel"],
 input[type="color"] {
     display: block;
     width: 100%;
-    height: $app-line-height-lg; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+    //height: $app-line-height-lg; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
     padding: 1rem;
     font-size: $font-size-base;
     line-height: $line-height-base;
@@ -98,6 +105,8 @@ input[type="color"] {
 //** Reset textarea height
 textarea {
     height: auto;
+    background-color: #999999 !important;
+    border: 0 !important;
 }
 
 //== Required field
@@ -188,6 +197,11 @@ textarea {
 
 // Inquiry form
 .app-form-inquiry {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-right: 0;
+    padding-left: 0;
+    @media (min-width: $screen-md-min) {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    
 }

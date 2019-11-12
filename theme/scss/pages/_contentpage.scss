@@ -36,7 +36,13 @@
 .app-page-content {
     z-index: 1051;
     padding-left: 1.5rem;
+    padding-right: 1.5rem;
     padding-top: 1.5rem;
+    @include when-inside('.app-page-frontpage') {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+    }
 }
 
 .app-page-frontpage .app-page-content {
@@ -74,14 +80,43 @@
 //## Text body layout and styling
 
 .app-page-header {
-    padding: 0 1rem;
+    @include when-inside('.app-gallery-caption') {
+        padding: 0 1rem;
+    }
+    @include when-inside('.app-page-col-main') {
+        padding: 0;
+        @media (min-width: $screen-md-min) {
+            padding: 0 1rem;
+        }
+    }
+    @include when-inside('.app-main-default') {
+        padding: 0;
+        @media (min-width: $screen-md-min) {
+            padding: 0 1rem;
+        }
+    }
 }
+
+
 
 .app-page-title {
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 1rem !important;
     color: #808080;
     letter-spacing: 2px;
+    @media (min-width: $screen-md-min) {
+        font-size: 1.75rem !important;
+    }
+}
+
+.app-page-headline {
+    text-transform: uppercase;
+    font-size: 1.4rem !important;
+    color: #808080;
+    letter-spacing: 2px;
+    @media (min-width: $screen-md-min) {
+        font-size: 2.3rem !important;
+    }
 }
 
 .app-page-headline-lg {
@@ -134,7 +169,13 @@
 
 
 .app-page-text {
-    padding: 0 1rem;
+    padding: 0;
+    @media (min-width: $screen-md-min) {
+            padding: 0 1rem;
+        }
+    //@include when-inside('.app-main-default') {
+    //    padding: 0 1rem 0 0; 
+    //}
 }
 
 // Text inside page section snippets
@@ -187,33 +228,48 @@
 //
 //## Flexbox based grid classes
 .app-page-section {
-    //@include container-fixed;
-    @media (min-width: $grid-float-breakpoint) {
-        display: flex;
-        flex-wrap: row wrap;
-        &-inverse {
+
+    display: flex;
+    flex-wrap: column wrap;
+    flex-direction: column-reverse;
+
+    @include when-inside('.app-main-default') {
+        @media (min-width: $screen-lg-min) {
+            flex-direction: row;
+            &-inverse {
             flex-direction: row-reverse;
+            }
         }
-        @include when-inside('.app-main-inverse') {
+    }
+    
+
+    @include when-inside('.app-main-inverse') {
+        @media (min-width: $screen-lg-min) {
             flex-direction: row-reverse;
             &-inverse {
                 flex-direction: row;
             }
-        }
+        }     
     }
 }
 
 .app-page-col {
     padding: 0.5rem;
-    @media (min-width: $screen-md-min) {
+    
         flex: 1;
         &-main {
-            flex: 0 0 40%;
+            flex: 0 0 100%;
+            @media (min-width: $screen-lg-min) {
+                flex: 0 0 40%;   
+            }
+            
         }
         &-aside {
-            flex: 0 0 60%;
+            flex: 0 0 100%;
+            @media (min-width: $screen-lg-min) {
+                flex: 0 0 60%;   
+            }
         }
-    }
 }
 
 
@@ -311,4 +367,8 @@
 // Download item styling
 .app-download-item {
     border-bottom: 1px solid $gray-light;
+}
+
+.app-page-asset {
+    padding-bottom: 1rem;
 }

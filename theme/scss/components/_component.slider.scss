@@ -97,10 +97,10 @@ $c-slider-padding:                $app-spacer-base;
 .flickity-prev-next-button .flickity-button-icon {
   position: absolute;
   left: 20%;
-  //top: -200%;
+  top: -70%;
   width: 60%;
   height: 60%;
-  @include mq($from: md) {
+  @include mq($from: lg) {
     top: 20%;
   }
 }

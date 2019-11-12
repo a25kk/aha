@@ -9459,7 +9459,7 @@ input, button, select, textarea {
 
 .o-form__control--checkbox + label {
   position: relative;
-  padding-left: 1.95em;
+  padding-left: 2rem;
   cursor: pointer;
   font-weight: 400;
 }

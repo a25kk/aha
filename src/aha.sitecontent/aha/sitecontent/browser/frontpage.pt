@@ -98,8 +98,14 @@
                     Licht
                 </div>
             </a>
+          
         </div>
+
     </div>
+    <div class="app-frontpage-footer">
+      <a href="/raum/impressum">Impressum</a> | <a href="/raum/datenschutzerklaerung">Datenschutz</a>
+    </div>
+
   </metal:content-core>
 </metal:main>
 </body>
