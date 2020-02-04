@@ -19709,6 +19709,24 @@ c-list--bordered .c-list__item:last-of-type {
   }
 }
 
+@media (min-width: 62em) {
+  .template-login_success .app-content {
+    padding: calc(1rem * 1.5);
+  }
+}
+
+@media (min-width: 62em) {
+  .template-folder_contents .app-content {
+    padding: calc(1rem * 1.5);
+  }
+}
+
+@media (min-width: 62em) {
+  .template-edit .app-content {
+    padding: calc(1rem * 1.5);
+  }
+}
+
 .hidden, .hiddenStructure,
 .hiddenStructure {
   visibility: hidden;

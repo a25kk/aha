@@ -59,3 +59,27 @@
       flex: 1;
     }
 }
+
+.app-content {
+    @include when-inside('.template-login_success') {
+        @include mq($from: lg) {
+            padding: $app-spacer-base;
+        }
+    }
+}
+
+.app-content {
+    @include when-inside('.template-folder_contents') {
+        @include mq($from: lg) {
+            padding: $app-spacer-base;
+        }
+    }
+}
+
+.app-content {
+    @include when-inside('.template-edit') {
+        @include mq($from: lg) {
+            padding: $app-spacer-base;
+        }
+    }
+}
