@@ -12844,6 +12844,11 @@ button {
   background: transparent;
 }
 
+.app-shopbutton img {
+  max-width: 70%;
+  padding-top: 2rem;
+}
+
 a:not(class) {
   color: #212529;
 }
