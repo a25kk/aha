@@ -64,7 +64,7 @@
             <a class="app-navitem-tab"
                     tal:attributes="class python:active and 'app-navitem-tab active ' or 'app-navitem-tab'"
                href="${portal_url}/${section}/projekte">
-                <span>Projekte</span>
+                <span>Referenzen</span>
             </a>
             <ul class="app-navbar-nav app-navbar-subnav"
                 tal:define="categories python:view.showrooms(section)">
@@ -79,7 +79,7 @@
                 </tal:items>
             </ul>
         </li>
-        <li class="app-navitem"
+        <!--<li class="app-navitem"
                 tal:condition="python:view.active_section('raum')"
                 tal:define="active python:view.active_navitem('zukunftsschmiede')"
                 tal:attributes="class python:active and 'app-navitem active ' or 'app-navitem'">
@@ -88,7 +88,7 @@
                       href="${portal_url}/${section}/leh">
                 <span>LEH</span>
               </a>
-        </li>
+        </li>-->
         <li class="app-navitem"
                 tal:condition="python:view.active_section('raum')"
                 tal:define="active python:view.active_navitem('filterkaffeemaschine')"

@@ -15354,7 +15354,7 @@ div.riform .label {
 }
 
 .app-navbar-subnav {
-  display: none;
+  display: block;
   font-weight: 400px;
 }
 
