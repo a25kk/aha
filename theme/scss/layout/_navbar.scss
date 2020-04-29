@@ -158,7 +158,7 @@
 }
 
 .app-navbar-subnav {
-    display: none;
+    display: block;
     font-weight: 400px;
     @include when-inside('.active') {
         display: block;
